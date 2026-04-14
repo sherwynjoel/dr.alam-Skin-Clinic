@@ -225,58 +225,86 @@
                         <p style="font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">Schedule a private consultation with our medical team. Your journey toward refined confidence begins here.</p>
                     </div>
 
-                    <form id="booking-form" class="luxury-form">
+                    <form id="booking-form" class="luxury-form" action="https://formsubmit.co/howthulalamraja@gmail.com" method="POST">
+                        <!-- Formsubmit config -->
+                        <input type="hidden" name="_subject" value="New Appointment Request — Dr. Alam's Skin Clinic">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://dralamdermcentre.com/contact.html?submitted=true">
+
                         <style>
                             .luxury-form { color: #fff; }
                             .luxury-form label { display: block; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; font-weight: 700; }
-                            .luxury-form .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; width: 100%; transition: all 0.3s ease; }
+                            .luxury-form .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; width: 100%; transition: all 0.3s ease; color-scheme: dark; }
                             .luxury-form .form-control:focus { background: rgba(255,255,255,0.08); border-color: var(--color-accent); outline: none; box-shadow: 0 0 15px rgba(184, 151, 62, 0.2); }
                             .luxury-form .grid { gap: 2rem; margin-bottom: 2rem; }
                             .btn-make-appointment { background: #e91e63; color: #fff; border: none; padding: 1.25rem; width: 100%; border-radius: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3); }
                             .btn-make-appointment:hover { background: #d81b60; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233, 30, 99, 0.4); }
                             select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.5rem center; background-size: 1.2rem; }
+                            .input-icon-wrap { position: relative; }
+                            .field-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--color-accent); pointer-events: none; z-index: 1; }
+                            .dropdown-arrow { position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: rgba(255,255,255,0.5); pointer-events: none; z-index: 1; }
+                            .form-control.with-icon { padding-left: 3rem; padding-right: 3rem; appearance: none; }
+                            .luxury-form select option { background: #0d2235; color: #fff; }
                         </style>
 
                         <div class="grid grid-2">
                             <div class="form-group">
                                 <label>Your Name *</label>
-                                <input type="text" class="form-control" placeholder="Enter Full Name" required>
+                                <input type="text" name="Full Name" class="form-control" placeholder="Enter Full Name" required>
                             </div>
                             <div class="form-group">
                                 <label>Your Phone</label>
-                                <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                                <input type="tel" name="Phone Number" class="form-control" placeholder="Mobile Number" required>
                             </div>
                         </div>
 
                         <div class="grid grid-2">
                             <div class="form-group">
                                 <label>Service</label>
-                                <select class="form-control">
-                                    <option>Select Service</option>
-                                    <option>Acne & Scars</option>
-                                    <option>Hair Loss</option>
-                                    <option>Pigmentation</option>
-                                    <option>Laser Hair Removal</option>
-                                </select>
+                                <div class="input-icon-wrap">
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                    <select name="Service" class="form-control with-icon">
+                                        <option>Select Service</option>
+                                        <option>Acne & Scars</option>
+                                        <option>Hair Loss</option>
+                                        <option>Pigmentation</option>
+                                        <option>Laser Hair Removal</option>
+                                    </select>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Doctor</label>
-                                <select class="form-control">
-                                    <option>Select Doctor</option>
-                                    <option>Dr. Alam</option>
-                                    <option>Medical Specialist</option>
-                                </select>
+                                <div class="input-icon-wrap">
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                    <select name="Doctor" class="form-control with-icon">
+                                        <option>Select Doctor</option>
+                                        <option>Dr. Alam</option>
+                                        <option>Medical Specialist</option>
+                                    </select>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
 
                         <div class="grid grid-2" style="grid-template-columns: 1fr 1fr;">
                             <div class="form-group">
                                 <label>Preferred Date</label>
-                                <input type="date" class="form-control" required>
+                                <input type="date" name="Preferred Date" class="form-control" required onkeydown="return false" onclick="this.showPicker()">
                             </div>
                             <div class="form-group">
                                 <label>Preferred Time</label>
-                                <input type="time" class="form-control" required>
+                                <input type="time" name="Preferred Time" class="form-control" required onkeydown="return false" onclick="this.showPicker()">
                             </div>
                         </div>
 

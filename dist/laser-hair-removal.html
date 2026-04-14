@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laser Hair Removal | Dr. Alam's Skin Clinic Erode</title>
+    <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
+    <meta name="description" content="Tired of shaving and waxing? Get professional, dermatologist-supervised laser hair removal in Erode for smooth, hair-free skin.">
+    
+    <!-- Core Design System -->
+    
+    <style>
+        :root {
+            --lp-primary: #04121f;
+            --lp-accent: #b8973e;
+            --lp-red: #e74c3c;
+        }
+
+        /* 1. Distraction-Free Header */
+        .lp-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            border-bottom: 2px solid var(--color-accent-pale);
+        }
+
+        .lp-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 2. StoryBrand Hero Section */
+        .hero-lp {
+            padding: 160px 0 80px;
+            background: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), 
+                        url('https://images.unsplash.com/photo-1512290902241-15b9c14bc699?auto=format&fit=crop&w=1920&q=80') center/cover;
+            text-align: center;
+        }
+
+        .hero-lp h1 {
+            font-size: clamp(2rem, 5.5vw, 4.2rem);
+            line-height: 1.1;
+            color: var(--lp-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-lp .subheadline {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: var(--color-text-main);
+            line-height: 1.7;
+        }
+
+        .trust-line {
+            margin-top: 3.5rem;
+            font-weight: 700;
+            color: var(--lp-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+        }
+
+        /* Architectural Card Styles */
+        .procedure-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            border-top: 4px solid var(--lp-accent);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+        .procedure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(184, 151, 62, 0.12);
+        }
+        .card-num {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-family: serif;
+            font-size: 2.5rem;
+            color: rgba(184, 151, 62, 0.08);
+            font-weight: 800;
+            line-height: 1;
+        }
+        .proc-icon {
+            color: var(--lp-accent);
+            margin-bottom: 2rem;
+            background: rgba(184, 151, 62, 0.05);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+        }
+        .procedure-card:hover .proc-icon { transform: rotateY(180deg) scale(1.1); }
+        .procedure-card h4 {
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--lp-primary);
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /* FAQ Styling */
+        .faq-lp-item { border-bottom: 1px solid var(--color-border); padding: 1.5rem 0; }
+        .faq-lp-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; color: var(--lp-primary); font-size: 1.1rem; }
+        .faq-lp-answer { margin-top: 1rem; color: var(--color-text-muted); line-height: 1.7; display: none; }
+        .faq-lp-item.active .faq-lp-answer { display: block; }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hero-lp { padding: 130px 0 60px; }
+            .lp-nav .btn-primary { display: none; }
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+</head>
+
+<body>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/9345410038" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp Us">
+        <svg fill="white" width="35" height="35" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Standard Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION (Character + Desire) -->
+        <section class="hero-lp">
+            <div class="container">
+                <h1>Tired of Shaving, Waxing<br>and Ingrown Hair?</h1>
+                <p class="subheadline">Medical laser hair removal for your face and body, performed under dermatologist supervision for safe, smooth, and long-term results in Erode.</p>
+                <div class="btn-group" style="justify-content: center; gap: 1rem;">
+                    <a href="#cta-final" class="btn btn-primary" style="padding: 1.25rem 3rem;">Book Consultation</a>
+                    <a href="https://wa.me/9345410038" class="btn btn-secondary" style="padding: 1.25rem 3rem;">WhatsApp Us</a>
+                </div>
+                <p class="trust-line">Dermatologist Supervised | Medical Grade Laser | Face & Body Reduction</p>
+            </div>
+        </section>
+
+        <!-- 2. PROBLEM SECTION -->
+        <section class="section">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div class="animate-fade-left">
+                    <span class="eyebrow">The Challenge</span>
+                    <h2>Shaving and Waxing Are Only Temporary Solutions</h2>
+                    <div class="gold-divider" style="margin: 1.5rem 0;"></div>
+                    <p class="mb-sm">If you are shaving or waxing regularly, you already know how time-consuming and frustrating it can be. You might also struggle with ingrown hairs, razor bumps, and skin irritation.</p>
+                    <p class="mb-sm">Our laser hair removal helps you reduce unwanted hair growth over time while also clearing up the skin darkening and bumps caused by traditional shaving methods.</p>
+                    <p style="font-weight: 800; color: var(--lp-primary); border-left: 3px solid var(--lp-accent); padding-left: 1rem;">
+                        It’s not just about removing hair—it’s about giving you smoother, healthier skin and the freedom to stop worrying about your next waxing appointment.
+                    </p>
+                </div>
+                <div class="animate-fade-right">
+                    <img src="/assets/Screenshot%202026-04-09%20214456-Dl6VXUZC.png" 
+                        alt="Challenges with Waxing and Shaving" 
+                        style="border-radius: 20px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GUIDE SECTION (Doctor) -->
+        <section class="section section-bg-light">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div class="animate-fade-left">
+                    <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Howthul Alam Raja" style="border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="eyebrow">Expert Supervision</span>
+                    <h2>Dermatologist-Supervised Hair Reduction</h2>
+                    <div class="gold-divider" style="margin: 1.5rem 0;"></div>
+                    <p class="mb-sm">At Dr. Alam’s Skin Clinic, your laser hair removal is performed using medical-grade machines under my direct supervision. We adjust the laser settings specifically for your skin type and hair thickness.</p>
+                    <p class="mb-sm">We can help you with hair reduction for almost any area, including:</p>
+                    <ul class="check-list" style="columns: 2; margin-top: 1rem;">
+                        <li>Face & Chin</li>
+                        <li>Underarms</li>
+                        <li>Arms & Legs</li>
+                        <li>Chest & Back</li>
+                        <li>Bikini Area</li>
+                        <li>Full Body</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PLAN SECTION -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">The Process</span>
+                    <h2>Laser Hair Removal in 3 Steps</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <div class="procedure-card animate-fade-up">
+                        <div class="card-num">01</div>
+                        <h3>Consultation</h3>
+                        <p>We examine your skin type and hair thickness to set the most effective parameters for your treatment.</p>
+                    </div>
+                    <div class="procedure-card animate-fade-up" style="transition-delay: 0.1s;">
+                        <div class="card-num">02</div>
+                        <h3>Laser Sessions</h3>
+                        <p>Your sessions are done at regular intervals to target hair during its growth phase for maximum reduction.</p>
+                    </div>
+                    <div class="procedure-card animate-fade-up" style="transition-delay: 0.2s;">
+                        <div class="card-num">03</div>
+                        <h3>Maintenance</h3>
+                        <p>After your primary sessions, your hair growth will be significantly slower, thinner, and less dense.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. BENEFITS SECTION -->
+        <section class="section section-bg-light">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">The Value</span>
+                    <h2>Why You’ll Love Your Results</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"></path></svg>
+                        </div>
+                        <h4>Smoother Skin Texture</h4>
+                    </div>
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                        </div>
+                        <h4>No More Ingrown Hair</h4>
+                    </div>
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        </div>
+                        <h4>Permanent Reduction</h4>
+                    </div>
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                        </div>
+                        <h4>Even Skin Tone</h4>
+                    </div>
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h4>Save Precious Time</h4>
+                    </div>
+                    <div class="procedure-card">
+                        <div class="proc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h4>High Precision</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SUCCESS SECTION -->
+        <section class="section text-center">
+            <div class="container animate-fade-up" style="max-width: 900px;">
+                <span class="eyebrow">The Outcome</span>
+                <h2>Imagine Not Having to Shave or Wax Frequently</h2>
+                <div class="gold-divider"></div>
+                <p style="font-size: 1.25rem; line-height: 1.8; color: var(--lp-primary);">
+                    After multiple sessions, most of our patients notice hair growth becomes almost negligible. You'll feel more comfortable and confident without worrying about daily grooming routines or unsightly razor bumps.
+                </p>
+                <p style="font-weight: 800; color: var(--lp-accent); font-size: 1.5rem; margin-top: 1.5rem;">We help you achieve smooth skin that lasts.</p>
+            </div>
+        </section>
+
+        <!-- 7. RESULTS SECTION -->
+        <section class="section section-bg-light">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Visual Proof</span>
+                    <h2>Real Hair Reduction Results</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-2" style="gap: 4rem; align-items: center;">
+                    <div class="ba-card animate-fade-left">
+                        <img src="/assets/Screenshot%202026-04-09%20214717-Ca318277.png" 
+                            alt="Underarm Laser Results Before and After" 
+                            style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);">
+                        <div class="ba-label"><span>Before</span><span>After 6 Sessions</span></div>
+                    </div>
+                    <div class="animate-fade-right">
+                        <h3>We Focus on Your Progress:</h3>
+                        <ul class="why-list" style="margin-top: 1.5rem;">
+                            <li><span>•</span> Reducing total hair count</li>
+                            <li><span>•</span> Thinner, lighter hair regrowth</li>
+                            <li><span>•</span> Clearing skin irritations</li>
+                            <li><span>•</span> Reversing "strawberry skin" look</li>
+                            <li><span>•</span> Long-term dermal health</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAILURE SECTION (Stakes) -->
+        <section class="section" style="background: #fffafa; border-left: 8px solid var(--lp-red);">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <span class="eyebrow" style="color: var(--lp-red);">The Drawbacks</span>
+                    <h2>The Issues With Frequent Shaving & Waxing</h2>
+                    <div class="gold-divider" style="background: var(--lp-red); margin: 1.5rem 0;"></div>
+                    <ul class="check-list">
+                        <li>Chronic ingrown hairs and infection</li>
+                        <li>Persistent razor burns and cuts</li>
+                        <li>Skin darkening in friction areas</li>
+                        <li>Thick, prickly hair regrowth</li>
+                        <li>Expensive lifetime cost of waxing</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 20px rgba(231, 76, 60, 0.1);">
+                        <h4 style="color: var(--lp-red);">Let's stop the cycle.</h4>
+                        <p>Repeated trauma from waxing can lead to permanent skin thickening and darkening. Laser is the gentler choice for your skin's long-term health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ SECTION -->
+        <section class="section section-bg-light">
+            <div class="container" style="max-width: 850px;">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Your Questions</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="faq-lp-list">
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">Is laser hair removal permanent? <span>+</span></div>
+                        <div class="faq-lp-answer">It provides long-term hair reduction. Most hair is permanently removed, though some very fine hairs may occasionally need maintenance sessions once or twice a year.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">How many sessions will you need? <span>+</span></div>
+                        <div class="faq-lp-answer">Most patients see significant results after 6 to 8 sessions. The exact number depends on your hair thickness and the area we are treating.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">Does it hurt? <span>+</span></div>
+                        <div class="faq-lp-answer">Most patients describe the sensation as a mild rubber-band snap. Our modern medical lasers have cooling tips to make the procedure very tolerable.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">Is it safe for your skin type? <span>+</span></div>
+                        <div class="faq-lp-answer">Yes. Because we use medical-grade lasers and proper dermatologist supervision, we can safely and effectively treat almost all skin types.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FINAL CTA SECTION -->
+        <section id="cta-final" class="section text-center section-bg-dark" style="background-color: var(--lp-primary); padding: 120px 0;">
+            <div class="container animate-fade-up">
+                <span class="eyebrow" style="color: var(--lp-accent);">Book Today</span>
+                <h2 class="text-white mb-sm">Start Your Journey to Smooth Skin</h2>
+                <div class="gold-divider"></div>
+                <p class="text-white cta-text mb-xl" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    If you’re ready to get rid of unwanted hair and razor bumps for good, let’s help you get started with a clinical assessment.
+                </p>
+                <div class="btn-group" style="justify-content: center; gap: 1rem;">
+                    <a href="tel:09345410038" class="btn btn-white">Call Clinic</a>
+                    <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-lp-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                if(item.querySelector('span')) {
+                    item.querySelector('span').textContent = item.classList.contains('active') ? '−' : '+';
+                }
+            });
+        });
+
+        // Animation Observer
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    e.target.classList.add('fade-up-active');
+                }
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

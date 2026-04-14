@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sherwynjoel/dr.alam-Skin-Clinic#readme",
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^8.0.8"
   },
   "dependencies": {

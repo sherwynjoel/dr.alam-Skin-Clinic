@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alam's Skin Clinic | Advanced Dermatology & Laser Surgery</title>
+    <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
+    <meta name="description"
+        content="Advanced dermatology, laser and skin surgery treatments in Erode specializing in acne scars, pigmentation, hair loss, laser hair removal and clinical dermatology.">
+    <!-- Ali Abdaal Style Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="scripts/main.js" defer></script>
+    <style>
+        /* ============================================
+           HOME PAGE — UNIQUE COMPONENT STYLES
+           ============================================ */
+
+        /* ── HERO ─────────────────────────────────── */
+        .hero {
+            padding: 130px 0 70px;
+            background: linear-gradient(to right, rgba(244, 247, 249, 0.92), rgba(244, 247, 249, 0.75)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80') center/cover;
+            text-align: center;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--color-primary-dark);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        .hero .subheadline {
+            font-size: 1.15rem;
+            color: var(--color-text-main);
+            max-width: 720px;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .hero-trust-line {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            line-height: 2;
+        }
+
+        .trust-divider {
+            margin: 0 0.5rem;
+        }
+
+        #typewriter-text {
+            display: inline;
+            white-space: nowrap;
+        }
+
+        .specialty-highlight {
+            color: var(--color-accent);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .specialty-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--color-accent);
+            opacity: 0.35;
+        }
+
+        /* ── RESULT ARCH CARDS ───────────────────── */
+        .result-arch-group {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+            padding-right: 5%;
+        }
+
+        /* ── RESULT ARCH CARDS ───────────────────── */
+        .result-arch-group {
+            width: 50%;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-right: 2rem;
+        }
+        .result-arch-card {
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
+        }
+        .result-arch-frame {
+            height: 380px;
+            width: 100%;
+            border-radius: 140px 140px 20px 20px;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: var(--shadow-lg);
+            background: #fdfdfd;
+        }
+        .result-arch-frame .ba-img {
+            height: 50%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: background-image 0.6s ease-in-out;
+        }
+        .ba-badge {
+            position: absolute;
+            left: 12px;
+            padding: 4px 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            z-index: 5;
+        }
+        .ba-badge.before { bottom: 12px; }
+        .ba-badge.after { bottom: 12px; }
+        .result-arch-frame .img-before { border-bottom: 2px solid #fff; }
+        .result-arch-label {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--color-primary-dark);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-waves {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='800' height='400' viewBox='0 0 800 400' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200C100 250 200 150 300 200C400 250 500 150 600 200C700 250 800 150 900 200' stroke='%23b8973e' stroke-width='1' stroke-opacity='0.15'/%3E%3Cpath d='M0 220C100 270 200 170 300 220C400 270 500 170 600 220C700 270 800 170 900 220' stroke='%23b8973e' stroke-width='1' stroke-opacity='0.1'/%3E%3C/svg%3E") no-repeat center right;
+            z-index: 1;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        /* ── CAROUSEL ──────────────────────────────── */
+        .hero-carousel {
+            margin: var(--spacing-lg) auto 0;
+            max-width: var(--container-width);
+            padding: 0 var(--container-padding);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-container {
+            position: relative;
+            background: transparent;
+            width: 100%;
+            height: 520px;
+        }
+
+        .carousel-slide {
+            display: none;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide.active {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 50px;
+                animation: fadeIn 0.8s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .carousel-image {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 16px;
+                box-shadow: none;
+                z-index: 1;
+                order: 2;
+                /* Image on right */
+            }
+
+            .carousel-slide::after {
+                display: none;
+                /* No overlay on desktop */
+            }
+
+            .carousel-content {
+                position: relative;
+                width: 50%;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0;
+                z-index: 3;
+                order: 1;
+                /* Text on left */
+            }
+
+            .carousel-card {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .carousel-card h2 {
+                font-family: var(--font-heading);
+                font-size: clamp(2rem, 3.5vw, 3.2rem);
+                color: var(--color-primary-dark);
+                font-weight: 700;
+                line-height: 1.15;
+                margin-bottom: 1.25rem;
+            }
+
+            .carousel-card h2::after {
+                display: none;
+            }
+
+            .carousel-card p {
+                font-size: 1.1rem;
+                color: var(--color-text-main);
+                line-height: 1.65;
+                margin-bottom: 2rem;
+                max-width: 95%;
+            }
+
+            .carousel-card .btn {
+                background: var(--color-accent) !important;
+                color: #fff !important;
+                padding: 0.85rem 2rem;
+                border-radius: 5px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                border: none;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+                display: inline-block;
+            }
+
+            .carousel-controls {
+                position: absolute;
+                top: 50%;
+                right: 40px;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                z-index: 10;
+            }
+
+            .carousel-dot {
+                width: 2px;
+                height: 32px;
+                background: rgba(255, 255, 255, 0.25);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-dot.active {
+                background: var(--color-accent);
+                height: 50px;
+                width: 3px;
+            }
+
+            /* ── STEP CARDS ────────────────────────────── */
+            /* ── STEP CARDS (HORIZONTAL) ──────────────── */
+            .step-cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                margin: var(--spacing-xl) auto 0;
+                max-width: var(--container-width);
+                position: relative;
+            }
+
+            .step-cards::before {
+                content: '';
+                position: absolute;
+                top: 30px;
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #e1d6c0, transparent);
+                z-index: 1;
+            }
+
+            .step-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                background: #fff;
+                color: var(--color-primary);
+                border: 1px solid var(--color-primary);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2rem;
+                font-size: 1.5rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .step-card::after {
+                content: attr(data-step);
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 6rem;
+                font-weight: 800;
+                color: rgba(0, 0, 0, 0.03);
+                z-index: -1;
+                pointer-events: none;
+                font-family: var(--font-serif);
+            }
+
+            .step-content {
+                padding: 0 10px;
+            }
+
+            .step-content h3 {
+                font-family: var(--font-serif);
+                color: var(--color-primary-dark);
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+            .step-content p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                color: var(--color-text-muted);
+                max-width: 100%;
+            }
+
+            /* ── WHY CHOOSE LIST ───────────────────────── */
+            .why-choose-list {
+                color: white;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem 3rem;
+                text-align: left;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            /* ── BEFORE/AFTER SLIDER ───────────────────── */
+            .single-ba-slider {
+                max-width: 760px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            /* ============================================
+           MOBILE  ≤ 768px
+           ============================================ */
+            @media (max-width: 768px) {
+
+                /* Hero */
+                .hero {
+                    padding: 90px 0 40px;
+                    background: linear-gradient(to bottom, rgba(244, 247, 249, 0.85), rgba(244, 247, 249, 0.4)),
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+                    background-attachment: scroll;
+                }
+
+                .hero h1 {
+                    color: var(--color-primary-dark);
+                    font-size: clamp(1.8rem, 7vw, 2.4rem);
+                    line-height: 1.2;
+                }
+
+                .hero h1 .text-accent {
+                    color: var(--color-accent);
+                }
+
+                .hero .subheadline {
+                    color: var(--color-text-main);
+                    font-size: 0.95rem;
+                    margin-bottom: 1.25rem;
+                }
+
+                .hero-trust-line {
+                    color: var(--color-text-muted);
+                    font-size: 0.65rem;
+                    letter-spacing: 1px;
+                    margin-top: 0.75rem;
+                    line-height: 2.2;
+                }
+
+                .trust-divider {
+                    display: none;
+                }
+
+                .specialty-highlight {
+                    font-weight: 600;
+                }
+
+                .hero .btn-secondary {
+                    border-color: var(--color-primary-dark);
+                    color: var(--color-primary-dark);
+                    background: transparent;
+                }
+
+                /* Carousel — Stacked Light Mobile Layout */
+                .hero-carousel {
+                    padding: 0 var(--container-padding);
+                    margin-top: 2rem;
+                }
+
+                /* Carousel — Stacked Vertical Layout for Better Mobile Reading */
+                .carousel-container {
+                    height: auto;
+                    overflow: visible;
+                }
+
+                .carousel-slide {
+                    position: relative;
+                    inset: unset;
+                }
+
+                .carousel-slide.active {
+                    flex-direction: column;
+                    text-align: center;
+                    height: auto;
+                    gap: 30px;
+                    padding-bottom: 40px;
+                }
+
+                .carousel-content {
+                    width: 100%;
+                    order: 2;
+                    padding: 0 1rem;
+                }
+
+                .carousel-card {
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .carousel-card h2 {
+                    font-size: 1.8rem;
+                    line-height: 1.3;
+                    margin-bottom: 1rem;
+                }
+
+                .carousel-card p {
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin-bottom: 1.5rem;
+                }
+
+                .carousel-image {
+                    width: 100%;
+                    height: 260px;
+                    min-height: 260px;
+                    max-height: 260px;
+                    flex-shrink: 0;
+                    border-radius: 12px;
+                    order: 1;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .carousel-card .btn {
+                    padding: 0.8rem 1.8rem;
+                    font-size: 0.8rem;
+                }
+
+                #review-track {
+                    display: flex;
+                    gap: 2rem;
+                    transition: none !important; /* Disabling transition for smooth marquee crawl */
+                }
+
+                .carousel-controls {
+                    right: 10px;
+                    top: 50%;
+                    gap: 7px;
+                    transform: translateY(-50%);
+                }
+
+                .carousel-dot {
+                    width: 2px;
+                    height: 18px;
+                }
+
+                .carousel-dot.active {
+                    width: 3px;
+                    height: 28px;
+                }
+
+                /* Step Cards — single column stacked */
+                .step-cards {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                    margin-top: var(--spacing-lg);
+                }
+
+
+                .step-cards::before {
+                    display: none;
+                }
+
+                .step-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    gap: 0.5rem;
+                    padding: 0;
+                    background: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    border: none;
+                }
+
+                .step-content {
+                    text-align: center;
+                    padding: 0;
+                }
+
+                .step-content p {
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+
+                .step-icon {
+                    width: 52px;
+                    height: 52px;
+                    font-size: 1.3rem;
+                }
+
+                .step-content h3 {
+                    font-size: 1rem;
+                }
+
+                .step-content p {
+                    font-size: 0.85rem;
+                }
+
+                .step-card::after {
+                    display: none;
+                }
+
+                /* Why Choose list */
+                .why-choose-list {
+                    grid-template-columns: 1fr;
+                    gap: 0.6rem;
+                    padding-left: 0.5rem;
+                    text-align: left;
+                }
+
+                /* Before/After slider */
+                .single-ba-slider {
+                    max-width: 100%;
+                }
+
+                /* Testimonial */
+                .testimonial-card {
+                    padding: 2rem 1.5rem;
+                }
+
+                /* Featured Results Section Responsive */
+                .section-results-featured .container {
+                    flex-direction: column !important;
+                    gap: 40px !important;
+                }
+
+                .result-arch-group {
+                    width: 100% !important;
+                    padding-right: 0 !important;
+                    justify-content: center;
+                }
+            }
+    </style>
+
+  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+</head>
+
+
+
+
+<body>
+    <div id="page-progress" class="page-progress-bar"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="hero-section">
+        <div id="hero-spotlight" class="hero-spotlight"></div>
+        <div class="container animate-fade-up">
+            <h1 style="font-family: var(--font-serif); font-weight: 700; font-style: italic;">Transform Your Skin.<br>Restore Your Hair.<br><span class="text-accent" style="font-style: normal;">Reclaim Your Confidence.</span>
+            </h1>
+            <p class="subheadline">Advanced dermatology, laser &amp; skin surgery in Erode — specializing in <span
+                    class="specialty-highlight">Acne Scars, Pigmentation &amp; Skin Surgery</span></p>
+
+            <div class="btn-group" style="justify-content: center;">
+                <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                <a href="https://wa.me/9345410038" target="_blank" class="btn btn-secondary">WhatsApp Us</a>
+            </div>
+
+            <p class="hero-trust-line">Dermatologist-Led Treatments <span class="trust-divider">|</span> Evidence-Based
+                Dermatology
+                <span class="trust-divider">|</span> Advanced Laser &amp; Skin Surgery Centre
+            </p>
+
+
+            <!-- Hero Carousel -->
+            <div class="hero-carousel">
+                <div class="carousel-container">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Expert Dermatology Care Tailored to Your Unique Skin.</h2>
+                                <p>We are dedicated to helping you achieve and maintain healthy, beautiful skin through
+                                    personalized clinical care and comprehensive dermatologist-led treatments.</p>
+                                <a href="services.html" class="btn btn-primary">Our Services</a>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-1-UpCBQbx3.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Living With a Skin Condition Is Hard. Getting Help Shouldn't Be.</h2>
+                                <p>Psoriasis, eczema, vitiligo, fungal infections — properly diagnosed, carefully
+                                    treated, and managed for the long term.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-2-YnRhx5VH.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>You’ve Tried a Lot for Your Acne. Let’s Try What Works.</h2>
+                                <p>A clear, step-by-step plan — from controlling active acne to treating old scars.
+                                    Designed for your skin.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-3-Du89A-iy.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Dark Spots and Uneven Skin Tone? Find Real Solutions.</h2>
+                                <p>Melasma and pigmentation need medical diagnosis. We help you choose the treatment
+                                    that actually works.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-4-DN0T3MuW.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Hair Loss Is Stressful. But It’s Treatable.</h2>
+                                <p>Receding hairline or hair fall — find the medical cause and start a professional
+                                    restoration journey.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-5-CUhPJJis.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Look Like Yourself. Just More Refreshed.</h2>
+                                <p>Subtle, doctor-led dermatological treatments that enhance your clinical skin health
+                                    and appearance.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-6-CGuDpWDw.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Smooth Skin. Advanced Laser Hair Removal.</h2>
+                                <p>Professional hair reduction sessions planned precisely for your skin and hair type.
+                                    Stop constant waxing.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-7-C9-HOGm9.jpg');"></div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <div class="carousel-card">
+                                <h2>Safe Skin Surgery. Expert Mole & Tag Removal.</h2>
+                                <p>Medical-grade clinical removal of moles, cysts and tags with expert care and quick
+                                    recovery time.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-image" style="background-image: url('/assets/hero-slide-8-Dt3BkMLY.jpg');"></div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Dots -->
+                <div class="carousel-controls">
+                    <div class="carousel-dot active" data-index="0"></div>
+                    <div class="carousel-dot" data-index="1"></div>
+                    <div class="carousel-dot" data-index="2"></div>
+                    <div class="carousel-dot" data-index="3"></div>
+                    <div class="carousel-dot" data-index="4"></div>
+                    <div class="carousel-dot" data-index="5"></div>
+                    <div class="carousel-dot" data-index="6"></div>
+                    <div class="carousel-dot" data-index="7"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FEATURED RESULTS (SEPARATE SECTION) ───── -->
+    <section class="section section-results-featured" style="background: linear-gradient(135deg, #f4f7f9 0%, #ffffff 100%); overflow: hidden; padding: 100px 0;">
+        <div class="container" style="display: flex; align-items: center; gap: 80px; flex-wrap: wrap;">
+            <div class="result-arch-group" style="width: auto; flex: 1; padding: 0;">
+                <!-- Consolidated Card (Cycling) -->
+                <div class="result-arch-card" id="acne-cycling-card">
+                    <div class="result-arch-frame">
+                        <div class="ba-img img-before" style="background-image: url('/assets/11-cNI8Nx_s.jpg');">
+                            <span class="ba-badge before">Before</span>
+                        </div>
+                        <div class="ba-img img-after" style="background-image: url('/assets/12-C23pb6MB.jpg');">
+                            <span class="ba-badge after">After</span>
+                        </div>
+                    </div>
+                    <span class="result-arch-label">Patient Results</span>
+                </div>
+            </div>
+            
+            <div class="result-text-content" style="flex: 1; min-width: 320px;">
+                <span class="badge mb-sm" style="display: inline-block; padding: 0.5rem 1.25rem; background: var(--color-accent); color: #fff; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-serif); font-style: italic;">Clinical Excellence</span>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 1.5rem; line-height: 1.1; font-weight: 700;">Real Patients. <br><span style="color: var(--color-accent);">Real Transformations.</span></h2>
+                <p style="font-size: 1.15rem; color: var(--color-text-main); margin-bottom: 2.5rem; line-height: 1.7;">Our results speak for our expertise. Every skin concern is unique, and our dermatologist-led protocols ensure you get visible, lasting improvements safely.</p>
+                <div class="btn-group">
+                    <a href="results.html" class="btn btn-primary" style="padding: 1rem 2rem;">See Results Gallery</a>
+                    <a href="contact.html" class="btn btn-secondary" style="padding: 1rem 2rem;">Get a Diagnosis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-target="5000" data-suffix="+">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Patients Treated</span>
+                </div>
+                <div class="stat-item" data-target="10" data-suffix="+ Yrs">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item" data-target="15" data-suffix="+">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Treatments Available</span>
+                </div>
+                <div class="stat-item" data-target="98" data-suffix="%">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Patient Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg-light">
+        <div class="container grid grid-2 animate-fade-up" style="align-items: flex-start; gap: 60px;">
+            <div>
+                <span class="eyebrow">The Challenge</span>
+                <h2 style="margin-bottom: 2rem; font-size: 3rem; font-family: var(--font-heading);">Your Skin Problems <br>are Holding You Back</h2>
+                <img src="/assets/problem-vibe-DSeV2Oea.jpg" alt="Individual struggling with skin problems"
+                    style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); width: 100%;">
+            </div>
+            <div style="padding-top: 6.5rem;">
+                <div class="gold-divider" style="margin-left: 0; width: 60px; margin-bottom: 2rem;"></div>
+                <p class="text-muted mb-sm" style="font-size: 1.15rem; line-height: 1.8;">Acne scars, pigmentation, hair
+                    loss and skin problems don’t just
+                    affect appearance — they affect confidence, social life and how you feel about yourself.</p>
+                <p class="text-muted mb-sm" style="font-size: 1.15rem; line-height: 1.8;">Many patients come to us after
+                    trying multiple creams, home remedies and
+                    cosmetic treatments without real improvement. This can be frustrating, time-consuming and expensive.
+                </p>
+                <p class="text-muted" style="font-size: 1.15rem; line-height: 1.8;">Skin and hair problems should be
+                    properly diagnosed and medically treated, not
+                    ignored or treated with random products. Proper dermatology treatment can significantly improve skin
+                    texture, pigmentation, hair growth and overall skin health.</p>
+                <a href="contact.html" class="btn btn-secondary mt-md">Request a Medical Evaluation</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grid grid-2" style="align-items: center;">
+            <div class="animate-fade-up">
+                <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Howthul Alam Raja"
+                    style="border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+            <div class="animate-fade-up">
+                <span class="eyebrow">Expertise & Trust</span>
+                <h2>Meet Your Dermatologist</h2>
+                <div class="gold-divider"></div>
+                <p>We understand how frustrating skin and hair problems can be when treatments don’t work and the
+                    problem keeps coming back. Many patients feel they have tried everything but still don’t see
+                    improvement.</p>
+                <p>At Dr. Alam’s Skin Clinic, we focus on proper diagnosis, medical treatment and advanced procedures to
+                    provide long-term improvement rather than temporary solutions.</p>
+                <p><strong>Dr. Howthul Alam Raja</strong> is a Consultant Dermatologist trained at Madras Medical
+                    College, Chennai, specializing in acne scars, pigmentation disorders, hair loss treatment, laser
+                    procedures and skin surgery. The clinic focuses on evidence-based dermatology, advanced laser
+                    treatments and dermatosurgery procedures to deliver safe and effective results.</p>
+                <a href="about.html" class="btn btn-secondary mt-sm">Read Full Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg-light" style="padding: 100px 0;">
+        <div class="container animate-fade-up text-center">
+            <span class="eyebrow">The Path</span>
+            <h2 class="mb-sm">Skin & Hair Health in 3 Simple Steps</h2>
+            <div class="gold-divider"></div>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto 20px;">A clear, medical path from diagnosis to
+                long-term skin and hair health.</p>
+
+            <div class="step-cards-outer">
+                <div class="step-cards">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <h3>Consultation</h3>
+                            <p class="text-muted">Detailed clinical evaluation of your skin or hair concern and a professional medical diagnosis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </div>
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <h3>Personalized Plan</h3>
+                            <p class="text-muted">A customized medical, procedural, or laser treatment strategy designed specifically for you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <polyline points="9 12 11 14 15 10" />
+                            </svg>
+                        </div>
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <h3>Follow-Up Care</h3>
+                            <p class="text-muted">Focused treatment sessions and monitoring for lasting improvement and healthy skin maintenance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .step-cards-outer { overflow: hidden; padding: 10px 0; }
+                .step-cards { 
+                    display: grid; 
+                    grid-template-columns: repeat(3, 1fr); 
+                    gap: 1.5rem; 
+                    position: relative;
+                }
+                /* Connecting Line */
+                .step-cards::before {
+                    content: '';
+                    position: absolute;
+                    top: 52px; /* Center of the icon */
+                    left: 10%;
+                    right: 10%;
+                    height: 1px;
+                    background: rgba(186, 151, 91, 0.2);
+                    z-index: 1;
+                }
+                .step-card {
+                    background: transparent;
+                    padding: 1rem;
+                    text-align: center;
+                    position: relative;
+                }
+                .step-icon {
+                    width: 64px;
+                    height: 64px;
+                    background: #fff;
+                    border: 1px solid rgba(186, 151, 91, 0.3);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--color-primary-dark);
+                    margin: 0 auto 0.5rem;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                    position: relative;
+                    z-index: 2;
+                }
+                /* Large Faint Numbers — in-flow, below the icon */
+                .step-num {
+                    font-size: 5rem;
+                    font-weight: 800;
+                    color: rgba(186, 151, 91, 0.35);
+                    font-family: var(--font-heading);
+                    line-height: 1;
+                    margin-bottom: 0.5rem;
+                }
+                .step-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-primary-dark); }
+                .step-content p { font-size: 0.9rem; line-height: 1.6; }
+
+                @media (max-width: 768px) {
+                    .step-cards-outer { overflow: visible; padding: 30px 0; }
+                    .step-cards {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 5px;
+                        padding: 0;
+                        width: 100%;
+                    }
+                    .step-cards::before { top: 38px; left: 15%; right: 15%; width: auto; }
+                    .step-card { flex: none; padding: 0.5rem; }
+                    .step-num { font-size: 2.5rem; margin-bottom: 0.25rem; }
+                    .step-icon { width: 42px; height: 42px; margin-bottom: 0.4rem; }
+                    .step-icon svg { width: 18px; height: 18px; }
+                    .step-content h3 { font-size: 0.72rem; letter-spacing: -0.2px; margin-bottom: 4px; }
+                    .step-content p { font-size: 0.62rem; line-height: 1.3; color: #777 !important; }
+                }
+            </style>
+
+            <div class="mt-xl">
+                <a href="contact.html" class="btn btn-primary">Start Your Journey Today</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div class="animate-fade-left">
+                <span class="eyebrow">Live with Confidence</span>
+                <h2 class="mt-xs">Imagine Your Future with Clear Skin</h2>
+                <div class="gold-divider"></div>
+
+                <div class="mt-sm mb-md" style="font-size: 1.15rem; line-height: 1.7; color: var(--color-text-main);">
+                    <p style="margin-bottom: 1.5rem;">When your skin and hair problems are properly treated, you don’t
+                        have to hide your skin with makeup, avoid photos or worry about hair fall every day.</p>
+                    <p>Clearer skin, improved scars, controlled pigmentation and healthier hair can improve confidence,
+                        social life and overall quality of life.</p>
+                </div>
+
+                <div
+                    style="padding: 24px; border-left: 4px solid var(--color-primary); background: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); margin-bottom: 30px; position: relative;">
+                    <p
+                        style="font-style: italic; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 10px; font-size: 1.15rem; line-height: 1.5;">
+                        "Our goal is not just to treat skin conditions, but to help patients feel comfortable and
+                        confident in their own skin."</p>
+                    <p
+                        style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">
+                        — DR. ALAM'S CLINICAL PHILOSOPHY</p>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary">Book Your Transformation</a>
+            </div>
+            <div class="animate-fade-right" style="position: relative;">
+                <div
+                    style="position: absolute; top: -30px; left: -30px; width: 120px; height: 120px; background: rgba(10, 61, 98, 0.04); border-radius: 50%; z-index: -1;">
+                </div>
+                <div
+                    style="position: absolute; bottom: -30px; right: -30px; width: 180px; height: 180px; background: rgba(186, 151, 91, 0.05); border-radius: 50%; z-index: -1;">
+                </div>
+
+                <img src="/assets/success-result-Bzi9r2gp.jpg?v=FINAL_CLINICAL_VISION"
+                    alt="Patient feeling confident with clear skin" class="cinematic-img"
+                    style="border-radius: 40px; box-shadow: var(--shadow-xl); width: 100%; object-fit: cover; height: 500px; display: block; border: 1px solid rgba(10, 61, 98, 0.05);">
+
+                <div
+                    style="position: absolute; bottom: 30px; right: 30px; background: #fff; padding: 15px 25px; border-radius: 15px; box-shadow: var(--shadow-xl); display: flex; align-items: center; gap: 10px; border-bottom: 3px solid var(--color-accent);">
+                    <div
+                        style="width: 10px; height: 10px; background: #2ecc71; border-radius: 50%; box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);">
+                    </div>
+                    <span
+                        style="font-weight: 800; color: var(--color-primary-dark); font-size: 0.9rem; letter-spacing: 0.5px;">PROVEN
+                        RESULTS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SERVICES SECTION -->
+    <section class="section section-bg-light">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-md">
+                <span class="eyebrow" style="font-family: var(--font-serif); font-style: italic; color: var(--color-accent);">Specialties</span>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700;">Advanced Dermatology Treatments</h2>
+                <div class="gold-divider"></div>
+                <p class="text-muted" style="max-width: 700px; margin: 0 auto;">From medical dermatology to advanced
+                    laser and skin surgery procedures, we treat a wide range of skin and hair conditions.</p>
+            </div>
+
+            <!-- Advanced Treatment Carousel -->
+            <div class="treatment-carousel-outer" style="position: relative; overflow: hidden; margin-top: 3rem; padding: 10px 0 40px;">
+                <div class="treatment-carousel-track" id="treatment-track" style="display: flex; gap: 2rem;">
+                    
+                    <a href="services.html#acne" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/acne-treatment-Pld-Z0Z4.jpg" alt="Acne Treatment" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Acne & Acne Scar Treatment</h3>
+                            <p class="card-text">Specialized care for active acne and deep scars using medical protocols and advanced laser tech.</p>
+                        </div>
+                    </a>
+
+                    <a href="services.html#pigmentation" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/pigmentation-treatment-BXlAeGVd.jpg" alt="Pigmentation Treatment" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Pigmentation Treatment</h3>
+                            <p class="card-text">Clinical solutions for melasma, dark spots, and uneven skin tone using medical lightening procedures.</p>
+                        </div>
+                    </a>
+
+                    <a href="services.html#hair-loss" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/hair-restoration-vWegBJVy.jpg" alt="Hair Restoration" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Hair Loss & Hair Restoration</h3>
+                            <p class="card-text">Evidence-based hair fall control and PRP therapies designed for long-term health and density.</p>
+                        </div>
+                    </a>
+
+                    <a href="services.html#laser-hair-removal" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/laser-hair-removal-F8k9Bv2e.jpg" alt="Laser Hair Removal" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Laser Hair Removal</h3>
+                            <p class="card-text">Painless and precision medical laser treatments for effective reduction of facial and body hair.</p>
+                        </div>
+                    </a>
+
+                    <a href="services.html#dermatosurgery" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/skin-surgery-Dq1ptMoy.jpg" alt="Skin Surgery" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Skin Surgery & Mole Removal</h3>
+                            <p class="card-text">Expert surgical removal of moles, skin tags, and cysts with clinical precision and minimal marking.</p>
+                        </div>
+                    </a>
+
+                    <a href="services.html#clinical-dermatology" class="card treatment-card carousel-item-service">
+                        <div class="card-img-wrapper">
+                            <img src="/assets/clinical-dermatology-I7JEya2c.jpg" alt="Clinical Dermatology" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Clinical Dermatology</h3>
+                            <p class="card-text">Medical management of psoriasis, eczema, and skin infections by a qualified dermatologist.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <style>
+                .treatment-carousel-track { transition: none !important; }
+                .carousel-item-service {
+                    flex: 0 0 calc(33.333% - 1.4rem);
+                    text-decoration: none;
+                    color: inherit;
+                    transition: transform 0.4s ease;
+                    display: flex; /* Ensure the anchor itself is a flex container */
+                }
+                .carousel-item-service .treatment-card {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .carousel-item-service .card-body {
+                    flex-grow: 1; /* Make the card body expand to fill the common height */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
+                .carousel-item-service:hover { transform: translateY(-10px); }
+                
+                @media (max-width: 1100px) {
+                    .carousel-item-service { flex: 0 0 calc(50% - 1rem); }
+                }
+                @media (max-width: 768px) {
+                    .carousel-item-service { flex: 0 0 calc(85% - 1rem); margin-right: 15px; min-height: 480px; }
+                    .treatment-carousel-track { padding-left: 7.5%; align-items: stretch; }
+                    .carousel-item-service .treatment-card { min-height: 100%; }
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('treatment-track');
+                    if(!track) return;
+                    
+                    const items = Array.from(track.children);
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        track.appendChild(clone);
+                    });
+
+                    let scrollAmount = 0;
+                    let isPaused = false;
+                    const speed = 0.6; // Slightly slower than reviews for readability
+
+                    function animateTreatmentCarousel() {
+                        if(!isPaused) {
+                            scrollAmount += speed;
+                            if(scrollAmount >= track.scrollWidth / 2) {
+                                scrollAmount = 0;
+                            }
+                            track.style.transform = `translateX(-${scrollAmount}px)`;
+                        }
+                        requestAnimationFrame(animateTreatmentCarousel);
+                    }
+
+                    track.addEventListener('mouseenter', () => isPaused = true);
+                    track.addEventListener('mouseleave', () => isPaused = false);
+                    track.addEventListener('touchstart', () => isPaused = true);
+                    track.addEventListener('touchend', () => isPaused = false);
+
+                    animateTreatmentCarousel();
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- 6. WHY CHOOSE US -->
+    <section class="section section-bg-dark text-center">
+        <div class="container animate-fade-up">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Distinction</span>
+            <h2 class="mb-sm text-white">Why Proper Dermatology Matters</h2>
+            <div class="gold-divider"></div>
+            <p class="text-white"
+                style="max-width: 800px; margin: 0 auto; margin-bottom: var(--spacing-md); opacity: 0.9;">At Dr. Alam’s
+                Skin Clinic, we focus on medical dermatology and advanced procedures to treat skin and hair problems
+                scientifically and safely. Unlike beauty clinics that focus only on cosmetic treatments, we diagnose and
+                treat the root cause of skin and hair conditions and provide structured treatment plans for long-term
+                improvement.</p>
+
+            <ul class="check-list why-choose-list">
+                <li>Dermatologist-Led Treatments</li>
+                <li>Evidence-Based Dermatology</li>
+                <li>Advanced Laser & Procedure Treatments</li>
+                <li>Personalized Treatment Plans</li>
+                <li>Focus on Long-Term Results</li>
+                <li>Medical Dermatology, Laser and Skin Surgery Centre</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 7. BEFORE & AFTER RESULTS -->
+    <section class="section">
+        <div class="container animate-fade-up text-center">
+            <span class="eyebrow">Visual Evidence</span>
+            <h2 class="mb-sm">Real Transformations</h2>
+            <div class="gold-divider"></div>
+            <p class="text-muted" style="max-width: 800px; margin: 0 auto; margin-bottom: var(--spacing-lg);">We focus
+                on visible improvement in acne scars, pigmentation, hair loss and other skin conditions using medical
+                and procedural treatments. With proper diagnosis and structured treatment plans, most patients see
+                significant improvement over time.</p>
+
+            <div class="ba-slider-container mb-lg single-ba-slider">
+                <!-- Patient Results: Pigmentation -->
+                <div class="ba-slider" data-ba-slider>
+                    <div class="ba-image-before"
+                        style="background-image: url('/assets/pigmentation_before_1775715841906-BhR22FnF.png');"></div>
+                    <div class="ba-image-after"
+                        style="background-image: url('/assets/pigmentation_after_1775715858271-C7ytjxNE.png');"></div>
+                    <div class="ba-handle">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--spacing-md);"><strong>Note:</strong>
+                Results vary from patient to patient depending on condition severity, skin type and treatment
+                compliance.</p>
+            <a href="results.html" class="btn btn-secondary">View More Patient Results</a>
+        </div>
+    </section>
+
+    <!-- 7.5 SKIN EDUCATION (YOUTUBE SHORTS STYLE) -->
+    <section class="section section-bg-light" id="skin-education">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-xl">
+                <span class="eyebrow">Skin Education</span>
+                <h2>Expert Insights in 60 Seconds</h2>
+                <div class="gold-divider"></div>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Join Dr. Alam as he breaks down complex skin concerns, treatment myths, and skincare essentials in these short, educational videos.</p>
+            </div>
+
+            <div class="shorts-grid">
+                <!-- Short 1 -->
+                <a href="https://youtube.com/shorts/GxphAYGh8Hc" target="_blank" class="short-card">
+                    <div class="short-thumb" style="background-image: url('https://img.youtube.com/vi/GxphAYGh8Hc/hqdefault.jpg');">
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="short-doctor-tag">
+                            <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Alam">
+                            <span>Dr. Alam</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Short 2 -->
+                <a href="https://youtube.com/shorts/mjdWV7-p6_Q" target="_blank" class="short-card">
+                    <div class="short-thumb" style="background-image: url('https://img.youtube.com/vi/mjdWV7-p6_Q/hqdefault.jpg');">
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="short-doctor-tag">
+                            <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Alam">
+                            <span>Dr. Alam</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Short 3 -->
+                <a href="https://youtube.com/shorts/hISjbpvp3no" target="_blank" class="short-card">
+                    <div class="short-thumb" style="background-image: url('https://img.youtube.com/vi/hISjbpvp3no/hqdefault.jpg');">
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="short-doctor-tag">
+                            <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Alam">
+                            <span>Dr. Alam</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Short 4 -->
+                <a href="https://youtube.com/shorts/16k-oZ7t8X8" target="_blank" class="short-card">
+                    <div class="short-thumb" style="background-image: url('https://img.youtube.com/vi/16k-oZ7t8X8/hqdefault.jpg');">
+                        <div class="play-overlay">
+                            <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="short-doctor-tag">
+                            <img src="/assets/dr-alam-BPEW0Xt1.png" alt="Dr. Alam">
+                            <span>Dr. Alam</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-lg">
+                <a href="https://youtube.com/@DrAlamSkinClinic" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    Watch All Shorts
+                </a>
+            </div>
+        </div>
+
+        <style>
+            .shorts-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            .short-card {
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+            .short-card:hover {
+                transform: translateY(-8px);
+            }
+            .short-thumb {
+                aspect-ratio: 9 / 16;
+                background-size: cover;
+                background-position: center;
+                border-radius: 20px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: var(--shadow-md);
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            .short-thumb::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.8));
+                z-index: 1;
+            }
+            .play-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 60px;
+                height: 60px;
+                background: rgba(255,255,255,0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255,255,255,0.3);
+            }
+            .play-overlay svg {
+                width: 24px;
+                height: 24px;
+            }
+            .short-card:hover .play-overlay {
+                background: var(--color-accent);
+                transform: translate(-50%, -50%) scale(1.1);
+                border-color: var(--color-accent);
+            }
+            .short-doctor-tag {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background: rgba(0,0,0,0.5);
+                backdrop-filter: blur(8px);
+                padding: 4px 10px 4px 4px;
+                border-radius: 30px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                z-index: 2;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .short-doctor-tag img {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .short-doctor-tag span {
+                color: white;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+            .short-title {
+                margin-top: 1rem;
+                font-family: var(--font-body);
+                font-weight: 700;
+                font-size: 1rem;
+                color: var(--color-primary-dark);
+                line-height: 1.4;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            @media (max-width: 992px) {
+                .shorts-grid { grid-template-columns: repeat(3, 1fr); }
+                .short-card:nth-child(4) { display: none; }
+            }
+            @media (max-width: 600px) {
+                .shorts-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+                .short-card:nth-child(3) { display: none; }
+                .short-thumb { border-radius: 15px; }
+                .short-title { font-size: 0.85rem; }
+            }    <!-- 7.7 THE CLINIC EXPERIENCE: LUXURY & TECHNOLOGY -->
+    <section class="section" id="clinic-experience" style="padding-top: 0;">
+        <div class="container animate-fade-up">
+            <div class="luxury-experience-grid">
+                <!-- Left: Big Branding Image (Reception) -->
+                <div class="experience-main-img" style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <img src="images/Screenshot 2026-04-13 132535.png" alt="Dr. Alam Skin Clinic Reception" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="img-overlay-dark" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);"></div>
+                    <div class="img-content" style="position: absolute; bottom: 30px; left: 30px; color: white;">
+                        <span class="eyebrow" style="color: var(--color-accent); margin-bottom: 5px;">Modern Facility</span>
+                        <h3 style="font-size: 2rem; margin: 0;">The Dr. Alam Experience</h3>
+                    </div>
+                </div>
+
+                <!-- Right: Content & Tech Pieces -->
+                <div class="experience-details">
+                    <div class="text-block mb-lg">
+                        <span class="eyebrow">Excellence in Care</span>
+                        <h2 style="margin-bottom: 1rem;">Precision Medicine, World-Class Environment</h2>
+                        <p class="text-muted">A blend of advanced clinical technology and patient-centric luxury. Every detail of our clinic is designed to provide a safe, comfortable, and result-oriented dermatological journey.</p>
+                    </div>
+
+                    <div class="tech-gallery-mini">
+                        <!-- Tech 1 -->
+                        <div class="tech-item-mini">
+                            <div class="tech-thumb-mini">
+                                <img src="images/image (4).png" alt="Precision Laser System">
+                            </div>
+                            <div class="tech-info-mini">
+                                <h5>Advanced Lasers</h5>
+                                <p>Femtoderma Fractional Systems</p>
+                            </div>
+                        </div>
+                        <!-- Tech 2 -->
+                        <div class="tech-item-mini">
+                            <div class="tech-thumb-mini">
+                                <img src="images/image (8).png" alt="Clinical Grade PRP Systems">
+                            </div>
+                            <div class="tech-info-mini">
+                                <h5>Regenerative Tech</h5>
+                                <p>Medical Grade GFC/PRP Centrifuge</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transformation Spotlight -->
+                    <div class="transformation-spotlight-card mt-lg">
+                        <div class="spotlight-header">
+                            <span class="eyebrow" style="font-size: 0.7rem;">Featured Result</span>
+                            <h4 style="margin: 5px 0 0 0;">Melasma Correction</h4>
+                        </div>
+                        <div class="spotlight-ba">
+                            <img src="images/Screenshot 2026-04-13 132254.png" alt="Pigmentation Correction B&A" style="width: 100%; border-radius: 12px; margin-top: 15px;">
+                        </div>
+                        <div class="spotlight-footer mt-md">
+                            <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4;">Significant reduction in depth-seated melasma and skin texture refinement through target procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .luxury-experience-grid {
+                display: grid;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 4rem;
+                align-items: start;
+            }
+            .tech-gallery-mini {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            .tech-item-mini {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                background: #fdfdfd;
+                padding: 10px;
+                border-radius: 15px;
+                border: 1px solid rgba(0,0,0,0.05);
+                transition: all 0.3s ease;
+            }
+            .tech-item-mini:hover {
+                transform: translateX(5px);
+                border-color: var(--color-accent);
+                box-shadow: var(--shadow-sm);
+            }
+            .tech-thumb-mini {
+                width: 60px;
+                height: 60px;
+                background: white;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                flex-shrink: 0;
+            }
+            .tech-thumb-mini img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            .tech-info-mini h5 {
+                margin: 0;
+                font-size: 0.9rem;
+                color: var(--color-primary-dark);
+            }
+            .tech-info-mini p {
+                margin: 0;
+                font-size: 0.75rem;
+                color: var(--color-text-muted);
+            }
+            .transformation-spotlight-card {
+                background: white;
+                padding: 25px;
+                border-radius: 24px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+                border: 1px solid rgba(0,0,0,0.03);
+            }
+            .experience-main-img {
+                height: 650px;
+            }
+            @media (max-width: 992px) {
+                .luxury-experience-grid {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+                .experience-main-img {
+                    height: 450px;
+                }
+            }
+            @media (max-width: 480px) {
+                .tech-gallery-mini {
+                    grid-template-columns: 1fr;
+                }
+                .experience-main-img {
+                    height: 350px;
+                }
+            }
+        </style>
+    </section>
+
+
+
+    <!-- 8. PATIENT TESTIMONIALS -->
+    <section class="section section-bg-light" style="background-color: #f4f7f9;">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-lg">
+                <span class="eyebrow" style="color: var(--color-accent);">Voices of Confidence</span>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700;">Patient Experiences</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="testimonials-carousel-outer" style="position: relative; overflow: hidden; margin-top: 3rem; padding: 20px 0 60px;">
+                <div class="testimonials-carousel-track" id="review-track" style="display: flex; gap: 2rem;">
+                    
+                    <!-- Review 1 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"It was a best experience with Dr. Alam's skin clinic. I was suffering due to a fungul infection, more than 2 months. None of the medications prescribed at different clinics were work out. Just one time visit, everything was sorted out and I'm all good within two weeks."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Gunasekaran S</h4>
+                                <span>Consultation & Treatment</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I recently visited for a scalp-related issue, and my experience was excellent. Dr. Alam Raja was very kind, patient, and knowledgeable. He explained the condition clearly and made me feel comfortable. Highly recommended for hair concerns."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Branham Bright A</h4>
+                                <span>Scalp & Hair Care</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I had a great experience with this dermatologist. The doctor was very professional, patient, and explained my skin condition clearly. The treatment was effective, and I noticed visible improvement within a short time. Clinic was clean and well-organized."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Sakthi Appleid</h4>
+                                <span>Satisfied Patient</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"Excellent service and amazing results. My acne and dark spots have reduced a lot. I feel more confident now. Highly recommended for skin treatments. I got the best results in a short time."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Prathap</h4>
+                                <span>Acne & Dark Spots</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I took treatment for acne and acne marks here and the results are great. My pimples are under control and the dark marks have reduced a lot. Very happy with the treatment."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Karthi Keya</h4>
+                                <span>Acne marks Treatment</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I had a black spot on my skin and consulted Dr. Alam sir and Dr. Firthous Fathima mam. After their treatment the spot is now completely cured. I had previously visited many clinics in Erode but nothing worked. Truly grateful!"</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Keerthana M</h4>
+                                <span>Skin Pigmentation</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 7 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I visited for pimples and first time... doctor checked me thoroughly and suggested ointments and cream, it really worked well. After 10 days I visited again for hair fall. They received me well and gave a prompt response."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Abirami Manivannan</h4>
+                                <span>Acne & Hair Fall</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 8 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"Black marks from old pimples got cleared in a 3 months... everything was explained scientifically. Clinic is clean and peaceful. Highly satisfied with the clinical outcome."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Dayana Dayana</h4>
+                                <span>Post-Acne Marks</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 9 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I am so happy now, all my pimples and scars are now clear. Thank you doctor for the wonderful transformation. My skin looks much better now."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Mohammed Iqlaas</h4>
+                                <span>Pimple & Scars</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 10 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I was having dandruff and fungal itching problems so I consulted Dr. Alam. After 2 weeks the itching stopped and got cured completely. Overall it was a great experience, definitely recommend!"</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Vasu Dev</h4>
+                                <span>Dandruff & Itching</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 11 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I came for an itching issue. First treatment cleared the issue, then they called for a review on free consultation. The clinic was awesome, and the doctor and nurse treat caringly."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Logesh</h4>
+                                <span>Itching Issue</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 12 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"Consulted Dr. Alam's Raja 15 days ago for my forehead skin allergy and waist itching allergy. Now all problems are cleared. I am so happy, thank you doctor."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Sathyaa Magic Show_</h4>
+                                <span>Skin Allergy</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 13 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"Struggling with a skin allergy for a long time—redness, relentless itching, rashes all over. Tried many things, but nothing offered lasting relief. After visiting Dr. Alam's clinic, I am now fully cured."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Akbar Ayaan</h4>
+                                <span>Chronic Allergy</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 14 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"I had skin allergy on my neck, very itchy and uncomfortable. After taking treatment at Dr. Alam's skin clinic, I got great results within 2 weeks. Highly satisfied with the treatment!"</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Elango Kandhasamy</h4>
+                                <span>Neck Allergy</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 15 -->
+                    <div class="luxury-review-card carousel-card-item">
+                        <p class="review-text">"Visited here for skin allergy and itching, the problem has been cured within 2 visits. The doctor was very patient and the medicines cured my skin problem quickly. Recommend for quick results."</p>
+                        <div class="review-footer">
+                            <div class="author-info">
+                                <h4>Deepa</h4>
+                                <span>Allergy & Itching</span>
+                            </div>
+                            <div class="google-badge-mini">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="review-nav-btn prev" id="review-prev" style="left: -20px;" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="review-nav-btn next" id="review-next" style="right: -20px;" aria-label="Next">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+
+            <style>
+                .testimonials-carousel-outer { position: relative; max-width: 100vw; padding: 20px 0 40px; }
+                .carousel-card-item {
+                    flex: 0 0 calc(33.333% - 1.4rem);
+                    box-sizing: border-box;
+                    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .review-nav-btn {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 50px;
+                    height: 50px;
+                    background: #fff;
+                    border: none;
+                    border-radius: 50%;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    z-index: 10;
+                    color: var(--color-primary-dark);
+                    transition: all 0.3s ease;
+                }
+                .review-nav-btn:hover { background: var(--color-primary-dark); color: #fff; }
+                
+                .luxury-review-card {
+                    background: #ffffff; 
+                    padding: 3rem 2.5rem; 
+                    border-radius: 24px; 
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.04); 
+                    display: flex; 
+                    flex-direction: column; 
+                    justify-content: space-between; 
+                    min-height: 380px; 
+                    border: 1px solid rgba(0,0,0,0.02);
+                }
+                .review-text { font-size: 1.05rem; line-height: 1.8; color: #444; margin-bottom: 2rem; font-family: 'Inter', sans-serif; text-align: center; flex-grow: 1; }
+                .review-footer { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: auto; }
+                .author-info { margin-bottom: 1rem; }
+                .author-info h4 { font-weight: 800; color: #1a1a1a; margin-bottom: 2px; font-size: 1.1rem; letter-spacing: -0.5px; }
+                .author-info span { font-size: 0.85rem; color: #888; }
+                .google-badge-mini .stars { font-size: 0.8rem; color: #fbbc05; }
+                .google-badge-mini img { height: 18px; display: block; margin: 0 auto 4px; }
+
+                @media (max-width: 1100px) {
+                    .carousel-card-item { flex: 0 0 calc(50% - 1rem); }
+                }
+                @media (max-width: 768px) {
+                    .testimonials-carousel-outer { padding: 5px 0 20px; overflow: hidden; }
+                    #review-track { padding-left: 7.5%; align-items: stretch; } /* Centering the 85% card */
+                    .carousel-card-item { flex: 0 0 85%; margin-right: 15px; min-height: 380px; display: flex; }
+                    .luxury-review-card { padding: 1.8rem 1.25rem; min-height: 100%; border-radius: 16px; width: 100%; }
+                    .review-text { font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.2rem; }
+                    .google-badge-mini img { height: 14px; }
+                    .review-nav-btn { display: none; }
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('review-track');
+                    const cards = Array.from(track.children);
+                    if(!track || cards.length < 3) return;
+
+                    // Duplicate cards for seamless loop
+                    cards.forEach(card => {
+                        const clone = card.cloneNode(true);
+                        track.appendChild(clone);
+                    });
+
+                    let scrollAmount = 0;
+                    let isPaused = false;
+                    const speed = 0.8; // Pixels per frame
+
+                    function crawl() {
+                        if(!isPaused) {
+                            scrollAmount += speed;
+                            const maxScroll = track.scrollWidth / 2;
+                            
+                            if (scrollAmount >= maxScroll) {
+                                scrollAmount = 0;
+                            }
+                            
+                            track.style.transform = `translateX(-${scrollAmount}px)`;
+                        }
+                        requestAnimationFrame(crawl);
+                    }
+
+                    // Touch/Hover to pause
+                    track.addEventListener('mouseenter', () => isPaused = true);
+                    track.addEventListener('mouseleave', () => isPaused = false);
+                    track.addEventListener('touchstart', () => isPaused = true);
+                    track.addEventListener('touchend', () => isPaused = false);
+
+                    // Handle window resize offsets
+                    window.addEventListener('resize', () => {
+                        scrollAmount = 0;
+                        track.style.transform = `translateX(0)`;
+                    });
+
+                    crawl();
+
+                    // Remove old nav buttons since they don't apply to marquee
+                    const navBtns = document.querySelectorAll('.review-nav-btn');
+                    navBtns.forEach(btn => btn.remove());
+                });
+            </script>
+            
+            <div class="text-center mt-lg">
+                <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="btn btn-secondary google-btn-luxury">Read More on Google Reviews</a>
+            </div>
+            <style>
+                .google-btn-luxury { 
+                    background: #ffffff !important; 
+                    color: #0c3d62 !important; 
+                    border: 1px solid rgba(0,0,0,0.1) !important; 
+                    padding: 1.2rem 3.5rem !important; 
+                    border-radius: 60px !important; 
+                    font-weight: 800 !important; 
+                    font-size: 1rem !important; 
+                    text-transform: uppercase !important; 
+                    letter-spacing: 2px !important; 
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important; 
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+                    display: inline-block;
+                    text-decoration: none;
+                }
+                .google-btn-luxury:hover { 
+                    background: #0c3d62 !important; 
+                    color: #ffffff !important; 
+                    transform: translateY(-5px) scale(1.02) !important; 
+                    box-shadow: 0 20px 40px rgba(12, 61, 98, 0.2) !important; 
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- 9. FAILURE SECTION (Clinical Outcomes Comparison) -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <span class="eyebrow">The Stakes</span>
+                <h2 style="border: none; padding-bottom: 0; margin-bottom: 0.5rem;">Choice of Professional Care</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="comparison-wrapper">
+                <div class="comparison-vs">VS</div>
+
+                <div class="grid grid-2" style="gap: 3rem; position: relative; align-items: stretch;">
+                    <!-- The Risk (Without Treatment) -->
+                    <div class="outcome-card risk-card">
+                        <div class="card-status-label status-danger">Risks of Neglect</div>
+                        <h3 class="outcome-title">Delayed or DIY Care</h3>
+                        <ul class="outcome-list">
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg></span>
+                                <div>
+                                    <strong>Permanent Damage</strong>
+                                    <p>Acne scars and pigmentation can become irreversible without clinical
+                                        intervention.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a6 6 0 0 1 8.49 8.49Z">
+                                        </path>
+                                        <line x1="3" y1="3" x2="21" y2="21"></line>
+                                    </svg></span>
+                                <div>
+                                    <strong>Wasted Resources</strong>
+                                    <p>Spending years on ineffective "over-the-counter" products that don't solve the
+                                        root cause.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                        </path>
+                                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg></span>
+                                <div>
+                                    <strong>Worsening Conditions</strong>
+                                    <p>Hair loss and chronic skin conditions often progress rapidly without a medical
+                                        diagnosis.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- The Reward (With Treatment) -->
+                    <div class="outcome-card success-card">
+                        <div class="card-status-label status-success">The Clinical Advantage</div>
+                        <h3 class="outcome-title">Dermatologist-Led Path</h3>
+                        <ul class="outcome-list">
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg></span>
+                                <div>
+                                    <strong>Long-Term Restoration</strong>
+                                    <p>Visible regrowth, clearer skin, and restored texture using evidence-based
+                                        protocols.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg></span>
+                                <div>
+                                    <strong>Medical Expertise</strong>
+                                    <p>Proper diagnosis ensures you only use treatments that are safe and effective for
+                                        you.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                        </path>
+                                    </svg></span>
+                                <div>
+                                    <strong>Restored Confidence</strong>
+                                    <p>Improve your social life and self-esteem by feeling comfortable in your own skin
+                                        again.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CLINICAL FAQ SECTION -->
+    <section class="section section-bg-light">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-lg">
+                <span class="eyebrow">Assurance</span>
+                <h2>Treatment FAQ</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How many sessions are usually required for Laser Hair Removal?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Most patients require 6 to 8 sessions for significant, long-lasting hair reduction. The
+                                exact number depends on your hair type, skin color, and the area being treated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Are the clinical results permanent?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>While many procedures like acne scar removal or mole excision provide permanent results,
+                                conditions like pigmentation or hair loss may require maintenance sessions or a specific
+                                skincare routine to sustain the outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Is there any downtime after a skin surgery or laser treatment?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Downtime varies. Simple laser treatments might have 2-3 hours of redness, while deeper
+                                skin surgery might require 3-5 days of wound care. Dr. Alam will provide a detailed
+                                post-care plan for your specific procedure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How can I book a priority appointment?</span>
+                        <div class="faq-icon"></div>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>You can book directly via our website contact form or click the WhatsApp button for a
+                                faster response. Our coordinators will assist you in finding a suitable slot with Dr.
+                                Alam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FINAL CTA SECTION -->
+    <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark);">
+        <div class="container animate-fade-up">
+            <h2 class="mb-sm text-white">Start Your Skin and Hair Treatment Journey Today</h2>
+            <p class="text-white cta-text">
+                If you are struggling with acne scars, pigmentation, hair loss or any skin condition, book a
+                consultation and get a proper diagnosis and treatment plan.
+            </p>
+
+            <div class="btn-group cta-btn-group" style="justify-content: center;">
+                <a href="contact.html" class="btn btn-white">Book Consultation</a>
+                <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Dr. Alam</a>
+                <a href="tel:09345410038" class="btn btn-outline-white">Call Clinic</a>
+            </div>
+
+            <div class="grid grid-3" style="margin-top: 3rem;">
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h4>Contact Info</h4>
+                        <p style="font-size: 0.95rem; color: #2d3436; margin-bottom: 0.5rem;"><strong>Phone:</strong> <a
+                                href="tel:09345410038" style="color: inherit;">09345410038</a></p>
+                        <p style="font-size: 0.95rem; color: #2d3436;"><strong>WhatsApp:</strong> <a
+                                href="https://wa.me/9345410038" style="color: inherit;">09345410038</a></p>
+                    </div>
+                </div>
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h4>Location</h4>
+                        <p style="font-size: 0.95rem; color: #2d3436; margin-bottom: 0.3rem; font-weight: 600;">Dr.
+                            Alam's Skin Clinic</p>
+                        <p style="font-size: 0.95rem; color: #2d3436;">306, Nasiyanur Road, Narayanavalasu, Erode</p>
+                    </div>
+                </div>
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h4>Working Hours</h4>
+                        <p style="font-size: 0.95rem; color: #2d3436;">Mon - Sat: 10:00 AM - 2:00 PM & 5:00 PM - 9:00
+                            PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CLINIC LOCATION MAP -->
+    <section class="section section-bg-light" id="location-map">
+        <div class="container animate-fade-up text-center">
+            <span class="eyebrow">Visit Us</span>
+            <h2 class="mb-sm">Clinic Location</h2>
+            <div class="gold-divider" style="margin: 0 auto;"></div>
+            <p class="text-muted" style="max-width: 700px; margin: 2rem auto;">Our clinic is located centrally in Erode. You can find us on Google Maps below and get instant directions.</p>
+            
+            <div class="map-wrapper" style="width: 100%; height: 450px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid rgba(186,151,62,0.1); margin-bottom: 30px;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8315579919623!2d77.70295627581702!3d11.346850288837134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f0066f368bb%3A0x6bd703759021eb4e!2sDr.Alam&#39;s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1713000000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="btn btn-primary" style="padding: 1rem 3rem;">Open in Google Maps</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin
+                        Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu,
+                        Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a
+                        href="https://thearktech.in/" target="_blank"
+                        style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:alamraja@gmail.com" class="fab-contact fab-mail" title="Email Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Automatic Cycling for Arched Result Cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const acnePairs = [
+                { b: 'images/11.jpg', a: 'images/12.jpg' },
+                { b: 'images/15.jpg', a: 'images/16.jpg' },
+                { b: 'images/13.jpg', a: 'images/14.jpg' },
+                { b: 'images/Screenshot 2026-04-12 120603.png', a: 'images/Screenshot 2026-04-12 120548.png' },
+                { b: 'images/10 (1).jpg', a: 'images/11 (1).jpg' },
+                { b: 'images/31.jpg', a: 'images/32.jpg' },
+                { b: 'images/16 (1).jpg', a: 'images/17.jpg' },
+                { b: 'images/38.jpg', a: 'images/37.jpg' }
+            ];
+
+            function cycleCard(cardId, pairs) {
+                const card = document.getElementById(cardId);
+                if(!card) return;
+                const beforeImg = card.querySelector('.img-before');
+                const afterImg = card.querySelector('.img-after');
+                let currentIndex = 0;
+
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % pairs.length;
+                    beforeImg.style.opacity = '0.7';
+                    afterImg.style.opacity = '0.7';
+                    
+                    setTimeout(() => {
+                        beforeImg.style.backgroundImage = `url('${pairs[currentIndex].b}')`;
+                        afterImg.style.backgroundImage = `url('${pairs[currentIndex].a}')`;
+                        beforeImg.style.opacity = '1';
+                        afterImg.style.opacity = '1';
+                    }, 400);
+                }, 5000); 
+            }
+
+            cycleCard('acne-cycling-card', acnePairs);
+        });
+
+        // Hero Carousel Logic (Swappable/Swipeable)
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.hero-carousel');
+            const container = document.querySelector('.carousel-container');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            if (!carousel || slides.length === 0) return;
+
+            let currentSlide = 0;
+            let slideInterval;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let animationID;
+
+            function showSlide(index) {
+                currentSlide = index;
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+
+                // Reset translate for active slide focus
+                container.style.transform = `translateX(0)`;
+                prevTranslate = 0;
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function startAutoPlay() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(slideInterval);
+            }
+
+            // Swipe/Drag Implementation
+            carousel.addEventListener('mousedown', dragStart);
+            carousel.addEventListener('touchstart', dragStart);
+            carousel.addEventListener('mouseup', dragEnd);
+            carousel.addEventListener('touchend', dragEnd);
+            carousel.addEventListener('mouseleave', dragEnd);
+            carousel.addEventListener('mousemove', dragMove);
+            carousel.addEventListener('touchmove', dragMove);
+
+            function dragStart(e) {
+                isDragging = true;
+                startPos = getPositionX(e);
+                stopAutoPlay();
+                carousel.style.cursor = 'grabbing';
+            }
+
+            function dragMove(e) {
+                if (!isDragging) return;
+                const currentPosition = getPositionX(e);
+                const diff = currentPosition - startPos;
+
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        // Swiped Right
+                        currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+                    } else {
+                        // Swiped Left
+                        currentSlide = (currentSlide + 1) % slides.length;
+                    }
+                    showSlide(currentSlide);
+                    isDragging = false;
+                }
+            }
+
+            function dragEnd() {
+                isDragging = false;
+                carousel.style.cursor = 'grab';
+                startAutoPlay();
+            }
+
+            function getPositionX(e) {
+                return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+            }
+
+            startAutoPlay();
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

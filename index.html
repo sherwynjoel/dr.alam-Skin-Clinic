@@ -464,8 +464,12 @@
                 /* Carousel — Stacked Vertical Layout for Better Mobile Reading */
                 .carousel-container {
                     height: auto;
-                    min-height: 500px;
                     overflow: visible;
+                }
+
+                .carousel-slide {
+                    position: relative;
+                    inset: unset;
                 }
 
                 .carousel-slide.active {
@@ -501,9 +505,14 @@
 
                 .carousel-image {
                     width: 100%;
-                    height: 280px;
+                    height: 260px;
+                    min-height: 260px;
+                    max-height: 260px;
+                    flex-shrink: 0;
                     border-radius: 12px;
                     order: 1;
+                    background-size: cover;
+                    background-position: center;
                 }
 
                 .carousel-card .btn {
@@ -897,19 +906,20 @@
             <span class="eyebrow">The Path</span>
             <h2 class="mb-sm">Skin & Hair Health in 3 Simple Steps</h2>
             <div class="gold-divider"></div>
-            <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">A clear, medical path from diagnosis to
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto 20px;">A clear, medical path from diagnosis to
                 long-term skin and hair health.</p>
 
             <div class="step-cards-outer">
                 <div class="step-cards">
                     <!-- Step 1 -->
-                    <div class="step-card" data-step="01">
+                    <div class="step-card">
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                             </svg>
                         </div>
+                        <div class="step-num">01</div>
                         <div class="step-content">
                             <h3>Consultation</h3>
                             <p class="text-muted">Detailed clinical evaluation of your skin or hair concern and a professional medical diagnosis.</p>
@@ -917,7 +927,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="step-card" data-step="02">
+                    <div class="step-card">
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -928,6 +938,7 @@
                                 <polyline points="10 9 9 9 8 9" />
                             </svg>
                         </div>
+                        <div class="step-num">02</div>
                         <div class="step-content">
                             <h3>Personalized Plan</h3>
                             <p class="text-muted">A customized medical, procedural, or laser treatment strategy designed specifically for you.</p>
@@ -935,7 +946,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="step-card" data-step="03">
+                    <div class="step-card">
                         <div class="step-icon">
                             <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -943,6 +954,7 @@
                                 <polyline points="9 12 11 14 15 10" />
                             </svg>
                         </div>
+                        <div class="step-num">03</div>
                         <div class="step-content">
                             <h3>Follow-Up Care</h3>
                             <p class="text-muted">Focused treatment sessions and monitoring for lasting improvement and healthy skin maintenance.</p>
@@ -952,7 +964,7 @@
             </div>
 
             <style>
-                .step-cards-outer { overflow: hidden; padding: 40px 0; }
+                .step-cards-outer { overflow: hidden; padding: 10px 0; }
                 .step-cards { 
                     display: grid; 
                     grid-template-columns: repeat(3, 1fr); 
@@ -970,57 +982,52 @@
                     background: rgba(186, 151, 91, 0.2);
                     z-index: 1;
                 }
-                .step-card { 
-                    background: transparent; 
-                    padding: 1rem; 
+                .step-card {
+                    background: transparent;
+                    padding: 1rem;
                     text-align: center;
-                    position: relative; 
-                    z-index: 2;
+                    position: relative;
                 }
-                /* Large Faint Numbers */
-                .step-card::before {
-                    content: attr(data-step);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    font-size: 8rem;
-                    font-weight: 800;
-                    color: rgba(186, 151, 91, 0.04);
-                    z-index: -1;
-                    font-family: var(--font-heading);
-                }
-                .step-icon { 
-                    width: 64px; 
-                    height: 64px; 
-                    background: #fff; 
+                .step-icon {
+                    width: 64px;
+                    height: 64px;
+                    background: #fff;
                     border: 1px solid rgba(186, 151, 91, 0.3);
-                    border-radius: 50%; 
-                    display: flex; 
-                    align-items: center; 
-                    justify-content: center; 
-                    color: var(--color-primary-dark); 
-                    margin: 0 auto 1.5rem;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--color-primary-dark);
+                    margin: 0 auto 0.5rem;
                     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
                     position: relative;
-                    z-index: 3;
+                    z-index: 2;
+                }
+                /* Large Faint Numbers — in-flow, below the icon */
+                .step-num {
+                    font-size: 5rem;
+                    font-weight: 800;
+                    color: rgba(186, 151, 91, 0.35);
+                    font-family: var(--font-heading);
+                    line-height: 1;
+                    margin-bottom: 0.5rem;
                 }
                 .step-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-primary-dark); }
                 .step-content p { font-size: 0.9rem; line-height: 1.6; }
-                
+
                 @media (max-width: 768px) {
                     .step-cards-outer { overflow: visible; padding: 30px 0; }
-                    .step-cards { 
-                        display: grid; 
-                        grid-template-columns: repeat(3, 1fr); 
-                        gap: 5px; 
+                    .step-cards {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 5px;
                         padding: 0;
                         width: 100%;
                     }
                     .step-cards::before { top: 38px; left: 15%; right: 15%; width: auto; }
                     .step-card { flex: none; padding: 0.5rem; }
-                    .step-card::before { font-size: 3.5rem; top: 40%; }
-                    .step-icon { width: 42px; height: 42px; margin-bottom: 0.8rem; }
+                    .step-num { font-size: 2.5rem; margin-bottom: 0.25rem; }
+                    .step-icon { width: 42px; height: 42px; margin-bottom: 0.4rem; }
                     .step-icon svg { width: 18px; height: 18px; }
                     .step-content h3 { font-size: 0.72rem; letter-spacing: -0.2px; margin-bottom: 4px; }
                     .step-content p { font-size: 0.62rem; line-height: 1.3; color: #777 !important; }

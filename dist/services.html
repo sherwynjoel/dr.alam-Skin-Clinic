@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Dermatology & Skin Surgery | Dr. Alam's Skin Clinic</title>
+    <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
+    <meta name="description" content="Discover professional dermatology treatments in Erode. Advanced solutions for Acne, Pigmentation, Hair Loss, and Precision Skin Surgery.">
+    
+    
+    <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #b8973e 0%, #ecd08c 50%, #b8973e 100%);
+        }
+
+        .services-hero {
+            padding: 240px 0 160px;
+            background: linear-gradient(rgba(4, 18, 31, 0.95), rgba(4, 18, 31, 0.92)), 
+                        url('/assets/Screenshot%202026-04-13%20132535-BvCHu7VT.png') center/cover fixed;
+            text-align: center;
+            color: white;
+            background-size: cover;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .services-container {
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 1. Main Grid - The Dashboard */
+        .hub-section {
+            padding: 120px 0;
+            background: #fafafa;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: -240px;
+        }
+
+        .service-hub-card {
+            background: white;
+            padding: 4rem 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.06);
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            border: 1px solid rgba(184, 151, 62, 0.1);
+        }
+
+        .service-hub-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 60px 120px rgba(184, 151, 62, 0.15);
+            border-color: var(--color-accent);
+        }
+
+        .hub-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-primary-dark);
+            color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            box-shadow: 12px 12px 0px var(--color-accent-pale);
+        }
+
+        /* 2. Detailed Info Sections - The "Big" Content */
+        .info-strip {
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-strip:nth-child(even) {
+            background: #fff;
+        }
+        .info-strip:nth-child(odd) {
+            background: #fdfaf3;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .info-strip:nth-child(even) .info-grid {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .info-image-wrapper {
+            position: relative;
+        }
+
+        .info-image-wrapper img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        .experience-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 800;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--color-primary-dark);
+            font-family: var(--font-secondary);
+        }
+
+        .info-list {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.15rem;
+            color: var(--color-text-main);
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 900;
+        }
+
+        .pillars-section {
+            padding: 120px 0;
+            background: var(--color-primary-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .pillar-item h4 {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .pillar-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            background: linear-gradient(rgba(4, 18, 31, 0.95), rgba(4, 18, 31, 0.98)),
+                        url('/assets/Screenshot%202026-04-11%20100345-DDyvzS6s.png') center/cover no-repeat;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; margin-top: -60px; }
+            .info-grid { grid-template-columns: 1fr !important; gap: 3rem; }
+            .pillar-grid { grid-template-columns: 1fr; }
+            .info-content h2 { font-size: 2.25rem; }
+            .hero-title { font-size: 2.8rem; }
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+</head>
+
+<body>
+    <div id="page-progress" class="page-progress-bar"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO -->
+        <section class="services-hero">
+            <div class="container animate-fade-up">
+                <span class="eyebrow" style="color: var(--color-accent); letter-spacing: 5px;">World-Class Clinical Care</span>
+                <h1 class="hero-title">Definitive Solutions for<br>Your Skin & Hair</h1>
+                <p class="subheading">From chronic skin disease to aesthetic perfection — we combine medical science with aesthetic artistry to deliver results that matter.</p>
+            </div>
+        </section>
+
+        <!-- 2. QUICK LINKS DASHBOARD -->
+        <section class="hub-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-hub-card animate-fade-up">
+                        <div class="hub-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.88 5.88l12.24 12.24M5.88 18.12L18.12 5.88"/></svg>
+                        </div>
+                        <h3>Clinical & Aesthetics</h3>
+                        <p>Specialized treatments for Acne, Scars, and Pigmentation.</p>
+                        <a href="#acne" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
+                    </div>
+                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.1s;">
+                        <div class="hub-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21s-2-2.9-2-8.7A8.3 8.3 0 0 0 10.7 4c-4.4 0-8.3 3.6-7.7 8C4 18.5 2 21 2 21"/></svg>
+                        </div>
+                        <h3>Hair & Laser Restoration</h3>
+                        <p>Medical-grade hair restoration and permanent hair reduction.</p>
+                        <a href="#hair" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
+                    </div>
+                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.2s;">
+                        <div class="hub-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/></svg>
+                        </div>
+                        <h3>Medical Procedures</h3>
+                        <p>Advanced Dermatosurgery and clinical dermatology protocols.</p>
+                        <a href="#surgery" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. DETAILED CONTENT STRIPS (ALL 6 SERVICES) -->
+        
+        <!-- 1. ACNE & ACNE SCARS -->
+        <section id="acne" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-image-wrapper animate-fade-left">
+                    <img src="/assets/Screenshot%202026-04-09%20213907-CyOmwU4Q.png" alt="Advanced Acne Treatment">
+                </div>
+                <div class="info-content animate-fade-right">
+                    <span class="experience-tag">Acne & Acne Scars</span>
+                    <h2>Your Path to Clearer Skin Starts Here</h2>
+                    <p class="mb-sm">We don't just treat the spots; we treat the cause. Our clinical protocols range from medical management of hormonal acne to surgical resurfacing of deep ice-pick and rolling scars.</p>
+                    <ul class="info-list">
+                        <li>Subcision and Microneedling RF for deep scars</li>
+                        <li>Dermatologist-grade chemical peels for active acne</li>
+                        <li>TCA Cross for stubborn pit scars</li>
+                        <li>Customized hormonal and medical therapies</li>
+                    </ul>
+                    <a href="acne-scars.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">Learn How We Clear Scars</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PIGMENTATION & MELASMA -->
+        <section id="pigment" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-content animate-fade-left">
+                    <span class="experience-tag">Skin Tone</span>
+                    <h2>Find Real Solutions for Dark Spots</h2>
+                    <p class="mb-sm">Pigmentation and melasma need careful medical diagnosis. We help you choose the treatment that target the root of the melanin overproduction without damaging the skin.</p>
+                    <ul class="info-list">
+                        <li>Laser toning for deep pigment deposition</li>
+                        <li>Medical-grade brightening peels (Melanoout)</li>
+                        <li>Advanced mesotherapy for skin radiance</li>
+                        <li>Clinical management of persistent Melasma</li>
+                    </ul>
+                    <a href="pigmentation.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">View Pigmentation Solutions</a>
+                </div>
+                <div class="info-image-wrapper animate-fade-right">
+                    <img src="/assets/Screenshot%202026-04-13%20132254-DA9qKBkh.png" alt="Clinical Pigmentation & Melasma Treatment Results">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HAIR LOSS & RESTORATION -->
+        <section id="hair" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-image-wrapper animate-fade-left">
+                    <img src="/assets/Screenshot%202026-04-09%20213610-DDm-K-TS.png" alt="Hair Loss Restoration">
+                </div>
+                <div class="info-content animate-fade-right">
+                    <span class="experience-tag">Hair Restoration</span>
+                    <h2>Regain Your Density and Confidence</h2>
+                    <p class="mb-sm">Hair fall is a medical condition that needs a medical answer. We combine advanced growth factor therapies with clinical management to stop hair fall and encourage new growth.</p>
+                    <ul class="info-list">
+                        <li>PRP (Platelet Rich Plasma) & Growth Factor Therapy</li>
+                        <li>Mesotherapy for directed nutrition</li>
+                        <li>Medical management of pattern baldness</li>
+                        <li>Advanced scalp analysis and diagnosis</li>
+                    </ul>
+                    <a href="hair-loss.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">Discover Hair Restoration</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LASER HAIR REMOVAL -->
+        <section id="laser" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-content animate-fade-left">
+                    <span class="experience-tag">Advanced Laser</span>
+                    <h2>Smooth Skin With Clinical Precision</h2>
+                    <p class="mb-sm">Ditch the wax and the razor. Our medical laser hair removal sessions are performed under specialist supervision to ensure maximum reduction with absolute safety.</p>
+                    <ul class="info-list">
+                        <li>High-precision medical-grade diode lasers</li>
+                        <li>Safe for all Indian skin types</li>
+                        <li>Virtually painless cooling technologies</li>
+                        <li>Fixed protocols for long-term reduction</li>
+                    </ul>
+                    <a href="laser-hair-removal.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">View Laser Options</a>
+                </div>
+                <div class="info-image-wrapper animate-fade-right">
+                    <img src="/assets/Screenshot%202026-04-11%20100345-DDyvzS6s.png" alt="Clinical Laser Hair Removal Treatment">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DERMATOSURGERY -->
+        <section id="surgery" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-image-wrapper animate-fade-left">
+                    <img src="/assets/Screenshot%202026-04-09%20215215-BCdDg7N0.png" alt="Dermatosurgery Suite">
+                </div>
+                <div class="info-content animate-fade-right">
+                    <span class="experience-tag">Precision Surgery</span>
+                    <h2>Safe, Expert Surgical Procedures</h2>
+                    <p class="mb-sm">Our sterile minor procedure suite is dedicated to the precise removal of skin growths with minimal scarring and expert post-surgical care.</p>
+                    <ul class="info-list">
+                        <li>Mole, wart, and skin tag removal</li>
+                        <li>Cyst excision and earlobe repair</li>
+                        <li>Keloid and hypertrophic scar treatments</li>
+                        <li>Specialized Vitiligo and nail surgeries</li>
+                    </ul>
+                    <a href="dermatosurgery.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">See Surgical Procedures</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CLINICAL DERMATOLOGY -->
+        <section id="medical" class="info-strip">
+            <div class="container info-grid">
+                <div class="info-content animate-fade-left">
+                    <span class="experience-tag">Medical Care</span>
+                    <h2>Expert Diagnosis for Chronic Skin Disease</h2>
+                    <p class="mb-sm">Proper dermatology goes beyond the surface. We provide evidence-based management for chronic skin conditions that affect your daily quality of life.</p>
+                    <ul class="info-list">
+                        <li>Specialized Psoriasis & Vitiligo care</li>
+                        <li>Chronic Eczema and Allergic management</li>
+                        <li>Scaling, WHITE patches, and Fungal infections</li>
+                        <li>Pediatric and Geriatric dermatology</li>
+                    </ul>
+                    <a href="clinical-dermatology.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">Clinical Dermatology Info</a>
+                </div>
+                <div class="info-image-wrapper animate-fade-right">
+                    <img src="/assets/Screenshot%202026-04-09%20215827-jIedRV30.png" alt="Clinical Dermatology Exam">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PILLARS OF OUR CLINIC -->
+        <section class="pillars-section">
+            <div class="container">
+                <h2 class="text-white">Why Patients Trust Dr. Alam's Clinic</h2>
+                <div class="gold-divider" style="background: var(--gold-gradient); margin-left: auto; margin-right: auto;"></div>
+                <div class="pillar-grid">
+                    <div class="pillar-item animate-fade-up">
+                        <svg width="40" height="40" fill="var(--color-accent)" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <h4>Expert Led</h4>
+                        <p>Every consultation and procedure is personally supervised by our specialist dermatologist.</p>
+                    </div>
+                    <div class="pillar-item animate-fade-up" style="transition-delay: 0.1s;">
+                        <svg width="40" height="40" fill="var(--color-accent)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        <h4>Sterile OT</h4>
+                        <p>We maintain hospital-grade sterilization for all dermatosurgery and clinical procedures.</p>
+                    </div>
+                    <div class="pillar-item animate-fade-up" style="transition-delay: 0.2s;">
+                        <svg width="40" height="40" fill="var(--color-accent)" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 11-5-11-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <h4>Advanced Tech</h4>
+                        <p>Equipped with US-FDA approved lasers and high-precision radio-frequency devices.</p>
+                    </div>
+                    <div class="pillar-item animate-fade-up" style="transition-delay: 0.3s;">
+                        <svg width="40" height="40" fill="var(--color-accent)" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        <h4>Patient Care</h4>
+                        <p>Structured follow-up protocols and detailed guidance for post-procedure recovery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FINAL ACTION -->
+        <section class="section text-center">
+            <div class="container" style="max-width: 800px;">
+                <span class="eyebrow">Taking Action</span>
+                <h2>Find the Right Treatment Path</h2>
+                <div class="gold-divider"></div>
+                <p class="mb-xl">The best treatment is the one that's right for your specific condition. Join hundreds of patients who found clinical clarity at our clinic.</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 4rem;">Book My Consultation</a>
+                    <a href="https://wa.me/9345410038" class="btn btn-outline-primary" style="padding: 1.5rem 3rem;">Inquire on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
