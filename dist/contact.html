@@ -222,12 +222,7 @@
                         <p style="font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">Schedule a private consultation with our medical team. Your journey toward refined confidence begins here.</p>
                     </div>
 
-                    <form id="booking-form" class="luxury-form" action="https://formsubmit.co/howthulalamraja@gmail.com" method="POST">
-                        <!-- Formsubmit config -->
-                        <input type="hidden" name="_subject" value="New Appointment Request — Dr. Alam's Skin Clinic">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://dralamdermcentre.com/contact.html?submitted=true">
+                    <form id="booking-form" class="luxury-form" action="send-appointment.php" method="POST">
 
                         <style>
                             .luxury-form { color: #fff; }
@@ -430,6 +425,33 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
+            if (!status) return;
+
+            const toast = document.createElement('div');
+            toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);padding:1rem 2rem;border-radius:8px;font-weight:700;font-size:1rem;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.2);transition:opacity 0.5s ease;';
+
+            if (status === 'success') {
+                toast.style.background = '#1a7a4a';
+                toast.style.color = '#fff';
+                toast.textContent = '✓ Appointment request sent! We will contact you shortly.';
+            } else {
+                toast.style.background = '#c0392b';
+                toast.style.color = '#fff';
+                toast.textContent = '✗ Something went wrong. Please try again or call us directly.';
+            }
+
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; }, 4000);
+            setTimeout(() => { toast.remove(); }, 4500);
+
+            // Clean URL
+            window.history.replaceState({}, '', window.location.pathname);
+        })();
+    </script>
 </body>
 
 </html>

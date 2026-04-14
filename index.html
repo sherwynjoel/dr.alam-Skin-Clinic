@@ -464,12 +464,8 @@
                 /* Carousel — Stacked Vertical Layout for Better Mobile Reading */
                 .carousel-container {
                     height: auto;
+                    min-height: 500px;
                     overflow: visible;
-                }
-
-                .carousel-slide {
-                    position: relative;
-                    inset: unset;
                 }
 
                 .carousel-slide.active {
@@ -505,14 +501,9 @@
 
                 .carousel-image {
                     width: 100%;
-                    height: 260px;
-                    min-height: 260px;
-                    max-height: 260px;
-                    flex-shrink: 0;
+                    height: 280px;
                     border-radius: 12px;
                     order: 1;
-                    background-size: cover;
-                    background-position: center;
                 }
 
                 .carousel-card .btn {
@@ -906,7 +897,7 @@
             <span class="eyebrow">The Path</span>
             <h2 class="mb-sm">Skin & Hair Health in 3 Simple Steps</h2>
             <div class="gold-divider"></div>
-            <p class="text-muted" style="max-width: 600px; margin: 0 auto 20px;">A clear, medical path from diagnosis to
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">A clear, medical path from diagnosis to
                 long-term skin and hair health.</p>
 
             <div class="step-cards-outer">
@@ -965,28 +956,30 @@
 
             <style>
                 .step-cards-outer { overflow: hidden; padding: 10px 0; }
-                .step-cards { 
-                    display: grid; 
-                    grid-template-columns: repeat(3, 1fr); 
-                    gap: 1.5rem; 
+                .step-cards {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.5rem;
                     position: relative;
                 }
                 /* Connecting Line */
                 .step-cards::before {
                     content: '';
                     position: absolute;
-                    top: 52px; /* Center of the icon */
+                    top: 48px;
                     left: 10%;
                     right: 10%;
                     height: 1px;
                     background: rgba(186, 151, 91, 0.2);
-                    z-index: 1;
+                    z-index: 0;
                 }
                 .step-card {
                     background: transparent;
                     padding: 1rem;
                     text-align: center;
-                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
                 .step-icon {
                     width: 64px;
@@ -1001,15 +994,16 @@
                     margin: 0 auto 0.5rem;
                     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
                     position: relative;
-                    z-index: 2;
+                    z-index: 1;
+                    flex-shrink: 0;
                 }
-                /* Large Faint Numbers — in-flow, below the icon */
+                /* Step number — real DOM element, always below icon */
                 .step-num {
                     font-size: 5rem;
                     font-weight: 800;
+                    line-height: 1;
                     color: rgba(186, 151, 91, 0.35);
                     font-family: var(--font-heading);
-                    line-height: 1;
                     margin-bottom: 0.5rem;
                 }
                 .step-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--color-primary-dark); }
@@ -1018,17 +1012,15 @@
                 @media (max-width: 768px) {
                     .step-cards-outer { overflow: visible; padding: 30px 0; }
                     .step-cards {
-                        display: grid;
                         grid-template-columns: repeat(3, 1fr);
                         gap: 5px;
                         padding: 0;
-                        width: 100%;
                     }
-                    .step-cards::before { top: 38px; left: 15%; right: 15%; width: auto; }
-                    .step-card { flex: none; padding: 0.5rem; }
-                    .step-num { font-size: 2.5rem; margin-bottom: 0.25rem; }
-                    .step-icon { width: 42px; height: 42px; margin-bottom: 0.4rem; }
+                    .step-cards::before { top: 29px; left: 15%; right: 15%; }
+                    .step-card { padding: 0.5rem; }
+                    .step-icon { width: 42px; height: 42px; margin-bottom: 0.3rem; }
                     .step-icon svg { width: 18px; height: 18px; }
+                    .step-num { font-size: 2.5rem; margin-bottom: 0.25rem; }
                     .step-content h3 { font-size: 0.72rem; letter-spacing: -0.2px; margin-bottom: 4px; }
                     .step-content p { font-size: 0.62rem; line-height: 1.3; color: #777 !important; }
                 }
