@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Alam | Dr. Alam's Skin Clinic Erode</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="description"
+        content="Meet Dr. Howthul Alam Raja, a leading consultant dermatologist and dermatosurgeon in Erode. Specialist in medical dermatology, laser treatments, and skin surgery.">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 169, 126, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .journey-image-stack {
+            position: relative;
+            height: 480px;
+        }
+
+        .journey-img-1 {
+            width: 85%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .journey-img-2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 65%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            border: 10px solid white;
+        }
+
+        .expert-section {
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .signature-quote {
+            padding: 5rem 0;
+            background: var(--color-primary-dark);
+            color: white;
+            text-align: center;
+            border-top: 5px solid var(--color-accent);
+        }
+
+        @media (max-width: 992px) {
+            .journey-image-stack { height: 400px; }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero { padding: 120px 0 60px; }
+            .journey-image-stack { height: auto; margin-bottom: 2rem; }
+            .journey-img-1, .journey-img-2 { position: static; width: 100%; height: 320px; margin-bottom: 1rem; border: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (Same as Index) -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="about-hero">
+        <div class="container grid grid-2" style="align-items: center;">
+            <div class="animate-fade-left">
+                <span class="text-accent text-uppercase letter-spacing-lg" style="font-size: 0.9rem; font-weight: 700;">MEDICAL EXPERTISE</span>
+                <h1 style="margin: 1rem 0;">Meet Dr. Howthul Alam Raja</h1>
+                <p class="subheadline" style="margin: 0; font-weight: 600; color: var(--color-primary-dark);">Consultant Dermatologist, Dermatosurgeon and Laser Specialist</p>
+                <p style="margin-top: 1.5rem; font-size: 1.15rem; line-height: 1.7; color: var(--color-text-main);">
+                    Dr. Alam’s Skin Clinic is an advanced dermatology, laser and skin surgery centre specializing in acne scars, pigmentation disorders, hair loss treatment, clinical dermatology and dermatosurgery procedures with a focus on evidence-based treatments and long-term results.
+                </p>
+            </div>
+            <div class="animate-fade-right">
+                <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja" style="width: 100%; border-radius: 30px; box-shadow: var(--shadow-xl);">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MY JOURNEY SECTION -->
+    <section class="section">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div class="journey-image-stack animate-fade-left">
+                <img src="images/hero-slide-4.jpg" class="journey-img-1" alt="Dermatology Consultation">
+                <img src="images/hero-slide-7.jpg" class="journey-img-2" alt="Medical Training">
+            </div>
+            <div class="animate-fade-right">
+                <span class="eyebrow">Professional Path</span>
+                <h2>My Journey in Dermatology</h2>
+                <div class="gold-divider"></div>
+                <p class="mt-sm mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
+                    I understand how frustrating skin and hair problems can be because I have seen it in thousands of patients over the years. I have seen patients lose confidence due to acne scars, pigmentation, hair loss and chronic skin conditions, even though many of these problems are treatable with proper dermatology care.
+                </p>
+                <p class="mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
+                    My journey in dermatology began at **Madras Medical College**, Chennai, one of the most prestigious medical institutions in India. During my training at Rajiv Gandhi Government Hospital, I treated a wide variety of skin diseases, complex dermatological conditions and dermatosurgical cases. This experience helped me understand that behind every skin condition is a person who wants not only treatment, but also confidence and a better quality of life.
+                </p>
+                <p class="mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
+                    After working in government hospitals and treating a large number of patients, I started Dr. Alam’s Skin Clinic in Erode with a clear goal: to provide structured dermatology treatment, advanced laser procedures and skin surgery treatments under one center so that patients can receive proper diagnosis and complete treatment rather than temporary cosmetic solutions.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 600; color: var(--color-primary);">My approach is simple: listen to the patient, diagnose accurately, create a structured treatment plan and provide long-term care and follow-up.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. QUOTE SECTION -->
+    <section class="signature-quote">
+        <div class="container animate-fade-up">
+            <h2 style="color: white; font-style: italic; font-weight: 400; font-family: 'Georgia', serif; font-size: 1.8rem; line-height: 1.6; max-width: 900px; margin: 0 auto;">
+                “Skin and hair problems should be properly diagnosed and medically treated, not just managed with temporary cosmetic treatments. Every patient deserves honest advice, evidence-based treatment and long-term results.”
+            </h2>
+            <p style="margin-top: 2rem; font-weight: 800; color: var(--color-accent); letter-spacing: 2px;">— DR. HOWTHUL ALAM RAJA</p>
+        </div>
+    </section>
+
+    <!-- 4. QUALIFICATIONS & TRAINING -->
+    <section class="section section-bg-light expert-section">
+        <div class="container">
+            <div class="text-center mb-lg animate-fade-up">
+                <span class="badge" style="background: rgba(200, 169, 126, 0.2);">Rigorous Training</span>
+                <h2 class="mt-xs">Education, Training and Expertise</h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Dr. Alam has received advanced clinical training from India's most prestigious medical institutions, ensuring the highest standards of care.</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <!-- Education Details -->
+                <div class="card expertise-card animate-fade-up">
+                    <div class="expertise-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 12.5V17a2 2 0 002 2h10a2 2 0 002-2v-4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Education & Qualifications</h3>
+                        <p>Dr. Howthul Alam Raja completed his <strong>MBBS</strong> from VMKV Medical College & Hospital and <strong>MD in Dermatology, Venereology and Leprosy</strong> from the prestigious <strong>Madras Medical College</strong> and Rajiv Gandhi Government Hospital, Chennai.</p>
+                    </div>
+                    <div class="expertise-footer">Elite Medical Training</div>
+                </div>
+ 
+                <!-- Training Card -->
+                <div class="card expertise-card animate-fade-up">
+                    <div class="expertise-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.77 3.77z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <h3>Specialized Expertise</h3>
+                        <p>Extensive experience in treating acne scars, pigmentation, hair loss, and chronic conditions like psoriasis & vitiligo. He is highly trained in <strong>dermatosurgery procedures</strong>, laser treatments, and minor surgeries like mole/cyst excision.</p>
+                    </div>
+                    <div class="expertise-footer">Dermatosurgery Specialist</div>
+                </div>
+            </div>
+        </div>
+    <!-- 4.5 OUR TEAM SECTION -->
+    <section class="section">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-xl">
+                <span class="eyebrow">Professional Excellence</span>
+                <h2>Meet Our Team</h2>
+                <div class="gold-divider"></div>
+                <p class="text-muted" style="max-width: 800px; margin: 0 auto;">At Dr. Alam’s Skin Clinic, every patient is cared for by a team of qualified professionals — at every step of their visit, not just in the consultation room.</p>
+            </div>
+
+            <!-- 1. DOCTORS (Visually Dominant) -->
+            <div class="team-category-wrapper">
+                <h3 class="team-category-title">Doctors</h3>
+                <div class="team-grid doctors-grid">
+                    <!-- Dr. Alam -->
+                    <div class="team-card doctor-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja">
+                        </div>
+                        <div class="team-info">
+                            <h3>Dr. Howthul Alam Raja</h3>
+                            <span class="team-role">Consultant Dermatologist, Dermatosurgeon & Laser Specialist</span>
+                            <span class="team-edu">MD DVL, Madras Medical College</span>
+                            <p>He leads all clinical, laser and surgical care at the clinic — personally overseeing diagnosis, treatment planning and complex procedures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Kaviya -->
+                    <div class="team-card doctor-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/dr  Kaviya.jpeg" alt="Dr. Kaviya">
+                        </div>
+                        <div class="team-info">
+                            <h3>Dr. Kaviya</h3>
+                            <span class="team-role">Consultant Dermatologist</span>
+                            <span class="team-edu">MD DVL</span>
+                            <p>She manages clinical consultations and medical dermatology cases, ensuring every patient receives proper dermatology-standard care.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Firthous Fathima -->
+                    <div class="team-card doctor-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Dr. Fathima.jpeg" alt="Dr. Firthous Fathima">
+                        </div>
+                        <div class="team-info">
+                            <h3>Dr. Firthous Fathima</h3>
+                            <span class="team-role">Medical Officer</span>
+                            <span class="team-edu">MBBS</span>
+                            <p>She supports patient care, routine consultations and day-to-day clinical coordination at the clinic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. CLINICAL & PATIENT SUPPORT TEAM (Consolidated) -->
+            <div class="team-category-wrapper mt-xl">
+                <h3 class="team-category-title">Clinical & Patient Support Team</h3>
+                <div class="team-grid support-staff-unified-grid">
+                    <!-- Sowndharya -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Sowndharya.jpeg" alt="Sowndharya">
+                        </div>
+                        <div class="team-info">
+                            <h3>Sowndharya</h3>
+                            <span class="team-role">Skin Therapist</span>
+                            <p>She assists with laser procedures and skin treatments under direct doctor supervision — making sure every patient feels comfortable and cared for.</p>
+                        </div>
+                    </div>
+
+                    <!-- Shalinija -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Shalinija.jpeg" alt="Shalinija">
+                        </div>
+                        <div class="team-info">
+                            <h3>Shalinija</h3>
+                            <span class="team-role">Staff Nurse | BSc Nursing</span>
+                            <p>She manages clinical preparation and procedure support with precision and care — ensuring every treatment is medically sound.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hariharan -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Hariharan.jpeg" alt="Hariharan">
+                        </div>
+                        <div class="team-info">
+                            <h3>Hariharan</h3>
+                            <span class="team-role">Pharmacist | D.Pharm</span>
+                            <p>He handles prescription dispensing and medication counselling — ensuring the right medication is understood the right way.</p>
+                        </div>
+                    </div>
+
+                    <!-- Babypriya -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Babypriya.jpeg" alt="Babypriya">
+                        </div>
+                        <div class="team-info">
+                            <h3>Babypriya</h3>
+                            <span class="team-role">Receptionist</span>
+                            <p>She manages appointments and front desk coordination with a warm welcome that makes all the difference for our patients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Loginya -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/Loginya.jpeg" alt="Loginya">
+                        </div>
+                        <div class="team-info">
+                            <h3>Loginya</h3>
+                            <span class="team-role">Patient Care Coordinator</span>
+                            <p>She manages follow-ups and patient reminders, ensuring no patient ever feels lost in their treatment journey.</p>
+                        </div>
+                    </div>
+
+                    <!-- VimalRaj -->
+                    <div class="team-card support-card">
+                        <div class="team-img-placeholder">
+                            <img src="images/vimal.jpeg" alt="VimalRaj">
+                        </div>
+                        <div class="team-info">
+                            <h3>VimalRaj</h3>
+                            <span class="team-role">Digital Marketing Executive | D.Pharm</span>
+                            <p>He manages the clinic’s online presence, ensuring honest and educational content reaches those seeking real dermatology care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-xl" style="font-weight: 700; font-size: 1.25rem; color: var(--color-primary-dark); font-style: italic;">
+                "Every member of our team works toward one goal — to give you the care, attention and results you deserve."
+            </p>
+        </div>
+
+        <style>
+            .team-category-wrapper { margin-bottom: 2rem; }
+            .team-category-title { 
+                font-size: 1.1rem; 
+                text-transform: uppercase; 
+                letter-spacing: 2px; 
+                color: var(--color-accent); 
+                margin-bottom: 2rem; 
+                border-bottom: 1px solid rgba(184, 151, 62, 0.2);
+                padding-bottom: 0.5rem;
+                font-weight: 800;
+                text-align: center;
+            }
+            .team-grid {
+                display: grid;
+                gap: 2rem;
+            }
+            .doctors-grid { grid-template-columns: repeat(3, 1fr); }
+            .support-staff-unified-grid { grid-template-columns: repeat(3, 1fr); }
+
+            .team-card {
+                background: #fff;
+                border-radius: 4px;
+                overflow: hidden;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+                transition: all 0.4s ease;
+                border: 1px solid rgba(0,0,0,0.02);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                max-width: 400px; /* Limit width to maintain a professional portrait shape */
+                margin: 0 auto; /* Center cards within their grid cells */
+            }
+            .team-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+            
+            .team-img-placeholder {
+                width: 100%;
+                height: 380px;
+                background: white; /* Clean white background to blend with clinical photos */
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .team-img-placeholder img { 
+                width: 100%; 
+                height: 100%; 
+                transition: transform 0.6s ease;
+            }
+            .doctor-card .team-img-placeholder img {
+                object-fit: cover;
+                object-position: center top;
+            }
+            .support-card .team-img-placeholder img {
+                object-fit: cover;
+                object-position: center;
+                padding: 0;
+            }
+            .team-card:hover .team-img-placeholder img { transform: scale(1.02); }
+            .team-info { 
+                padding: 2.5rem 2rem; 
+                flex-grow: 1; 
+                text-align: center; /* Center align for a more balanced, premium look */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-info h3 { 
+                font-size: 1.4rem; 
+                color: var(--color-primary-dark); 
+                margin-bottom: 0.75rem; 
+                letter-spacing: -0.5px;
+                font-family: var(--font-secondary);
+                font-weight: 800;
+            }
+            .team-role { 
+                display: block; 
+                font-weight: 800; 
+                color: var(--color-accent); 
+                font-size: 0.8rem; 
+                text-transform: uppercase; 
+                margin-bottom: 0.5rem; 
+                letter-spacing: 1px;
+                line-height: 1.4;
+            }
+            .team-edu { 
+                display: block; 
+                font-size: 0.85rem; 
+                color: #888; 
+                margin-bottom: 1.5rem; 
+                font-weight: 600;
+                position: relative;
+                padding-bottom: 1rem;
+            }
+            .team-edu::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 30px;
+                height: 2px;
+                background: var(--color-accent-pale);
+            }
+            .team-info p { 
+                font-size: 1rem; 
+                line-height: 1.8; 
+                color: #666; 
+                margin: 0;
+                max-width: 90%; 
+            }
+
+            @media (min-width: 993px) {
+                .grid grid-2-1-responsive { display: grid; grid-template-columns: 1fr 1fr; }
+            }
+            @media (max-width: 992px) {
+                .doctors-grid, .support-staff-unified-grid { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 600px) {
+                .doctors-grid, .support-staff-unified-grid { grid-template-columns: 1fr !important; }
+                .team-img-placeholder { height: 320px; } /* More compact on mobile */
+                .team-info { padding: 1.5rem; }
+                .team-info h3 { font-size: 1.25rem; }
+            }
+        </style>
+    </section>
+
+    <!-- 5. AREAS OF SPECIAL EXPERTISE -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <h2>Areas of Special Interest and Expertise</h2>
+                <p class="text-muted mt-xs">Focused on medical dermatology and advanced procedural dermatology</p>
+            </div>
+            <div class="expertise-carousel-container animate-fade-up">
+                <div class="expertise-track scrolling-ticker">
+                    <!-- Original Items -->
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Acne Scar Revision</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Melasma & Pigmentation</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>PRP & Hair Restoration</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Laser Treatments</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Dermatosurgery</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Mole & Wart Removal</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Clinical Psoriasis/Eczema</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Nail & Hair Disorders</strong></div></div>
+                    <!-- Duplicated Items for Seamless Loop -->
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Acne Scar Revision</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Melasma & Pigmentation</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>PRP & Hair Restoration</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Laser Treatments</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Dermatosurgery</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Mole & Wart Removal</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Clinical Psoriasis/Eczema</strong></div></div>
+                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Nail & Hair Disorders</strong></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TREATMENT PHILOSOPHY -->
+    <section class="section section-bg-light">
+        <div class="container">
+            <div class="text-center mb-xl animate-fade-up">
+                <span class="eyebrow">The Method</span>
+                <h2>Our Treatment Philosophy</h2>
+                <div class="gold-divider"></div>
+                <p>Medical-grade approach to long-term skin and hair health.</p>
+            </div>
+            <div class="grid grid-3 animate-fade-up" style="gap: 2rem;">
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
+                    <div class="card-body">
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Evidence-Based Treatment</h3>
+                        <p style="font-size: 0.95rem;">All treatments are based on scientific evidence and proven dermatology protocols.</p>
+                    </div>
+                </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
+                    <div class="card-body">
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Personalized Plans</h3>
+                        <p style="font-size: 0.95rem;">Every patient receives a customized treatment plan based on their condition, skin type and treatment goals.</p>
+                    </div>
+                </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
+                    <div class="card-body">
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Honest Communication</h3>
+                        <p style="font-size: 0.95rem;">We believe in explaining the condition, treatment options, expected results and treatment duration clearly to patients.</p>
+                    </div>
+                </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
+                    <div class="card-body">
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Treat the Root Cause</h3>
+                        <p style="font-size: 0.95rem;">We focus on treating the underlying cause of skin and hair problems rather than only treating symptoms.</p>
+                    </div>
+                </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
+                    <div class="card-body">
+                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Long-Term Health</h3>
+                        <p style="font-size: 0.95rem;">Our goal is long-term improvement and maintenance, not temporary cosmetic improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. MISSION & 9. WHY CHOOSE -->
+    <section class="section">
+        <div class="container animate-fade-up">
+            <div class="mission-why-us-grid">
+                <div class="mission-side">
+                    <span class="eyebrow">The Core Mission</span>
+                    <h2>Healing with Expertise</h2>
+                    <div class="gold-divider" style="margin-bottom: 2rem;"></div>
+                    <p>Our mission is to provide evidence-based dermatology treatment, advanced laser procedures and dermatosurgery treatments under one center so that patients can receive proper diagnosis and complete treatment rather than temporary cosmetic solutions. We aim to help patients improve their skin, hair and overall confidence.</p>
+                </div>
+                <div class="why-us-side">
+                    <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Excellence</span>
+                    <h3 style="color: white; margin-bottom: 1rem;">Why Patients Choose Us</h3>
+                    <div class="gold-divider" style="margin-bottom: 2rem;"></div>
+                    <ul class="why-list">
+                        <li><span>✓</span> Dermatologist-led treatments</li>
+                        <li><span>✓</span> Evidence-based medical dermatology</li>
+                        <li><span>✓</span> Advanced laser and procedure treatments</li>
+                        <li><span>✓</span> Personalized treatment plans</li>
+                        <li><span>✓</span> Focus on long-term results</li>
+                        <li><span>✓</span> Structured diagnosis and treatment approach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CALL TO ACTION & INFO GRID -->
+    <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark);">
+        <div class="container animate-fade-up">
+            <h2 class="text-white mb-sm">Book a Consultation With Dr. Alam</h2>
+            <p class="text-white cta-text">
+                If you are struggling with acne scars, pigmentation, hair loss or any skin condition, book a consultation for proper diagnosis and a structured treatment plan.
+            </p>
+            <div class="btn-group cta-btn-group" style="justify-content: center;">
+                <a href="contact.html" class="btn btn-white">Book Consultation</a>
+                <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Dr. Alam</a>
+                <a href="tel:09345410038" class="btn btn-outline-white">Call Clinic</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:alamraja@gmail.com" class="fab-contact fab-mail" title="Email Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

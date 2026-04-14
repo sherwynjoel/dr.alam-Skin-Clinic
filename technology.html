@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology & Clinic | Dr. Alam's Skin Clinic</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <style>
+        /* Technology Page Specific Mobile Tweaks */
+        @media (max-width: 768px) {
+            .tech-card {
+                padding: 1.5rem !important;
+                gap: 1.5rem !important;
+                margin-bottom: 2rem !important;
+                border-radius: 25px !important;
+            }
+            .tech-card .order-1, 
+            .tech-card .order-2 {
+                order: unset !important;
+            }
+            .tech-card img {
+                margin-bottom: 0.5rem;
+            }
+            .tech-card h2 {
+                font-size: 1.4rem;
+            }
+            .tech-card .check-list {
+                grid-template-columns: 1fr !important;
+            }
+            .hero-content {
+                padding: 2rem 0 !important;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.3 !important;
+            }
+            .hero-content p {
+                font-size: 1rem !important;
+            }
+            .cta-btn-group {
+                flex-direction: column;
+                gap: 1rem;
+                display: flex;
+            }
+            .cta-btn-group .btn {
+                width: 100%;
+                margin: 0 !important;
+            }
+        }
+    </style>
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link active">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section hero-section" style="padding-top: 140px; padding-bottom: 100px; position: relative; background: url('images/Screenshot 2026-04-13 132535.png') no-repeat center center; background-size: cover; min-height: 450px; display: flex; align-items: center; color: white;">
+        <!-- Dark Overlay for Readability -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 5, 20, 0.95), rgba(0, 5, 20, 0.7)); z-index: 1;"></div>
+        
+        <div class="container animate-fade-up text-center hero-content" style="position: relative; z-index: 2;">
+            <h1 style="color: white; font-size: 3rem; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">The Right Technology. The Right Doctor. The Right Results.</h1>
+            <p style="max-width: 850px; margin: 1.5rem auto; font-size: 1.25rem; line-height: 1.7; color: rgba(255,255,255,0.9);">
+                At Dr. Alam’s Skin Clinic, we use some of the most advanced skin treatment equipment available in dermatology today — including premium Italian lasers, dedicated procedure rooms and a minor operation theatre. Everything is set up so you get safe, effective and comfortable treatments for your skin.
+            </p>
+            <div class="btn-group cta-btn-group" style="justify-content: center; margin-top: 2.5rem;">
+                <a href="contact.html" class="btn btn-primary" style="background: var(--color-accent); color: white; border-color: var(--color-accent);">Book a Consultation</a>
+                <a href="results.html" class="btn btn-outline-white" style="border: 1px solid white; color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">See Patient Results</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. WHY EQUIPMENT MATTERS -->
+    <section class="section section-bg-light">
+        <div class="container animate-fade-up">
+            <div class="text-center mb-lg">
+                <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Clinical Standard</span>
+                <h2 class="mt-xs">Why Equipment Matters for Your Skin</h2>
+            </div>
+            <div style="max-width: 850px; margin: 0 auto; color: var(--color-text-main); font-size: 1.1rem; line-height: 1.8;">
+                <p class="mb-sm">You wouldn’t want a surgeon operating with old tools. The same is true for skin treatments.</p>
+                <p class="mb-sm">Treating acne scars, dark spots, hair problems, redness and skin growths properly needs the right equipment — not just any equipment. Different skin problems need different types of light, energy and tools. A laser that works great for dark spots won’t work for hair removal. A device that’s perfect for scars isn’t the right one for redness.</p>
+                <p class="mb-sm">That’s why we’ve invested in a full range of treatment devices — so we can pick the right tool for your specific problem, instead of trying to make one device do everything.</p>
+                <div style="padding: 2rem; background: #fff; border-radius: 20px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--color-accent); margin-top: 2rem;">
+                    <p style="font-weight: 600; color: var(--color-primary); margin: 0;">Our clinic has everything under one roof: consultation, diagnosis, laser treatments, skin procedures and minor surgeries — all in separate, dedicated rooms with proper safety and hygiene standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-lg">
+                <span class="badge" style="background: var(--color-bg-secondary); color: var(--color-primary); border: 1px solid var(--color-primary);">World-Class Technology</span>
+                <h2>Our Treatment Technologies</h2>
+            </div>
+            <!-- Quanta System Section - Focused on Premium Tier -->
+            <div style="background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%); padding: 3.5rem 2rem; border-radius: 40px; border: 1px solid rgba(13, 110, 253, 0.1); box-shadow: var(--shadow-xl); margin-bottom: 4rem; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(186, 151, 91, 0.05); border-radius: 50%; z-index: 0;"></div>
+                
+                <div class="text-center mb-xl" style="position: relative; z-index: 1;">
+                    <h3 style="color: var(--color-primary); text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 1rem;">PREMIUM LASER SUITE</h3>
+                    <p style="font-weight: 700; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1.5rem;">Powered by Quanta System, Italy</p>
+                    <p class="text-muted" style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem;">
+                        Our clinic features a complete premium laser suite from Quanta System — one of the world’s top medical laser companies based in Milan, Italy. These are the same machines used in leading skin clinics across Europe, the USA and Asia.
+                    </p>
+                </div>
+
+                <div class="grid grid-4" style="gap: 1.5rem; position: relative; z-index: 1;">
+                    <!-- Device Card: Youlaser MT -->
+                    <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 300px; background: #fbfbfb; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 2rem;">
+                            <img src="images/Youlaser-MT_Front_Copyright (1).webp" alt="Youlaser MT - Advanced Scar Treatment Laser" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="card-body" style="padding: 1.5rem; flex-grow: 1;">
+                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Youlaser MT</h3>
+                            <p style="font-weight: 600; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 1rem; line-height: 1.4;">Scar & Skin Resurfacing</p>
+                            
+                            <p class="text-muted mb-xs" style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Helps with:</p>
+                            <ul class="check-list mb-md" style="font-size: 0.85rem;">
+                                <li>Deep Acne Scars</li>
+                                <li>Injury Scars</li>
+                                <li>Stretch Marks</li>
+                                <li>Skin Renewal</li>
+                            </ul>
+                            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; line-height: 1.5; color: var(--color-text-light);">
+                                Dual-wavelength tech for multi-layer scar repair.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Card: Q-Plus A Evo -->
+                    <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 300px; background: #fbfbfb; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 2rem;">
+                            <img src="images/Q-Plus_DX_Copyright.webp" alt="Q-Plus A Evo - Advanced Pigmentation & Tattoo Laser" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="card-body" style="padding: 1.5rem; flex-grow: 1;">
+                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Q-Plus A Evo</h3>
+                            <p style="font-weight: 600; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 1rem; line-height: 1.4;">Pigmentation & Tattoo</p>
+                            
+                            <p class="text-muted mb-xs" style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Helps with:</p>
+                            <ul class="check-list mb-md" style="font-size: 0.85rem;">
+                                <li>Melasma & Sun Damage</li>
+                                <li>Tattoo Removal</li>
+                                <li>Deep Pigmentation</li>
+                                <li>Carbon Peel</li>
+                            </ul>
+                            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; line-height: 1.5; color: var(--color-text-light);">
+                                Shatters pigment into particles for natural clearing.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Card: Light B EVO -->
+                    <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 300px; background: #fbfbfb; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 2rem;">
+                            <img src="images/Light_SX_Copyright.webp" alt="Light B EVO - Vein & Vascular Laser" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="card-body" style="padding: 1.5rem; flex-grow: 1;">
+                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Light B EVO</h3>
+                            <p style="font-weight: 600; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 1rem; line-height: 1.4;">Veins, Redness & IPL</p>
+                            
+                            <p class="text-muted mb-xs" style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Helps with:</p>
+                            <ul class="check-list mb-md" style="font-size: 0.85rem;">
+                                <li>Spider Veins (Face/Legs)</li>
+                                <li>Rosacea & Redness</li>
+                                <li>Active Acne</li>
+                                <li>Hair (Darker skin)</li>
+                            </ul>
+                            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; line-height: 1.5; color: var(--color-text-light);">
+                                Gentle vascular heating with built-in cooling.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Card: Quanta 585 -->
+                    <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
+                        <div style="height: 300px; background: #fbfbfb; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 2rem;">
+                            <img src="images/585_Front_Copyright.webp" alt="Quanta 585 - Yellow Laser for Redness" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="card-body" style="padding: 1.5rem; flex-grow: 1;">
+                            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.5rem;">Quanta 585</h3>
+                            <p style="font-weight: 600; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 1rem; line-height: 1.4;">Yellow Laser for Redness</p>
+                            
+                            <p class="text-muted mb-xs" style="font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Helps with:</p>
+                            <ul class="check-list mb-md" style="font-size: 0.85rem;">
+                                <li>Persistent Redness</li>
+                                <li>Post-Acne Red Marks</li>
+                                <li>Cherry Angiomas</li>
+                                <li>Port Wine Stains</li>
+                            </ul>
+                            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.8rem; line-height: 1.5; color: var(--color-text-light);">
+                                Gold-standard 585nm wavelength for vascular precision.
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <!-- X6 AI Skin Imager Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/X6有手具.png" alt="X6 AI Skin Imager - Intelligent Skin Analysis" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Diagnostic Excellence</span>
+                    <h2 class="mt-xs">X6 AI Skin Imager — Intelligent Skin Analysis</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">See what’s happening in your skin — before and after every treatment</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Detailed skin analysis before treatment planning</li>
+                        <li>Tracking your progress with clear before-and-after photos</li>
+                        <li>Seeing pigmentation, sun damage and pores hidden to the naked eye</li>
+                        <li>Understanding exactly what your skin needs scientifically</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        This AI-powered imaging system takes detailed photos of your skin using different types of light — showing things you can’t see in a mirror. It helps us plan your treatment more accurately and shows you real, measurable progress over time. You’ll never have to wonder “is this treatment working?” — you’ll see it clearly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4-Wavelength Hair Removal System -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Pain-Free Innovation</span>
+                    <h2 class="mt-xs">4-Wavelength Laser Hair Removal System</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Four laser wavelengths working together for faster, more comfortable hair removal on all skin types</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Upper lip, face and full body hair removal</li>
+                        <li>Effective for underarms, arms, legs and bikini area</li>
+                        <li>Safe for all skin colours and hair thicknesses</li>
+                        <li>Treats ingrown hair problems at the source</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        Most machines use just one wavelength. Ours uses four — each targeting hair at a different depth. The built-in <strong>ice-cold sapphire tip (−30°C)</strong> keeps your skin cool throughout the session. AI-powered detection adjusts the settings automatically for your specific hair type.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/image (1).png" alt="4-Wavelength Laser Hair Removal System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- Microneedling RF Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/WhatsApp Image 2026-04-02 at 14.20.23.jpeg" alt="Microneedling RF - Collagen Boosting Treatment" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Collagen Rebuilding</span>
+                    <h2 class="mt-xs">Microneedling RF — Collagen Boosting Treatment</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Tiny gold needles deliver energy deep into your skin to rebuild collagen from within</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Acne Scars (Boxcar, Rolling, Atrophic)</li>
+                        <li>Large Open Pores and Texture Issues</li>
+                        <li>Loose, Sagging Skin or Fine Lines</li>
+                        <li>Effective for Stretch Marks on Body</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        This device uses tiny gold-plated needles that release energy directly at a precise depth. This kickstarts your body’s natural collagen-building process — the protein that makes skin look plump and smooth. The <strong>vacuum-assist</strong> ensures even contact for consistent results across all treated areas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- IPL Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Broadband Clarity</span>
+                    <h2 class="mt-xs">IPL — Intense Pulsed Light Treatment</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Broadband light therapy for pigmentation, redness and overall skin clarity</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Active Acne Breakouts & Inflamed Skin</li>
+                        <li>Mild to Moderate Pigmentation & Dark Patches</li>
+                        <li>Redness and uneven skin tone/texture</li>
+                        <li>Sun-damaged skin and overall rejuvenation</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        IPL sends controlled flashes of broad-spectrum light into your skin. The light targets both pigment and blood vessels, helping to even out your skin tone, calm redness and clear up active breakouts — all with <strong>minimal downtime</strong>. It's the perfect treatment for restoring a healthy, natural glow.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/IPL — Intense Pulsed Light Treatment.png" alt="IPL — Intense Pulsed Light Treatment System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- Fractional CO2 Laser Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/image (4).png" alt="Fractional CO2 Laser - Skin Resurfacing" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Proven Resurfacing</span>
+                    <h2 class="mt-xs">Fractional CO₂ Laser — Skin Resurfacing</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Proven laser technology for deep scars, skin renewal and texture improvement</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Moderate to Severe Acne Scars</li>
+                        <li>Intensive Skin Resurfacing & Renewal</li>
+                        <li>Improvement of Surgical & Injury Scars</li>
+                        <li>Effective for Stretch Marks & Wart Removal</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        This laser creates thousands of tiny micro-channels, triggering your body’s natural healing response to build fresh, healthy skin. It is one of the most well-studied and proven treatments for deep scars and rough texture, delivering reliable results across all skin types.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Picosecond Laser Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Ultra-Short Pulse</span>
+                    <h2 class="mt-xs">Picosecond Laser — Pigmentation Treatment</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Ultra-short pulse laser for dark spots, pigmentation and skin toning</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Dark Spots, Sun Damage & Age Spots</li>
+                        <li>Melasma & Patchy Skin Discolouration</li>
+                        <li>Global Skin Toning & Brightening</li>
+                        <li>Effective Tattoo Lightening</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        This laser delivers energy in ultra-short bursts that break down pigment particles into tiny fragments your body removes naturally. It is an extremely precise tool for pigmentation treatment and skin brightening, designed to deliver results with minimal risk to surrounding tissue.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/image (5).png" alt="Picosecond Laser - Pigmentation Treatment" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- LED Light Therapy Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/E8B2C94A-E885-4CE3-A7C8-EE96524C32E6.JPG.jpg" alt="LED Light Therapy - Anti-Acne & Healing" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Painless Healing</span>
+                    <h2 class="mt-xs">LED Light Therapy — Anti-Acne & Recovery</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Painless light treatment that helps heal skin, kill acne bacteria and boost recovery</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Active Acne (Blue light eliminates bacteria)</li>
+                        <li>Post-Procedure Healing (Red light recovery)</li>
+                        <li>Calming Inflammation, Redness & Swelling</li>
+                        <li>Collagen Stimulation & Skin Rejuvenation</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        LED therapy is a non-invasive treatment using specific wavelengths of light to bio-stimulate skin cells. <strong>Blue light</strong> targets acne-causing bacteria, while <strong>Red and Infrared light</strong> speed up cellular repair and boost collagen production. This is often recommended as a post-treatment step to enhance recovery.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Radiofrequency Skin Tightening Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Non-Invasive Lifting</span>
+                    <h2 class="mt-xs">Radiofrequency Skin Tightening</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Non-invasive skin tightening using heat energy to boost collagen</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Skin Tightening and Gentle Face Lifting</li>
+                        <li>Effective for Fine Lines and Early Wrinkles</li>
+                        <li>Collagen Boost and Improved Skin Firmness</li>
+                        <li>Overall Skin Rejuvenation & Anti-Ageing</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        Radiofrequency gently heats the deeper layers of your skin, causing existing collagen to tighten and stimulating your body to produce new collagen over time. It is a comfortable, non-invasive treatment for improving skin firmness and reducing the early signs of ageing without any downtime.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/WhatsApp Image 2026-04-02 at 14.20.24.jpeg" alt="Radiofrequency Skin Tightening System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- Specialised Treatments Section Header -->
+            <div class="text-center mb-xl">
+                <span class="badge" style="background: var(--color-bg-secondary); color: var(--color-primary); border: 1px solid var(--color-primary);">Advanced Techniques</span>
+                <h2 class="mt-xs">Specialised Treatments</h2>
+            </div>
+
+            <!-- Excimer Light Therapy Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/image (6).png" alt="Excimer Light Therapy - Vitiligo & Psoriasis" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Targeted UV Therapy</span>
+                    <h2 class="mt-xs">Excimer Light Therapy (308 nm)</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Targeted light treatment for vitiligo, psoriasis and other localised skin conditions</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Vitiligo (Stimulates pigment in white patches)</li>
+                        <li>Psoriasis patches and localised lesions</li>
+                        <li>Alopecia Areata (Patchy hair loss)</li>
+                        <li>Post-Vitiligo Surgery (Accelerates colour uptake)</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        This device delivers a focused beam of therapeutic UV light only to the affected area — without exposing healthy surrounding skin. For vitiligo, it stimulates pigment-producing cells to bring colour back to white patches much faster than traditional UV therapy.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Electrosurgery Section Header -->
+            <div class="text-center mb-xl">
+                <span class="badge" style="background: var(--color-bg-secondary); color: var(--color-primary); border: 1px solid var(--color-primary);">Precise Removal</span>
+                <h2 class="mt-xs">Electrosurgery</h2>
+            </div>
+
+            <!-- Electrosurgery Unit Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Surgical Precision</span>
+                    <h2 class="mt-xs">Electrosurgery Unit (Hyfrecator 2000)</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Precision device for quick, safe removal of skin tags, warts, moles and small growths</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Skin Tag & Wart Removal (Face, Hands, Body)</li>
+                        <li>Small Mole & DPN (Dark spots on face) Removal</li>
+                        <li>Syringoma & Cherry Spot Treatment</li>
+                        <li>Corn, Callus & viral Molluscum treatment</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        The Hyfrecator is a precision surgical device that uses controlled electrical energy to remove skin growths safely. Most procedures are same-day and done under local numbing — you walk in, get the growth removed, and walk out. It’s an essential tool for providing clear skin with minimal downtime.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/image (7).png" alt="Electrosurgery Unit (Hyfrecator 2000)" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <!-- PRP Therapy Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left">
+                    <img src="images/image (8).png" alt="PRP Therapy - Platelet Rich Plasma" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Natural Bio-Therapy</span>
+                    <h2 class="mt-xs">PRP Therapy — Platelet Rich Plasma</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Your own blood’s healing power, concentrated and used to treat hair loss and improve skin</p>
+                    
+                    <ul class="check-list mb-md">
+                        <li>Hair Loss & Thinning (Natural growth signals)</li>
+                        <li>Acne Scars (Combined with Microneedling RF)</li>
+                        <li>Skin Rejuvenation & Natural Glow</li>
+                        <li>Under-Eye Dark Circles & Hollowing</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        PRP therapy involves concentrating the natural healing and growth factors from your own blood to stimulate repair. These are your body’s own repair molecules — with <strong>no chemicals or foreign substances</strong>. For hair loss, it triggers dormant follicles, and for skin, it accelerates collagen and repair processes. It’s a completely natural approach because it comes from you.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skin Surgery & Minor Procedures Section -->
+            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left order-2">
+                    <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Clinical Surgery</span>
+                    <h2 class="mt-xs">Skin Surgery & Minor Procedures</h2>
+                    <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Fully equipped procedure room for minor skin surgeries under local anaesthesia</p>
+                    
+                    <ul class="check-list mb-md" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem;">
+                        <li>Mole & Cyst Removal</li>
+                        <li>Wart & Tag Removal</li>
+                        <li>Lipoma Removal</li>
+                        <li>Ingrown Nail Surgery</li>
+                         <li>Earlobe Repair</li>
+                        <li>Keloid Treatment</li>
+                        <li>Scar Revision</li>
+                        <li>Vitiligo Surgery</li>
+                    </ul>
+                    
+                    <p class="text-muted" style="line-height: 1.7;">
+                        Some skin problems need a surgical solution — not just creams or lasers. Our clinic has a fully equipped procedure room for minor skin surgeries, done safely under local numbing. Most procedures are quick, sterile, and walk-in/walk-out. You won’t need a hospital stay for these.
+                    </p>
+                </div>
+                <div class="animate-fade-right order-1">
+                    <img src="images/image (9).png" alt="Skin Surgery & Minor Procedures Suite" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+            <div class="text-center mb-lg animate-fade-up">
+                <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Clinic Design</span>
+                <h2 class="mt-xs">Our Dedicated Treatment Rooms</h2>
+                <p class="text-muted" style="max-width: 800px; margin: 1.5rem auto; line-height: 1.7;">
+                    Our clinic is designed with separate rooms for different types of treatments. This means your laser session won’t be delayed because a surgery is happening in the same room. Everything runs smoothly, on time, and in its proper space.
+                </p>
+            </div>
+
+            <div class="max-width-md tech-card" style="margin: 0 auto;">
+                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; border-radius: 40px;">
+                    <div style="height: 400px; overflow: hidden;">
+                        <img src="images/Gemini_Generated_Image_kg1c38kg1c38kg1c.jpg" alt="Surgicalis - Surgery & Resurfacing Room" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body" style="padding: 3rem; text-align: center;">
+                        <h3 style="color: var(--color-primary); font-size: 1.8rem; margin-bottom: 1.5rem;">Surgicalis — Surgery & Resurfacing Suite</h3>
+                        <p class="text-muted" style="line-height: 1.8; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                            Our dedicated room for skin surgeries and advanced laser resurfacing. Equipped with our Youlaser MT laser, Excimer light therapy and sterile surgical instruments. Maintained at the highest hospital-grade sterility standards to ensure safe, effective results for every patient.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- 6. YOUR SAFETY COMES FIRST -->
+            <section class="section section-bg-light" style="border-radius: 40px; margin-bottom: 4rem;">
+                <div class="container">
+                    <div class="text-center mb-lg">
+                        <span class="badge" style="background: var(--color-white); color: #d63031; border: 1px solid #d63031;">Safety Protocol</span>
+                        <h2 class="mt-xs">Your Safety Comes First</h2>
+                        <p class="text-muted">Every treatment at our clinic follows strict medical safety and hygiene standards:</p>
+                    </div>
+                    
+                    <div class="grid grid-2 tech-card" style="gap: 2rem;">
+                        <div class="card" style="padding: 2rem; border: none; box-shadow: var(--shadow-sm); border-left: 4px solid #d63031;">
+                            <ul class="check-list">
+                                <li>All surgical instruments are properly sterilised before every use</li>
+                                <li>Disposable items (needles, tips, consumables) are used once and discarded</li>
+                                <li>Laser safety goggles are provided to every patient and worn by all staff</li>
+                            </ul>
+                        </div>
+                        <div class="card" style="padding: 2rem; border: none; box-shadow: var(--shadow-sm); border-left: 4px solid #d63031;">
+                            <ul class="check-list">
+                                <li>Smoke evacuation systems are used during all ablative procedures</li>
+                                <li>All laser equipment is calibrated according to manufacturer standards</li>
+                                <li>Every treatment is performed or supervised by a qualified dermatologist</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-lg">
+                        <p style="font-weight: 700; color: var(--color-primary-dark); font-size: 1.1rem;">
+                            We believe in doing things right, not cutting corners. Your safety and treatment quality are never compromised.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. WHY THE RIGHT TECHNOLOGY MATTERS -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center mb-lg">
+                        <h2 class="mt-xs">Why the Right Technology Matters for Your Skin</h2>
+                    </div>
+                    <div style="max-width: 850px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; color: var(--color-text-main);">
+                        <p class="mb-sm">Here’s something most patients don’t know: not all lasers are the same. A laser that’s great for fair skin can cause dark patches on Indian skin. A machine that’s perfect for fine hair won’t work on thick body hair. And a device made for surface-level spots can’t reach deep pigmentation.</p>
+                        <p class="mb-sm">That’s why having the right range of equipment matters. When you come to us with a skin concern, we don’t force-fit one machine to every problem. We pick the specific device, wavelength and settings that match your skin type, your condition and your goals.</p>
+                        <div style="background: var(--color-bg-secondary); padding: 2rem; border-radius: 20px; text-align: center; margin: 2rem 0; border: 1px solid var(--color-primary-light);">
+                            <p style="font-weight: 700; font-style: italic; color: var(--color-primary); font-size: 1.3rem; margin: 0;">
+                                "The right technology + the right doctor = the right results."
+                            </p>
+                        </div>
+                        <p>But technology alone doesn’t give results. The doctor operating the equipment matters just as much. A premium laser in untrained hands can cause harm. Our doctors are trained in laser dermatology and dermatosurgery, and every major procedure is performed personally by Dr. Alam.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. REVISED CALL TO ACTION -->
+            <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark); border-radius: 40px; margin: 2rem;">
+                <div class="container animate-fade-up">
+                    <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--color-white); border: 1px solid rgba(255,255,255,0.3);">Get Started</span>
+                    <h2 class="text-white mt-sm">Not Sure Which Treatment Is Right for You?</h2>
+                    <p class="text-white cta-text" style="max-width: 700px; margin: 1rem auto 2rem;">
+                        Book a consultation and we’ll examine your skin, explain your options and recommend a treatment plan — no pressure, no commitment.
+                    </p>
+                    <div class="btn-group cta-btn-group" style="justify-content: center;">
+                        <a href="contact.html" class="btn btn-white">Book a Consultation</a>
+                        <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Us</a>
+                        <a href="results.html" class="btn btn-outline-white">See Patient Results</a>
+                    </div>
+
+                    <div class="grid grid-3" style="margin-top: 4rem;">
+                        <div class="card info-card">
+                            <div class="card-body">
+                                <h4>Contact Info</h4>
+                                <p style="font-size: 0.95rem; color: #2d3436; margin-bottom: 0.5rem;"><strong>Phone:</strong> <a href="tel:09345410038" style="color: inherit;">09345410038</a></p>
+                                <p style="font-size: 0.95rem; color: #2d3436;"><strong>WhatsApp:</strong> <a href="https://wa.me/9345410038" style="color: inherit;">09345410038</a></p>
+                            </div>
+                        </div>
+                        <div class="card info-card">
+                            <div class="card-body">
+                                <h4>Location</h4>
+                                <p style="font-size: 0.95rem; color: #2d3436; margin-bottom: 0.3rem; font-weight: 600;">Dr. Alam's Skin Clinic</p>
+                                <p style="font-size: 0.95rem; color: #2d3436;">306, Nasiyanur Road, Narayanavalasu, Erode</p>
+                            </div>
+                        </div>
+                        <div class="card info-card">
+                            <div class="card-body">
+                                <h4>Working Hours</h4>
+                                <p style="font-size: 0.95rem; color: #2d3436;">Mon - Sat: 10:00 AM - 2:00 PM & 5:00 PM - 9:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="services.html#acne">Acne & Acne Scars</a>
+                    <a href="services.html#pigmentation">Pigmentation</a>
+                    <a href="services.html#hair-loss">Hair loss</a>
+                    <a href="services.html#laser-hair-removal">Laser Hair Removal</a>
+                    <a href="services.html#dermatosurgery">Skin Surgery</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

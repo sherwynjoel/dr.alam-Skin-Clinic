@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation | Contact Dr. Alam's Skin Clinic Erode</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="description" content="Book your appointment at Dr. Alam's Skin Clinic for specialized acne, hair loss, laser, and skin surgery treatments. Contact us via Phone, WhatsApp, or our online form.">
+    
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <style>
+        .contact-hero {
+            padding: 220px 0 140px;
+            background: linear-gradient(rgba(4, 18, 31, 0.94), rgba(4, 18, 31, 0.88)), 
+                        url('images/hero-slide-1.jpg') center/cover;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .contact-hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content {
+            padding: 120px 0;
+            background: #fff;
+        }
+
+        .contact-grid-wrapper {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 3rem;
+            align-items: stretch;
+        }
+
+        .form-card {
+            background: white;
+            padding: 4rem;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+            border: 1px solid rgba(184, 151, 62, 0.1);
+        }
+
+        .info-card-luxury {
+            background: var(--color-primary-dark);
+            color: white;
+            padding: 4rem;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(4, 18, 31, 0.2);
+        }
+
+        .info-card-luxury h2 {
+            color: var(--color-accent);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-secondary);
+        }
+
+        .contact-detail-item {
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .detail-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        .detail-content h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .detail-content p, .detail-content a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .map-section {
+            padding: 100px 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .working-hours-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hours-row.active {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+            .form-card, .info-card-luxury { padding: 2.5rem; }
+        }
+
+        /* Mobile Optimization Fixes */
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 120px 0 60px;
+            }
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            .contact-content {
+                padding: 60px 0;
+            }
+            .appointment-container {
+                padding: 2.5rem 1.5rem !important;
+                border-radius: 12px !important;
+            }
+            .info-card-luxury {
+                padding: 2.5rem 1.5rem !important;
+                text-align: left;
+            }
+            .info-card-luxury h2 {
+                font-size: 1.5rem;
+            }
+            .luxury-form .grid {
+                gap: 1.5rem !important;
+            }
+            .grid-3-mobile-stack {
+                grid-template-columns: 1fr !important;
+            }
+            .map-section {
+                padding: 60px 0;
+            }
+            .map-container {
+                height: 350px;
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page-progress" class="page-progress-bar"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO -->
+        <section class="contact-hero">
+            <div class="container animate-fade-up">
+                <span class="eyebrow" style="color: var(--color-accent); letter-spacing: 5px;">Join the Journey</span>
+                <h1>Book Your Consultation</h1>
+                <p class="subheading" style="color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 2.5rem;">Expert medical diagnosis for acne, pigmentation, hair loss, laser treatments and surgical dermatology.</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="tel:09345410038" class="btn btn-primary">Call Clinic</a>
+                    <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
+                    <a href="#booking-form" class="btn btn-outline-white">Book Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MAIN CONTACT SECTION -->
+        <section class="contact-content">
+            <div class="container contact-grid-wrapper">
+                
+                <!-- Luxury Transformation Booking Form -->
+                <div class="appointment-container animate-fade-up" style="background: #04121f; padding: 4rem; border-radius: 20px; box-shadow: var(--shadow-xl); position: relative; overflow: hidden; border: 1px solid rgba(184, 151, 62, 0.2);">
+                    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(184, 151, 62, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+                    
+                    <div class="text-center mb-xl">
+                        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: 2px; color: #fff; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1.2;">Begin Your <span style="color: var(--color-accent);">Transformation</span></h2>
+                        <p style="font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">Schedule a private consultation with our medical team. Your journey toward refined confidence begins here.</p>
+                    </div>
+
+                    <form id="booking-form" class="luxury-form">
+                        <style>
+                            .luxury-form { color: #fff; }
+                            .luxury-form label { display: block; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; font-weight: 700; }
+                            .luxury-form .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; width: 100%; transition: all 0.3s ease; }
+                            .luxury-form .form-control:focus { background: rgba(255,255,255,0.08); border-color: var(--color-accent); outline: none; box-shadow: 0 0 15px rgba(184, 151, 62, 0.2); }
+                            .luxury-form .grid { gap: 2rem; margin-bottom: 2rem; }
+                            .btn-make-appointment { background: #e91e63; color: #fff; border: none; padding: 1.25rem; width: 100%; border-radius: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3); }
+                            .btn-make-appointment:hover { background: #d81b60; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233, 30, 99, 0.4); }
+                            select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.5rem center; background-size: 1.2rem; }
+                        </style>
+
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" class="form-control" placeholder="Enter Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Phone</label>
+                                <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label>Service</label>
+                                <select class="form-control">
+                                    <option>Select Service</option>
+                                    <option>Acne & Scars</option>
+                                    <option>Hair Loss</option>
+                                    <option>Pigmentation</option>
+                                    <option>Laser Hair Removal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Doctor</label>
+                                <select class="form-control">
+                                    <option>Select Doctor</option>
+                                    <option>Dr. Alam</option>
+                                    <option>Medical Specialist</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2" style="grid-template-columns: 1fr 1fr;">
+                            <div class="form-group">
+                                <label>Preferred Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time</label>
+                                <input type="time" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-make-appointment mt-md">Make An Appointment</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Card -->
+                <div class="info-card-luxury animate-fade-right">
+                    <h2>Clinic Contact Information</h2>
+                    <div class="gold-divider" style="margin-bottom: 3rem;"></div>
+                    
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Address</h4>
+                            <p>306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.81 12.81 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Phone & WhatsApp</h4>
+                            <p><a href="tel:09345410038">+91 93454 10038</a></p>
+                            <p><a href="https://wa.me/9345410038">WhatsApp: 93454 10038</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Electronic Mail</h4>
+                            <p><a href="mailto:info@dralamskinclinic.com">info@dralamskinclinic.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="working-hours-grid">
+                        <h4>Consultation Hours</h4>
+                        <div class="hours-row">
+                            <span>Mon - Sat (Morning)</span>
+                            <span>10:00 AM - 02:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Mon - Sat (Evening)</span>
+                            <span>05:00 PM - 09:00 PM</span>
+                        </div>
+                        <div class="hours-row" style="opacity: 0.5;">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. GOOGLE MAPS SECTION -->
+        <section class="map-section">
+            <div class="container">
+                <span class="eyebrow">Visit Us Locally</span>
+                <h2>Clinic Location</h2>
+                <div class="gold-divider" style="margin-left:auto; margin-right:auto;"></div>
+                <p>Our clinic is located centrally in Erode. You can find the exact location on Google Maps below and get turn-by-turn directions.</p>
+                
+                <div class="map-container">
+                    <!-- Standard Google Maps Placeholder Embed -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8546535260187!2d77.7051493!3d11.34541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDIwJzQzLjUiTiA3N8KwNDInMTguNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+                <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="btn btn-primary" style="padding: 1.5rem 5rem;">Get Directions on Google Maps</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acne & Acne Scar Treatment | Dr. Alam's Skin Clinic Erode</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="description"
+        content="Struggling with acne or acne scars? Get clearer, smoother skin with dermatologist-led treatments in Erode at Dr. Alam's Skin Clinic.">
+
+    <!-- Core Design System -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+
+    <style>
+        :root {
+            --lp-primary: #061d30;
+            --lp-accent: #b8973e;
+            --lp-red: #e74c3c;
+        }
+
+        /* 1. Distraction-Free Header (Logo + Book only) */
+        .lp-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            border-bottom: 2px solid var(--color-accent-pale);
+        }
+
+        .lp-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero-lp {
+            padding: 160px 0 80px;
+            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                url('images/acne-hero.png'), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80') center/cover;
+            text-align: center;
+        }
+
+        .hero-lp h1 {
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            color: var(--lp-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-lp .subheadline {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            color: var(--color-text-main);
+            line-height: 1.7;
+        }
+
+        .trust-line {
+            margin-top: 3.5rem;
+            font-weight: 700;
+            color: var(--lp-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+        }
+
+        /* 4. Plan Section (3 Simple Steps) */
+        .plan-step-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-border);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .plan-step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--lp-accent);
+        }
+
+        .step-pill {
+            background: var(--lp-accent);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Google Reviews Placeholder */
+        .reviews-section {
+            background: #fdfaf5;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stars {
+            color: #f1c40f;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Styling */
+        .faq-lp-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: 1.5rem 0;
+        }
+
+        .faq-lp-question {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            color: var(--lp-primary);
+            font-size: 1.1rem;
+        }
+
+        .faq-lp-answer {
+            margin-top: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-lp-item.active .faq-lp-answer {
+            display: block;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-fixed:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-lp {
+                padding: 130px 0 60px;
+            }
+
+            .lp-nav .btn-primary {
+                display: none;
+            }
+
+            /* Hide in header for mobile to save space */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/9345410038" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp Us">
+        <svg fill="white" width="35" height="35" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Standard Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Clinic</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link">Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION (Character + Desire) -->
+        <section class="hero-lp">
+            <div class="container">
+                <h1>Struggling With Acne or Acne Scars?<br>Let’s Help You Get Clearer, Smoother Skin.</h1>
+                <p class="subheadline">Dermatologist-led acne and acne scar treatment in Erode using medical treatment,
+                    chemical peels, microneedling RF and laser procedures.</p>
+                <div class="btn-group" style="justify-content: center; gap: 1rem;">
+                    <a href="#cta-final" class="btn btn-primary" style="padding: 1.25rem 3rem;">Book Consultation</a>
+                    <a href="https://wa.me/9345410038" class="btn btn-secondary" style="padding: 1.25rem 3rem;">WhatsApp
+                        Us</a>
+                </div>
+                <p class="trust-line">Consultant Dermatologist | Acne & Acne Scar Treatment | Advanced Procedures</p>
+            </div>
+        </section>
+
+        <!-- 3. CHARACTER + PROBLEM SECTION -->
+        <section class="section">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div class="animate-fade-left">
+                    <span class="eyebrow">The Struggle</span>
+                    <h2>Acne and Acne Scars Are More Than Just a Skin Problem</h2>
+                    <div class="gold-divider" style="margin: 1.5rem 0;"></div>
+                    <p class="mb-sm">If you have acne or acne scars, you may already know how frustrating it can be.
+                        Many patients try multiple creams, home remedies and cosmetic treatments but still do not see
+                        proper improvement.</p>
+                    <p class="mb-sm">Acne can leave behind dark marks, scars and uneven skin texture. Acne scars do not
+                        improve with creams alone and usually require procedures for improvement.</p>
+                    <p
+                        style="font-weight: 800; color: var(--lp-red); border-left: 3px solid var(--lp-red); padding-left: 1rem;">
+                        If acne is not treated properly and early, scars can become permanent. The good news is that
+                        acne can be controlled and acne scars can be significantly improved with the right treatment
+                        plan.
+                    </p>
+                </div>
+                <div class="animate-fade-right">
+                    <img src="images/Screenshot 2026-04-09 212034.png" 
+                        alt="Dr. Alam Skin Clinic Patient Journey" 
+                        style="border-radius: 20px; box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. GUIDE SECTION (Doctor – Empathy + Authority) -->
+        <section class="section section-bg-light">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div class="animate-fade-left">
+                    <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja"
+                        style="border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                </div>
+                <div class="animate-fade-right">
+                    <span class="eyebrow">Expert Guidance</span>
+                    <h2>Dermatologist-Led Acne and Acne Scar Treatment</h2>
+                    <div class="gold-divider" style="margin: 1.5rem 0;"></div>
+                    <p class="mb-sm">At Dr. Alam’s Skin Clinic, we understand how acne and acne scars can affect
+                        confidence and appearance. Many patients come to us after trying multiple treatments without
+                        improvement.</p>
+                    <p class="mb-sm">We follow a structured dermatology approach where we first control active acne and
+                        then treat acne scars using appropriate procedures depending on scar type.</p>
+                    <p class="mb-sm"><strong>Dr. Howthul Alam Raja</strong> is a Consultant Dermatologist trained at
+                        **Madras Medical College** and has experience treating acne, acne scars, pigmentation and hair
+                        loss using medical and procedural dermatology treatments.</p>
+                    <p
+                        style="font-weight: 700; color: var(--lp-primary); font-size: 1.1rem; margin-top: 1.5rem; font-style: italic;">
+                        "You don’t need random treatments. You need a proper diagnosis and a structured treatment plan."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PLAN SECTION (3 Simple Steps) -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">The Clear Path</span>
+                    <h2>Acne and Acne Scar Treatment in 3 Simple Steps</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <div class="plan-step-card animate-fade-up">
+                        <span class="step-pill">STEP 1</span>
+                        <h3>Control Active Acne</h3>
+                        <p>We first control active acne to prevent new scars and reduce inflammation using medical
+                            dermatology protocols.</p>
+                    </div>
+                    <div class="plan-step-card animate-fade-up" style="transition-delay: 0.2s;">
+                        <span class="step-pill">STEP 2</span>
+                        <h3>Assess Acne Scars</h3>
+                        <p>We examine your acne scars and decide the best combination of medical procedures for your
+                            specific skin type.</p>
+                    </div>
+                    <div class="plan-step-card animate-fade-up" style="transition-delay: 0.4s;">
+                        <span class="step-pill">STEP 3</span>
+                        <h3>Start Scar Treatment</h3>
+                        <p>Procedures are done over multiple sessions to improve acne scars and skin texture using
+                            advanced clinical equipment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TREATMENT OPTIONS SECTION -->
+        <section class="section section-bg-light">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Procedural Excellence</span>
+                    <h2>Advanced Acne & Scar Sculpting</h2>
+                    <div class="gold-divider"></div>
+                    <p class="text-muted" style="max-width: 700px; margin: 1.5rem auto; font-size: 1.05rem;">
+                        Our clinic specializes in multi-modal scar revision, combining clinical precision with the latest medical technology for lasting results.
+                    </p>
+                </div>
+                <div class="grid grid-4" style="gap: 2rem;">
+                    <!-- Option 1 -->
+                    <div class="procedure-card">
+                        <div class="card-num">01</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+                        </div>
+                        <h4>Medical Acne Management</h4>
+                    </div>
+                    <!-- Option 2 -->
+                    <div class="procedure-card">
+                        <div class="card-num">02</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                        </div>
+                        <h4>Advanced Clinical Peels</h4>
+                    </div>
+                    <!-- Option 3 -->
+                    <div class="procedure-card">
+                        <div class="card-num">03</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m10 2 9 9"/><path d="m14 6 5 5-11 11-5-5L14 6Z"/><path d="m4.5 16.5-1 1L2 22l4.5-1.5 1-1"/></svg>
+                        </div>
+                        <h4>Microneedling RF</h4>
+                    </div>
+                    <!-- Option 4 -->
+                    <div class="procedure-card">
+                        <div class="card-num">04</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h4>Fractional CO2 Laser</h4>
+                    </div>
+                    <!-- Option 5 -->
+                    <div class="procedure-card">
+                        <div class="card-num">05</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                        </div>
+                        <h4>Surgical Subcision</h4>
+                    </div>
+                    <!-- Option 6 -->
+                    <div class="procedure-card">
+                        <div class="card-num">06</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                        </div>
+                        <h4>PRP Scar Growth Factors</h4>
+                    </div>
+                    <!-- Option 7 -->
+                    <div class="procedure-card">
+                        <div class="card-num">07</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        </div>
+                        <h4>Laser Skin Resurfacing</h4>
+                    </div>
+                    <!-- Option 8 -->
+                    <div class="procedure-card">
+                        <div class="card-num">08</div>
+                        <div class="proc-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M16 8h5V3"/></svg>
+                        </div>
+                        <h4>Custom Combination Plans</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .procedure-card {
+                background: white;
+                padding: 3rem 2rem;
+                border-radius: 4px; /* Shaper, more architectural edges */
+                border-top: 4px solid var(--lp-accent);
+                box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+                transition: all 0.5s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .procedure-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 25px 60px rgba(184, 151, 62, 0.12);
+            }
+            .card-num {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-family: serif;
+                font-size: 2.5rem;
+                color: rgba(184, 151, 62, 0.08); /* Sophisticated subtle numbering */
+                font-weight: 800;
+                line-height: 1;
+            }
+            .proc-icon {
+                color: var(--lp-accent);
+                margin-bottom: 2rem;
+                background: rgba(184, 151, 62, 0.05);
+                width: 70px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: transform 0.4s ease;
+            }
+            .procedure-card:hover .proc-icon { transform: rotateY(180deg) scale(1.1); }
+            .procedure-card h4 {
+                font-size: 1.15rem;
+                letter-spacing: -0.02em;
+                color: var(--lp-primary);
+                font-weight: 800;
+                margin: 0;
+            }
+        </style>
+
+        <!-- 7. SUCCESS SECTION -->
+        <section class="section text-center">
+            <div class="container animate-fade-up" style="max-width: 900px;">
+                <span class="eyebrow">The Outcome</span>
+                <h2>Imagine Feeling Confident in Your Skin Again</h2>
+                <div class="gold-divider"></div>
+                <p style="font-size: 1.25rem; line-height: 1.8; color: var(--lp-primary);">
+                    When acne is controlled and acne scars improve, skin texture becomes smoother, marks reduce and
+                    overall skin appearance improves. Many patients feel more confident, comfortable in photos and less
+                    worried about their skin.
+                </p>
+                <p style="font-weight: 800; color: var(--lp-accent); font-size: 1.5rem; margin-top: 1.5rem;">Our goal is
+                    not just to treat acne, but to help you feel confident in your skin again.</p>
+            </div>
+        </section>
+
+        <!-- 8. RESULTS SECTION (Proof) -->
+        <section class="section section-bg-light">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Before & After</span>
+                    <h2>Acne and Acne Scar Treatment Results</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-2" style="gap: 4rem; align-items: center;">
+                    <div class="ba-card animate-fade-left">
+                        <img src="images/Screenshot 2026-04-09 211422.png" 
+                            alt="Dr. Alam Skin Clinic Acne Results" 
+                            style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);">
+                        <div class="ba-label"><span>Before</span><span>After Clinical Treatment</span></div>
+                    </div>
+                    <div class="animate-fade-right">
+                        <h3>We focus on improving:</h3>
+                        <ul class="why-list" style="margin-top: 1.5rem;">
+                            <li><span>•</span> Acne control & active clearance</li>
+                            <li><span>•</span> Deep scar remodeling</li>
+                            <li><span>•</span> Skin texture & smoothness</li>
+                            <li><span>•</span> Post-acne marks & pigmentation</li>
+                            <li><span>•</span> Overall clinical appearance</li>
+                        </ul>
+                        <p class="mt-md text-muted" style="font-size: 0.9rem;">Results vary depending on scar type,
+                            severity and number of sessions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAILURE SECTION (StoryBrand Stakes) -->
+        <section class="section" style="background: #fffafa; border-left: 8px solid var(--lp-red);">
+            <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <span class="eyebrow" style="color: var(--lp-red);">The Risks</span>
+                    <h2>What Happens If Acne Is Not Treated Properly?</h2>
+                    <div class="gold-divider" style="background: var(--lp-red); margin: 1.5rem 0;"></div>
+                    <p class="mb-sm">Delaying medical care for acne often leads to permanent consequences:</p>
+                    <ul class="check-list" style="columns: 2;">
+                        <li>Permanent atrophic scars</li>
+                        <li>Dark marks (PIH) increase</li>
+                        <li>Uneven, pitted texture</li>
+                        <li>More costly procedures later</li>
+                        <li>Treatment becomes difficult</li>
+                        <li>Long-term impact on confidence</li>
+                    </ul>
+                    <p style="font-weight: 800; color: var(--lp-red); margin-top: 1.5rem;">Early acne treatment is the
+                        only way to prevent permanent acne scars.</p>
+                </div>
+                <div class="animate-fade-right text-center">
+                    <div
+                        style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 20px rgba(231, 76, 60, 0.1);">
+                        <h4 style="color: var(--lp-red);">Clinical Warning:</h4>
+                        <p style="font-size: 0.95rem;">Treating active acne **now** is much simpler than treating
+                            permanent scars later. Don't let active acne turn into lifelong scars.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Reviews Highlight -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Real Stories</span>
+                    <h2>Patient Experiences</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="grid grid-3" style="gap: 1.5rem;">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Best scar treatment in Erode. Dr. Alam's approach to my deep acne scars has been amazing.
+                            The laser sessions were handled very professionally."</p>
+                        <cite>— Clinical Patient</cite>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"My active acne was controlled in just 2 months. Very happy with the clinical results. Proper
+                            medical diagnosis really makes a difference."</p>
+                        <cite>— Skin Care Patient</cite>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Excellent dermatologist. Honest advice on what's possible and what's not. The chemical peels
+                            helped my marks significantly."</p>
+                        <cite>— Medical Consultation</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ SECTION -->
+        <section class="section section-bg-light">
+            <div class="container" style="max-width: 850px;">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Medical Info</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="faq-lp-list">
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">How long does acne treatment take? <span>+</span></div>
+                        <div class="faq-lp-answer">Acne treatment usually takes 3–6 months depending on severity.
+                            Initial clinical results are often visible within 4 weeks.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">Can acne scars be completely removed? <span>+</span></div>
+                        <div class="faq-lp-answer">While acne scars cannot be 100% removed, their depth and appearance
+                            can be significantly improved by 70–80% with advanced procedures.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">How many sessions are needed for acne scars? <span>+</span></div>
+                        <div class="faq-lp-answer">Multiple sessions (usually 4 to 6) are required depending on scar
+                            type and severity to achieve significant remodeling.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">Is acne scar treatment painful? <span>+</span></div>
+                        <div class="faq-lp-answer">Most procedures are done using medical-grade numbing cream and are
+                            very tolerable for almost all patients.</div>
+                    </div>
+                    <div class="faq-lp-item">
+                        <div class="faq-lp-question">When should acne treatment be started? <span>+</span></div>
+                        <div class="faq-lp-answer">Acne should be treated as early as possible. The longer inflammation
+                            persists, the higher the risk of permanent scarring.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FINAL CTA SECTION (Fixed Anchor) -->
+        <section id="cta-final" class="section text-center section-bg-dark"
+            style="background-color: var(--lp-primary); padding: 120px 0;">
+            <div class="container animate-fade-up">
+                <span class="eyebrow" style="color: var(--lp-accent);">Final Step</span>
+                <h2 class="text-white mb-sm">Book Consultation for Acne & Acne Scar Treatment</h2>
+                <div class="gold-divider"></div>
+                <p class="text-white cta-text mb-xl" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                    If you are struggling with acne or acne scars, book a consultation for proper diagnosis and a
+                    structured, dermatologist-led treatment plan.
+                </p>
+                <div class="btn-group" style="justify-content: center; gap: 1rem;">
+                    <a href="tel:09345410038" class="btn btn-white">Call Clinic</a>
+                    <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Full Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-lp-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                q.querySelector('span').textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // Simple Intersection Observer
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('fade-up-active');
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

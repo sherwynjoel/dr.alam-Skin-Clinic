@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Education Hub | Skin & Hair Resources | Dr. Alam's Skin Clinic</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="description" content="Access thousands of years of combined medical knowledge. Learn about acne, hair loss, pigmentation, and skin diseases from our dermatologist-led education hub.">
+    
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <style>
+        .blog-hero {
+            padding: 220px 0 140px;
+            background: linear-gradient(rgba(4, 18, 31, 0.85), rgba(4, 18, 31, 0.75)), 
+                        url('images/hero-slide-2.jpg') center/cover;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .blog-hero h1 {
+            color: white;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hub-intro {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding-bottom: 120px;
+        }
+
+        .education-section-card {
+            background: white;
+            border-radius: 4px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid rgba(184, 151, 62, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .education-section-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-accent);
+            box-shadow: 0 30px 70px rgba(184, 151, 62, 0.1);
+        }
+
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .topic-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary-dark);
+            color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topic-header h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: var(--color-primary-dark);
+            font-family: var(--font-secondary);
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .article-list li {
+            margin-bottom: 0.85rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .article-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 900;
+        }
+
+        .article-list li a {
+            color: var(--color-text-main);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .article-list li a:hover {
+            color: var(--color-accent);
+        }
+
+        .section-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .education-grid { grid-template-columns: 1fr; }
+            .blog-hero { padding: 140px 0 80px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page-progress" class="page-progress-bar"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="blog.html" class="nav-link active">Blog / Skin Education</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO -->
+        <section class="blog-hero">
+            <div class="container animate-fade-up">
+                <span class="eyebrow" style="color: var(--color-accent); letter-spacing: 5px;">Patient Empowerment</span>
+                <h1>Skin, Hair and Treatment<br>Education Hub</h1>
+                <p class="subheading" style="color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 2.5rem;">Learn about acne, pigmentation, hair loss, skin diseases, laser treatments and skincare from dermatologist-written patient education articles.</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                    <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. INTRODUCTION -->
+        <section class="hub-intro">
+            <div class="container" style="max-width: 900px;">
+                <span class="section-tag">Dermatologist Verified</span>
+                <h2>Learn About Your Skin Problem and Treatment Options</h2>
+                <div class="gold-divider" style="margin-left: auto; margin-right: auto;"></div>
+                <p>Many patients have questions about acne, pigmentation, hair loss, laser treatments and skin diseases. This section contains patient education articles that explain common skin problems, treatment options and skincare advice in simple language.</p>
+                <p style="margin-top: 1rem; font-weight: 700; color: var(--color-primary-dark);">Explore the knowledge clusters below based on your specific concern.</p>
+            </div>
+        </section>
+
+        <!-- 3. EDUCATION GRID -->
+        <section class="section" style="background-color: #fafafa;">
+            <div class="container education-grid">
+                
+                <!-- ACNE EDUCATION -->
+                <div class="education-section-card animate-fade-up">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <h2>Acne & Scars</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">Acne Treatment Guide</a></li>
+                        <li><a href="#">Why Pimples Keep Coming Back</a></li>
+                        <li><a href="#">Acne Scar Treatment Options</a></li>
+                        <li><a href="#">Isotretinoin Treatment Guide</a></li>
+                        <li><a href="#">Skincare Routine for Acne</a></li>
+                        <li><a href="#">Chemical Peels for Acne</a></li>
+                        <li><a href="#">Microneedling RF for Acne Scars</a></li>
+                        <li><a href="#">CO2 Laser for Acne Scars</a></li>
+                    </ul>
+                </div>
+
+                <!-- PIGMENTATION EDUCATION -->
+                <div class="education-section-card animate-fade-up" style="transition-delay: 0.1s;">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M5.88 5.88l12.24 12.24"/></svg>
+                        </div>
+                        <h2>Pigmentation & Melasma</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">Melasma Treatment Guide</a></li>
+                        <li><a href="#">Pigmentation Treatment Options</a></li>
+                        <li><a href="#">Chemical Peels for Pigmentation</a></li>
+                        <li><a href="#">Laser Treatment for Pigmentation</a></li>
+                        <li><a href="#">Sunscreen Guide</a></li>
+                        <li><a href="#">Skincare Routine for Pigmentation</a></li>
+                        <li><a href="#">Dark Spots After Acne Treatment</a></li>
+                    </ul>
+                </div>
+
+                <!-- HAIR LOSS EDUCATION -->
+                <div class="education-section-card animate-fade-up" style="transition-delay: 0.2s;">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21s-2-2.9-2-8.7A8.3 8.3 0 0 0 10.7 4c-4.4 0-8.3 3.6-7.7 8C4 18.5 2 21 2 21"/></svg>
+                        </div>
+                        <h2>Hair Fall & Thinning</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">Hair Loss Causes and Treatment</a></li>
+                        <li><a href="#">PRP for Hair Loss</a></li>
+                        <li><a href="#">Hair Thinning Treatment Options</a></li>
+                        <li><a href="#">Dandruff and Hair Fall</a></li>
+                        <li><a href="#">Androgenetic Alopecia Treatment</a></li>
+                        <li><a href="#">Hair Care Routine for Hair Fall</a></li>
+                        <li><a href="#">When to Start Hair Loss Treatment</a></li>
+                    </ul>
+                </div>
+
+                <!-- LASERS & PROCEDURES -->
+                <div class="education-section-card animate-fade-up">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <h2>Laser & Skin Procedures</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">Laser Hair Removal Guide</a></li>
+                        <li><a href="#">Acne Scar Laser Treatment</a></li>
+                        <li><a href="#">Microneedling RF Treatment Guide</a></li>
+                        <li><a href="#">CO2 Laser Treatment Guide</a></li>
+                        <li><a href="#">Mole Removal Procedure</a></li>
+                        <li><a href="#">Wart Removal Treatment</a></li>
+                        <li><a href="#">PRP Treatment Guide</a></li>
+                        <li><a href="#">Chemical Peel Treatment Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- SKIN DISEASES -->
+                <div class="education-section-card animate-fade-up" style="transition-delay: 0.1s;">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3c.5-.5 1.4-.5 1.9 0l15 15c.5.5.5 1.4 0 1.9l-1.9 1.9c-.5.5-1.4.5-1.9 0l-15-15c-.5-.5-.5-1.4 0-1.9l1.9-1.9z"/></svg>
+                        </div>
+                        <h2>Medical Skin Diseases</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">Psoriasis Treatment Guide</a></li>
+                        <li><a href="#">Vitiligo Treatment Options</a></li>
+                        <li><a href="#">Fungal Infection Treatment</a></li>
+                        <li><a href="#">Eczema Treatment Guide</a></li>
+                        <li><a href="#">Urticaria Treatment</a></li>
+                        <li><a href="#">Lichen Planus Treatment</a></li>
+                        <li><a href="#">Skin Allergy Treatment</a></li>
+                        <li><a href="#">Nail Fungal Infection Treatment</a></li>
+                    </ul>
+                </div>
+
+                <!-- GENERAL SKINCARE -->
+                <div class="education-section-card animate-fade-up" style="transition-delay: 0.2s;">
+                    <div class="topic-header">
+                        <div class="topic-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <h2>Skincare & Skin Health</h2>
+                    </div>
+                    <ul class="article-list">
+                        <li><a href="#">How to Choose Sunscreen</a></li>
+                        <li><a href="#">Morning Skincare Routine</a></li>
+                        <li><a href="#">Night Skincare Routine</a></li>
+                        <li><a href="#">Skincare for Oily Skin</a></li>
+                        <li><a href="#">Skincare for Dry Skin</a></li>
+                        <li><a href="#">Anti-aging Skincare Guide</a></li>
+                        <li><a href="#">Dark Neck Treatment</a></li>
+                        <li><a href="#">Under Eye Dark Circles</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark);">
+            <div class="container animate-fade-up">
+                <h2 class="text-white mb-sm">Have More Questions?</h2>
+                <p class="text-white cta-text">Education is the first step, but a clinical diagnosis is the second. Book your consultation today.</p>
+                <div class="btn-group cta-btn-group" style="justify-content: center;">
+                    <a href="contact.html" class="btn btn-white">Request Appointment</a>
+                    <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
