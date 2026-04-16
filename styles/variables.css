@@ -6,6 +6,7 @@
   --color-accent: #b8973e;          /* Refined antique gold */
   --color-accent-light: #d4b96a;
   --color-accent-pale: #f5eed9;     /* Warm gold wash */
+  --gradient-gold: linear-gradient(135deg, #b8973e 0%, #d4b96a 50%, #b8973e 100%);
   --color-white: #ffffff;
   --color-background: #faf9f7;      /* Warm ivory — not harsh white */
   --color-bg-secondary: #f2efe9;    /* Cream */
@@ -17,10 +18,12 @@
 
   --color-border: #e2ddd6;           /* Warm border */
 
-  /* Typography — Modern Editorial (inspired by provided reference) */
+  /* Typography — Modern Editorial */
   --font-heading: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
   --font-accent: 'Inter', sans-serif;
+  --letter-spacing-heading: -0.03em;
+  --letter-spacing-eyebrow: 0.35em;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -37,16 +40,17 @@
   --border-radius-lg: 20px;
   --border-radius-xl: 32px;
 
-  /* Shadows — deeper, warmer */
-  --shadow-sm: 0 2px 8px rgba(10, 30, 50, 0.06);
-  --shadow-md: 0 6px 20px rgba(10, 30, 50, 0.10);
-  --shadow-lg: 0 16px 40px rgba(10, 30, 50, 0.14);
-  --shadow-xl: 0 30px 70px rgba(10, 30, 50, 0.18);
+  /* Shadows — deeper, softer, more luxurious */
+  --shadow-sm: 0 4px 15px rgba(6, 29, 48, 0.04);
+  --shadow-md: 0 10px 30px rgba(6, 29, 48, 0.06);
+  --shadow-lg: 0 20px 40px rgba(6, 29, 48, 0.08);
+  --shadow-xl: 0 30px 80px rgba(6, 29, 48, 0.12);
+  --shadow-glass: 0 8px 32px rgba(6, 29, 48, 0.05);
 
   /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.25s ease;
+  --transition-normal: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition-slow: 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake | Dr. Alam's Skin Clinic</title>
+    <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
+    <meta name="description" content="A simple classic Snake game built into the Dr. Alam's Skin Clinic site.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/snake-logic.js" defer></script>
+    <script src="scripts/snake-page.js" defer></script>
+    <style>
+        .snake-hero {
+            padding: 130px 0 70px;
+            background: linear-gradient(180deg, rgba(242, 239, 233, 0.95), rgba(250, 249, 247, 0.98));
+        }
+
+        .snake-shell {
+            max-width: 960px;
+            margin: 0 auto;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+            padding: clamp(1.25rem, 3vw, 2rem);
+        }
+
+        .snake-intro {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+            align-items: end;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .snake-intro p {
+            margin: 0.75rem 0 0;
+            max-width: 560px;
+            color: var(--color-text-muted);
+        }
+
+        .snake-actions,
+        .snake-stats,
+        .snake-controls-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .snake-stats {
+            margin-bottom: var(--spacing-md);
+            justify-content: space-between;
+        }
+
+        .snake-stat-card {
+            min-width: 150px;
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-md);
+            padding: 1rem 1.25rem;
+        }
+
+        .snake-stat-card strong {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .snake-stat-card span {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-primary-dark);
+        }
+
+        .snake-status {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .snake-board-frame {
+            background: var(--color-primary-dark);
+            border-radius: 20px;
+            padding: 0.9rem;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+
+        .snake-board {
+            display: grid;
+            grid-template-columns: repeat(14, minmax(0, 1fr));
+            gap: 4px;
+            aspect-ratio: 1 / 1;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 4px;
+            border-radius: 14px;
+        }
+
+        .snake-cell {
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .snake-cell-head {
+            background: var(--color-accent);
+        }
+
+        .snake-cell-body {
+            background: #e7d6a0;
+        }
+
+        .snake-cell-food {
+            background: #c84b31;
+        }
+
+        .snake-controls {
+            margin-top: var(--spacing-md);
+            display: grid;
+            gap: 0.75rem;
+            justify-items: center;
+        }
+
+        .snake-controls-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 64px);
+            gap: 0.75rem;
+        }
+
+        .snake-control-spacer {
+            visibility: hidden;
+        }
+
+        .snake-controls-grid .btn {
+            min-height: 56px;
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .snake-note {
+            margin-top: 1rem;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .snake-hero {
+                padding-top: 96px;
+            }
+
+            .snake-intro,
+            .snake-stats {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .snake-stat-card {
+                width: 100%;
+            }
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+</head>
+<body>
+    <div class="page-progress-bar" id="page-progress"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="results.html" class="nav-link">Results Gallery</a>
+                <a href="snake.html" class="nav-link active">Snake</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="snake-hero">
+            <div class="container">
+                <div class="snake-shell">
+                    <div class="snake-intro">
+                        <div>
+                            <span class="badge">Classic Arcade</span>
+                            <h1>Snake</h1>
+                            <p>Use arrow keys or WASD to steer the snake, collect food, and avoid the walls or your own trail.</p>
+                        </div>
+                        <div class="snake-actions">
+                            <button class="btn btn-secondary" type="button" data-snake-pause>Pause</button>
+                            <button class="btn btn-primary" type="button" data-snake-restart>Restart</button>
+                        </div>
+                    </div>
+
+                    <div class="snake-stats">
+                        <div class="snake-controls-row">
+                            <div class="snake-stat-card">
+                                <strong>Score</strong>
+                                <span data-snake-score>0</span>
+                            </div>
+                            <div class="snake-stat-card">
+                                <strong>Status</strong>
+                                <div class="snake-status" data-snake-state>Running</div>
+                            </div>
+                        </div>
+                        <p class="snake-note">Press <strong>Space</strong> to pause or resume. Press <strong>Enter</strong> after game over to restart.</p>
+                    </div>
+
+                    <div class="snake-board-frame">
+                        <div class="snake-board" data-snake-board data-board-size="14" role="img" aria-label="Snake game board"></div>
+                    </div>
+
+                    <div class="snake-controls">
+                        <div class="snake-controls-grid" aria-label="On-screen controls">
+                            <span class="snake-control-spacer" aria-hidden="true"></span>
+                            <button class="btn btn-secondary" type="button" data-direction="up" aria-label="Move up">↑</button>
+                            <span class="snake-control-spacer" aria-hidden="true"></span>
+                            <button class="btn btn-secondary" type="button" data-direction="left" aria-label="Move left">←</button>
+                            <button class="btn btn-secondary" type="button" data-direction="down" aria-label="Move down">↓</button>
+                            <button class="btn btn-secondary" type="button" data-direction="right" aria-label="Move right">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="acne-scars.html">Acne & Acne Scars</a>
+                    <a href="pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="hair-loss.html">Hair Loss Restoration</a>
+                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Clinic</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="results.html">Results Gallery</a>
+                    <a href="snake.html">Snake</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-contact-stack">
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+        <a href="mailto:alamraja@gmail.com" class="fab-contact fab-mail" title="Email Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
