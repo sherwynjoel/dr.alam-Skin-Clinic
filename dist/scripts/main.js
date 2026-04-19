@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ── 0. Cinematic Preloader ───────────────────────────────
+    const preloader = document.getElementById('preloader');
+    
+    function hidePreloader() {
+        if (preloader && preloader.style.display !== 'none') {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.add('loaded');
+            }, 800);
+        }
+    }
+
+    // Load event (all images etc)
+    window.addEventListener('load', () => {
+        setTimeout(hidePreloader, 400); // Small grace period for a premium feel
+    });
+
+    // Failsafe: Hide preloader after 3 seconds regardless of load state
+    setTimeout(hidePreloader, 3000);
+
     // ── Mobile navigation toggle ──────────────────────────────
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks  = document.querySelector('.nav-links');
@@ -12,13 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Sticky header shadow ──────────────────────────────────
+    // ── Sticky header glassmorphism ───────────────────────────
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', () => {
-            header.style.boxShadow = window.scrollY > 10
-                ? '0 4px 20px rgba(6,29,48,0.12)'
-                : '0 1px 0 rgba(184,151,62,0.15)';
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }, { passive: true });
     }
 
@@ -171,18 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Testimonials carousel logic removed - now using static grid display.
 
 
-    // ── 10. Luxury Spotlight (Hero) ──────────────────────────
-    const heroSpot = document.getElementById('hero-spotlight');
-    const heroSec  = document.getElementById('hero-section');
-    if (heroSpot && heroSec) {
-        heroSec.addEventListener('mousemove', (e) => {
-            const rect = heroSec.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            heroSpot.style.left = `${x}px`;
-            heroSpot.style.top  = `${y}px`;
-        });
-    }
 
     // ── 11. 3D Card Tilt ────────────────────────────────────
     const tiltCards = document.querySelectorAll('.card, .outcome-card');
@@ -237,19 +248,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // ── 14. Magnetic Buttons ──────────────────────────────────
-    document.querySelectorAll('.btn').forEach(btn => {
+    // ── 14. Magnetic Buttons (Luxury Attraction) ──────────────
+    document.querySelectorAll('.btn, .mobile-menu-btn, .fab-contact').forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
             const rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             
-            // Move button 40% towards cursor
-            btn.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px)`;
+            // Subtle 35% magnetic attraction
+            btn.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+            
+            // Add a small inner glow shadow on move
+            if(!btn.classList.contains('btn-secondary')) {
+                btn.style.boxShadow = `0 15px 35px rgba(184, 151, 62, 0.4)`;
+            }
         });
         
         btn.addEventListener('mouseleave', () => {
             btn.style.transform = `translate(0px, 0px)`;
+            if(!btn.classList.contains('btn-secondary')) {
+                btn.style.boxShadow = '';
+            }
         });
     });
 
@@ -367,5 +386,284 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 200);
         }, { passive: true });
     });
+    // ── 21. Interactive Timeline Animation ────────────────────
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineProgress = document.getElementById('timeline-progress');
+    const timelineContainer = document.querySelector('.credentials-timeline');
+
+    if (timelineItems.length && timelineContainer) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Optional: once revealed, stop observing
+                    // timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
+
+        timelineItems.forEach(item => timelineObserver.observe(item));
+
+        // Progress line animation on scroll
+        window.addEventListener('scroll', () => {
+            const rect = timelineContainer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const totalHeight = rect.height;
+                const progress = Math.max(0, Math.min(1, (windowHeight * 0.7 - rect.top) / totalHeight));
+                timelineProgress.style.height = (progress * 100) + "%";
+            }
+        }, { passive: true });
+    }
+
+    // ── 22. SKIN JOURNEY DIGITAL CONCIERGE ────────────────────
+    const conciergeModal   = document.getElementById('concierge-modal');
+    const openBtn          = document.getElementById('open-concierge');
+    const closeBtn         = document.getElementById('concierge-close');
+    const progressFill     = document.getElementById('concierge-progress-fill');
+    const stepLabel        = document.getElementById('concierge-step-label');
+    const backBtn          = document.getElementById('concierge-back');
+    const conciergeNav     = document.getElementById('concierge-nav');
+
+    let currentStep = 1;
+    let answers = { concern: null, duration: null, treated: null };
+
+    const recommendations = {
+        acne: {
+            headline: "Acne & Scar Restoration Protocol",
+            text: "Dr. Alam recommends beginning with a Diagnostic Consultation to assess your skin type, acne grade, and scar depth. Your path may include medical-grade topicals, chemical peels, and Advanced Fractional CO₂ Laser Resurfacing for deep scars — with a structured 3–6 month plan for visible, lasting improvement.",
+            link: "acne-scars.html"
+        },
+        pigmentation: {
+            headline: "Medical Pigmentation Treatment Plan",
+            text: "Dr. Alam recommends a Melasma & Pigmentation Diagnostic to identify the cause — hormonal, sun-induced, or post-inflammatory. Your plan will likely combine prescription-grade products, chemical peels, and Q-Switched Laser Therapy for targeted, safe brightening.",
+            link: "pigmentation.html"
+        },
+        hair: {
+            headline: "Hair Loss Diagnosis & Restoration Plan",
+            text: "Dr. Alam recommends a Trichoscopy Assessment to determine the root cause of your hair loss. Treatment typically combines medical management, PRP Therapy, and growth factor treatments to stop loss and stimulate regrowth.",
+            link: "hair-loss.html"
+        },
+        "laser-hair": {
+            headline: "Precision Laser Hair Removal Protocol",
+            text: "Dr. Alam recommends a Skin & Hair Assessment to match the right laser technology to your skin tone and hair type. A personalised multi-session plan will be designed for long-term reduction — face, body, or both.",
+            link: "laser-hair-removal.html"
+        },
+        surgery: {
+            headline: "Clinical Skin Surgery Consultation",
+            text: "Dr. Alam recommends a Clinical Dermatosurgery Evaluation to assess the lesion — whether mole, skin tag, cyst, or lipoma. Removal is performed with medical-grade precision, minimal scarring, and histopathology if required.",
+            link: "dermatosurgery.html"
+        },
+        clinical: {
+            headline: "Medical Dermatology Treatment Plan",
+            text: "Dr. Alam recommends a Skin Condition Diagnostic for conditions like psoriasis, eczema, or vitiligo. Dr. Alam focuses on identifying the medical trigger and prescribing evidence-based systemic treatment for long-term control.",
+            link: "clinical-dermatology.html"
+        }
+    };
+
+    function openConcierge() {
+        conciergeModal.classList.add('open');
+        conciergeModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeConcierge() {
+        conciergeModal.classList.remove('open');
+        conciergeModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(resetConcierge, 600);
+    }
+    function resetConcierge() {
+        currentStep = 1;
+        answers = { concern: null, duration: null, treated: null };
+        showStep(1);
+    }
+    function updateProgress(step) {
+        const pct = step === 'result' ? 100 : ((step - 1) / 3) * 100;
+        if (progressFill) progressFill.style.width = pct + '%';
+        if (stepLabel) stepLabel.textContent = step === 'result' ? 'Your Personalised Result' : `Step ${step} of 3`;
+        if (conciergeNav) conciergeNav.style.display = step > 1 ? 'block' : 'none';
+    }
+    function showStep(step) {
+        document.querySelectorAll('.concierge-step').forEach(s => s.classList.remove('active'));
+        const target = step === 'result'
+            ? document.getElementById('concierge-result')
+            : document.getElementById(`step-${step}`);
+        if (target) target.classList.add('active');
+        currentStep = step;
+        updateProgress(step);
+    }
+    function buildResult() {
+        const rec = recommendations[answers.concern] || recommendations.acne;
+        const headline = document.getElementById('result-headline');
+        const resultText = document.getElementById('result-text');
+        const learnMore = document.getElementById('result-learn-more');
+        if (headline) headline.textContent = rec.headline;
+        if (resultText) resultText.textContent = rec.text;
+        if (learnMore) learnMore.href = rec.link;
+        showStep('result');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openConcierge);
+    if (closeBtn) closeBtn.addEventListener('click', closeConcierge);
+    if (backBtn) backBtn.addEventListener('click', () => {
+        if (currentStep === 2) showStep(1);
+        else if (currentStep === 3) showStep(2);
+        else if (currentStep === 'result') showStep(3);
+    });
+    if (conciergeModal) {
+        conciergeModal.addEventListener('click', (e) => {
+            if (e.target === conciergeModal) closeConcierge();
+        });
+    }
+
+    // Step 1 — Concern selection (auto-advances)
+    document.querySelectorAll('.concern-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            answers.concern = btn.dataset.value;
+            showStep(2);
+        });
+    });
+    // Step 2 — Duration selection (auto-advances)
+    document.querySelectorAll('#step-2 .duration-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            answers.duration = btn.dataset.value;
+            showStep(3);
+        });
+    });
+    // Step 3 — Prior treatment (generates result)
+    document.querySelectorAll('#step-3 .duration-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            answers.treated = btn.dataset.value;
+            buildResult();
+        });
+    });
+
+    const spotlightWrap    = document.getElementById('clinical-spotlight-wrap');
+    const spotlightOverlay = document.getElementById('spotlight-overlay');
+    const spotlightCircle  = document.getElementById('spotlight-circle');
+
+    if (spotlightWrap && spotlightOverlay) {
+        // Desktop interactions
+        spotlightWrap.addEventListener('mouseenter', () => spotlightWrap.classList.add('active'));
+        spotlightWrap.addEventListener('mouseleave', () => spotlightWrap.classList.remove('active'));
+
+        // Mobile touch start
+        spotlightWrap.addEventListener('touchstart', (e) => {
+            spotlightWrap.classList.add('active');
+            // Prevent scrolling when interacting with spotlight if needed
+            // e.preventDefault(); 
+        }, { passive: true });
+
+        const annotations = spotlightWrap.querySelectorAll('.clinical-annotation');
+
+        const updateSpotlight = (clientX, clientY) => {
+            const rect = spotlightWrap.getBoundingClientRect();
+            const relX = clientX - rect.left;
+            const relY = clientY - rect.top;
+            const xPercent = (relX / rect.width * 100).toFixed(2) + '%';
+            const yPercent = (relY / rect.height * 100).toFixed(2) + '%';
+            
+            spotlightOverlay.style.setProperty('--sx', xPercent);
+            spotlightOverlay.style.setProperty('--sy', yPercent);
+            
+            const radius = window.innerWidth <= 768 ? 100 : 130;
+
+            spotlightOverlay.style.maskImage =
+                `radial-gradient(circle ${radius}px at ${xPercent} ${yPercent}, transparent 0%, black 80%)`;
+            spotlightOverlay.style.webkitMaskImage =
+                `radial-gradient(circle ${radius}px at ${xPercent} ${yPercent}, transparent 0%, black 80%)`;
+
+            if (spotlightCircle) {
+                spotlightCircle.style.left = xPercent;
+                spotlightCircle.style.top = yPercent;
+            }
+
+            // Proximity Logic: Only show the SINGLE closest annotation if "lit" by the spotlight
+            let closestAnn = null;
+            let minDistance = radius + 50; // Threshold for being "lit"
+
+            annotations.forEach(ann => {
+                const annX = ann.offsetLeft;
+                const annY = ann.offsetTop;
+                const dx = relX - annX;
+                const dy = relY - annY;
+                const distance = Math.sqrt(dx*dx + dy*dy);
+                
+                ann.classList.remove('visible'); // Hide by default
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestAnn = ann;
+                }
+            });
+
+            if (closestAnn) {
+                closestAnn.classList.add('visible');
+            }
+        };
+
+        spotlightWrap.addEventListener('mousemove', (e) => {
+            updateSpotlight(e.clientX, e.clientY);
+        }, { passive: true });
+
+        spotlightWrap.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                updateSpotlight(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+    }
+
+    // ── 24. MAGNETIC CONTACT DOCK ──────────────────────────────
+    const contactDock = document.getElementById('contact-dock');
+    if (contactDock) {
+        // Slide up after 2s
+        setTimeout(() => contactDock.classList.add('visible'), 2000);
+
+        // Magnetic attraction on dock items
+        document.querySelectorAll('.dock-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dx = (e.clientX - cx) * 0.28;
+                const dy = (e.clientY - cy) * 0.28;
+                item.style.transform = `translate(${dx}px, ${dy - 5}px) scale(1.05)`;
+                const wrap = item.querySelector('.dock-icon-wrap');
+                if (wrap) wrap.style.transform = `translate(${dx * 0.4}px, ${dy * 0.4}px)`;
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = '';
+                const wrap = item.querySelector('.dock-icon-wrap');
+                if (wrap) wrap.style.transform = '';
+            });
+        });
+    }
+
+    // ── 25. PREMIUM CUSTOM CURSOR ─────────────────────────────
+    const cursorDot  = document.querySelector('.cursor-dot');
+    const cursorAura = document.querySelector('.cursor-aura');
+    
+    if (cursorDot && cursorAura) {
+        document.addEventListener('mousemove', (e) => {
+            // Instant move for dot
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top  = e.clientY + 'px';
+            
+            // Slightly delayed move for aura using animate or just CSS transition?
+            // For max premiumness, we use requestAnimationFrame or smooth transition
+            cursorAura.animate({
+                left: e.clientX + 'px',
+                top: e.clientY + 'px'
+            }, { duration: 500, fill: "forwards" });
+        }, { passive: true });
+
+        // Hover effect on interactable elements
+        const interactables = 'a, button, .card, .stat-item, .faq-header, [data-ba-slider]';
+        document.querySelectorAll(interactables).forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+    }
 
 });

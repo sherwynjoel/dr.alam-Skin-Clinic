@@ -34,18 +34,69 @@
   color: var(--color-white);
 }
 
-/* Header & Navigation */
+/* Header & Navigation (Ultra Glass) */
+.top-bar {
+  background: #061d30;
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 0;
+}
+
+.top-bar-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  white-space: nowrap;
+  animation: topBarMarquee 40s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 6px 0;
+  }
+  .top-bar-track {
+    gap: 40px;
+    animation: topBarMarquee 25s linear infinite;
+  }
+}
+
+@keyframes topBarMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 30px)); }
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-bar-divider {
+  opacity: 0.3;
+}
+
 .header {
-  position: fixed;
-  top: 0;
+  position: relative;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: #ffffff;
+  padding-top: env(safe-area-inset-top); /* Handle mobile notch/status bar area */
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: var(--shadow-glass);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition: all var(--transition-normal);
 }
 
@@ -107,12 +158,13 @@
   font-family: var(--font-body);
   font-weight: 500;
   color: var(--color-text-main);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 1.5px;
-  white-space: nowrap;
+  text-decoration: none;
   position: relative;
-  padding-bottom: 2px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
 }
 
 .nav-link::after {
@@ -235,8 +287,15 @@
   text-transform: uppercase;
 }
 
-.footer a:hover {
-  color: var(--color-accent);
+.sticky-header-wrapper {
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(6, 29, 48, 0.08);
 }
 
 .footer-bottom {

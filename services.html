@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Comprehensive Dermatology & Skin Surgery | Dr. Alam's Skin Clinic</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <meta name="description" content="Discover professional dermatology treatments in Erode. Advanced solutions for Acne, Pigmentation, Hair Loss, and Precision Skin Surgery.">
@@ -20,23 +20,22 @@
 
         .services-hero {
             padding: 240px 0 160px;
-            background: linear-gradient(rgba(4, 18, 31, 0.95), rgba(4, 18, 31, 0.92)), 
+            background: linear-gradient(to bottom, rgba(6, 29, 48, 0.98), rgba(6, 29, 48, 0.95)), 
                         url('images/Screenshot 2026-04-13 132535.png') center/cover fixed;
             text-align: center;
             color: white;
-            background-size: cover;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(3rem, 8vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 2rem;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
             font-weight: 800;
+            letter-spacing: -1px;
         }
-
         .services-container {
             background: #fff;
             position: relative;
@@ -60,11 +59,12 @@
         .service-hub-card {
             background: white;
             padding: 4rem 2.5rem;
-            border-radius: 4px;
+            border-radius: 20px 80px 20px 20px; /* Signature Executive Arch */
             box-shadow: 0 40px 100px rgba(0,0,0,0.06);
             transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
             position: relative;
-            border: 1px solid rgba(184, 151, 62, 0.1);
+            border: 1px solid rgba(184, 151, 62, 0.15);
+            overflow: hidden;
         }
 
         .service-hub-card:hover {
@@ -96,7 +96,7 @@
             background: #fff;
         }
         .info-strip:nth-child(odd) {
-            background: #fdfaf3;
+            background: #ffffff;
         }
 
         .info-grid {
@@ -112,12 +112,17 @@
 
         .info-image-wrapper {
             position: relative;
+            border-radius: 40px 160px 40px 40px; /* Signature Executive Arch */
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            background: white;
         }
 
         .info-image-wrapper img {
             width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            display: block;
+            object-fit: cover;
         }
 
         .experience-tag {
@@ -131,10 +136,10 @@
         }
 
         .info-content h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 2rem;
-            color: var(--color-primary-dark);
-            font-family: var(--font-secondary);
+            color: #061D30;
+            font-weight: 800;
         }
 
         .info-list {
@@ -160,7 +165,7 @@
 
         .pillars-section {
             padding: 120px 0;
-            background: var(--color-primary-dark);
+            background: #061D30;
             color: white;
             text-align: center;
         }
@@ -196,10 +201,17 @@
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; margin-top: -60px; }
-            .info-grid { grid-template-columns: 1fr !important; gap: 3rem; }
+            .info-strip { padding: 60px 0; }
+            .info-grid { 
+                display: flex !important;
+                flex-direction: column; 
+                gap: 2rem; 
+            }
+            .info-strip:nth-child(even) .info-grid {
+                flex-direction: column-reverse; 
+            }
             .pillar-grid { grid-template-columns: 1fr; }
-            .info-content h2 { font-size: 2.25rem; }
+            .info-content h2 { font-size: 2.25rem; margin-bottom: 1.5rem; }
             .hero-title { font-size: 2.8rem; }
         }
     </style>
@@ -240,37 +252,73 @@
             </div>
         </section>
 
-        <!-- 2. QUICK LINKS DASHBOARD -->
-        <section class="hub-section">
-            <div class="container">
-                <div class="services-grid">
-                    <div class="service-hub-card animate-fade-up">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.88 5.88l12.24 12.24M5.88 18.12L18.12 5.88"/></svg>
-                        </div>
-                        <h3>Clinical & Aesthetics</h3>
-                        <p>Specialized treatments for Acne, Scars, and Pigmentation.</p>
-                        <a href="#acne" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.1s;">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21s-2-2.9-2-8.7A8.3 8.3 0 0 0 10.7 4c-4.4 0-8.3 3.6-7.7 8C4 18.5 2 21 2 21"/></svg>
-                        </div>
-                        <h3>Hair & Laser Restoration</h3>
-                        <p>Medical-grade hair restoration and permanent hair reduction.</p>
-                        <a href="#hair" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.2s;">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/></svg>
-                        </div>
-                        <h3>Medical Procedures</h3>
-                        <p>Advanced Dermatosurgery and clinical dermatology protocols.</p>
-                        <a href="#surgery" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                </div>
+
+
+        <!-- 2. SPECIALTY NAVIGATOR (NEW) -->
+        <nav class="specialty-nav animate-fade-up">
+            <div class="container nav-scroll-wrapper">
+                <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
+                <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
+                <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
+                <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
+                <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
+                <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
             </div>
-        </section>
+        </nav>
+
+        <style>
+            .specialty-nav {
+                background: white;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                position: sticky;
+                top: 80px; 
+                z-index: 100;
+                padding: 1rem 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            }
+            .nav-scroll-wrapper {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+            }
+            .spec-link {
+                text-decoration: none;
+                color: #061D30;
+                font-weight: 700;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 0.8rem 1.2rem;
+                border-radius: 8px;
+                border: 1px solid transparent;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .spec-link:hover {
+                background: rgba(6, 29, 48, 0.05);
+                color: var(--color-accent);
+            }
+
+            @media (max-width: 992px) {
+                .specialty-nav { top: 70px; padding: 1.5rem 0; }
+                .nav-scroll-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.8rem;
+                    padding: 0 1.5rem;
+                }
+                .spec-link {
+                    background: #f8f9fa;
+                    border: 1px solid rgba(0,0,0,0.05);
+                    text-align: center;
+                    font-size: 0.72rem;
+                    padding: 1rem 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1.2;
+                }
+            }
+        </style>
 
         <!-- 3. DETAILED CONTENT STRIPS (ALL 6 SERVICES) -->
         
@@ -278,7 +326,7 @@
         <section id="acne" class="info-strip">
             <div class="container info-grid">
                 <div class="info-image-wrapper animate-fade-left">
-                    <img src="images/Screenshot 2026-04-09 213907.png" alt="Advanced Acne Treatment">
+                    <img src="images/Screenshot 2026-04-20 014526.png" alt="Advanced Acne & Scar Treatment Result" style="transform: scale(1.15); transform-origin: center 60%;">
                 </div>
                 <div class="info-content animate-fade-right">
                     <span class="experience-tag">Acne & Acne Scars</span>
@@ -487,7 +535,7 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 
 </html>

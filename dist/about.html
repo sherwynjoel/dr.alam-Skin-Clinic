@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>About Dr. Alam | Dr. Alam's Skin Clinic Erode</title>
     <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
     <meta name="description"
@@ -72,11 +72,38 @@
 
         @media (max-width: 768px) {
             .about-hero { padding: 120px 0 60px; }
-            .journey-image-stack { height: auto; margin-bottom: 2rem; }
-            .journey-img-1, .journey-img-2 { position: static; width: 100%; height: 320px; margin-bottom: 1rem; border: none; }
+            .journey-image-stack { 
+                height: 420px; 
+                margin-bottom: 4rem; 
+                display: block;
+                width: 100%;
+            }
+            .journey-img-1 { 
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 85% !important; 
+                height: 320px !important; 
+                border-radius: 20px;
+                display: block !important;
+            }
+            .journey-img-2 { 
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 70% !important; 
+                height: 240px !important; 
+                border-radius: 20px;
+                border: 6px solid white !important;
+                display: block !important;
+                z-index: 2;
+                box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            }
         }
     </style>
-  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+  <script type="module" crossorigin src="/assets/about-IanSLAhD.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
 </head>
 
 <body>
@@ -114,7 +141,7 @@
                     Dr. Alam’s Skin Clinic is an advanced dermatology, laser and skin surgery centre specializing in acne scars, pigmentation disorders, hair loss treatment, clinical dermatology and dermatosurgery procedures with a focus on evidence-based treatments and long-term results.
                 </p>
             </div>
-            <div class="animate-fade-right">
+            <div class="animate-fade-right luxury-zoom">
                 <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja" style="width: 100%; border-radius: 30px; box-shadow: var(--shadow-xl);">
             </div>
         </div>
@@ -123,7 +150,7 @@
     <!-- 2. MY JOURNEY SECTION -->
     <section class="section">
         <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
-            <div class="journey-image-stack animate-fade-left">
+            <div class="journey-image-stack animate-fade-left luxury-zoom">
                 <img src="/assets/hero-slide-4-DN0T3MuW.jpg" class="journey-img-1" alt="Dermatology Consultation">
                 <img src="/assets/hero-slide-7-C9-HOGm9.jpg" class="journey-img-2" alt="Medical Training">
             </div>
@@ -203,6 +230,13 @@
                 <span class="eyebrow">Professional Excellence</span>
                 <h2>Meet Our Team</h2>
                 <div class="gold-divider"></div>
+                
+                <!-- New Group Photo -->
+                <div class="team-group-hero mb-xl animate-fade-up">
+                    <img src="/assets/Screenshot%202026-04-16%20215241-DgzAmkzM.png" alt="Dr. Alam's Full Team" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow-xl); border: 1px solid rgba(184, 151, 62, 0.1);">
+                    <p class="mt-sm" style="font-style: italic; color: var(--color-accent); font-weight: 600;">The specialized clinical team at Dr. Alam's Skin Clinic.</p>
+                </div>
+
                 <p class="text-muted" style="max-width: 800px; margin: 0 auto;">At Dr. Alam’s Skin Clinic, every patient is cared for by a team of qualified professionals — at every step of their visit, not just in the consultation room.</p>
             </div>
 
@@ -211,7 +245,7 @@
                 <h3 class="team-category-title">Doctors</h3>
                 <div class="team-grid doctors-grid">
                     <!-- Dr. Alam -->
-                    <div class="team-card doctor-card">
+                    <div class="team-card doctor-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja">
                         </div>
@@ -224,7 +258,7 @@
                     </div>
 
                     <!-- Dr. Kaviya -->
-                    <div class="team-card doctor-card">
+                    <div class="team-card doctor-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/dr%20%20Kaviya-D8TesY_P.jpeg" alt="Dr. Kaviya">
                         </div>
@@ -237,7 +271,7 @@
                     </div>
 
                     <!-- Dr. Firthous Fathima -->
-                    <div class="team-card doctor-card">
+                    <div class="team-card doctor-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/Dr.%20Fathima-ev7pn_wA.jpeg" alt="Dr. Firthous Fathima">
                         </div>
@@ -256,9 +290,9 @@
                 <h3 class="team-category-title">Clinical & Patient Support Team</h3>
                 <div class="team-grid support-staff-unified-grid">
                     <!-- Sowndharya -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
-                            <img src="/assets/Sowndharya-CIPtBCpu.jpeg" alt="Sowndharya">
+                            <img src="/assets/Sowndharya-C0QMNTX4.jpeg" alt="Sowndharya">
                         </div>
                         <div class="team-info">
                             <h3>Sowndharya</h3>
@@ -268,7 +302,7 @@
                     </div>
 
                     <!-- Shalinija -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/Shalinija-BdGDYUVz.jpeg" alt="Shalinija">
                         </div>
@@ -280,7 +314,7 @@
                     </div>
 
                     <!-- Hariharan -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/Hariharan-BJe19BdZ.jpeg" alt="Hariharan">
                         </div>
@@ -292,9 +326,9 @@
                     </div>
 
                     <!-- Babypriya -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
-                            <img src="/assets/Babypriya-tFkgV7Aa.jpeg" alt="Babypriya">
+                            <img src="/assets/Babypriya-wyU5v-q6.jpeg" alt="Babypriya">
                         </div>
                         <div class="team-info">
                             <h3>Babypriya</h3>
@@ -304,7 +338,7 @@
                     </div>
 
                     <!-- Loginya -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
                             <img src="/assets/Loginya-DGpb1UIH.jpeg" alt="Loginya">
                         </div>
@@ -316,9 +350,9 @@
                     </div>
 
                     <!-- VimalRaj -->
-                    <div class="team-card support-card">
+                    <div class="team-card support-card luxury-zoom">
                         <div class="team-img-placeholder">
-                            <img src="/assets/vimal-BTNt0V7A.jpeg" alt="VimalRaj">
+                            <img src="/assets/vimel-DHM3ADHW.jpeg" alt="VimalRaj">
                         </div>
                         <div class="team-info">
                             <h3>VimalRaj</h3>
@@ -381,7 +415,7 @@
             .team-img-placeholder img { 
                 width: 100%; 
                 height: 100%; 
-                transition: transform 0.6s ease;
+                transition: transform var(--transition-slow) !important;
             }
             .doctor-card .team-img-placeholder img {
                 object-fit: cover;
@@ -392,7 +426,7 @@
                 object-position: center;
                 padding: 0;
             }
-            .team-card:hover .team-img-placeholder img { transform: scale(1.02); }
+            .team-card:hover .team-img-placeholder img { transform: scale(1.03); }
             .team-info { 
                 padding: 2.5rem 2rem; 
                 flex-grow: 1; 
@@ -564,6 +598,34 @@
         </div>
     </section>
 
+    <!-- Live with Confidence Section -->
+    <section class="section">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div class="animate-fade-left">
+                <span class="eyebrow">Live with Confidence</span>
+                <h2 class="mt-xs">Imagine Clearer Skin</h2>
+                <div class="gold-divider"></div>
+
+                <div class="mt-sm mb-md" style="font-size: 1.15rem; line-height: 1.7; color: var(--color-text-main);">
+                    <p style="margin-bottom: 1.5rem;">When your skin and hair are treated right, you stop hiding. No more covering, avoiding photos, or worrying every day.</p>
+                    <p>Clearer skin. Fewer scars. Controlled pigmentation. Healthier hair—so you can feel confident again.</p>
+                </div>
+
+                <div style="padding: 24px; border-left: 4px solid var(--color-primary); background: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); margin-bottom: 30px; position: relative;">
+                    <p style="font-style: italic; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 10px; font-size: 1.25rem; line-height: 1.5;">
+                        "We don't just treat skin. We help you feel comfortable in it."</p>
+                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">
+                        — DR. ALAM'S CLINICAL PHILOSOPHY</p>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary">Book Your Transformation</a>
+            </div>
+            <div class="animate-fade-right" style="position: relative;">
+                <img src="/assets/success-result-Bzi9r2gp.jpg" alt="Patient feeling confident with clear skin" class="cinematic-img" style="border-radius: 40px; box-shadow: var(--shadow-xl); width: 100%; object-fit: cover; height: 500px; display: block; border: 1px solid rgba(10, 61, 98, 0.05);">
+            </div>
+        </div>
+    </section>
+
     <!-- 10. CALL TO ACTION & INFO GRID -->
     <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark);">
         <div class="container animate-fade-up">
@@ -637,8 +699,7 @@
                 <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
             </svg>
         </a>
-    </div>
-    <script src="scripts/main.js"></script>
+    </div>
 </body>
 
 </html>

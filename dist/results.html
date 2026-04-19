@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Patient Results | Clinical Before & After | Dr. Alam's Skin Clinic</title>
     <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
     <meta name="description" content="View real patient results for acne scars, pigmentation, hair loss, and dermatosurgery treatments at Dr. Alam's Skin Clinic in Erode.">
@@ -212,85 +212,58 @@
             margin: 0 auto;
         }
 
-        /* Modern Comparison Slider */
+        /* Static Before & After — Side by Side */
         .ba-slider-container {
-            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px;
             width: 100%;
-            aspect-ratio: 1 / 1; /* Square format */
-            overflow: hidden;
-            background: #f0f0f0;
-            cursor: ew-resize;
-            touch-action: none;
-            user-select: none; /* Prevent text selection */
-            -webkit-user-select: none;
+            background: #e0e0e0;
+            cursor: default;
+            position: relative;
         }
 
         .ba-slider-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-drag: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .ba-slider-image img {
             width: 100%;
-            height: 100%;
+            height: 300px;
             object-fit: cover;
             display: block;
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-drag: none;
+            transition: transform 0.6s ease;
+        }
+
+        .ba-clinical-card:hover .ba-slider-image img {
+            transform: scale(1.04);
         }
 
         .ba-slider-before {
-            z-index: 10;
-            clip-path: inset(0 50% 0 0); /* Default initial split */
+            clip-path: none;
+            z-index: auto;
         }
 
         .ba-slider-after {
-            z-index: 5;
+            z-index: auto;
         }
 
-        .ba-tag {
-            pointer-events: none; /* Ensure tags don't block the slider interaction */
-        }
-
-        .ba-slider-handle {
+        /* Static divider line between panels */
+        .ba-slider-container::after {
+            content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
+            top: 0; bottom: 0;
             left: 50%;
-            width: 3px;
+            width: 2px;
             background: white;
-            z-index: 20;
             transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            z-index: 5;
             pointer-events: none;
         }
 
-        .ba-slider-handle::after {
-            content: '↔';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            background: var(--color-accent);
-            color: var(--color-primary-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            box-shadow: 0 0 0 6px rgba(255,255,255,0.2), var(--shadow-md);
-            border: 2px solid white;
-        }
+        /* Hide the old drag handle */
+        .ba-slider-handle { display: none; }
 
         /* Specialized Gallery */
         .specialized-gallery-card {
@@ -343,7 +316,9 @@
             .results-nav { justify-content: flex-start; padding: 0 1.5rem; }
         }
     </style>
-  <link rel="stylesheet" crossorigin href="/assets/components-D6oMbJfo.css">
+  <script type="module" crossorigin src="/assets/results-BHj43RAs.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
 </head>
 
 <body>
@@ -432,12 +407,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/11-cNI8Nx_s.jpg" alt="Active Acne Before" draggable="false">
+                                <img src="/assets/11-DnaMApoy.jpg" alt="Active Acne Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/12-C23pb6MB.jpg" alt="Active Acne After" draggable="false">
-                                <span class="ba-tag ba-tag-after">After Treatment</span>
+                                <img src="/assets/12-CLrQtm3p.jpg" alt="Active Acne After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -447,12 +422,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/13%20(2)-DFgTtOMG.jpg" alt="Acne Treatment Patient 2 Before" draggable="false">
+                                <img src="/assets/13%20(2)-CF6UebwX.jpg" alt="Acne Treatment Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/14%20(2)-CRhreFS1.jpg" alt="Acne Treatment Patient 2 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">After Treatment</span>
+                                <img src="/assets/14%20(2)-CDj6FbUN.jpg" alt="Acne Treatment Patient 2 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -462,12 +437,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/12%20(4)-DHVb065G.jpg" alt="Acne Treatment Patient 3 Before" draggable="false">
+                                <img src="/assets/12%20(4)-DuoEKeRK.jpg" alt="Acne Treatment Patient 3 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/13%20(3)-0aHSxmbn.jpg" alt="Acne Treatment Patient 3 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clinical Clearance</span>
+                                <img src="/assets/13%20(3)-DnSo4h7b.jpg" alt="Acne Treatment Patient 3 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -489,12 +464,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/10%20(3)-vPHtBpJ2.jpg" alt="Acne Scar Treatment Patient 2 Before" draggable="false">
+                                <img src="/assets/10%20(3)-CmsGhyRb.jpg" alt="Acne Scar Treatment Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/11%20(6)-SAhETRRT.jpg" alt="Acne Scar Treatment Patient 2 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Healed & Smoother</span>
+                                <img src="/assets/11%20(6)-y6lyXqzf.jpg" alt="Acne Scar Treatment Patient 2 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -505,12 +480,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/12%20(4)-DHVb065G.jpg" alt="Acne Scar Patient 4 Before" draggable="false">
+                                <img src="/assets/12%20(4)-DuoEKeRK.jpg" alt="Acne Scar Patient 4 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/13%20(3)-0aHSxmbn.jpg" alt="Acne Scar Patient 4 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Textural Smoothing</span>
+                                <img src="/assets/13%20(3)-DnSo4h7b.jpg" alt="Acne Scar Patient 4 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -520,12 +495,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/14%20(3)-BKmtODbX.jpg" alt="Acne Scar Patient 5 Before" draggable="false">
+                                <img src="/assets/14%20(3)-DGsAVaCq.jpg" alt="Acne Scar Patient 5 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/6-DgKB2t_h.jpg" alt="Acne Scar Patient 5 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Total Restoration</span>
+                                <img src="/assets/6-B9ak3gjU.jpg" alt="Acne Scar Patient 5 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -547,12 +522,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/4-D8DQfjAF.jpg" alt="Melasma Treatment Patient 1 Before" draggable="false">
+                                <img src="/assets/4-BF_3-ROd.jpg" alt="Melasma Treatment Patient 1 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/5-DVKP3bhU.jpg" alt="Melasma Treatment Patient 1 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Epidermal Clearance</span>
+                                <img src="/assets/5-C1sLl8r8.jpg" alt="Melasma Treatment Patient 1 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -562,12 +537,12 @@
                     <div class="ba-clinical-card animate-fade-up" style="transition-delay: 0.1s;">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/31-m20g9qJp.jpg" alt="Dermal Pigmentation Before" draggable="false">
+                                <img src="/assets/31-CQW0UU3t.jpg" alt="Dermal Pigmentation Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/32-BL1NHiWs.jpg" alt="Dermal Pigmentation After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clearance</span>
+                                <img src="/assets/32-CWcN-FET.jpg" alt="Dermal Pigmentation After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -577,12 +552,12 @@
                     <div class="ba-clinical-card animate-fade-up" style="transition-delay: 0.2s;">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/6%20(1)-CR4w7IGK.jpg" alt="Pigmentation Patient 3 Before" draggable="false">
+                                <img src="/assets/6%20(1)-BwGxuRVt.jpg" alt="Pigmentation Patient 3 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/11%20(7)-CEIriT06.jpg" alt="Pigmentation Patient 3 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Uniform Tone</span>
+                                <img src="/assets/11%20(7)-CDF3NiAH.jpg" alt="Pigmentation Patient 3 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -605,12 +580,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/16%20(1)-DJLbC43i.jpg" alt="Hair Restoration Before" draggable="false">
+                                <img src="/assets/16%20(1)-C6aIUUIq.jpg" alt="Hair Restoration Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/17-v8kEyjYn.jpg" alt="Hair Restoration After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Total Regrowth</span>
+                                <img src="/assets/17-BPIBw6_r.jpg" alt="Hair Restoration After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -620,12 +595,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/18-D9BQGrua.jpg" alt="Hair Restoration Patient 2 Before" draggable="false">
+                                <img src="/assets/18-mT3qK2wY.jpg" alt="Hair Restoration Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/19-BjjmwOUa.jpg" alt="Hair Restoration Patient 2 After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Improved Density</span>
+                                <img src="/assets/19-BLXv6jPV.jpg" alt="Hair Restoration Patient 2 After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -649,12 +624,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/10%20(5)-CZBrqunE.jpg" alt="Laser Hair Removal Before" draggable="false">
+                                <img src="/assets/10%20(5)-i8Y07Lwr.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/sd%20(1)-CjDGVef5.jpg" alt="Laser Hair Removal After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clinical Outcome</span>
+                                <img src="/assets/sd%20(1)-DSkhzrW3.jpg" alt="Laser Hair Removal After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -663,12 +638,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/11%20(8)-BbBJoAaN.jpg" alt="Laser Hair Removal Before" draggable="false">
+                                <img src="/assets/11%20(8)-DSbcktYn.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/Minimalist%20Before%20After%20Salon%20_%20Makeup%20Instagram%20Post-C79TjurA.jpg" alt="Laser Hair Removal After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clinical Clearance</span>
+                                <img src="/assets/Minimalist%20Before%20After%20Salon%20_%20Makeup%20Instagram%20Post-DtfOLVbI.jpg" alt="Laser Hair Removal After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -677,12 +652,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/24-DHwporLK.jpg" alt="Laser Hair Removal Before" draggable="false">
+                                <img src="/assets/24-CicQSz7h.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/25-DNEWVAAq.jpg" alt="Laser Hair Removal After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clinical Result</span>
+                                <img src="/assets/25-tVPjn2u0.jpg" alt="Laser Hair Removal After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -705,12 +680,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/34-BizcK6_5.jpg" alt="Mole Removal Before" draggable="false">
+                                <img src="/assets/34-C3v_xEBw.jpg" alt="Mole Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/35-BMYCkvqN.jpg" alt="Mole Removal After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Healed Skin</span>
+                                <img src="/assets/35-BGOsJb__.jpg" alt="Mole Removal After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -718,12 +693,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/30-OnSR_SH-.jpg" alt="Mole Treatment Before" draggable="false">
+                                <img src="/assets/30-9jKSkocs.jpg" alt="Mole Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/31%20(1)-Bo7zlKaz.jpg" alt="Mole Treatment After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Total Recovery</span>
+                                <img src="/assets/31%20(1)-CctsIhpf.jpg" alt="Mole Treatment After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -732,12 +707,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/36-Byx55kg5.jpg" alt="Complex Mole Treatment Before" draggable="false">
+                                <img src="/assets/36-D-U_isiN.jpg" alt="Complex Mole Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/37%20(1)-DlXdWIDH.jpg" alt="Complex Mole Treatment After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Clinical Success</span>
+                                <img src="/assets/37%20(1)-ujL6c_pI.jpg" alt="Complex Mole Treatment After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -758,12 +733,12 @@
                     <div class="ba-clinical-card animate-fade-up">
                         <div class="ba-slider-container" data-slider>
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/37-ByI4dmGc.jpg" alt="Keloid Treatment Before" draggable="false">
+                                <img src="/assets/37-Czd0Kvqx.jpg" alt="Keloid Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/38-D_Rx899o.jpg" alt="Keloid Treatment After" draggable="false">
-                                <span class="ba-tag ba-tag-after">Flattened & Clear</span>
+                                <img src="/assets/38-25XVUma7.jpg" alt="Keloid Treatment After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
                             </div>
                             <div class="ba-slider-handle"></div>
                         </div>
@@ -892,99 +867,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </a>
     </div>
-
-    <script src="scripts/main.js"></script>
-    <script>
-        // Professional Before/After Slider Logic
-        function initBASliders() {
-            const sliders = document.querySelectorAll('[data-slider]');
-            
-            sliders.forEach(slider => {
-                const before = slider.querySelector('.ba-slider-before');
-                const handle = slider.querySelector('.ba-slider-handle');
-                let isActive = false;
-                let autoScanActive = true;
-                let autoScanPos = 50;
-                let autoScanDirection = 0.35; // Speed of auto-scan
-
-                const updateSlider = (percent) => {
-                    percent = Math.max(0, Math.min(100, percent));
-                    before.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-                    handle.style.left = `${percent}%`;
-                };
-
-                // Auto-Scan Animation
-                const animate = () => {
-                    if (autoScanActive) {
-                        autoScanPos += autoScanDirection;
-                        if (autoScanPos > 90 || autoScanPos < 10) {
-                            autoScanDirection *= -1;
-                        }
-                        updateSlider(autoScanPos);
-                        requestAnimationFrame(animate);
-                    }
-                };
-
-                // Initialize Animation
-                requestAnimationFrame(animate);
-
-                const stopAutoScan = () => {
-                    autoScanActive = false;
-                };
-
-                const handleMove = (e) => {
-                    if (!isActive && e.type !== 'mousemove' && e.type !== 'touchmove') return;
-                    
-                    const rect = slider.getBoundingClientRect();
-                    const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-                    
-                    if (clientX === undefined) return;
-                    
-                    const x = clientX - rect.left;
-                    const percent = (x / rect.width) * 100;
-                    
-                    updateSlider(percent);
-                    stopAutoScan();
-                };
-
-                // Mouse Events
-                slider.addEventListener('mousedown', (e) => {
-                    e.preventDefault(); // Prevent default image drag
-                    isActive = true;
-                    handleMove(e);
-                });
-                
-                window.addEventListener('mouseup', () => {
-                    isActive = false;
-                });
-                
-                slider.addEventListener('mousemove', (e) => {
-                    if(isActive) handleMove(e);
-                });
-                
-                // Touch Events
-                slider.addEventListener('touchstart', (e) => {
-                    e.preventDefault(); // Prevent scroll/selection
-                    isActive = true;
-                    stopAutoScan();
-                    handleMove(e);
-                }, {passive: false});
-                
-                window.addEventListener('touchend', () => {
-                    isActive = false;
-                });
-                
-                slider.addEventListener('touchmove', (e) => {
-                    if(isActive) handleMove(e);
-                }, {passive: false});
-
-                // Hover to stop auto-scan
-                slider.addEventListener('mouseenter', stopAutoScan);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', initBASliders);
-    </script>
+
+        <!-- Before/After slider JS removed — using static side-by-side layout -->
 </body>
 
 </html>
