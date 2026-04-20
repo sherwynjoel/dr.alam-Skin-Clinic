@@ -16,23 +16,22 @@
 
         .services-hero {
             padding: 240px 0 160px;
-            background: linear-gradient(rgba(4, 18, 31, 0.95), rgba(4, 18, 31, 0.92)), 
+            background: linear-gradient(to bottom, rgba(6, 29, 48, 0.98), rgba(6, 29, 48, 0.95)), 
                         url('/assets/Screenshot%202026-04-13%20132535-BRVLKiiM.png') center/cover fixed;
             text-align: center;
             color: white;
-            background-size: cover;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(3rem, 8vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 2rem;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
             font-weight: 800;
+            letter-spacing: -1px;
         }
-
         .services-container {
             background: #fff;
             position: relative;
@@ -56,11 +55,12 @@
         .service-hub-card {
             background: white;
             padding: 4rem 2.5rem;
-            border-radius: 4px;
+            border-radius: 20px 80px 20px 20px; /* Signature Executive Arch */
             box-shadow: 0 40px 100px rgba(0,0,0,0.06);
             transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
             position: relative;
-            border: 1px solid rgba(184, 151, 62, 0.1);
+            border: 1px solid rgba(184, 151, 62, 0.15);
+            overflow: hidden;
         }
 
         .service-hub-card:hover {
@@ -92,7 +92,7 @@
             background: #fff;
         }
         .info-strip:nth-child(odd) {
-            background: #fdfaf3;
+            background: #ffffff;
         }
 
         .info-grid {
@@ -108,12 +108,17 @@
 
         .info-image-wrapper {
             position: relative;
+            border-radius: 40px 160px 40px 40px; /* Signature Executive Arch */
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            background: white;
         }
 
         .info-image-wrapper img {
             width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            display: block;
+            object-fit: cover;
         }
 
         .experience-tag {
@@ -127,10 +132,10 @@
         }
 
         .info-content h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 2rem;
-            color: var(--color-primary-dark);
-            font-family: var(--font-secondary);
+            color: #061D30;
+            font-weight: 800;
         }
 
         .info-list {
@@ -156,7 +161,7 @@
 
         .pillars-section {
             padding: 120px 0;
-            background: var(--color-primary-dark);
+            background: #061D30;
             color: white;
             text-align: center;
         }
@@ -192,19 +197,239 @@
         }
 
         @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; margin-top: -60px; }
-            .info-grid { grid-template-columns: 1fr !important; gap: 3rem; }
+            .info-strip { padding: 60px 0; }
+            .info-grid { 
+                display: flex !important;
+                flex-direction: column; 
+                gap: 2rem; 
+            }
+            .info-strip:nth-child(even) .info-grid {
+                flex-direction: column-reverse; 
+            }
             .pillar-grid { grid-template-columns: 1fr; }
-            .info-content h2 { font-size: 2.25rem; }
+            .info-content h2 { font-size: 2.25rem; margin-bottom: 1.5rem; }
             .hero-title { font-size: 2.8rem; }
         }
     </style>
-  <script type="module" crossorigin src="/assets/services-CM9d_TmT.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
+  <script type="module" crossorigin src="/assets/services-CoqXn0VQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DNa0xiyN.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
 </head>
 
 <body>
+    <!-- 0. REDESIGNED LUXURY PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                </div>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+        <style>
+            #preloader {
+                position: fixed;
+                inset: 0;
+                background: #061d30;
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+                color: #fff;
+            }
+            
+            body.loaded #preloader {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .preloader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .preloader-logo-wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .preloader-logo {
+                width: 70px;
+                height: auto;
+                position: relative;
+                z-index: 2;
+                animation: logo-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 20px rgba(184, 151, 62, 0.4));
+            }
+
+            .preloader-rings {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            .ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 1px solid transparent;
+            }
+
+            .ring-1 {
+                border-top-color: var(--color-accent);
+                animation: spin 3s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            .ring-2 {
+                inset: 15px;
+                border-bottom-color: var(--color-champagne);
+                animation: spin 5s linear infinite reverse;
+                opacity: 0.6;
+            }
+
+            .ring-3 {
+                inset: -20px;
+                border: 1px solid rgba(184, 151, 62, 0.08);
+                animation: pulse-ring 4s ease-out infinite;
+            }
+
+            .preloader-brand {
+                display: flex;
+                gap: 4px;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .brand-letter, .brand-dot, .brand-space {
+                opacity: 0;
+                transform: translateY(15px);
+                animation: letter-reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            }
+
+            .preloader-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.7em;
+                color: var(--color-accent);
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity: 0;
+                animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+            }
+
+            .preloader-progress-container {
+                width: 200px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                margin-top: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fade-in 0.6s ease 1s forwards;
+            }
+
+            .preloader-progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+                transform: translateX(-100%);
+                animation: progress-move 2.5s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            @keyframes logo-float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            @keyframes pulse-ring {
+                0% { transform: scale(0.9); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: scale(1.4); opacity: 0; }
+            }
+
+            @keyframes letter-reveal {
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(15px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in {
+                to { opacity: 1; }
+            }
+
+            @keyframes progress-move {
+                0% { transform: translateX(-100%); }
+                50% { transform: translateX(0); }
+                100% { transform: translateX(100%); }
+            }
+
+            /* Staggered letter animations */
+            .brand-letter:nth-child(1) { animation-delay: 0.2s; }
+            .brand-letter:nth-child(2) { animation-delay: 0.25s; }
+            .brand-dot { animation-delay: 0.3s; }
+            .brand-space { animation-delay: 0.35s; }
+            .brand-letter:nth-child(5) { animation-delay: 0.35s; }
+            .brand-letter:nth-child(6) { animation-delay: 0.4s; }
+            .brand-letter:nth-child(7) { animation-delay: 0.45s; }
+            .brand-letter:nth-child(8) { animation-delay: 0.5s; }
+            .brand-letter:nth-child(9) { animation-delay: 0.55s; }
+            .brand-letter:nth-child(10) { animation-delay: 0.6s; }
+        </style>
+        <script>
+            // Emergency Safety Net: Force hide preloader if main script fails or takes too long
+            setTimeout(function() {
+                var p = document.getElementById('preloader');
+                if (p && !document.body.classList.contains('loaded')) {
+                    p.style.opacity = '0';
+                    setTimeout(function() { 
+                        p.style.display = 'none'; 
+                        document.body.classList.add('loaded'); 
+                    }, 800);
+                }
+            }, 5000);
+        </script>
+    </div>
+
     <div id="page-progress" class="page-progress-bar"></div>
 
     <header class="header">
@@ -239,37 +464,73 @@
             </div>
         </section>
 
-        <!-- 2. QUICK LINKS DASHBOARD -->
-        <section class="hub-section">
-            <div class="container">
-                <div class="services-grid">
-                    <div class="service-hub-card animate-fade-up">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.88 5.88l12.24 12.24M5.88 18.12L18.12 5.88"/></svg>
-                        </div>
-                        <h3>Clinical & Aesthetics</h3>
-                        <p>Specialized treatments for Acne, Scars, and Pigmentation.</p>
-                        <a href="#acne" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.1s;">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21s-2-2.9-2-8.7A8.3 8.3 0 0 0 10.7 4c-4.4 0-8.3 3.6-7.7 8C4 18.5 2 21 2 21"/></svg>
-                        </div>
-                        <h3>Hair & Laser Restoration</h3>
-                        <p>Medical-grade hair restoration and permanent hair reduction.</p>
-                        <a href="#hair" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                    <div class="service-hub-card animate-fade-up" style="transition-delay: 0.2s;">
-                        <div class="hub-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/></svg>
-                        </div>
-                        <h3>Medical Procedures</h3>
-                        <p>Advanced Dermatosurgery and clinical dermatology protocols.</p>
-                        <a href="#surgery" class="hub-link" style="font-weight: 800; color: var(--color-accent); text-decoration: none;">Explore Sections ↓</a>
-                    </div>
-                </div>
+
+
+        <!-- 2. SPECIALTY NAVIGATOR (NEW) -->
+        <nav class="specialty-nav animate-fade-up">
+            <div class="container nav-scroll-wrapper">
+                <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
+                <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
+                <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
+                <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
+                <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
+                <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
             </div>
-        </section>
+        </nav>
+
+        <style>
+            .specialty-nav {
+                background: white;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                position: sticky;
+                top: 80px; 
+                z-index: 100;
+                padding: 1rem 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            }
+            .nav-scroll-wrapper {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+            }
+            .spec-link {
+                text-decoration: none;
+                color: #061D30;
+                font-weight: 700;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 0.8rem 1.2rem;
+                border-radius: 8px;
+                border: 1px solid transparent;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .spec-link:hover {
+                background: rgba(6, 29, 48, 0.05);
+                color: var(--color-accent);
+            }
+
+            @media (max-width: 992px) {
+                .specialty-nav { top: 70px; padding: 1.5rem 0; }
+                .nav-scroll-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.8rem;
+                    padding: 0 1.5rem;
+                }
+                .spec-link {
+                    background: #f8f9fa;
+                    border: 1px solid rgba(0,0,0,0.05);
+                    text-align: center;
+                    font-size: 0.72rem;
+                    padding: 1rem 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1.2;
+                }
+            }
+        </style>
 
         <!-- 3. DETAILED CONTENT STRIPS (ALL 6 SERVICES) -->
         
@@ -277,7 +538,7 @@
         <section id="acne" class="info-strip">
             <div class="container info-grid">
                 <div class="info-image-wrapper animate-fade-left">
-                    <img src="/assets/acne-treatment-BD2Mf4pq.jpg" alt="Advanced Acne Treatment">
+                    <img src="/assets/Screenshot%202026-04-20%20014526-D9mbYeKp.png" alt="Advanced Acne & Scar Treatment Result" style="transform: scale(1.15); transform-origin: center 60%;">
                 </div>
                 <div class="info-content animate-fade-right">
                     <span class="experience-tag">Acne & Acne Scars</span>
@@ -438,7 +699,6 @@
                 <p class="mb-xl">The best treatment is the one that's right for your specific condition. Join hundreds of patients who found clinical clarity at our clinic.</p>
                 <div class="btn-group" style="justify-content: center;">
                     <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 4rem;">Book My Consultation</a>
-                    <a href="https://wa.me/9345410038" class="btn btn-outline-primary" style="padding: 1.5rem 3rem;">Inquire on WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -485,7 +745,47 @@
             </div>
         </div>
     </footer>
-
+
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+    <!-- Magnetic Contact Dock (Mobile Only) -->
+    <div class="contact-dock">
+        <div class="dock-bar">
+            <span class="dock-label">Expert Care</span>
+            <div class="dock-items">
+                <a href="tel:09345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span class="dock-item-label">Phone</span>
+                </a>
+                <a href="https://wa.me/9345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
+                    </div>
+                    <span class="dock-item-label">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="dock-item dock-item-cta">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span class="dock-item-label">Book Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

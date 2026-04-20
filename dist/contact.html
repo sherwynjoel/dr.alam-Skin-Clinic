@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Book Consultation | Contact Dr. Alam's Skin Clinic Erode</title>
     <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
-    <meta name="description" content="Book your appointment at Dr. Alam's Skin Clinic for specialized acne, hair loss, laser, and skin surgery treatments. Contact us via Phone, WhatsApp, or our online form.">
-    
-    
+    <meta name="description"
+        content="Book your appointment at Dr. Alam's Skin Clinic for specialized acne, hair loss, laser, and skin surgery treatments. Contact us via Phone, WhatsApp, or our online form.">
+
+
     <style>
         .contact-hero {
             padding: 220px 0 140px;
-            background: linear-gradient(rgba(4, 18, 31, 0.94), rgba(4, 18, 31, 0.88)), 
-                        url('/assets/hero-slide-1-UpCBQbx3.jpg') center/cover;
+            background: linear-gradient(rgba(4, 18, 31, 0.94), rgba(4, 18, 31, 0.88)),
+                url('/assets/hero-slide-1-UpCBQbx3.jpg') center/cover;
             text-align: center;
             color: white;
             position: relative;
@@ -41,7 +42,7 @@
             background: white;
             padding: 4rem;
             border-radius: 4px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(184, 151, 62, 0.1);
         }
 
@@ -81,8 +82,9 @@
             font-size: 0.8rem;
         }
 
-        .detail-content p, .detail-content a {
-            color: rgba(255,255,255,0.8);
+        .detail-content p,
+        .detail-content a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: 1.1rem;
             line-height: 1.6;
@@ -99,7 +101,7 @@
             height: 500px;
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             margin: 3rem 0;
         }
 
@@ -109,14 +111,14 @@
             gap: 1rem;
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hours-row {
             display: flex;
             justify-content: space-between;
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .hours-row.active {
@@ -125,8 +127,15 @@
         }
 
         @media (max-width: 1024px) {
-            .contact-grid-wrapper { grid-template-columns: 1fr; gap: 3rem; }
-            .form-card, .info-card-luxury { padding: 2.5rem; }
+            .contact-grid-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-card,
+            .info-card-luxury {
+                padding: 2.5rem;
+            }
         }
 
         /* Mobile Optimization Fixes */
@@ -134,44 +143,339 @@
             .contact-hero {
                 padding: 120px 0 60px;
             }
+
             .contact-hero h1 {
                 font-size: 2.2rem;
             }
+
             .contact-content {
                 padding: 60px 0;
             }
+
             .appointment-container {
                 padding: 2.5rem 1.5rem !important;
                 border-radius: 12px !important;
             }
+
             .info-card-luxury {
                 padding: 2.5rem 1.5rem !important;
                 text-align: left;
             }
+
             .info-card-luxury h2 {
                 font-size: 1.5rem;
             }
+
             .luxury-form .grid {
                 gap: 1.5rem !important;
             }
+
             .grid-3-mobile-stack {
                 grid-template-columns: 1fr !important;
             }
+
             .map-section {
                 padding: 60px 0;
             }
+
             .map-container {
                 height: 350px;
                 margin: 2rem 0;
             }
         }
     </style>
-  <script type="module" crossorigin src="/assets/contact-ebaki5aX.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
+  <script type="module" crossorigin src="/assets/contact-D-72kDUK.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DNa0xiyN.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
 </head>
 
 <body>
+    <!-- 0. REDESIGNED LUXURY PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                </div>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+        <style>
+            #preloader {
+                position: fixed;
+                inset: 0;
+                background: #061d30;
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+                color: #fff;
+            }
+
+            body.loaded #preloader {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .preloader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .preloader-logo-wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .preloader-logo {
+                width: 70px;
+                height: auto;
+                position: relative;
+                z-index: 2;
+                animation: logo-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 20px rgba(184, 151, 62, 0.4));
+            }
+
+            .preloader-rings {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            .ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 1px solid transparent;
+            }
+
+            .ring-1 {
+                border-top-color: var(--color-accent);
+                animation: spin 3s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            .ring-2 {
+                inset: 15px;
+                border-bottom-color: var(--color-champagne);
+                animation: spin 5s linear infinite reverse;
+                opacity: 0.6;
+            }
+
+            .ring-3 {
+                inset: -20px;
+                border: 1px solid rgba(184, 151, 62, 0.08);
+                animation: pulse-ring 4s ease-out infinite;
+            }
+
+            .preloader-brand {
+                display: flex;
+                gap: 4px;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .brand-letter,
+            .brand-dot,
+            .brand-space {
+                opacity: 0;
+                transform: translateY(15px);
+                animation: letter-reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            }
+
+            .preloader-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.7em;
+                color: var(--color-accent);
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity: 0;
+                animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+            }
+
+            .preloader-progress-container {
+                width: 200px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                margin-top: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fade-in 0.6s ease 1s forwards;
+            }
+
+            .preloader-progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+                transform: translateX(-100%);
+                animation: progress-move 2.5s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes logo-float {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            @keyframes pulse-ring {
+                0% {
+                    transform: scale(0.9);
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 0.3;
+                }
+
+                100% {
+                    transform: scale(1.4);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes letter-reveal {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fade-in-up {
+                from {
+                    opacity: 0;
+                    transform: translateY(15px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fade-in {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes progress-move {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                50% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+
+            /* Staggered letter animations */
+            .brand-letter:nth-child(1) {
+                animation-delay: 0.2s;
+            }
+
+            .brand-letter:nth-child(2) {
+                animation-delay: 0.25s;
+            }
+
+            .brand-dot {
+                animation-delay: 0.3s;
+            }
+
+            .brand-space {
+                animation-delay: 0.35s;
+            }
+
+            .brand-letter:nth-child(5) {
+                animation-delay: 0.35s;
+            }
+
+            .brand-letter:nth-child(6) {
+                animation-delay: 0.4s;
+            }
+
+            .brand-letter:nth-child(7) {
+                animation-delay: 0.45s;
+            }
+
+            .brand-letter:nth-child(8) {
+                animation-delay: 0.5s;
+            }
+
+            .brand-letter:nth-child(9) {
+                animation-delay: 0.55s;
+            }
+
+            .brand-letter:nth-child(10) {
+                animation-delay: 0.6s;
+            }
+        </style>
+        <script>
+            // Emergency Safety Net: Force hide preloader if main script fails or takes too long
+            setTimeout(function () {
+                var p = document.getElementById('preloader');
+                if (p && !document.body.classList.contains('loaded')) {
+                    p.style.opacity = '0';
+                    setTimeout(function () {
+                        p.style.display = 'none';
+                        document.body.classList.add('loaded');
+                    }, 800);
+                }
+            }, 5000);
+        </script>
+    </div>
+
     <div id="page-progress" class="page-progress-bar"></div>
 
     <header class="header">
@@ -202,7 +506,9 @@
             <div class="container animate-fade-up">
                 <span class="eyebrow" style="color: var(--color-accent); letter-spacing: 5px;">Join the Journey</span>
                 <h1>Book Your Consultation</h1>
-                <p class="subheading" style="color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 2.5rem;">Expert medical diagnosis for acne, pigmentation, hair loss, laser treatments and surgical dermatology.</p>
+                <p class="subheading" style="color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 2.5rem;">
+                    Expert medical diagnosis for acne, pigmentation, hair loss, laser treatments and surgical
+                    dermatology.</p>
                 <div class="btn-group" style="justify-content: center;">
                     <a href="tel:09345410038" class="btn btn-primary">Call Clinic</a>
                     <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
@@ -214,42 +520,146 @@
         <!-- 2. MAIN CONTACT SECTION -->
         <section class="contact-content">
             <div class="container contact-grid-wrapper">
-                
+
                 <!-- Luxury Transformation Booking Form -->
-                <div class="appointment-container animate-fade-up" style="background: #04121f; padding: 4rem; border-radius: 20px; box-shadow: var(--shadow-xl); position: relative; overflow: hidden; border: 1px solid rgba(184, 151, 62, 0.2);">
-                    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(184, 151, 62, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-                    
-                    <div class="text-center mb-xl">
-                        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: 2px; color: #fff; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1.2;">Begin Your <span style="color: var(--color-accent);">Transformation</span></h2>
-                        <p style="font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">Schedule a private consultation with our medical team. Your journey toward refined confidence begins here.</p>
+                <div class="appointment-container animate-fade-up"
+                    style="background: #04121f; padding: 4rem; border-radius: 20px; box-shadow: var(--shadow-xl); position: relative; overflow: hidden; border: 1px solid rgba(184, 151, 62, 0.2);">
+                    <div
+                        style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(184, 151, 62, 0.1) 0%, transparent 70%); border-radius: 50%;">
                     </div>
 
-                    <form id="booking-form" class="luxury-form" action="send-appointment.php" method="POST">
+                    <div class="text-center mb-xl">
+                        <h2
+                            style="font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: 2px; color: #fff; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1.2;">
+                            Begin Your <span style="color: var(--color-accent);">Transformation</span></h2>
+                        <p
+                            style="font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                            Schedule a private consultation with our medical team. Your journey toward refined
+                            confidence begins here.</p>
+                    </div>
+
+                    <form id="booking-form" class="luxury-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
 
                         <style>
-                            .luxury-form { color: #fff; }
-                            .luxury-form label { display: block; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; font-weight: 700; }
-                            .luxury-form .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; width: 100%; transition: all 0.3s ease; color-scheme: dark; }
-                            .luxury-form .form-control:focus { background: rgba(255,255,255,0.08); border-color: var(--color-accent); outline: none; box-shadow: 0 0 15px rgba(184, 151, 62, 0.2); }
-                            .luxury-form .grid { gap: 2rem; margin-bottom: 2rem; }
-                            .btn-make-appointment { background: #e91e63; color: #fff; border: none; padding: 1.25rem; width: 100%; border-radius: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3); }
-                            .btn-make-appointment:hover { background: #d81b60; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233, 30, 99, 0.4); }
-                            select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1.5rem center; background-size: 1.2rem; }
-                            .input-icon-wrap { position: relative; }
-                            .field-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--color-accent); pointer-events: none; z-index: 1; }
-                            .dropdown-arrow { position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: rgba(255,255,255,0.5); pointer-events: none; z-index: 1; }
-                            .form-control.with-icon { padding-left: 3rem; padding-right: 3rem; appearance: none; }
-                            .luxury-form select option { background: #0d2235; color: #fff; }
+                            .luxury-form {
+                                color: #fff;
+                            }
+
+                            .luxury-form label {
+                                display: block;
+                                font-size: 0.75rem;
+                                letter-spacing: 2px;
+                                text-transform: uppercase;
+                                color: rgba(255, 255, 255, 0.6);
+                                margin-bottom: 0.75rem;
+                                font-weight: 700;
+                            }
+
+                            .luxury-form .form-control {
+                                background: rgba(255, 255, 255, 0.05);
+                                border: 1px solid rgba(255, 255, 255, 0.1);
+                                color: #fff;
+                                padding: 1rem 1.5rem;
+                                border-radius: 8px;
+                                font-family: var(--font-body);
+                                font-size: 1rem;
+                                width: 100%;
+                                transition: all 0.3s ease;
+                                color-scheme: dark;
+                            }
+
+                            .luxury-form .form-control:focus {
+                                background: rgba(255, 255, 255, 0.08);
+                                border-color: var(--color-accent);
+                                outline: none;
+                                box-shadow: 0 0 15px rgba(184, 151, 62, 0.2);
+                            }
+
+                            .luxury-form .grid {
+                                gap: 2rem;
+                                margin-bottom: 2rem;
+                            }
+
+                            .btn-make-appointment {
+                                background: #e91e63;
+                                color: #fff;
+                                border: none;
+                                padding: 1.25rem;
+                                width: 100%;
+                                border-radius: 8px;
+                                font-weight: 800;
+                                text-transform: uppercase;
+                                letter-spacing: 2px;
+                                font-size: 0.9rem;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3);
+                            }
+
+                            .btn-make-appointment:hover {
+                                background: #d81b60;
+                                transform: translateY(-2px);
+                                box-shadow: 0 8px 30px rgba(233, 30, 99, 0.4);
+                            }
+
+                            select.form-control {
+                                appearance: none;
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+                                background-repeat: no-repeat;
+                                background-position: right 1.5rem center;
+                                background-size: 1.2rem;
+                            }
+
+                            .input-icon-wrap {
+                                position: relative;
+                            }
+
+                            .field-icon {
+                                position: absolute;
+                                left: 1.1rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 18px;
+                                height: 18px;
+                                color: var(--color-accent);
+                                pointer-events: none;
+                                z-index: 1;
+                            }
+
+                            .dropdown-arrow {
+                                position: absolute;
+                                right: 1.1rem;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 16px;
+                                height: 16px;
+                                color: rgba(255, 255, 255, 0.5);
+                                pointer-events: none;
+                                z-index: 1;
+                            }
+
+                            .form-control.with-icon {
+                                padding-left: 3rem;
+                                padding-right: 3rem;
+                                appearance: none;
+                            }
+
+                            .luxury-form select option {
+                                background: #0d2235;
+                                color: #fff;
+                            }
                         </style>
 
                         <div class="grid grid-2">
                             <div class="form-group">
                                 <label>Your Name *</label>
-                                <input type="text" name="Full Name" class="form-control" placeholder="Enter Full Name" required>
+                                <input type="text" name="Full_Name" class="form-control" placeholder="Enter Full Name"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label>Your Phone</label>
-                                <input type="tel" name="Phone Number" class="form-control" placeholder="Mobile Number" required>
+                                <input type="tel" name="Phone_Number" class="form-control" placeholder="Mobile Number"
+                                    required>
                             </div>
                         </div>
 
@@ -257,8 +667,9 @@
                             <div class="form-group">
                                 <label>Service</label>
                                 <div class="input-icon-wrap">
-                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                                     </svg>
                                     <select name="Service" class="form-control with-icon">
                                         <option>Select Service</option>
@@ -267,25 +678,28 @@
                                         <option>Pigmentation</option>
                                         <option>Laser Hair Removal</option>
                                     </select>
-                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"/>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9" />
                                     </svg>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Doctor</label>
                                 <div class="input-icon-wrap">
-                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                        <circle cx="12" cy="7" r="4"/>
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
                                     </svg>
                                     <select name="Doctor" class="form-control with-icon">
                                         <option>Select Doctor</option>
                                         <option>Dr. Alam</option>
                                         <option>Medical Specialist</option>
                                     </select>
-                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"/>
+                                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9" />
                                     </svg>
                                 </div>
                             </div>
@@ -294,11 +708,13 @@
                         <div class="grid grid-2" style="grid-template-columns: 1fr 1fr;">
                             <div class="form-group">
                                 <label>Preferred Date</label>
-                                <input type="date" name="Preferred Date" class="form-control" required onkeydown="return false" onclick="this.showPicker()">
+                                <input type="date" name="Preferred_Date" class="form-control" required
+                                    onkeydown="return false" onclick="this.showPicker()">
                             </div>
                             <div class="form-group">
                                 <label>Preferred Time</label>
-                                <input type="time" name="Preferred Time" class="form-control" required onkeydown="return false" onclick="this.showPicker()">
+                                <input type="time" name="Preferred_Time" class="form-control" required
+                                    onkeydown="return false" onclick="this.showPicker()">
                             </div>
                         </div>
 
@@ -310,10 +726,13 @@
                 <div class="info-card-luxury animate-fade-right">
                     <h2>Clinic Contact Information</h2>
                     <div class="gold-divider" style="margin-bottom: 3rem;"></div>
-                    
+
                     <div class="contact-detail-item">
                         <div class="detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
                         </div>
                         <div class="detail-content">
                             <h4>Address</h4>
@@ -323,7 +742,10 @@
 
                     <div class="contact-detail-item">
                         <div class="detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.81 12.81 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.81 12.81 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
                         </div>
                         <div class="detail-content">
                             <h4>Phone & WhatsApp</h4>
@@ -334,7 +756,10 @@
 
                     <div class="contact-detail-item">
                         <div class="detail-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
                         </div>
                         <div class="detail-content">
                             <h4>Electronic Mail</h4>
@@ -368,17 +793,19 @@
                 <span class="eyebrow">Visit Us Locally</span>
                 <h2>Clinic Location</h2>
                 <div class="gold-divider" style="margin-left:auto; margin-right:auto;"></div>
-                <p>Our clinic is located centrally in Erode. You can find the exact location on Google Maps below and get turn-by-turn directions.</p>
-                
+                <p>Our clinic is located centrally in Erode. You can find the exact location on Google Maps below and
+                    get turn-by-turn directions.</p>
+
                 <div class="map-container">
                     <!-- Standard Google Maps Placeholder Embed -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8546535260187!2d77.7051493!3d11.34541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDIwJzQzLjUiTiA3N8KwNDInMTguNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8546535260187!2d77.7051493!3d11.34541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDIwJzQzLjUiTiA3N8KwNDInMTguNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
 
-                <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="btn btn-primary" style="padding: 1.5rem 5rem;">Get Directions on Google Maps</a>
+                <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="btn btn-primary"
+                    style="padding: 1.5rem 5rem;">Get Directions on Google Maps</a>
             </div>
         </section>
 
@@ -396,7 +823,8 @@
                             <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
                         </div>
                     </a>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin
+                        Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
                 </div>
                 <div>
                     <h3>Services</h3>
@@ -417,11 +845,14 @@
                 </div>
                 <div>
                     <h3>Location</h3>
-                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu,
+                        Erode,<br>Tamil Nadu, India</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
+                <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a
+                        href="https://thearktech.in/" target="_blank"
+                        style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
             </div>
         </div>
     </footer>
@@ -453,6 +884,160 @@
             window.history.replaceState({}, '', window.location.pathname);
         })();
     </script>
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+    <!-- Magnetic Contact Dock (Mobile Only) -->
+    <div class="contact-dock">
+        <div class="dock-bar">
+            <span class="dock-label">Expert Care</span>
+            <div class="dock-items">
+                <a href="tel:09345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="dock-item-label">Phone</span>
+                </a>
+                <a href="https://wa.me/9345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 448 512" fill="currentColor"
+                            style="width: 18px; height: 18px; color: #25D366;">
+                            <path
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                    </div>
+                    <span class="dock-item-label">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="dock-item dock-item-cta">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <span class="dock-item-label">Book Now</span>
+                </a>
+            </div>
+        </div>
+    <!-- Luxury Booking Success Modal -->
+    <div id="booking-success-modal" class="booking-modal">
+        <div class="modal-content animate-fade-up">
+            <div class="modal-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h2>Appointment Prepared!</h2>
+            <p>Your clinical request is ready. Choose your preferred way to transmit it to our booking team:</p>
+            
+            <div class="modal-actions">
+                <a href="#" id="modal-whatsapp-btn" class="modal-btn whatsapp-btn" target="_blank">
+                    <span class="icon">💬</span> Send via WhatsApp
+                </a>
+                <a href="#" id="modal-email-btn" class="modal-btn email-btn">
+                    <span class="icon">✉️</span> Send via Email
+                </a>
+            </div>
+            
+            <button class="modal-close" onclick="document.getElementById('booking-success-modal').classList.remove('active')">Back to Edit</button>
+        </div>
+        
+        <style>
+            .booking-modal {
+                position: fixed;
+                inset: 0;
+                background: rgba(4, 18, 31, 0.95);
+                backdrop-filter: blur(10px);
+                z-index: 100000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            }
+            .booking-modal.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .booking-modal .modal-content {
+                background: linear-gradient(135deg, #061d30 0%, #0a3d62 100%);
+                padding: 4rem 3rem;
+                border-radius: 20px;
+                max-width: 500px;
+                width: 90%;
+                text-align: center;
+                border: 1px solid rgba(184, 151, 62, 0.1);
+                box-shadow: 0 50px 100px rgba(0,0,0,0.4);
+            }
+            .modal-icon-wrap {
+                width: 70px;
+                height: 70px;
+                background: var(--color-accent);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 2rem;
+                color: #fff;
+            }
+            .modal-icon-wrap svg { width: 32px; height: 32px; }
+            .booking-modal h2 { color: #fff; margin-bottom: 1rem; font-family: var(--font-serif); font-size: 2rem; }
+            .booking-modal p { color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; line-height: 1.6; }
+            .modal-actions { display: flex; flex-direction: column; gap: 1rem; }
+            .modal-btn {
+                padding: 1.25rem;
+                border-radius: 12px;
+                text-decoration: none;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+            }
+            .whatsapp-btn { background: #25D366; color: #fff; }
+            .whatsapp-btn:hover { background: #128C7E; transform: scale(1.02); }
+            .email-btn { background: #fff; color: #061d30; }
+            .email-btn:hover { background: var(--color-accent); color: #fff; transform: scale(1.02); }
+            .modal-close {
+                background: transparent;
+                border: none;
+                color: rgba(255,255,255,0.4);
+                margin-top: 2rem;
+                cursor: pointer;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-decoration: underline;
+            }
+        </style>
+    </div>
 </body>
 
 </html>

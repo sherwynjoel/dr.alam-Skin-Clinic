@@ -8,51 +8,261 @@
     <style>
         /* Technology Page Specific Mobile Tweaks */
         @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 0 80px !important;
+            }
             .tech-card {
-                padding: 1.5rem !important;
-                gap: 1.5rem !important;
-                margin-bottom: 2rem !important;
-                border-radius: 25px !important;
+                padding: 2.5rem 1.5rem !important;
+                display: flex !important;
+                flex-direction: column; 
+                gap: 2.5rem !important;
+                border-radius: 40px !important;
             }
-            .tech-card .order-1, 
-            .tech-card .order-2 {
-                order: unset !important;
-            }
-            .tech-card img {
-                margin-bottom: 0.5rem;
-            }
+            /* Logic: Image First on Mobile regardless of source order */
+            .tech-card.img-first { flex-direction: column !important; }
+            .tech-card.content-first { flex-direction: column-reverse !important; }
+
             .tech-card h2 {
-                font-size: 1.4rem;
-            }
-            .tech-card .check-list {
-                grid-template-columns: 1fr !important;
-            }
-            .hero-content {
-                padding: 2rem 0 !important;
-            }
-            .hero-content h1 {
                 font-size: 1.8rem !important;
-                line-height: 1.3 !important;
+                margin-bottom: 1rem !important;
+                color: #061D30;
             }
-            .hero-content p {
-                font-size: 1rem !important;
-            }
-            .cta-btn-group {
-                flex-direction: column;
-                gap: 1rem;
-                display: flex;
-            }
-            .cta-btn-group .btn {
-                width: 100%;
-                margin: 0 !important;
-            }
+            .section { padding: 60px 0 !important; }
+        }
+
+        .tech-img-wrapper {
+            border-radius: 40px 160px 40px 40px; /* Signature Executive Arch */
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            background: white;
+            width: 100%;
+        }
+        .tech-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
     </style>
-  <script type="module" crossorigin src="/assets/technology-BNDWa34B.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
+  <script type="module" crossorigin src="/assets/technology-C0Q_CvU-.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DNa0xiyN.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
 </head>
 <body>
+    <!-- 0. REDESIGNED LUXURY PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                </div>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+        <style>
+            #preloader {
+                position: fixed;
+                inset: 0;
+                background: #061d30;
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+                color: #fff;
+            }
+            
+            body.loaded #preloader {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .preloader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .preloader-logo-wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .preloader-logo {
+                width: 70px;
+                height: auto;
+                position: relative;
+                z-index: 2;
+                animation: logo-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 20px rgba(184, 151, 62, 0.4));
+            }
+
+            .preloader-rings {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            .ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 1px solid transparent;
+            }
+
+            .ring-1 {
+                border-top-color: var(--color-accent);
+                animation: spin 3s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            .ring-2 {
+                inset: 15px;
+                border-bottom-color: var(--color-champagne);
+                animation: spin 5s linear infinite reverse;
+                opacity: 0.6;
+            }
+
+            .ring-3 {
+                inset: -20px;
+                border: 1px solid rgba(184, 151, 62, 0.08);
+                animation: pulse-ring 4s ease-out infinite;
+            }
+
+            .preloader-brand {
+                display: flex;
+                gap: 4px;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .brand-letter, .brand-dot, .brand-space {
+                opacity: 0;
+                transform: translateY(15px);
+                animation: letter-reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            }
+
+            .preloader-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.7em;
+                color: var(--color-accent);
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity: 0;
+                animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+            }
+
+            .preloader-progress-container {
+                width: 200px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                margin-top: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fade-in 0.6s ease 1s forwards;
+            }
+
+            .preloader-progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+                transform: translateX(-100%);
+                animation: progress-move 2.5s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            @keyframes logo-float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            @keyframes pulse-ring {
+                0% { transform: scale(0.9); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: scale(1.4); opacity: 0; }
+            }
+
+            @keyframes letter-reveal {
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(15px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in {
+                to { opacity: 1; }
+            }
+
+            @keyframes progress-move {
+                0% { transform: translateX(-100%); }
+                50% { transform: translateX(0); }
+                100% { transform: translateX(100%); }
+            }
+
+            /* Staggered letter animations */
+            .brand-letter:nth-child(1) { animation-delay: 0.2s; }
+            .brand-letter:nth-child(2) { animation-delay: 0.25s; }
+            .brand-dot { animation-delay: 0.3s; }
+            .brand-space { animation-delay: 0.35s; }
+            .brand-letter:nth-child(5) { animation-delay: 0.35s; }
+            .brand-letter:nth-child(6) { animation-delay: 0.4s; }
+            .brand-letter:nth-child(7) { animation-delay: 0.45s; }
+            .brand-letter:nth-child(8) { animation-delay: 0.5s; }
+            .brand-letter:nth-child(9) { animation-delay: 0.55s; }
+            .brand-letter:nth-child(10) { animation-delay: 0.6s; }
+        </style>
+        <script>
+            // Emergency Safety Net: Force hide preloader if main script fails or takes too long
+            setTimeout(function() {
+                var p = document.getElementById('preloader');
+                if (p && !document.body.classList.contains('loaded')) {
+                    p.style.opacity = '0';
+                    setTimeout(function() { 
+                        p.style.display = 'none'; 
+                        document.body.classList.add('loaded'); 
+                    }, 800);
+                }
+            }, 5000);
+        </script>
+    </div>
+
 
     <header class="header">
         <div class="container nav-container">
@@ -76,12 +286,10 @@
         </div>
     </header>
 
-    <section class="section hero-section" style="padding-top: 140px; padding-bottom: 100px; position: relative; background: url('/assets/Screenshot%202026-04-13%20132535-BRVLKiiM.png') no-repeat center center; background-size: cover; min-height: 450px; display: flex; align-items: center; color: white;">
-        <!-- Dark Overlay for Readability -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 5, 20, 0.95), rgba(0, 5, 20, 0.7)); z-index: 1;"></div>
-        
+    <section class="section hero-section" style="padding-top: 180px; padding-bottom: 120px; position: relative; background: linear-gradient(to right, rgba(6, 29, 48, 0.98), rgba(6, 29, 48, 0.9)), url('/assets/Screenshot%202026-04-13%20132535-BRVLKiiM.png') no-repeat center center; background-size: cover; min-height: 450px; display: flex; align-items: center; color: white;">
         <div class="container animate-fade-up text-center hero-content" style="position: relative; z-index: 2;">
-            <h1 style="color: white; font-size: 3rem; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">The Right Technology. The Right Doctor. The Right Results.</h1>
+            <span class="eyebrow" style="color: var(--color-accent); letter-spacing: 5px; display: block; margin-bottom: 1.5rem;">Scientific Precision</span>
+            <h1 style="color: white; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem; font-weight: 800; line-height: 1.1;">The Right Technology.<br>The Right Results.</h1>
             <p style="max-width: 850px; margin: 1.5rem auto; font-size: 1.25rem; line-height: 1.7; color: rgba(255,255,255,0.9);">
                 At Dr. Alam’s Skin Clinic, we use some of the most advanced skin treatment equipment available in dermatology today — including premium Italian lasers, dedicated procedure rooms and a minor operation theatre. Everything is set up so you get safe, effective and comfortable treatments for your skin.
             </p>
@@ -219,9 +427,9 @@
             </div>
 
             <!-- X6 AI Skin Imager Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/X6%E6%9C%89%E6%89%8B%E5%85%B7-DJDwRT2D.png" alt="X6 AI Skin Imager - Intelligent Skin Analysis" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/X6%E6%9C%89%E6%89%8B%E5%85%B7-DJDwRT2D.png" alt="X6 AI Skin Imager - Intelligent Skin Analysis">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Diagnostic Excellence</span>
@@ -242,10 +450,10 @@
             </div>
 
             <!-- 4-Wavelength Hair Removal System -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Pain-Free Innovation</span>
-                    <h2 class="mt-xs">4-Wavelength Laser Hair Removal System</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">4-Wavelength Laser Hair Removal System</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Four laser wavelengths working together for faster, more comfortable hair removal on all skin types</p>
                     
                     <ul class="check-list mb-md">
@@ -259,19 +467,19 @@
                         Most machines use just one wavelength. Ours uses four — each targeting hair at a different depth. The built-in <strong>ice-cold sapphire tip (−30°C)</strong> keeps your skin cool throughout the session. AI-powered detection adjusts the settings automatically for your specific hair type.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/image%20(1)-BGmFjx5m.png" alt="4-Wavelength Laser Hair Removal System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/image%20(1)-BGmFjx5m.png" alt="4-Wavelength Laser Hair Removal System">
                 </div>
             </div>
 
             <!-- Microneedling RF Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/WhatsApp%20Image%202026-04-02%20at%2014.20.23-DYYxTpTC.jpeg" alt="Microneedling RF - Collagen Boosting Treatment" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/WhatsApp%20Image%202026-04-02%20at%2014.20.23-DYYxTpTC.jpeg" alt="Microneedling RF - Collagen Boosting Treatment">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Collagen Rebuilding</span>
-                    <h2 class="mt-xs">Microneedling RF — Collagen Boosting Treatment</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Microneedling RF — Collagen Boosting Treatment</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Tiny gold needles deliver energy deep into your skin to rebuild collagen from within</p>
                     
                     <ul class="check-list mb-md">
@@ -288,10 +496,10 @@
             </div>
 
             <!-- IPL Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Broadband Clarity</span>
-                    <h2 class="mt-xs">IPL — Intense Pulsed Light Treatment</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">IPL — Intense Pulsed Light Treatment</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Broadband light therapy for pigmentation, redness and overall skin clarity</p>
                     
                     <ul class="check-list mb-md">
@@ -305,19 +513,19 @@
                         IPL sends controlled flashes of broad-spectrum light into your skin. The light targets both pigment and blood vessels, helping to even out your skin tone, calm redness and clear up active breakouts — all with <strong>minimal downtime</strong>. It's the perfect treatment for restoring a healthy, natural glow.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/IPL%20%E2%80%94%20Intense%20Pulsed%20Light%20Treatment-CBpi4XTc.png" alt="IPL — Intense Pulsed Light Treatment System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/IPL%20%E2%80%94%20Intense%20Pulsed%20Light%20Treatment-CBpi4XTc.png" alt="IPL — Intense Pulsed Light Treatment System">
                 </div>
             </div>
 
             <!-- Fractional CO2 Laser Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/image%20(4)-Asv6j4be.png" alt="Fractional CO2 Laser - Skin Resurfacing" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/image%20(4)-Crq3bksr.png" alt="Fractional CO2 Laser - Skin Resurfacing">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Proven Resurfacing</span>
-                    <h2 class="mt-xs">Fractional CO₂ Laser — Skin Resurfacing</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Fractional CO₂ Laser — Skin Resurfacing</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Proven laser technology for deep scars, skin renewal and texture improvement</p>
                     
                     <ul class="check-list mb-md">
@@ -334,10 +542,10 @@
             </div>
 
             <!-- Picosecond Laser Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Ultra-Short Pulse</span>
-                    <h2 class="mt-xs">Picosecond Laser — Pigmentation Treatment</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Picosecond Laser — Pigmentation Treatment</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Ultra-short pulse laser for dark spots, pigmentation and skin toning</p>
                     
                     <ul class="check-list mb-md">
@@ -351,19 +559,19 @@
                         This laser delivers energy in ultra-short bursts that break down pigment particles into tiny fragments your body removes naturally. It is an extremely precise tool for pigmentation treatment and skin brightening, designed to deliver results with minimal risk to surrounding tissue.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/image%20(5)-eE5b2Bn-.png" alt="Picosecond Laser - Pigmentation Treatment" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/image%20(5)-eE5b2Bn-.png" alt="Picosecond Laser - Pigmentation Treatment">
                 </div>
             </div>
 
             <!-- LED Light Therapy Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/E8B2C94A-E885-4CE3-A7C8-EE96524C32E6.JPG-CsQt1u4j.jpg" alt="LED Light Therapy - Anti-Acne & Healing" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/E8B2C94A-E885-4CE3-A7C8-EE96524C32E6.JPG-CsQt1u4j.jpg" alt="LED Light Therapy - Anti-Acne & Healing">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Painless Healing</span>
-                    <h2 class="mt-xs">LED Light Therapy — Anti-Acne & Recovery</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">LED Light Therapy — Anti-Acne & Recovery</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Painless light treatment that helps heal skin, kill acne bacteria and boost recovery</p>
                     
                     <ul class="check-list mb-md">
@@ -380,10 +588,10 @@
             </div>
 
             <!-- Radiofrequency Skin Tightening Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Non-Invasive Lifting</span>
-                    <h2 class="mt-xs">Radiofrequency Skin Tightening</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Radiofrequency Skin Tightening</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Non-invasive skin tightening using heat energy to boost collagen</p>
                     
                     <ul class="check-list mb-md">
@@ -397,8 +605,8 @@
                         Radiofrequency gently heats the deeper layers of your skin, causing existing collagen to tighten and stimulating your body to produce new collagen over time. It is a comfortable, non-invasive treatment for improving skin firmness and reducing the early signs of ageing without any downtime.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/WhatsApp%20Image%202026-04-02%20at%2014.20.24-G7VaH4ar.jpeg" alt="Radiofrequency Skin Tightening System" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/WhatsApp%20Image%202026-04-02%20at%2014.20.24-G7VaH4ar.jpeg" alt="Radiofrequency Skin Tightening System">
                 </div>
             </div>
 
@@ -409,13 +617,13 @@
             </div>
 
             <!-- Excimer Light Therapy Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/image%20(6)-llIF7e-h.png" alt="Excimer Light Therapy - Vitiligo & Psoriasis" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/image%20(6)-llIF7e-h.png" alt="Excimer Light Therapy - Vitiligo & Psoriasis">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Targeted UV Therapy</span>
-                    <h2 class="mt-xs">Excimer Light Therapy (308 nm)</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Excimer Light Therapy (308 nm)</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Targeted light treatment for vitiligo, psoriasis and other localised skin conditions</p>
                     
                     <ul class="check-list mb-md">
@@ -438,10 +646,10 @@
             </div>
 
             <!-- Electrosurgery Unit Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Surgical Precision</span>
-                    <h2 class="mt-xs">Electrosurgery Unit (Hyfrecator 2000)</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Electrosurgery Unit (Hyfrecator 2000)</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Precision device for quick, safe removal of skin tags, warts, moles and small growths</p>
                     
                     <ul class="check-list mb-md">
@@ -455,19 +663,19 @@
                         The Hyfrecator is a precision surgical device that uses controlled electrical energy to remove skin growths safely. Most procedures are same-day and done under local numbing — you walk in, get the growth removed, and walk out. It’s an essential tool for providing clear skin with minimal downtime.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/image%20(7)-BUBGU8o2.png" alt="Electrosurgery Unit (Hyfrecator 2000)" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/image%20(7)-BUBGU8o2.png" alt="Electrosurgery Unit (Hyfrecator 2000)">
                 </div>
             </div>
 
             <!-- PRP Therapy Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
-                <div class="animate-fade-left">
-                    <img src="/assets/image%20(8)-DhICmzHt.png" alt="PRP Therapy - Platelet Rich Plasma" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+            <div class="grid grid-2 tech-card img-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+                <div class="animate-fade-left tech-img-wrapper">
+                    <img src="/assets/image%20(8)-DhICmzHt.png" alt="PRP Therapy - Platelet Rich Plasma">
                 </div>
                 <div class="animate-fade-right">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Natural Bio-Therapy</span>
-                    <h2 class="mt-xs">PRP Therapy — Platelet Rich Plasma</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">PRP Therapy — Platelet Rich Plasma</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Your own blood’s healing power, concentrated and used to treat hair loss and improve skin</p>
                     
                     <ul class="check-list mb-md">
@@ -484,10 +692,10 @@
             </div>
 
             <!-- Skin Surgery & Minor Procedures Section -->
-            <div class="grid grid-2 tech-card" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
+            <div class="grid grid-2 tech-card content-first" style="gap: 3rem; align-items: center; margin-bottom: 5rem; background: #fff; border-radius: 40px; padding: 3rem; box-shadow: var(--shadow-lg);">
                 <div class="animate-fade-left order-2">
                     <span class="badge" style="background: var(--color-bg-main); color: var(--color-primary); border: 1px solid var(--color-primary-light);">Clinical Surgery</span>
-                    <h2 class="mt-xs">Skin Surgery & Minor Procedures</h2>
+                    <h2 class="mt-xs" style="color: #061D30;">Skin Surgery & Minor Procedures</h2>
                     <p style="font-weight: 600; font-size: 1.05rem; color: var(--color-accent); margin-bottom: 1.5rem;">Fully equipped procedure room for minor skin surgeries under local anaesthesia</p>
                     
                     <ul class="check-list mb-md" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem;">
@@ -505,8 +713,8 @@
                         Some skin problems need a surgical solution — not just creams or lasers. Our clinic has a fully equipped procedure room for minor skin surgeries, done safely under local numbing. Most procedures are quick, sterile, and walk-in/walk-out. You won’t need a hospital stay for these.
                     </p>
                 </div>
-                <div class="animate-fade-right order-1">
-                    <img src="/assets/image%20(9)-DznW41rC.png" alt="Skin Surgery & Minor Procedures Suite" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-md);">
+                <div class="animate-fade-right order-1 tech-img-wrapper">
+                    <img src="/assets/image%20(9)-DznW41rC.png" alt="Skin Surgery & Minor Procedures Suite">
                 </div>
             </div>
 
@@ -520,11 +728,11 @@
 
             <div class="max-width-md tech-card" style="margin: 0 auto;">
                 <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-lg); overflow: hidden; border-radius: 40px;">
-                    <div style="height: 400px; overflow: hidden;">
-                        <img src="/assets/Gemini_Generated_Image_kg1c38kg1c38kg1c-d2aE1fMM.jpg" alt="Surgicalis - Surgery & Resurfacing Room" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="height: 400px; overflow: hidden;" class="tech-img-wrapper">
+                        <img src="/assets/Gemini_Generated_Image_kg1c38kg1c38kg1c-d2aE1fMM.jpg" alt="Surgicalis - Surgery & Resurfacing Room" style="height: 100%; border-radius: 0; border: none;">
                     </div>
                     <div class="card-body" style="padding: 3rem; text-align: center;">
-                        <h3 style="color: var(--color-primary); font-size: 1.8rem; margin-bottom: 1.5rem;">Surgicalis — Surgery & Resurfacing Suite</h3>
+                        <h3 style="color: #061D30; font-size: 1.8rem; margin-bottom: 1.5rem;">Surgicalis — Surgery & Resurfacing Suite</h3>
                         <p class="text-muted" style="line-height: 1.8; font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
                             Our dedicated room for skin surgeries and advanced laser resurfacing. Equipped with our Youlaser MT laser, Excimer light therapy and sterile surgical instruments. Maintained at the highest hospital-grade sterility standards to ensure safe, effective results for every patient.
                         </p>
@@ -664,6 +872,46 @@
                 <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
             </div>
         </div>
-    </footer>
+    </footer>
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
+    <!-- Magnetic Contact Dock (Mobile Only) -->
+    <div class="contact-dock">
+        <div class="dock-bar">
+            <span class="dock-label">Expert Care</span>
+            <div class="dock-items">
+                <a href="tel:09345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span class="dock-item-label">Phone</span>
+                </a>
+                <a href="https://wa.me/9345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
+                    </div>
+                    <span class="dock-item-label">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="dock-item dock-item-cta">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span class="dock-item-label">Book Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

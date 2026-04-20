@@ -151,14 +151,237 @@
             .lp-nav .btn-primary { display: none; }
         }
     </style>
-  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
+  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
 </head>
 
 <body>
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/9345410038" class="whatsapp-fixed" target="_blank" aria-label="WhatsApp Us">
-        <svg fill="white" width="35" height="35" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
+    <!-- 0. REDESIGNED LUXURY PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                </div>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+        <style>
+            #preloader {
+                position: fixed;
+                inset: 0;
+                background: #061d30;
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+                color: #fff;
+            }
+            
+            body.loaded #preloader {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .preloader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .preloader-logo-wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .preloader-logo {
+                width: 70px;
+                height: auto;
+                position: relative;
+                z-index: 2;
+                animation: logo-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 20px rgba(184, 151, 62, 0.4));
+            }
+
+            .preloader-rings {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            .ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 1px solid transparent;
+            }
+
+            .ring-1 {
+                border-top-color: var(--color-accent);
+                animation: spin 3s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            .ring-2 {
+                inset: 15px;
+                border-bottom-color: var(--color-champagne);
+                animation: spin 5s linear infinite reverse;
+                opacity: 0.6;
+            }
+
+            .ring-3 {
+                inset: -20px;
+                border: 1px solid rgba(184, 151, 62, 0.08);
+                animation: pulse-ring 4s ease-out infinite;
+            }
+
+            .preloader-brand {
+                display: flex;
+                gap: 4px;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .brand-letter, .brand-dot, .brand-space {
+                opacity: 0;
+                transform: translateY(15px);
+                animation: letter-reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            }
+
+            .preloader-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.7em;
+                color: var(--color-accent);
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity: 0;
+                animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+            }
+
+            .preloader-progress-container {
+                width: 200px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                margin-top: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fade-in 0.6s ease 1s forwards;
+            }
+
+            .preloader-progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+                transform: translateX(-100%);
+                animation: progress-move 2.5s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            @keyframes logo-float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            @keyframes pulse-ring {
+                0% { transform: scale(0.9); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: scale(1.4); opacity: 0; }
+            }
+
+            @keyframes letter-reveal {
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(15px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in {
+                to { opacity: 1; }
+            }
+
+            @keyframes progress-move {
+                0% { transform: translateX(-100%); }
+                50% { transform: translateX(0); }
+                100% { transform: translateX(100%); }
+            }
+
+            /* Staggered letter animations */
+            .brand-letter:nth-child(1) { animation-delay: 0.2s; }
+            .brand-letter:nth-child(2) { animation-delay: 0.25s; }
+            .brand-dot { animation-delay: 0.3s; }
+            .brand-space { animation-delay: 0.35s; }
+            .brand-letter:nth-child(5) { animation-delay: 0.35s; }
+            .brand-letter:nth-child(6) { animation-delay: 0.4s; }
+            .brand-letter:nth-child(7) { animation-delay: 0.45s; }
+            .brand-letter:nth-child(8) { animation-delay: 0.5s; }
+            .brand-letter:nth-child(9) { animation-delay: 0.55s; }
+            .brand-letter:nth-child(10) { animation-delay: 0.6s; }
+        </style>
+        <script>
+            // Emergency Safety Net: Force hide preloader if main script fails or takes too long
+            setTimeout(function() {
+                var p = document.getElementById('preloader');
+                if (p && !document.body.classList.contains('loaded')) {
+                    p.style.opacity = '0';
+                    setTimeout(function() { 
+                        p.style.display = 'none'; 
+                        document.body.classList.add('loaded'); 
+                    }, 800);
+                }
+            }, 5000);
+        </script>
+    </div>
+
+    <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
+    <div class="floating-contact-stack">
+        <!-- Phone -->
+        <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <svg viewBox="0 0 448 512" fill="currentColor">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+        </a>
+    </div>
 
     <!-- Standard Header -->
     <header class="header">
@@ -455,6 +678,32 @@
         }, {threshold: 0.1});
         document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right').forEach(el => obs.observe(el));
     </script>
+    <!-- Magnetic Contact Dock (Mobile Only) -->
+    <div class="contact-dock">
+        <div class="dock-bar">
+            <span class="dock-label">Expert Care</span>
+            <div class="dock-items">
+                <a href="tel:09345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span class="dock-item-label">Phone</span>
+                </a>
+                <a href="https://wa.me/9345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
+                    </div>
+                    <span class="dock-item-label">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="dock-item dock-item-cta">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span class="dock-item-label">Book Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

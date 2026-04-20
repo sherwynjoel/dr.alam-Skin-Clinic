@@ -301,9 +301,16 @@
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-sm);
+  padding-bottom: 110px; /* Base room for contact dock */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #a4b0be;
   font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .footer-bottom {
+    padding-bottom: 140px; /* Extra room for mobile dock */
+  }
 }
 
 /* Responsive */

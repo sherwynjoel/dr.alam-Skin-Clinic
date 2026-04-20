@@ -11,21 +11,24 @@
     <style>
         /* About Page Specific Styles */
         .about-hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 180px 0 120px;
+            background: #061D30 !important; /* Force Midnight Navy for Contrast */
             position: relative;
             overflow: hidden;
+            color: white;
         }
 
         .about-hero::before {
             content: '';
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(200, 169, 126, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(184, 151, 62, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 20% 70%, rgba(184, 151, 62, 0.03) 0%, transparent 40%);
+            pointer-events: none;
         }
 
         .journey-image-stack {
@@ -71,42 +74,245 @@
         }
 
         @media (max-width: 768px) {
-            .about-hero { padding: 120px 0 60px; }
-            .journey-image-stack { 
-                height: 420px; 
-                margin-bottom: 4rem; 
-                display: block;
-                width: 100%;
+            .about-hero { padding: 120px 0 60px; text-align: center; }
+            .about-hero h1 { font-size: 2.5rem !important; }
+            .about-hero .grid-2 { gap: 2rem !important; }
+            .about-hero .animate-fade-left { order: 2; }
+            .about-hero .animate-fade-right { order: 1; margin-bottom: 2rem; }
+            
+            /* Timeline Mobile Fix */
+            .timeline-wrapper { padding: 20px 0 !important; }
+            .timeline-line { left: 20px !important; transform: none !important; }
+            .timeline-milestone { 
+                grid-template-columns: 1fr !important; 
+                margin-bottom: 40px !important; 
+                text-align: left !important; 
             }
-            .journey-img-1 { 
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 85% !important; 
-                height: 320px !important; 
-                border-radius: 20px;
-                display: block !important;
-            }
-            .journey-img-2 { 
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 70% !important; 
-                height: 240px !important; 
-                border-radius: 20px;
-                border: 6px solid white !important;
-                display: block !important;
-                z-index: 2;
-                box-shadow: 0 15px 45px rgba(0,0,0,0.15);
-            }
+            .timeline-milestone > div { padding: 0 0 0 50px !important; order: unset !important; }
+            .timeline-node { left: 10px !important; top: 10px !important; transform: none !important; }
+            .timeline-content-left { text-align: left !important; }
+            .timeline-img-wrapper { margin-top: 1.5rem !important; }
         }
     </style>
-  <script type="module" crossorigin src="/assets/about-IanSLAhD.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-Cx35yM5A.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-BJ2gHePB.css">
+  <script type="module" crossorigin src="/assets/about-DQI8N1rz.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DNa0xiyN.js">
+  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
 </head>
 
 <body>
+    <!-- 0. REDESIGNED LUXURY PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
+                </div>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+        <style>
+            #preloader {
+                position: fixed;
+                inset: 0;
+                background: #061d30;
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+                color: #fff;
+            }
+            
+            body.loaded #preloader {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .preloader-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .preloader-logo-wrapper {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .preloader-logo {
+                width: 70px;
+                height: auto;
+                position: relative;
+                z-index: 2;
+                animation: logo-float 3s ease-in-out infinite;
+                filter: drop-shadow(0 0 20px rgba(184, 151, 62, 0.4));
+            }
+
+            .preloader-rings {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            .ring {
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 1px solid transparent;
+            }
+
+            .ring-1 {
+                border-top-color: var(--color-accent);
+                animation: spin 3s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            .ring-2 {
+                inset: 15px;
+                border-bottom-color: var(--color-champagne);
+                animation: spin 5s linear infinite reverse;
+                opacity: 0.6;
+            }
+
+            .ring-3 {
+                inset: -20px;
+                border: 1px solid rgba(184, 151, 62, 0.08);
+                animation: pulse-ring 4s ease-out infinite;
+            }
+
+            .preloader-brand {
+                display: flex;
+                gap: 4px;
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+
+            .brand-letter, .brand-dot, .brand-space {
+                opacity: 0;
+                transform: translateY(15px);
+                animation: letter-reveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            }
+
+            .preloader-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.7em;
+                color: var(--color-accent);
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity: 0;
+                animation: fade-in-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.8s forwards;
+            }
+
+            .preloader-progress-container {
+                width: 200px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.08);
+                margin-top: 1.5rem;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fade-in 0.6s ease 1s forwards;
+            }
+
+            .preloader-progress-bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+                transform: translateX(-100%);
+                animation: progress-move 2.5s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+            }
+
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+            @keyframes logo-float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+
+            @keyframes pulse-ring {
+                0% { transform: scale(0.9); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: scale(1.4); opacity: 0; }
+            }
+
+            @keyframes letter-reveal {
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(15px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            @keyframes fade-in {
+                to { opacity: 1; }
+            }
+
+            @keyframes progress-move {
+                0% { transform: translateX(-100%); }
+                50% { transform: translateX(0); }
+                100% { transform: translateX(100%); }
+            }
+
+            /* Staggered letter animations */
+            .brand-letter:nth-child(1) { animation-delay: 0.2s; }
+            .brand-letter:nth-child(2) { animation-delay: 0.25s; }
+            .brand-dot { animation-delay: 0.3s; }
+            .brand-space { animation-delay: 0.35s; }
+            .brand-letter:nth-child(5) { animation-delay: 0.35s; }
+            .brand-letter:nth-child(6) { animation-delay: 0.4s; }
+            .brand-letter:nth-child(7) { animation-delay: 0.45s; }
+            .brand-letter:nth-child(8) { animation-delay: 0.5s; }
+            .brand-letter:nth-child(9) { animation-delay: 0.55s; }
+            .brand-letter:nth-child(10) { animation-delay: 0.6s; }
+        </style>
+        <script>
+            // Emergency Safety Net: Force hide preloader if main script fails or takes too long
+            setTimeout(function() {
+                var p = document.getElementById('preloader');
+                if (p && !document.body.classList.contains('loaded')) {
+                    p.style.opacity = '0';
+                    setTimeout(function() { 
+                        p.style.display = 'none'; 
+                        document.body.classList.add('loaded'); 
+                    }, 800);
+                }
+            }, 5000);
+        </script>
+    </div>
+
     <!-- Header (Same as Index) -->
     <header class="header">
         <div class="container nav-container">
@@ -130,44 +336,65 @@
         </div>
     </header>
 
-    <!-- 1. HERO SECTION -->
+    <!-- 1. HERO SECTION: Executive Profile -->
     <section class="about-hero">
-        <div class="container grid grid-2" style="align-items: center;">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
             <div class="animate-fade-left">
-                <span class="text-accent text-uppercase letter-spacing-lg" style="font-size: 0.9rem; font-weight: 700;">MEDICAL EXPERTISE</span>
-                <h1 style="margin: 1rem 0;">Meet Dr. Howthul Alam Raja</h1>
-                <p class="subheadline" style="margin: 0; font-weight: 600; color: var(--color-primary-dark);">Consultant Dermatologist, Dermatosurgeon and Laser Specialist</p>
-                <p style="margin-top: 1.5rem; font-size: 1.15rem; line-height: 1.7; color: var(--color-text-main);">
+                <div style="display: inline-flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <span style="width: 40px; height: 1.5px; background: var(--color-accent);"></span>
+                    <span class="text-accent text-uppercase" style="font-size: 0.85rem; letter-spacing: 4px; font-weight: 800;">VISIT OUR CLINIC</span>
+                </div>
+                <h1 style="color: white; font-size: 3.8rem; line-height: 1.1; margin-bottom: 1.5rem;">Dr. Howthul Alam Raja</h1>
+                <p class="subheadline" style="font-size: 1.25rem; font-weight: 600; color: var(--color-accent); letter-spacing: 1px; margin-bottom: 2rem;">Consultant Dermatologist, Dermatosurgeon & Laser Specialist</p>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.8); max-width: 580px;">
                     Dr. Alam’s Skin Clinic is an advanced dermatology, laser and skin surgery centre specializing in acne scars, pigmentation disorders, hair loss treatment, clinical dermatology and dermatosurgery procedures with a focus on evidence-based treatments and long-term results.
                 </p>
+                <div style="margin-top: 3rem; display: flex; gap: 30px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: white;">12000+</span>
+                        <span style="font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px;">Consultations</span>
+                    </div>
+                    <div style="height: 40px; width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: white;">2500+</span>
+                        <span style="font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px;">Surgeries</span>
+                    </div>
+                </div>
             </div>
-            <div class="animate-fade-right luxury-zoom">
-                <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja" style="width: 100%; border-radius: 30px; box-shadow: var(--shadow-xl);">
+            <div class="animate-fade-right" style="position: relative;">
+                <!-- Luxury Arched Frame for Doctor -->
+                <div style="position: relative; border-radius: 200px 200px 40px 40px; overflow: hidden; border: 8px solid white; box-shadow: 0 50px 100px rgba(0,0,0,0.3); background: #eee;">
+                    <img src="/assets/WhatsApp%20Image%202026-04-19%20at%2010.51.54%20PM-BgjFPDtn.jpeg" alt="Dr. Howthul Alam Raja's Clinical Result" style="width: 100%; display: block; filter: brightness(1.05);">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. MY JOURNEY SECTION -->
-    <section class="section">
-        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
-            <div class="journey-image-stack animate-fade-left luxury-zoom">
-                <img src="/assets/hero-slide-4-DN0T3MuW.jpg" class="journey-img-1" alt="Dermatology Consultation">
-                <img src="/assets/hero-slide-7-C9-HOGm9.jpg" class="journey-img-2" alt="Medical Training">
+    <!-- 2. MY JOURNEY SECTION: Executive Stacked Layout -->
+    <section class="section" style="background: white;">
+        <div class="container grid grid-2" style="align-items: center; gap: 6rem;">
+            <div class="animate-fade-left luxury-zoom" style="display: flex; justify-content: center;">
+                <!-- Singular Focus: Doctor Portrait with Watermark Crop -->
+                <div style="width: 100%; max-width: 450px; border-radius: 40px 160px 40px 40px; border: 8px solid white; box-shadow: var(--shadow-xl); overflow: hidden; background: #eee;">
+                    <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja" style="width: 100%; display: block; transform: scale(1.15); transform-origin: center;">
+                </div>
             </div>
             <div class="animate-fade-right">
-                <span class="eyebrow">Professional Path</span>
-                <h2>My Journey in Dermatology</h2>
-                <div class="gold-divider"></div>
-                <p class="mt-sm mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
-                    I understand how frustrating skin and hair problems can be because I have seen it in thousands of patients over the years. I have seen patients lose confidence due to acne scars, pigmentation, hair loss and chronic skin conditions, even though many of these problems are treatable with proper dermatology care.
-                </p>
-                <p class="mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
-                    My journey in dermatology began at **Madras Medical College**, Chennai, one of the most prestigious medical institutions in India. During my training at Rajiv Gandhi Government Hospital, I treated a wide variety of skin diseases, complex dermatological conditions and dermatosurgical cases. This experience helped me understand that behind every skin condition is a person who wants not only treatment, but also confidence and a better quality of life.
-                </p>
-                <p class="mb-sm" style="font-size: 1.1rem; line-height: 1.8;">
-                    After working in government hospitals and treating a large number of patients, I started Dr. Alam’s Skin Clinic in Erode with a clear goal: to provide structured dermatology treatment, advanced laser procedures and skin surgery treatments under one center so that patients can receive proper diagnosis and complete treatment rather than temporary cosmetic solutions.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 600; color: var(--color-primary);">My approach is simple: listen to the patient, diagnose accurately, create a structured treatment plan and provide long-term care and follow-up.</p>
+                <span class="eyebrow" style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">PROFESSIONAL PATH</span>
+                <h2 style="font-size: 2.8rem; margin: 1rem 0;">My Journey in Dermatology</h2>
+                <div class="gold-divider" style="width: 120px; height: 2px; background: var(--color-accent); margin-bottom: 2rem;"></div>
+                
+                <div style="color: var(--color-text-main); font-size: 1.1rem; line-height: 1.8;">
+                    <p class="mb-sm">I understand how frustrating skin and hair problems can be because I have seen it in thousands of patients over the years. I have seen patients lose confidence due to acne scars, pigmentation, hair loss and chronic skin conditions, even though many of these problems are treatable with proper dermatology care.</p>
+                    
+                    <p class="mb-sm">My journey in dermatology began at <strong>Madras Medical College</strong>, Chennai, one of the most prestigious medical institutions in India. During my training at Rajiv Gandhi Government Hospital, I mastered complex dermatological conditions and surgical cases, understanding that behind every skin condition is a person seeking confidence.</p>
+                    
+                    <p class="mb-sm">I established <strong>Dr. Alam's Skin Clinic</strong> in Erode with a clear goal: to provide structured, evidence-based dermatology treatments and advanced skin surgery under one roof. My approach is simple: listen to the patient, diagnose accurately, and create a structured treatment plan for long-term health.</p>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 20px; border-left: 3px solid var(--color-accent); background: rgba(184, 151, 62, 0.1); border-radius: 0 15px 15px 0;">
+                    <p style="font-style: italic; font-weight: 700; color: #061D30; margin: 0; font-size: 1.1rem;">"We don't just treat skin. We help you feel comfortable in it."</p>
+                </div>
             </div>
         </div>
     </section>
@@ -232,9 +459,9 @@
                 <div class="gold-divider"></div>
                 
                 <!-- New Group Photo -->
-                <div class="team-group-hero mb-xl animate-fade-up">
-                    <img src="/assets/Screenshot%202026-04-16%20215241-DgzAmkzM.png" alt="Dr. Alam's Full Team" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow-xl); border: 1px solid rgba(184, 151, 62, 0.1);">
-                    <p class="mt-sm" style="font-style: italic; color: var(--color-accent); font-weight: 600;">The specialized clinical team at Dr. Alam's Skin Clinic.</p>
+                            <div class="team-group-hero animate-fade-up" style="margin-bottom: 3rem;">
+                    <img src="/assets/Screenshot%202026-04-20%20013201-9EAysSZI.png" alt="Dr. Alam's Full Team" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow-xl); border: 1px solid rgba(184, 151, 62, 0.1);">
+                </div>                <p class="mt-sm" style="font-style: italic; color: var(--color-accent); font-weight: 600;">The specialized clinical team at Dr. Alam's Skin Clinic.</p>
                 </div>
 
                 <p class="text-muted" style="max-width: 800px; margin: 0 auto;">At Dr. Alam’s Skin Clinic, every patient is cared for by a team of qualified professionals — at every step of their visit, not just in the consultation room.</p>
@@ -383,23 +610,26 @@
             }
             .team-grid {
                 display: grid;
-                gap: 2rem;
+                gap: 2.5rem; /* Reduced Gap */
+                max-width: 1200px;
+                margin: 0 auto;
             }
-            .doctors-grid { grid-template-columns: repeat(3, 1fr); }
-            .support-staff-unified-grid { grid-template-columns: repeat(3, 1fr); }
+            .doctors-grid { grid-template-columns: repeat(3, 1fr); justify-content: center; }
+            .support-staff-unified-grid { grid-template-columns: repeat(3, 1fr); justify-content: center; }
 
             .team-card {
-                background: #fff;
-                border-radius: 4px;
+                background: #061D30;
+                border-radius: 40px 40px 10px 10px;
                 overflow: hidden;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-                transition: all 0.4s ease;
-                border: 1px solid rgba(0,0,0,0.02);
+                box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                border: 1px solid rgba(184, 151, 62, 0.1);
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                max-width: 400px; /* Limit width to maintain a professional portrait shape */
-                margin: 0 auto; /* Center cards within their grid cells */
+                max-width: 400px;
+                margin: 0 auto;
+                color: white;
             }
             .team-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
             
@@ -437,7 +667,7 @@
             }
             .team-info h3 { 
                 font-size: 1.4rem; 
-                color: var(--color-primary-dark); 
+                color: white; 
                 margin-bottom: 0.75rem; 
                 letter-spacing: -0.5px;
                 font-family: var(--font-secondary);
@@ -496,36 +726,58 @@
     </section>
 
     <!-- 5. AREAS OF SPECIAL EXPERTISE -->
-    <section class="section">
+    <section class="section" style="background: #fdfdfd;">
         <div class="container">
-            <div class="text-center mb-lg">
+            <div class="text-center mb-xl animate-fade-up">
+                <span class="eyebrow">Clinical Excellence</span>
                 <h2>Areas of Special Interest and Expertise</h2>
-                <p class="text-muted mt-xs">Focused on medical dermatology and advanced procedural dermatology</p>
+                <p style="font-size: 1.25rem; font-weight: 700; color: #061D30; letter-spacing: 1px; margin-top: 1rem;">Focused on Medical Dermatology & Advanced Procedural Dermatology</p>
+                <div class="gold-divider"></div>
             </div>
-            <div class="expertise-carousel-container animate-fade-up">
-                <div class="expertise-track scrolling-ticker">
-                    <!-- Original Items -->
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Acne Scar Revision</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Melasma & Pigmentation</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>PRP & Hair Restoration</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Laser Treatments</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Dermatosurgery</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Mole & Wart Removal</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Clinical Psoriasis/Eczema</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Nail & Hair Disorders</strong></div></div>
-                    <!-- Duplicated Items for Seamless Loop -->
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Acne Scar Revision</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Melasma & Pigmentation</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>PRP & Hair Restoration</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Laser Treatments</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Dermatosurgery</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Mole & Wart Removal</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Clinical Psoriasis/Eczema</strong></div></div>
-                    <div class="expertise-slide"><div class="expertise-card-mini"><strong>Nail & Hair Disorders</strong></div></div>
-                </div>
+            
+            <div class="grid grid-4 animate-fade-up" style="gap: 1.5rem;">
+                <div class="expertise-card-new"><strong>Acne Scar Restoration</strong></div>
+                <div class="expertise-card-new"><strong>Melasma & Deep Pigmentation</strong></div>
+                <div class="expertise-card-new"><strong>Advanced Dermatosurgery</strong></div>
+                <div class="expertise-card-new"><strong>Precision Laser Medicine</strong></div>
+                <div class="expertise-card-new"><strong>Clinical Hair Restoration</strong></div>
+                <div class="expertise-card-new"><strong>Mole & Wart Excisions</strong></div>
+                <div class="expertise-card-new"><strong>Chronic Psoriasis Care</strong></div>
+                <div class="expertise-card-new"><strong>Nail & Appendageal Disorders</strong></div>
             </div>
         </div>
     </section>
+
+    <style>
+        .expertise-card-new {
+            background: white;
+            padding: 1.5rem 1rem; /* Compact for mobile */
+            text-align: center;
+            border-radius: 20px;
+            border: 1px solid rgba(184, 151, 62, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            font-size: 0.95rem; /* Balanced size */
+            color: #061D30;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+        @media (max-width: 768px) {
+            .grid-4 { 
+                grid-template-columns: repeat(2, 1fr) !important; 
+                gap: 1rem !important; 
+            }
+            .grid-3 {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            .section { padding: 4rem 1.5rem; }
+            h2 { font-size: 1.8rem !important; }
+            .about-hero h1 { font-size: 2.2rem !important; }
+        }
+    </style>
 
     <!-- 6. TREATMENT PHILOSOPHY -->
     <section class="section section-bg-light">
@@ -537,35 +789,25 @@
                 <p>Medical-grade approach to long-term skin and hair health.</p>
             </div>
             <div class="grid grid-3 animate-fade-up" style="gap: 2rem;">
-                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
-                    <div class="card-body">
-                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Evidence-Based Treatment</h3>
-                        <p style="font-size: 0.95rem;">All treatments are based on scientific evidence and proven dermatology protocols.</p>
-                    </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.03); border-radius: 40px; padding: 2.5rem; text-align: left;">
+                    <h3 style="color: #061D30; font-size: 1.3rem; margin-bottom: 1rem;">Evidence-Based Treatment</h3>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">All treatments are based on scientific evidence and proven dermatology protocols.</p>
                 </div>
-                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
-                    <div class="card-body">
-                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Personalized Plans</h3>
-                        <p style="font-size: 0.95rem;">Every patient receives a customized treatment plan based on their condition, skin type and treatment goals.</p>
-                    </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.03); border-radius: 40px; padding: 2.5rem; text-align: left;">
+                    <h3 style="color: #061D30; font-size: 1.3rem; margin-bottom: 1rem;">Personalized Plans</h3>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Every patient receives a customized treatment plan based on their condition, skin type and goals.</p>
                 </div>
-                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
-                    <div class="card-body">
-                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Honest Communication</h3>
-                        <p style="font-size: 0.95rem;">We believe in explaining the condition, treatment options, expected results and treatment duration clearly to patients.</p>
-                    </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.03); border-radius: 40px; padding: 2.5rem; text-align: left;">
+                    <h3 style="color: #061D30; font-size: 1.3rem; margin-bottom: 1rem;">Honest Communication</h3>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Clear explanations of conditions, treatment options, and expected results to our patients.</p>
                 </div>
-                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
-                    <div class="card-body">
-                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Treat the Root Cause</h3>
-                        <p style="font-size: 0.95rem;">We focus on treating the underlying cause of skin and hair problems rather than only treating symptoms.</p>
-                    </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.03); border-radius: 40px; padding: 2.5rem; text-align: left;">
+                    <h3 style="color: #061D30; font-size: 1.3rem; margin-bottom: 1rem;">Treat the Root Cause</h3>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">We focus on treating the underlying cause of clinical problems rather than only treating symptoms.</p>
                 </div>
-                <div class="card" style="border: none; background: #fff; box-shadow: var(--shadow-md);">
-                    <div class="card-body">
-                        <h3 style="color: var(--color-primary); font-size: 1.25rem;">Long-Term Health</h3>
-                        <p style="font-size: 0.95rem;">Our goal is long-term improvement and maintenance, not temporary cosmetic improvement.</p>
-                    </div>
+                <div class="card" style="border: none; background: #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.03); border-radius: 40px; padding: 2.5rem; text-align: left;">
+                    <h3 style="color: #061D30; font-size: 1.3rem; margin-bottom: 1rem;">Long-Term Health</h3>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Our goal is long-term improvement and maintenance, not temporary cosmetic solutions.</p>
                 </div>
             </div>
         </div>
@@ -598,38 +840,10 @@
         </div>
     </section>
 
-    <!-- Live with Confidence Section -->
-    <section class="section">
-        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
-            <div class="animate-fade-left">
-                <span class="eyebrow">Live with Confidence</span>
-                <h2 class="mt-xs">Imagine Clearer Skin</h2>
-                <div class="gold-divider"></div>
-
-                <div class="mt-sm mb-md" style="font-size: 1.15rem; line-height: 1.7; color: var(--color-text-main);">
-                    <p style="margin-bottom: 1.5rem;">When your skin and hair are treated right, you stop hiding. No more covering, avoiding photos, or worrying every day.</p>
-                    <p>Clearer skin. Fewer scars. Controlled pigmentation. Healthier hair—so you can feel confident again.</p>
-                </div>
-
-                <div style="padding: 24px; border-left: 4px solid var(--color-primary); background: #fff; border-radius: 0 20px 20px 0; box-shadow: var(--shadow-sm); margin-bottom: 30px; position: relative;">
-                    <p style="font-style: italic; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 10px; font-size: 1.25rem; line-height: 1.5;">
-                        "We don't just treat skin. We help you feel comfortable in it."</p>
-                    <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 1px;">
-                        — DR. ALAM'S CLINICAL PHILOSOPHY</p>
-                </div>
-
-                <a href="contact.html" class="btn btn-primary">Book Your Transformation</a>
-            </div>
-            <div class="animate-fade-right" style="position: relative;">
-                <img src="/assets/success-result-Bzi9r2gp.jpg" alt="Patient feeling confident with clear skin" class="cinematic-img" style="border-radius: 40px; box-shadow: var(--shadow-xl); width: 100%; object-fit: cover; height: 500px; display: block; border: 1px solid rgba(10, 61, 98, 0.05);">
-            </div>
-        </div>
-    </section>
-
     <!-- 10. CALL TO ACTION & INFO GRID -->
     <section class="section text-center section-bg-dark" style="background-color: var(--color-primary-dark);">
         <div class="container animate-fade-up">
-            <h2 class="text-white mb-sm">Book a Consultation With Dr. Alam</h2>
+            <h2 class="text-white mb-sm">Start Your Skin and Hair Treatment Journey Today</h2>
             <p class="text-white cta-text">
                 If you are struggling with acne scars, pigmentation, hair loss or any skin condition, book a consultation for proper diagnosis and a structured treatment plan.
             </p>
@@ -689,10 +903,7 @@
         <a href="tel:09345410038" class="fab-contact fab-phone" title="Call Clinic">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         </a>
-        <!-- Email -->
-        <a href="mailto:alamraja@gmail.com" class="fab-contact fab-mail" title="Email Clinic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        </a>
+
         <!-- WhatsApp -->
         <a href="https://wa.me/9345410038" class="fab-contact fab-whatsapp" target="_blank" title="Chat on WhatsApp">
             <svg viewBox="0 0 448 512" fill="currentColor">
@@ -700,6 +911,32 @@
             </svg>
         </a>
     </div>
+    <!-- Magnetic Contact Dock (Mobile Only) -->
+    <div class="contact-dock">
+        <div class="dock-bar">
+            <span class="dock-label">Expert Care</span>
+            <div class="dock-items">
+                <a href="tel:09345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span class="dock-item-label">Phone</span>
+                </a>
+                <a href="https://wa.me/9345410038" class="dock-item">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
+                    </div>
+                    <span class="dock-item-label">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="dock-item dock-item-cta">
+                    <div class="dock-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <span class="dock-item-label">Book Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
