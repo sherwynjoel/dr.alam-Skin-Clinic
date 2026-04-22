@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Book Consultation | Contact Dr. Alam's Skin Clinic Erode</title>
-    <link rel="icon" type="image/png" href="/assets/logo-Dm0W0hHt.png">
+    <link rel="icon" type="image/png" href="./assets/logo-Dm0W0hHt.png">
     <meta name="description"
         content="Book your appointment at Dr. Alam's Skin Clinic for specialized acne, hair loss, laser, and skin surgery treatments. Contact us via Phone, WhatsApp, or our online form.">
 
@@ -14,7 +14,7 @@
         .contact-hero {
             padding: 220px 0 140px;
             background: linear-gradient(rgba(4, 18, 31, 0.94), rgba(4, 18, 31, 0.88)),
-                url('/assets/hero-slide-1-UpCBQbx3.jpg') center/cover;
+                url('./assets/hero-slide-1-UpCBQbx3.jpg') center/cover;
             text-align: center;
             color: white;
             position: relative;
@@ -182,11 +182,33 @@
                 height: 350px;
                 margin: 2rem 0;
             }
+
+            .luxury-form-row {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .scheduler-heading {
+                font-size: 1.8rem !important;
+            }
+
+            /* Add spacing at the bottom of the scheduler to avoid overlap with contact dock */
+            #clinical-scheduler-wrap {
+                margin-bottom: 80px;
+            }
+        }
+
+        .luxury-form-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
         }
     </style>
-  <script type="module" crossorigin src="/assets/contact--227Y5Dg.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-CMm4ZuXF.js">
-  <link rel="stylesheet" crossorigin href="/assets/main-eF3KHqkO.css">
+  <script type="module" crossorigin src="./assets/contact-CnL-_kIK.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/main-B4UpKwxo.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-eF3KHqkO.css">
 </head>
 
 <body>
@@ -194,7 +216,7 @@
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-logo-wrapper">
-                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <img src="./assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="preloader-logo">
                 <div class="preloader-rings">
                     <div class="ring ring-1"></div>
                     <div class="ring ring-2"></div>
@@ -481,7 +503,7 @@
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                <img src="./assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
                 <div class="logo-text-wrapper">
                     <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                     <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -500,16 +522,7 @@
         </div>
     </header>
 
-    <nav class="specialty-nav animate-fade-up">
-        <div class="container nav-scroll-wrapper">
-            <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
-            <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
-            <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
-            <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
-            <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
-            <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
-        </div>
-    </nav>
+
 
     <main>
         <!-- 1. HERO -->
@@ -600,7 +613,7 @@
                         </style>
 
                         <!-- Step 1: Patient Info -->
-                        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+                        <div class="luxury-form-row">
                             <div class="form-group">
                                 <label>Your Name *</label>
                                 <input type="text" id="app-name" class="form-control" placeholder="Enter Full Name" required>
@@ -746,7 +759,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="/assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <img src="./assets/logo-Dm0W0hHt.png" alt="Dr. Alam's Logo" class="logo-icon">
                         <div class="logo-text-wrapper">
                             <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                             <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -988,11 +1001,19 @@
                     <div class="dock-icon-wrap">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
-                    <span class="dock-item-label">Book Now</span>
+                    <span class="dock-item-label">Book</span>
                 </a>
             </div>
         </div>
     </div>
+    <style>
+        /* Mobile usability enhancement */
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-bottom: 120px;
+            }
+        }
+    </style>
 </body>
 
 </html>

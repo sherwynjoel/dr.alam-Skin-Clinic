@@ -189,10 +189,10 @@ function initHeroSlider() {
         });
     });
 
-    let autoPlay = setInterval(() => updateSlider(currentIndex + 1), 8000);
+    let autoPlay = setInterval(() => updateSlider(currentIndex + 1), 5000);
     const resetAutoPlay = () => {
         clearInterval(autoPlay);
-        autoPlay = setInterval(() => updateSlider(currentIndex + 1), 8000);
+        autoPlay = setInterval(() => updateSlider(currentIndex + 1), 5000);
     };
     [nextBtn, prevBtn].forEach(btn => btn?.addEventListener('click', resetAutoPlay));
 }

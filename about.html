@@ -96,6 +96,13 @@
             .timeline-node { left: 10px !important; top: 10px !important; transform: none !important; }
             .timeline-content-left { text-align: left !important; }
             .timeline-img-wrapper { margin-top: 1.5rem !important; }
+            
+            .hero-stats {
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+                gap: 20px 30px !important;
+            }
+            .hero-stats .stat-divider { display: none !important; }
         }
     </style>
 </head>
@@ -347,27 +354,67 @@
                     <span class="text-accent text-uppercase" style="font-size: 0.85rem; letter-spacing: 4px; font-weight: 800;">VISIT OUR CLINIC</span>
                 </div>
                 <h1 style="color: white; font-size: 3.8rem; line-height: 1.1; margin-bottom: 1.5rem;">DR. ALAM'S SKIN CLINIC</h1>
-                <p class="subheadline" style="font-size: 1.25rem; font-weight: 600; color: var(--color-accent); letter-spacing: 1px; margin-bottom: 2rem;">Consultant Dermatologist, Dermatosurgeon & Laser Specialist</p>
+
                 <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.8); max-width: 580px;">
-                    Dr. Alam’s Skin Clinic is an advanced dermatology, laser and skin surgery centre specializing in acne scars, pigmentation disorders, hair loss treatment, clinical dermatology and dermatosurgery procedures with a focus on evidence-based treatments and long-term results.
+                    Advanced dermatology, laser and skin surgery centre in Erode — specializing in acne scars, pigmentation disorders, hair loss treatments, clinical dermatology and dermatosurgery procedures with a focus on evidence-based treatments and long-term results.
                 </p>
-                <div style="margin-top: 3rem; display: flex; gap: 30px;">
+                <div class="hero-stats" style="margin-top: 3rem; display: flex; gap: 40px; align-items: center;">
                     <div style="display: flex; flex-direction: column;">
                         <span style="font-size: 1.8rem; font-weight: 800; color: white;">12000+</span>
                         <span style="font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px;">Consultations</span>
                     </div>
-                    <div style="height: 40px; width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div class="stat-divider" style="height: 40px; width: 1px; background: rgba(255,255,255,0.1);"></div>
                     <div style="display: flex; flex-direction: column;">
                         <span style="font-size: 1.8rem; font-weight: 800; color: white;">2500+</span>
                         <span style="font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px;">Surgeries</span>
                     </div>
+                    <div class="stat-divider" style="height: 40px; width: 1px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: white;">500+</span>
+                        <span style="font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px;">Hair Restoration</span>
+                    </div>
                 </div>
             </div>
             <div class="animate-fade-right" style="position: relative;">
-                <!-- Luxury Arched Frame for Doctor -->
-                <div style="position: relative; border-radius: 200px 200px 40px 40px; overflow: hidden; border: 8px solid white; box-shadow: 0 50px 100px rgba(0,0,0,0.3); background: #eee;">
-                    <img src="images/WhatsApp Image 2026-04-19 at 10.51.54 PM.jpeg" alt="Dr. Howthul Alam Raja's Clinical Result" style="width: 100%; display: block; filter: brightness(1.05);">
+                <!-- Luxury Arched Frame Slider for Clinic -->
+                <div class="clinic-mini-slider" style="position: relative; border-radius: 200px 200px 40px 40px; overflow: hidden; border: 8px solid white; box-shadow: 0 50px 100px rgba(0,0,0,0.3); background: #eee;">
+                    <img src="images/WhatsApp Image 2026-04-19 at 10.51.54 PM.jpeg" class="mini-slide active" alt="Dr. Alam's Skin Clinic Reception 1" style="width: 100%; display: block;">
+                    <img src="images/WhatsApp Image 2026-04-19 at 10.51.55 PM.jpeg" class="mini-slide" alt="Dr. Alam's Skin Clinic Reception 2">
+                    
+                    <style>
+                        .mini-slide {
+                            transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+                            filter: brightness(1.05);
+                        }
+                        .mini-slide:not(.active) {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                        .mini-slide.active {
+                            opacity: 1;
+                            z-index: 2;
+                        }
+                    </style>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const slides = document.querySelectorAll('.mini-slide');
+                        if (slides.length > 1) {
+                            let currentSlide = 0;
+                            setInterval(() => {
+                                slides[currentSlide].classList.remove('active');
+                                currentSlide = (currentSlide + 1) % slides.length;
+                                slides[currentSlide].classList.add('active');
+                            }, 4000);
+                        }
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -375,10 +422,16 @@
     <!-- 2. MY JOURNEY SECTION: Executive Stacked Layout -->
     <section class="section" style="background: white;">
         <div class="container grid grid-2" style="align-items: center; gap: 6rem;">
-            <div class="animate-fade-left luxury-zoom" style="display: flex; justify-content: center;">
+            <div class="animate-fade-left luxury-zoom" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <!-- Singular Focus: Doctor Portrait with Watermark Crop -->
-                <div style="width: 100%; max-width: 450px; border-radius: 40px 160px 40px 40px; border: 8px solid white; box-shadow: var(--shadow-xl); overflow: hidden; background: #eee;">
-                    <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja" style="width: 100%; display: block; transform: scale(1.3); transform-origin: center 25%;">
+                <div style="width: 100%; max-width: 450px; border-radius: 40px 160px 40px 40px; border: 8px solid white; box-shadow: var(--shadow-xl); overflow: hidden; background: #eee; margin-bottom: 2rem;">
+                    <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja" style="width: 100%; display: block; transform: scale(1.1); transform-origin: center 15%;">
+                </div>
+                <!-- Doctor Profile Name & Qualifications -->
+                <div style="text-align: center;">
+                    <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 700; line-height: 1.2;">Dr. Howthul Alam Raja</h3>
+                    <p style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.95rem; margin-bottom: 0.5rem;">MD DVL (Madras Medical College)</p>
+                    <p style="color: var(--color-text-muted); font-size: 1.1rem; font-style: italic; max-width: 320px; margin: 0 auto;">Consultant Dermatologist, Dermatosurgery and Laser Specialist</p>
                 </div>
             </div>
             <div class="animate-fade-right">
@@ -648,8 +701,8 @@
                 width: 100%; 
                 height: 100%; 
                 object-fit: cover;
-                transform: scale(1.3);
-                transform-origin: center 25%;
+                transform: scale(1.1);
+                transform-origin: center 15%;
                 transition: transform var(--transition-slow) !important;
             }
             .doctor-card .team-img-placeholder img {
