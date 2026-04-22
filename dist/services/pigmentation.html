@@ -10,36 +10,79 @@
     <link rel="stylesheet" href="../styles/components.css">
     <script src="../scripts/main.js" defer></script>
     <style>
-        .hero { padding: 120px 0 60px; text-align: center; background: linear-gradient(rgba(244, 247, 249, 0.9), rgba(244, 247, 249, 0.9)), url('https://images.unsplash.com/photo-1616832880699-8541b04005ea?auto=format&fit=crop&w=1920&q=80') center/cover; }
+        .hero { padding: 120px 0 60px; text-align: center; background: linear-gradient(rgba(244, 247, 249, 0.94), rgba(244, 247, 249, 0.94)), url('../images/pigmentation-treatment.jpg') center/cover; }
         .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
-                <div class="logo-text-wrapper">
-                    <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
-                    <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+    <!-- Luxury Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-wrapper">
+                <img src="../images/logo.png" alt="Dr. Alam's Logo" class="preloader-logo">
+                <div class="preloader-rings">
+                    <div class="ring ring-1"></div>
+                    <div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div>
                 </div>
-            </a>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
-            <nav class="nav-links">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="../about.html" class="nav-link">About</a>
-                <a href="../blog.html" class="nav-link">Education</a>
-                <a href="acne.html" class="nav-link">Acne & Scars</a>
-                <a href="pigmentation.html" class="nav-link active">Pigmentation</a>
-                <a href="hair-loss.html" class="nav-link">Hair Loss</a>
-                <a href="dermatosurgery.html" class="nav-link">Procedures</a>
-                <a href="../technology.html" class="nav-link">Technology</a>
-                <a href="../results.html" class="nav-link">Results</a>
-                <a href="../contact.html" class="btn btn-primary">Book Consultation</a>
-            </nav>
+            </div>
+            <div class="preloader-brand">
+                <span class="brand-letter">D</span>
+                <span class="brand-letter">R</span>
+                <span class="brand-dot">.</span>
+                <span class="brand-space"> </span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">L</span>
+                <span class="brand-letter">A</span>
+                <span class="brand-letter">M</span>
+                <span class="brand-letter">'</span>
+                <span class="brand-letter">S</span>
+            </div>
+            <div class="preloader-tagline">REFINING CONFIDENCE</div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"></div>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <!-- Sticky Header Wrapper -->
+    <div class="sticky-header-wrapper" style="position: sticky; top: 0; z-index: 1000; width: 100%;">
+        <!-- Top Info Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-track">
+                    <div class="top-bar-item">500+ Google Reviews · <span style="color: #fbbc05;">4.9★</span></div>
+                    <span class="top-bar-divider">|</span>
+                    <div class="top-bar-item">Erode's Most Reviewed Dermatologist</div>
+                    <span class="top-bar-divider">|</span>
+                    <div class="top-bar-item">MD DVL, Madras Medical College</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="container nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                    <div class="logo-text-wrapper">
+                        <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                        <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+                <nav class="nav-links">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="../about.html" class="nav-link">About</a>
+                    <a href="../services.html" class="nav-link">Services</a>
+                    <a href="../technology.html" class="nav-link">Technology & Clinic</a>
+                    <a href="../results.html" class="nav-link">Results Gallery</a>
+                    <a href="../blog.html" class="nav-link">Blog / Skin Education</a>
+                    <a href="../contact.html" class="btn btn-primary">Contact</a>
+                </nav>
+            </div>
+        </header>
+    </div>
 
     <!-- 1. HERO -->
     <section class="hero">
@@ -245,6 +288,8 @@
                 height: 24px;
                 border-radius: 50%;
                 object-fit: cover;
+                transform: scale(1.3);
+                transform-origin: center 25%;
             }
             .short-doctor-tag span {
                 color: white;
@@ -259,12 +304,49 @@
             }
         </style>
     </section>
+    <!-- Full Footer -->
+    <footer class="footer">
         <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo.png" alt="Dr. Alam's Logo" class="logo-icon">
+                        <div class="logo-text-wrapper">
+                            <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
+                            <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
+                        </div>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <a href="../acne-scars.html">Acne & Acne Scars</a>
+                    <a href="../pigmentation.html">Pigmentation & Melasma</a>
+                    <a href="../hair-loss.html">Hair Loss Restoration</a>
+                    <a href="../laser-hair-removal.html">Laser Hair Removal</a>
+                    <a href="../dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
+                    <a href="../clinical-dermatology.html">Clinical Dermatology</a>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About Clinic</a>
+                    <a href="../services.html">Our Services</a>
+                    <a href="../results.html">Results Gallery</a>
+                    <a href="../blog.html">Skin Education</a>
+                </div>
+                <div>
+                    <h3>Location</h3>
+                    <p style="font-size: 0.9rem; color: #a4b0be;">306, Nasiyanur Road,<br>Narayanavalasu, Erode,<br>Tamil Nadu, India</p>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Dr. Alam's Skin Clinic. All Rights Reserved. | powered by <a href="https://thearktech.in/" target="_blank" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">thearktech</a></p>
             </div>
         </div>
     </footer>
+
+    <script type="module" src="../scripts/main.js"></script>
     <!-- Magnetic Contact Dock (Mobile Only) -->
     <div class="contact-dock">
         <div class="dock-bar">
@@ -278,7 +360,7 @@
                 </a>
                 <a href="https://wa.me/9345410038" class="dock-item">
                     <div class="dock-icon-wrap">
-                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-222 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
+                        <svg viewBox="0 0 448 512" fill="currentColor" style="width: 18px; height: 18px; color: #25D366;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.5-16.4-14.7-27.5-32.8-30.7-38.3-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.5-9.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.908-.2-10.608-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 34.9 2.2 10.6-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
                     </div>
                     <span class="dock-item-label">WhatsApp</span>
                 </a>

@@ -1130,17 +1130,19 @@
                 </a>
                 <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
                 <nav class="nav-links">
-                    <a href="/" class="nav-link active">Home</a>
-                    <a href="about" class="nav-link">About</a>
-                    <a href="services" class="nav-link">Services</a>
-                    <a href="technology" class="nav-link">Technology & Clinic</a>
-                    <a href="results" class="nav-link">Results Gallery</a>
-                    <a href="blog" class="nav-link">Blog / Skin Education</a>
-                    <a href="contact" class="btn btn-primary">Contact</a>
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                    <a href="results.html" class="nav-link">Results Gallery</a>
+                    <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                    <a href="contact.html" class="btn btn-primary">Contact</a>
+
                 </nav>
             </div>
         </header>
     </div>
+
 
     <!-- 1. HERO SECTION -->
     <section class="hero" id="hero-section">
@@ -1152,12 +1154,12 @@
                 <!-- Left Column: Text Content -->
                 <div class="hero-text-col" style="flex: 1.2; min-width: 320px;">
                     <h1 style="font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.01em; margin-bottom: 2rem; text-align: left; color: var(--color-background); font-size: clamp(2.5rem, 6vw, 4.2rem);">
-                        <span style="font-style: italic; font-weight: 300; display: block; opacity: 0.9;">Transform Your Skin.</span>
-                        <span style="font-style: italic; font-weight: 300; display: block; opacity: 0.9;">Restore Your Hair.</span>
-                        <span class="text-accent" style="font-weight: 900; text-transform: uppercase; letter-spacing: 4px; font-size: 0.6em; color: var(--color-accent); margin-top: 0.5rem; display: block;">Reclaim Your Confidence.</span>
+                        <span style="font-style: italic; font-weight: 800; display: block; margin-bottom: 0.2rem;">Transform Your Skin.</span>
+                        <span style="font-style: italic; font-weight: 800; display: block; margin-bottom: 0.2rem;">Restore Your Hair.</span>
+                        <span class="text-accent" style="font-weight: 900; text-transform: uppercase; letter-spacing: 4px; font-size: 0.6em; color: var(--color-accent); margin-top: 1rem; display: block;">Reclaim Your Confidence.</span>
                     </h1>
                     
-                    <p class="subheadline" style="font-size: 1.15rem; letter-spacing: 0.8px; line-height: 1.8; max-width: 680px; margin-left: 0; color: rgba(255, 253, 250, 0.8); font-weight: 300;">Advanced dermatology, laser &amp; skin surgery in Erode — specializing in <span
+                    <p class="subheadline" style="font-size: 1.15rem; letter-spacing: 0.8px; line-height: 1.8; max-width: 680px; margin-left: 0; color: rgba(255, 253, 250, 0.8); font-weight: 300;">Advanced dermatology, laser &amp; skin surgery center in Erode — specializing in <span
                             class="specialty-highlight" style="color: var(--color-accent); font-weight: 600;">Acne Scars, Pigmentation &amp; Skin Surgery</span></p>
 
                     <div class="btn-group" style="justify-content: flex-start; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap;">
@@ -1326,11 +1328,12 @@
                         <button class="hero-nav-btn next" id="hero-next" aria-label="Next Slide">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </button>
-                    </div>
 
-                </div>
+                    </div> <!-- End Hero Text Col or Image Col -->
+                </div> <!-- End Hero Split Wrapper -->
 
             </div> <!-- End Split Wrapper -->
+
 
             <!-- Hero Carousel -->
             <div class="hero-carousel">
@@ -1538,13 +1541,32 @@
         <div class="container animate-fade-up">
             <div class="challenge-header mb-lg" style="margin-bottom: 5rem;">
                 <span class="eyebrow">The Challenge</span>
-                <h2 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-family: var(--font-heading); color: var(--color-primary-dark); line-height: 1; margin-bottom: 1.5rem;">Your Skin Is <br>Holding You Back</h2>
+                <h2 class="challenge-title" style="font-size: clamp(2.2rem, 5vw, 4.5rem); font-family: var(--font-heading); color: var(--color-primary-dark); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800;">The Challenge:<br class="mobile-only"> Your Skin Is Holding You Back</h2>
+                <style>
+                    .mobile-only { display: none; }
+                    @media (max-width: 600px) { .mobile-only { display: block; } }
+                </style>
                 <div class="gold-divider" style="margin: 0; width: 80px;"></div>
             </div>
 
             <div class="challenge-split-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center;">
                 
-                <!-- Left Side: Pain Point Cards -->
+                <!-- Left Side: The Clinical Solution -->
+                <div class="challenge-solution-col">
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary-dark); line-height: 1.4; margin-bottom: 2rem;">You've tried creams and treatments—but nothing really works.</h3>
+                    
+                    <p style="font-size: 1.2rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 3.5rem; font-weight: 300;">Because without the right diagnosis, your skin won't improve.</p>
+
+                    <div class="solution-highlight" style="margin-bottom: 4rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;">
+                        <p style="font-size: 1.5rem; line-height: 1.5; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading); font-style: italic;">
+                            At Dr. Alam's Skin Clinic, we diagnose first, then treat—so results last, not fade.
+                        </p>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-secondary" style="padding: 1.2rem 3rem; font-weight: 800; letter-spacing: 1px; width: auto; min-width: 250px;">Request a Medical Evaluation</a>
+                </div>
+
+                <!-- Right Side: Pain Point Cards -->
                 <div class="pain-points-stack" style="display: flex; flex-direction: column; gap: 2.5rem;">
                     
                     <div class="pain-card" style="background: #fff; padding: 2.5rem; border-radius: 30px; box-shadow: 0 12px 40px rgba(6, 29, 48, 0.03); border: 1px solid rgba(184, 151, 62, 0.08); display: flex; gap: 2rem; align-items: center; transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); cursor: default;">
@@ -1579,21 +1601,6 @@
 
                 </div>
 
-                <!-- Right Side: The Clinical Solution -->
-                <div class="challenge-solution-col">
-                    <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary-dark); line-height: 1.4; margin-bottom: 2rem;">You've tried creams and treatments—but nothing really works.</h3>
-                    
-                    <p style="font-size: 1.2rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 3.5rem; font-weight: 300;">Because without the right diagnosis, your skin won't improve.</p>
-
-                    <div class="solution-highlight" style="margin-bottom: 4rem; border-left: 2px solid var(--color-accent); padding-left: 2rem;">
-                        <p style="font-size: 1.5rem; line-height: 1.5; font-weight: 700; color: var(--color-accent); font-family: var(--font-heading); font-style: italic;">
-                            At Dr. Alam's Skin Clinic, we diagnose first, then treat—so results last, not fade.
-                        </p>
-                    </div>
-
-                    <a href="contact.html" class="btn btn-secondary" style="padding: 1.2rem 3rem; font-weight: 800; letter-spacing: 1px; width: auto; min-width: 250px;">Request a Medical Evaluation</a>
-                </div>
-
             </div>
         </div>
 
@@ -1625,7 +1632,7 @@
             <div class="animate-fade-up">
                 <div style="overflow: hidden; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); aspect-ratio: 1/1; background: var(--color-primary-dark);">
                     <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja"
-                        style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.18); object-position: center 15%;">
+                        style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.3); object-position: center 20%;">
                 </div>
             </div>
             <div class="animate-fade-up">
@@ -1714,7 +1721,7 @@
     <section class="section section-bg-light">
         <div class="container animate-fade-up">
             <div class="text-center mb-md">
-                <span class="eyebrow" style="letter-spacing: 3px; font-weight: 700; color: var(--color-accent);">Medical Specialties</span>
+                <span class="eyebrow" style="letter-spacing: 3px; font-weight: 700; color: var(--color-accent); text-transform: uppercase;">WE ARE SPECIALIZED IN</span>
                 <h2 style="font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-top: 10px;">Advanced Dermatology <br><span class="text-accent" style="font-style: italic; font-weight: 400; font-family: var(--font-serif);">Treatments</span></h2>
                 <div class="gold-divider"></div>
                 <p class="text-muted" style="max-width: 700px; margin: 0 auto;">From medical dermatology to advanced
@@ -2184,6 +2191,8 @@
                 height: 24px;
                 border-radius: 50%;
                 object-fit: cover;
+                transform: scale(1.3);
+                transform-origin: center 25%;
             }
             .short-doctor-tag span {
                 color: white;
@@ -2904,8 +2913,25 @@
 
         <style>
             @media (max-width: 1024px) {
-                .final-contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
-                .map-frame-wrap { min-height: 400px !important; }
+                .final-contact-grid { 
+                    grid-template-columns: 1fr !important; 
+                    gap: 3rem !important; 
+                }
+                .map-frame-wrap { 
+                    min-height: 400px !important; 
+                    order: 2; /* Map second on mobile */
+                }
+                .contact-details-wrap {
+                    order: 1; /* Buttons first on mobile */
+                    margin-bottom: 2rem;
+                }
+                .cta-actions-vertical button, .cta-actions-vertical a {
+                    width: 100% !important;
+                }
+                /* Ensure section has enough room for sticky dock */
+                .section {
+                    padding-bottom: 120px !important;
+                }
             }
         </style>
     </section>
@@ -3300,5 +3326,6 @@
             </div>
         </div>
     </div>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 </html>

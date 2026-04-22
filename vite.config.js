@@ -40,7 +40,9 @@ const copyFoldersPlugin = {
 };
 
 export default defineConfig({
+  base: './',
   root: './',
+
   build: {
     outDir: 'dist',
     rollupOptions: {

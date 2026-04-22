@@ -8,12 +8,13 @@ const init = () => {
     initScrollReveal();
     initNavigation();
     initHeroSlider();
-    initImageSliders();
+    // initImageSliders(); // Disabled to allow static side-by-side results layout
     initMagneticEffects();
     initCounterAnimations();
     initFAQ();
     initSpotlight();
     initBookingForm();
+    initConcierge();
     initCursor();
 };
 
@@ -152,6 +153,7 @@ function initNavigation() {
 function initHeroSlider() {
     const cards = document.querySelectorAll('.result-arch-card');
     const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.hero-dot');
     const prevBtn = document.getElementById('hero-prev');
     const nextBtn = document.getElementById('hero-next');
     
@@ -165,25 +167,27 @@ function initHeroSlider() {
 
         cards.forEach((card, i) => {
             card.style.display = (i === currentIndex) ? 'block' : 'none';
-            if (i === currentIndex) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                    card.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 10);
-            }
         });
 
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
             if (i === currentIndex) slide.classList.add('active');
         });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
     };
 
     nextBtn?.addEventListener('click', () => updateSlider(currentIndex + 1));
     prevBtn?.addEventListener('click', () => updateSlider(currentIndex - 1));
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            updateSlider(i);
+            resetAutoPlay();
+        });
+    });
 
     let autoPlay = setInterval(() => updateSlider(currentIndex + 1), 8000);
     const resetAutoPlay = () => {
@@ -304,50 +308,224 @@ function initBookingForm() {
     const form = document.getElementById('booking-form');
     if (!form) return;
 
+    // --- 1. Dynamic Time Slot Generation ---
+    const slotsGrid = document.getElementById('time-slots-grid');
+    const timeHidden = document.getElementById('app-time');
+    const openingHours = [
+        "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", 
+        "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM",
+        "--- Evening ---",
+        "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM", 
+        "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM"
+    ];
+
+    openingHours.forEach(time => {
+        const slot = document.createElement('div');
+        
+        if (time.startsWith('---')) {
+            slot.className = 'time-divider';
+            slot.textContent = time.replace(/-/g, '').trim();
+            slot.style.gridColumn = '1 / -1';
+            slot.style.fontSize = '0.7rem';
+            slot.style.color = 'rgba(255,255,255,0.3)';
+            slot.style.textTransform = 'uppercase';
+            slot.style.letterSpacing = '2px';
+            slot.style.marginTop = '1rem';
+            slot.style.marginBottom = '0.5rem';
+            slot.style.textAlign = 'center';
+        } else {
+            slot.className = 'time-slot';
+            slot.textContent = time;
+            slot.onclick = () => {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('active'));
+                slot.classList.add('active');
+                timeHidden.value = time;
+            };
+        }
+        slotsGrid.appendChild(slot);
+    });
+
+    // --- 2. Simple Luxury Calendar Logic ---
+    const daysGrid = document.getElementById('calendar-days-grid');
+    const dateHidden = document.getElementById('app-date');
+    const monthLabel = document.getElementById('calendar-month');
+    const now = new Date();
+    let displayMonth = now.getMonth();
+    let displayYear = now.getFullYear();
+
+    const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+
+    function generateCalendar(month, year) {
+        daysGrid.innerHTML = '';
+        monthLabel.textContent = `${monthNames[month]} ${year}`;
+        
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+            daysGrid.appendChild(document.createElement('div'));
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dayEl = document.createElement('div');
+            dayEl.className = 'cal-day';
+            dayEl.textContent = d;
+            
+            const checkDate = new Date(year, month, d);
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            if (checkDate < today) {
+                dayEl.classList.add('disabled');
+            } else {
+                dayEl.onclick = () => {
+                    document.querySelectorAll('.cal-day').forEach(el => el.classList.remove('active'));
+                    dayEl.classList.add('active');
+                    dateHidden.value = `${d} ${monthNames[month]} ${year}`;
+                };
+            }
+            daysGrid.appendChild(dayEl);
+        }
+    }
+
+    document.querySelector('.btn-prev').onclick = () => {
+        displayMonth--;
+        if (displayMonth < 0) { displayMonth = 11; displayYear--; }
+        generateCalendar(displayMonth, displayYear);
+    };
+
+    document.querySelector('.btn-next').onclick = () => {
+        displayMonth++;
+        if (displayMonth > 11) { displayMonth = 0; displayYear++; }
+        generateCalendar(displayMonth, displayYear);
+    };
+
+    generateCalendar(displayMonth, displayYear);
+
+    // --- 3. WhatsApp Redirect Logic ---
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // 1. Capture Form Data
-        const formData = new FormData(form);
-        const name = formData.get('Full_Name') || 'Patient';
-        const phone = formData.get('Phone_Number') || 'Not provided';
-        const service = formData.get('Service') || 'General Consultation';
-        const doctor = formData.get('Doctor') || 'Any Specialist';
-        const date = formData.get('Preferred_Date') || 'TBD';
-        const time = formData.get('Preferred_Time') || 'TBD';
+        const name = document.getElementById('app-name').value;
+        const service = document.getElementById('app-service').value;
+        const date = dateHidden.value;
+        const time = timeHidden.value;
 
-        // 2. Format Professional Message
-        const messageBody = `Hello Dr. Alam's Clinic,\n\nI would like to book a professional consultation.\n\n*Patient Details:*\n- Name: ${name}\n- Phone: ${phone}\n\n*Appointment Details:*\n- Service: ${service}\n- Doctor: ${doctor}\n- Date: ${date}\n- Time: ${time}\n\nThank you!`;
-        
-        // 3. Generate Secure Communication Links
-        // Using clinical WhatsApp: +91 93454 10038
-        const whatsappUrl = `https://wa.me/919345410038?text=${encodeURIComponent(messageBody)}`;
-        
-        const emailSubject = `Appointment Request: ${name}`;
-        const emailBodyPlain = messageBody.replace(/\*/g, ''); // Remove formatting for email
-        const emailUrlValue = `mailto:admin@dralamdermcentre.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyPlain)}`;
+        if (!date || !time) {
+            alert("Please select both a Date and a Time slot.");
+            return;
+        }
 
-        // 4. Populate Success Interface
-        const modal = document.getElementById('booking-success-modal');
-        const waBtn = document.getElementById('modal-whatsapp-btn');
-        const emailBtn = document.getElementById('modal-email-btn');
+        const message = `Hello Dr. Alam's Clinic,\n\nI would like to book a clinical appointment.\n\n*Patient Name:* ${name}\n*Treatment:* ${service}\n*Date:* ${date}\n*Time Slot:* ${time}\n\nThank you!`;
+        const whatsappUrl = `https://wa.me/919345410038?text=${encodeURIComponent(message)}`;
 
-        if (waBtn) waBtn.href = whatsappUrl;
-        if (emailBtn) emailBtn.href = emailUrlValue;
+        window.open(whatsappUrl, '_blank');
+    });
+}
+
+// ============================================================
+// 9. DIGITAL CONCIERGE (SKIN ASSESSMENT)
+// ============================================================
+function initConcierge() {
+    const modal = document.getElementById('concierge-modal');
+    const openBtn = document.getElementById('open-concierge');
+    const closeBtn = document.getElementById('concierge-close');
+    const steps = document.querySelectorAll('.concierge-step');
+    const progressBar = document.getElementById('concierge-progress-fill');
+    const label = document.getElementById('concierge-step-label');
+    const backBtn = document.getElementById('concierge-back');
+    const nav = document.getElementById('concierge-nav');
+    
+    if (!modal || !openBtn) return;
+
+    let currentStep = 1;
+    let selections = {};
+
+    const updateUI = () => {
+        steps.forEach(s => s.classList.remove('active'));
+        const activeStep = document.getElementById(currentStep === 4 ? 'concierge-result' : `step-${currentStep}`);
+        activeStep?.classList.add('active');
+
+        // Progress
+        const pct = ((currentStep - 1) / 3) * 100;
+        if (progressBar) progressBar.style.width = `${pct}%`;
+        if (label) label.textContent = currentStep === 4 ? 'Assessment Complete' : `Step ${currentStep} of 3`;
         
-        // 5. Trigger Luxury Transformation Overlay
-        if (modal) {
-            modal.classList.add('active');
+        // Navigation
+        if (nav) nav.style.display = (currentStep > 1 && currentStep < 4) ? 'flex' : 'none';
+    };
+
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        currentStep = 1;
+        updateUI();
+    });
+
+    closeBtn?.addEventListener('click', () => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    });
+
+    // Handle Option Clicks
+    document.querySelectorAll('.concern-btn, .duration-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const val = btn.dataset.value;
+            const parentId = btn.closest('.concierge-step').id;
             
-            // Auto-close overlay when an action is taken to return to site
-            [waBtn, emailBtn].forEach(btn => {
-                btn?.addEventListener('click', () => {
-                    setTimeout(() => modal.classList.remove('active'), 1000);
-                    form.reset();
-                });
-            });
+            if (parentId === 'step-1') selections.concern = val;
+            if (parentId === 'step-2') selections.duration = val;
+            if (parentId === 'step-3') selections.prior = val;
+
+            if (currentStep < 3) {
+                currentStep++;
+                updateUI();
+            } else {
+                generateResult();
+            }
+        });
+    });
+
+    backBtn?.addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateUI();
         }
     });
+
+    function generateResult() {
+        currentStep = 4;
+        updateUI();
+
+        const headline = document.getElementById('result-headline');
+        const text = document.getElementById('result-text');
+        const learnMore = document.getElementById('result-learn-more');
+
+        let recTitle = "Clinical Diagnosis Required";
+        let recDesc = "Based on your input, Dr. Alam recommends a detailed skin diagnostic session. We specialize in evidence-based protocols for long-term health.";
+        let link = "services.html";
+
+        const c = selections.concern;
+        if (c === 'acne') {
+            recTitle = "Acne & Scar Restoration Path";
+            recDesc = "Your condition suggests a combined approach: Clinical medicine to control active acne, followed by advanced laser resurfacing for scar revision.";
+            link = "acne-scars.html";
+        } else if (c === 'pigmentation') {
+            recTitle = "Pigmentation Correction Protocol";
+            recDesc = "Melasma and deep pigmentation require a double-action plan: Medical-grade peels and Q-Switched laser therapy for deep pigment breakdown.";
+            link = "pigmentation.html";
+        } else if (c === 'hair') {
+            recTitle = "Hair Follicle Restoration";
+            recDesc = "Early intervention is key. Dr. Alam recommends a clinical assessment for pattern analysis, likely involving medical therapy and GFC/PRP restoration.";
+            link = "hair-loss.html";
+        }
+
+        if (headline) headline.textContent = recTitle;
+        if (text) text.textContent = recDesc;
+        if (learnMore) learnMore.setAttribute('href', link);
+    }
 }
 
 function initCursor() {

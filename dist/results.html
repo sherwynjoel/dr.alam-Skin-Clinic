@@ -40,28 +40,42 @@
 
         .results-nav {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             justify-content: center;
+            align-items: center;
             list-style: none;
             padding: 0;
             margin: 0;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .results-nav::-webkit-scrollbar {
+            display: none;
         }
 
         .results-nav a {
             text-decoration: none;
             color: #061D30;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 0.8rem 1.2rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 8px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            background: rgba(6, 29, 48, 0.03);
+            display: flex;
+            align-items: center;
         }
 
         .results-nav a:hover {
-            background: rgba(6, 29, 48, 0.05);
-            color: var(--color-accent);
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Introduction Section */
@@ -218,7 +232,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3px;
             width: 100%;
-            background: #e0e0e0;
+            background: white;
             cursor: default;
             position: relative;
         }
@@ -311,23 +325,17 @@
             .category-grid { grid-template-columns: 1fr; }
             .results-nav-container { top: 70px; padding: 1.5rem 0; }
             .results-nav {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
+                justify-content: flex-start;
                 padding: 0 1.5rem;
+                gap: 0.8rem;
             }
-            .results-nav li { width: 100%; }
+            .results-nav-container { padding: 1.25rem 0; }
             .results-nav a {
-                background: #f8f9fa;
-                border: 1px solid rgba(0,0,0,0.05);
-                text-align: center;
-                font-size: 0.72rem;
-                padding: 1rem 0.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                line-height: 1.2;
-                border-radius: 12px;
+                padding: 0.8rem 1rem;
+                font-size: 0.7rem;
+                background: white;
+                border: 1px solid rgba(0,0,0,0.08);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.03);
             }
             .gallery-category { padding: 60px 0 !important; }
             .category-header { margin-bottom: 3rem !important; }
@@ -356,7 +364,7 @@
         }
 
         .summary-label {
-            color: #ff0000;
+            color: var(--color-primary-dark);
             font-weight: 800;
             width: 110px;
             flex-shrink: 0;
@@ -375,9 +383,9 @@
             .results-hero { padding: 180px 0 100px; }
         }
     </style>
-  <script type="module" crossorigin src="/assets/results-QF6b-ycK.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-DNa0xiyN.js">
-  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
+  <script type="module" crossorigin src="/assets/results-Cxyd_3Tw.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-CMm4ZuXF.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-eF3KHqkO.css">
 </head>
 
 <body>
@@ -618,6 +626,17 @@
         </div>
     </header>
 
+    <nav class="specialty-nav animate-fade-up">
+        <div class="container nav-scroll-wrapper">
+            <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
+            <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
+            <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
+            <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
+            <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
+            <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
+        </div>
+    </nav>
+
     <main>
         <!-- 1. HERO -->
         <section class="results-hero">
@@ -677,7 +696,7 @@
                 <div class="category-grid">
 
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/11-DnaMApoy.jpg" alt="Active Acne Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -686,8 +705,7 @@
                                 <img src="/assets/12-CLrQtm3p.jpg" alt="Active Acne After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -706,7 +724,7 @@
 
                     <!-- Patient 2: Acne Treatment -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/13%20(2)-CF6UebwX.jpg" alt="Acne Treatment Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -715,8 +733,7 @@
                                 <img src="/assets/14%20(2)-CDj6FbUN.jpg" alt="Acne Treatment Patient 2 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -733,23 +750,22 @@
                         </div>
                     </div>
 
-                    <!-- Patient 3: Acne Control -->
+                    <!-- Patient 3: Inflammatory Acne Control -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/12%20(4)-DuoEKeRK.jpg" alt="Acne Treatment Patient 3 Before" draggable="false">
+                                <img src="/assets/51-CyI23Qt0.jpg" alt="Inflammatory Acne Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/13%20(3)-DnSo4h7b.jpg" alt="Acne Treatment Patient 3 After" draggable="false">
+                                <img src="/assets/49-RqUKFKky.jpg" alt="Inflammatory Acne After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
                         </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
-                                <span class="summary-value">Cystic Acne Improvement</span>
+                                <span class="summary-value">Grade IV Acne Control</span>
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">Session:</span>
@@ -761,6 +777,37 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Patient 4: Moderate Inflammatory Acne -->
+                    <div class="ba-clinical-card animate-fade-up">
+                        <div class="ba-slider-container">
+                            <div class="ba-slider-image ba-slider-before">
+                                <img src="/assets/15%20(1)-CwKgtc5v.jpg" alt="Active Acne Treatment Before" draggable="false">
+                                <span class="ba-tag ba-tag-before">Before</span>
+                            </div>
+                            <div class="ba-slider-image ba-slider-after">
+                                <img src="/assets/16%20(2)-Yreu_LDO.jpg" alt="Active Acne Treatment After" draggable="false">
+                                <span class="ba-tag ba-tag-after">After</span>
+                            </div>
+                        </div>
+                        <div class="ba-treatment-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Conditions:</span>
+                                <span class="summary-value">Inflammatory Control</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Session:</span>
+                                <span class="summary-value">4 sessions</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Duration:</span>
+                                <span class="summary-value">3 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </section>
@@ -774,9 +821,10 @@
                     <p style="font-size: 1.2rem;">Improving architectural skin damage using fractional resurfacing and procedural combinations.</p>
                 </div>
                 <div class="category-grid">
+
                     <!-- Patient 2: Acne Scar Treatment -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/10%20(3)-CmsGhyRb.jpg" alt="Acne Scar Treatment Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -785,8 +833,7 @@
                                 <img src="/assets/11%20(6)-y6lyXqzf.jpg" alt="Acne Scar Treatment Patient 2 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -806,21 +853,21 @@
 
                     <!-- Patient 4: Scar Revision -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
-                                <img src="/assets/12%20(4)-DuoEKeRK.jpg" alt="Acne Scar Patient 4 Before" draggable="false">
+                                <img src="/assets/12%20(5)-DuoEKeRK.jpg" alt="Acne Scar Patient 4 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
                             </div>
                             <div class="ba-slider-image ba-slider-after">
-                                <img src="/assets/13%20(3)-DnSo4h7b.jpg" alt="Acne Scar Patient 4 After" draggable="false">
+                                <img src="/assets/13%20(5)-DnSo4h7b.jpg" alt="Acne Scar Patient 4 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
-                                <span class="summary-value">Boxcar Scars</span>
+                                <span class="summary-value">Acne Scar Treatment</span>
+
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">Session:</span>
@@ -835,7 +882,7 @@
 
                     <!-- Patient 5: Scar Revision -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/14%20(3)-DGsAVaCq.jpg" alt="Acne Scar Patient 5 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -844,8 +891,7 @@
                                 <img src="/assets/6-B9ak3gjU.jpg" alt="Acne Scar Patient 5 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -876,7 +922,7 @@
                 <div class="category-grid">
                     <!-- Patient 1: Pigmentation -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/4-BF_3-ROd.jpg" alt="Melasma Treatment Patient 1 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -885,8 +931,7 @@
                                 <img src="/assets/5-C1sLl8r8.jpg" alt="Melasma Treatment Patient 1 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -905,7 +950,7 @@
 
                     <!-- Patient 2: Dermal Pigmentation -->
                     <div class="ba-clinical-card animate-fade-up" style="transition-delay: 0.1s;">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/31-CQW0UU3t.jpg" alt="Dermal Pigmentation Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -914,12 +959,12 @@
                                 <img src="/assets/32-CWcN-FET.jpg" alt="Dermal Pigmentation After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
-                                <span class="summary-value">Dermal Pigmentation</span>
+                                <span class="summary-value">Freckles</span>
+
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">Session:</span>
@@ -934,7 +979,7 @@
 
                     <!-- Patient 3: Pigmentation -->
                     <div class="ba-clinical-card animate-fade-up" style="transition-delay: 0.2s;">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/6%20(1)-BwGxuRVt.jpg" alt="Pigmentation Patient 3 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -943,8 +988,7 @@
                                 <img src="/assets/11%20(7)-CDF3NiAH.jpg" alt="Pigmentation Patient 3 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -976,7 +1020,7 @@
                 <div class="category-grid">
                     <!-- Patient 1: Hair Restoration -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/16%20(1)-C6aIUUIq.jpg" alt="Hair Restoration Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -985,8 +1029,7 @@
                                 <img src="/assets/17-BPIBw6_r.jpg" alt="Hair Restoration After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1005,7 +1048,7 @@
 
                     <!-- Patient 2: Hair Restoration -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/18-mT3qK2wY.jpg" alt="Hair Restoration Patient 2 Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1014,8 +1057,7 @@
                                 <img src="/assets/19-BLXv6jPV.jpg" alt="Hair Restoration Patient 2 After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1048,7 +1090,7 @@
                 <div class="category-grid">
                     <!-- Feature: Before/After Slider for Laser Hair Removal -->
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/10%20(5)-i8Y07Lwr.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1057,8 +1099,7 @@
                                 <img src="/assets/sd%20(1)-DSkhzrW3.jpg" alt="Laser Hair Removal After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1076,7 +1117,7 @@
                     </div>
 
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/11%20(8)-DSbcktYn.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1085,12 +1126,12 @@
                                 <img src="/assets/Minimalist%20Before%20After%20Salon%20_%20Makeup%20Instagram%20Post-DtfOLVbI.jpg" alt="Laser Hair Removal After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
-                                <span class="summary-value">Underarm LHR</span>
+                                <span class="summary-value">Face hair</span>
+
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">Session:</span>
@@ -1104,7 +1145,7 @@
                     </div>
 
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/24-CicQSz7h.jpg" alt="Laser Hair Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1113,12 +1154,12 @@
                                 <img src="/assets/25-tVPjn2u0.jpg" alt="Laser Hair Removal After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
-                                <span class="summary-value">Full Beard LHR</span>
+                                <span class="summary-value">Upper lip</span>
+
                             </div>
                             <div class="summary-item">
                                 <span class="summary-label">Session:</span>
@@ -1146,7 +1187,7 @@
                 <div class="category-grid">
 
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/34-C3v_xEBw.jpg" alt="Mole Removal Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1155,8 +1196,7 @@
                                 <img src="/assets/35-BGOsJb__.jpg" alt="Mole Removal After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1173,7 +1213,7 @@
                         </div>
                     </div>
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/30-9jKSkocs.jpg" alt="Mole Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1182,8 +1222,7 @@
                                 <img src="/assets/31%20(1)-CctsIhpf.jpg" alt="Mole Treatment After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1201,7 +1240,7 @@
                     </div>
 
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/36-D-U_isiN.jpg" alt="Complex Mole Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1210,8 +1249,7 @@
                                 <img src="/assets/37%20(1)-ujL6c_pI.jpg" alt="Complex Mole Treatment After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1241,7 +1279,7 @@
                 </div>
                 <div class="category-grid">
                     <div class="ba-clinical-card animate-fade-up">
-                        <div class="ba-slider-container" data-slider>
+                        <div class="ba-slider-container">
                             <div class="ba-slider-image ba-slider-before">
                                 <img src="/assets/37-Czd0Kvqx.jpg" alt="Keloid Treatment Before" draggable="false">
                                 <span class="ba-tag ba-tag-before">Before</span>
@@ -1250,8 +1288,7 @@
                                 <img src="/assets/38-25XVUma7.jpg" alt="Keloid Treatment After" draggable="false">
                                 <span class="ba-tag ba-tag-after">After</span>
                             </div>
-                            <div class="ba-slider-handle"></div>
-                        </div>
+                            </div>
                         <div class="ba-treatment-summary">
                             <div class="summary-item">
                                 <span class="summary-label">Conditions:</span>
@@ -1271,47 +1308,8 @@
             </div>
         </section>
 
-        <!-- SPECIALIZED CLINICAL CARE -->
-        <section id="specialized" class="gallery-category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="eyebrow" style="color: var(--color-accent);">Advanced Medical Care</span>
-                    <h2>Specialized Treatment Results</h2>
-                    <p style="font-size: 1.2rem;">Expert management for complex medical dermatology and surgical reconstruction.</p>
-                </div>
-                
-                <div class="category-grid">
-                    <div class="specialized-gallery-card animate-fade-up">
-                        <h3>Comprehensive Clinical Management</h3>
-                        <p>Our clinic provides gold-standard treatment for Keloids, Vitiligo (reconstruction & surgery), Cysts, Chronic non-healing ulcers, and Psoriasis. Due to the medically sensitive nature of these transformations, results are discussed and viewed in detail during a private consultation with Dr. Alam.</p>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; width: 100%; max-width: 900px; margin-top: 2rem; position: relative; z-index: 10;">
-                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                                <h5 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.5rem;">Keloid / Scar</h5>
-                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Flattening and color correction protocols for thick, elevated scarring.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                                <h5 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.5rem;">Vitiligo Treatment</h5>
-                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Advanced surgical pigment reconstruction for stable white patches.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                                <h5 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.5rem;">Cyst Excision</h5>
-                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Clean surgical removal of sebaceous cysts and skin swellings.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                                <h5 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.5rem;">Chronic Ulcers</h5>
-                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Medical management for non-healing leg and vascular skin ulcers.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
-                                <h5 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.5rem;">Psoriasis</h5>
-                                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6);">Comprehensive systemic and topical control of chronic skin plaques.</p>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="btn btn-white" style="margin-top: 4rem; position: relative; z-index: 10;">Consult Regarding Specialized Case</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
 
         <!-- INFORMATIONAL BLOCKS -->
         <section class="info-block" style="padding: 120px 0; background: var(--color-primary-dark); color: white;">

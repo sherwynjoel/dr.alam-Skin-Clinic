@@ -42,8 +42,8 @@
         /* 2. StoryBrand Hero Section */
         .hero-lp {
             padding: 160px 0 80px;
-            background: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), 
-                        url('https://images.unsplash.com/photo-1512290902241-15b9c14bc699?auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), 
+                        url('/assets/laser-hair-removal-F8k9Bv2e.jpg') center/cover;
             text-align: center;
         }
 
@@ -152,7 +152,9 @@
             .lp-nav .btn-primary { display: none; }
         }
     </style>
-  <link rel="stylesheet" crossorigin href="/assets/components-C1kgsoOE.css">
+  <script type="module" crossorigin src="/assets/laser-hair-removal-B9cZrwNY.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-CMm4ZuXF.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-eF3KHqkO.css">
 </head>
 
 <body>
@@ -407,6 +409,17 @@
         </div>
     </header>
 
+    <nav class="specialty-nav animate-fade-up">
+        <div class="container nav-scroll-wrapper">
+            <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
+            <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
+            <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
+            <a href="laser-hair-removal.html" class="spec-link active">Laser Hair Removal</a>
+            <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
+            <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
+        </div>
+    </nav>
+
     <main>
         <!-- 1. HERO SECTION (Character + Desire) -->
         <section class="hero-lp">
@@ -446,7 +459,9 @@
         <section class="section section-bg-light">
             <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
                 <div class="animate-fade-left">
-                    <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja" style="border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                    <div style="overflow: hidden; border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                        <img src="/assets/dr-alam-cYz4iZO0.png" alt="Dr. Howthul Alam Raja" style="width: 100%; display: block; transform: scale(1.3); transform-origin: center 25%;">
+                    </div>
                 </div>
                 <div class="animate-fade-right">
                     <span class="eyebrow">Expert Supervision</span>
@@ -560,30 +575,49 @@
         <section class="section section-bg-light">
             <div class="container">
                 <div class="text-center mb-xl">
-                    <span class="eyebrow">Visual Proof</span>
-                    <h2>Real Hair Reduction Results</h2>
+                    <span class="eyebrow">Clinical Transformation</span>
+                    <h2>Laser Hair Removal Outcome</h2>
                     <div class="gold-divider"></div>
                 </div>
-                <div class="grid grid-2" style="gap: 4rem; align-items: center;">
-                    <div class="ba-card animate-fade-left">
-                        <img src="/assets/Screenshot%202026-04-09%20214717-Ca318277.png" 
-                            alt="Underarm Laser Results Before and After" 
-                            style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);">
-                        <div class="ba-label"><span>Before</span><span>After 6 Sessions</span></div>
+
+                <div class="grid grid-2 clinical-case-grid">
+                    <div class="ba-clinical-card animate-fade-left">
+                        <div class="ba-slider-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: white;">
+                            <div class="ba-slider-image">
+                                <img src="/assets/10%20(5)-i8Y07Lwr.jpg" alt="Laser Hair Removal Before">
+                                <span class="ba-label-tag ba-label-before">BEFORE</span>
+                            </div>
+                            <div class="ba-slider-image">
+                                <img src="/assets/sd%20(1)-DSkhzrW3.jpg" alt="Laser Hair Removal After">
+                                <span class="ba-label-tag ba-label-after">AFTER</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="animate-fade-right">
-                        <h3>We Focus on Your Progress:</h3>
-                        <ul class="why-list" style="margin-top: 1.5rem;">
-                            <li><span>•</span> Reducing total hair count</li>
-                            <li><span>•</span> Thinner, lighter hair regrowth</li>
-                            <li><span>•</span> Clearing skin irritations</li>
-                            <li><span>•</span> Reversing "strawberry skin" look</li>
-                            <li><span>•</span> Long-term dermal health</li>
-                        </ul>
+                        <h3 style="font-size: 2rem; color: var(--lp-primary); margin-bottom: 1.5rem;">Precision Hair Reduction</h3>
+                        <p class="mb-md">This case demonstrates significant reduction in hair density and skin texture improvement. After 6 sessions, the hair became extremely fine, sparse, and the skin appearing smoother without razor bumps.</p>
+                        
+                        <div class="clinical-summary-box">
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Sessions:</span>
+                                <span class="clinical-summary-value">6-8 sessions</span>
+                            </div>
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Duration:</span>
+                                <span class="clinical-summary-value">Maintenance Phase</span>
+                            </div>
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Technique:</span>
+                                <span class="clinical-summary-value status-good">Medical Grade Laser</span>
+                            </div>
+                        </div>
+                        <a href="results.html" class="btn btn-outline" style="margin-top: 2rem; width: 100%; text-align: center;">View More Laser Results</a>
                     </div>
                 </div>
+
             </div>
         </section>
+
 
         <!-- 8. FAILURE SECTION (Stakes) -->
         <section class="section" style="background: #fffafa; border-left: 8px solid var(--lp-red);">
@@ -695,30 +729,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-lp-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-                if(item.querySelector('span')) {
-                    item.querySelector('span').textContent = item.classList.contains('active') ? '−' : '+';
-                }
-            });
-        });
-
-        // Animation Observer
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if(e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    e.target.classList.add('fade-up-active');
-                }
-            });
-        }, {threshold: 0.1});
-        document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right').forEach(el => obs.observe(el));
-    </script>
+
     <!-- Magnetic Contact Dock (Mobile Only) -->
     <div class="contact-dock">
         <div class="dock-bar">

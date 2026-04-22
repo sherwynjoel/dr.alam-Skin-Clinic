@@ -47,7 +47,7 @@
         .hero-lp {
             padding: 160px 0 80px;
             background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-                url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80') center/cover;
+                url('images/acne-treatment.jpg') center/cover;
             text-align: center;
         }
 
@@ -412,6 +412,17 @@
         </div>
     </header>
 
+    <nav class="specialty-nav animate-fade-up">
+        <div class="container nav-scroll-wrapper">
+            <a href="acne-scars.html" class="spec-link active">Acne & Acne Scars</a>
+            <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
+            <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
+            <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
+            <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
+            <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
+        </div>
+    </nav>
+
     <main>
         <!-- 2. HERO SECTION (Character + Desire) -->
         <section class="hero-lp">
@@ -459,8 +470,9 @@
         <section class="section section-bg-light">
             <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
                 <div class="animate-fade-left">
-                    <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja"
-                        style="border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                    <div style="overflow: hidden; border-radius: 20px; border: 12px solid white; box-shadow: var(--shadow-xl);">
+                        <img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja" style="width: 100%; display: block; transform: scale(1.3); transform-origin: center 25%;">
+                    </div>
                 </div>
                 <div class="animate-fade-right">
                     <span class="eyebrow">Expert Guidance</span>
@@ -592,6 +604,56 @@
                 </div>
             </div>
         </section>
+
+        <!-- NEW: CLINICAL CASE STUDY SECTION -->
+        <section class="section section-bg-white">
+            <div class="container">
+                <div class="text-center mb-xl">
+                    <span class="eyebrow">Case Transformation</span>
+                    <h2>Real Patient Outcome</h2>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <div class="grid grid-2 clinical-case-grid">
+                    <div class="ba-clinical-card animate-fade-left">
+                        <div class="ba-slider-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: white;">
+                            <div class="ba-slider-image">
+                                <img src="results/13 (2).jpg" alt="Acne Scar Treatment Before">
+                                <span class="ba-label-tag ba-label-before">BEFORE</span>
+                            </div>
+                            <div class="ba-slider-image">
+                                <img src="results/14 (2).jpg" alt="Acne Scar Treatment After">
+                                <span class="ba-label-tag ba-label-after">AFTER</span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="animate-fade-right">
+                        <p class="mb-md">This patient presented with deep rolling and boxcar scars following severe cystic acne. Using a combination of Subcision and Microneedling RF, we achieved significant texture smoothing and scar depth reduction.</p>
+
+                        
+                        <div class="clinical-summary-box">
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Sessions:</span>
+                                <span class="clinical-summary-value">6 sessions</span>
+                            </div>
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Duration:</span>
+                                <span class="clinical-summary-value">5 months</span>
+                            </div>
+                            <div class="clinical-summary-item">
+                                <span class="clinical-summary-label">Technique:</span>
+                                <span class="clinical-summary-value status-good">Multi-Layered Repair</span>
+                            </div>
+                        </div>
+                        <a href="results.html" class="btn btn-outline" style="margin-top: 2rem; width: 100%; text-align: center;">View More Acne Results</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
 
         <style>
             .procedure-card {
@@ -848,27 +910,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-lp-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-                q.querySelector('span').textContent = item.classList.contains('active') ? '−' : '+';
-            });
-        });
-
-        // Simple Intersection Observer
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('fade-up-active');
-                    e.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right').forEach(el => obs.observe(el));
-    </script>
+    <script type="module" src="scripts/main.js"></script>
     <!-- Floating Contact Stack (WhatsApp, Phone, Mail) -->
     <div class="floating-contact-stack">
         <!-- Phone -->
