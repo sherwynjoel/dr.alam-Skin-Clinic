@@ -2756,6 +2756,18 @@
                                 <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                                         height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg></span>
+                                <div>
+                                    <strong>Medical Expertise</strong>
+                                    <p>Proper diagnosis ensures you only use treatments that are safe and effective for
+                                        you.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path
                                             d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
                                         </path>
@@ -2764,18 +2776,6 @@
                                     <strong>Long-Term Restoration</strong>
                                     <p>Visible regrowth, clearer skin, and restored texture using evidence-based
                                         protocols.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="outcome-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    </svg></span>
-                                <div>
-                                    <strong>Medical Expertise</strong>
-                                    <p>Proper diagnosis ensures you only use treatments that are safe and effective for
-                                        you.</p>
                                 </div>
                             </li>
                             <li>
@@ -2799,49 +2799,67 @@
         </div>
     </section>
 
-
     <!-- 10. FINAL CTA / CLINIC LOCATION -->
     <section class="section" style="background: var(--color-primary-dark); padding: 120px 0; color: white;">
         <div class="container">
+            <!-- Part 1: Appointment Booking Block (Separate) -->
             <div class="text-center mb-xl animate-fade-up">
                 <h2 style="color: #fff; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem;">Begin Your Clinical Transformation Today</h2>
-                <p style="color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto;">If you are struggling with skin or hair concerns, take the first step towards a medically-backed solution.</p>
+                <p style="color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 3rem;">If you are struggling with skin or hair concerns, take the first step towards a medically-backed solution.</p>
+                
+                <div class="cta-actions-block animate-fade-up" style="max-width: 800px; margin: 0 auto 5rem;">
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 1.75rem; justify-content: center; font-size: 1.25rem; letter-spacing: 2px; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 15px 30px rgba(186,151,62,0.3);">BOOK TREATMENT CONSULTATION</a>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">WHATSAPP US</a>
+                        <a href="tel:09345410038" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">CALL CLINIC</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="final-contact-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start;">
-                <!-- Left Side: Professional Map Frame -->
-                <div class="map-frame-wrap animate-fade-up" style="position: relative; border-radius: 30px; overflow: hidden; height: 100%; min-height: 550px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid rgba(186,151,62,0.3);">
+            <!-- Part 2: Map and Location Side by Side -->
+            <div class="location-map-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: stretch;">
+                <!-- Left: Map -->
+                <div class="map-frame-wrap animate-fade-left" 
+                     onclick="this.querySelector('iframe').style.pointerEvents='auto'"
+                     style="position: relative; border-radius: 30px; overflow: hidden; min-height: 450px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid rgba(186,151,62,0.3); cursor: pointer;">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15647.7813958744!2d77.72!3d11.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f43f0000001%3A0x67300438cf38706d!2sDr.Alam&#39;s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1713500000000!5m2!1sen!2sin" 
-                        style="width: 100%; height: 100%; border:0; position: absolute; inset: 0;" allowfullscreen="" loading="lazy"></iframe>
+                        style="width: 100%; height: 100%; border:0; position: absolute; inset: 0; pointer-events: none;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- Interaction Overlay Hint -->
+                    <div class="map-overlay-hint" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(6,29,48,0.2); pointer-events: none; transition: opacity 0.3s;">
+                        <span style="background: var(--color-primary-dark); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--color-accent);">CLICK TO INTERACT WITH MAP</span>
+                    </div>
                 </div>
 
-                <!-- Right Side: Interaction & Details -->
-                <div class="contact-details-wrap" style="display: flex; flex-direction: column; gap: 2rem;">
-                    <!-- Action Buttons -->
-                    <div class="cta-actions-vertical" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
-                        <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 1.5rem; justify-content: center; font-size: 1.1rem; letter-spacing: 2px;">BOOK TREATMENT CONSULTATION</a>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem;">WHATSAPP US</a>
-                            <a href="tel:09345410038" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem;">CALL CLINIC</a>
-                        </div>
-                    </div>
+                <script>
+                    // Hide hint when map is clicked
+                    document.querySelector('.map-frame-wrap').addEventListener('click', function() {
+                        this.querySelector('.map-overlay-hint').style.opacity = '0';
+                    });
+                </script>
 
-                    <!-- Info Cards Stack -->
-                    <div class="info-cards-stack" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <!-- Card 1: Location -->
-                        <div class="clinical-info-card" style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid var(--color-accent);">
-                            <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Clinic Location</h4>
-                            <p style="font-size: 1.15rem; line-height: 1.5; color: rgba(255,255,255,0.9);"><strong>Dr. Alam's Skin Clinic</strong><br>308, Nasiyanur Road, Narayanavalasu,<br>Erode, Tamil Nadu</p>
-                        </div>
-
-                        <!-- Card 2: Contact -->
-                        <div class="clinical-info-card" style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid var(--color-accent);">
-                            <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">Contact Lines</h4>
-                            <p style="font-size: 1.15rem; line-height: 1.5; color: rgba(255,255,255,0.9);">Phone: 09345410038<br>WhatsApp: 09345410038</p>
+                <!-- Right: Location Details -->
+                <div class="location-details-wrap animate-fade-right" style="display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
+                    <div class="clinical-info-card" style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 30px; border: 1px solid rgba(186,151,62,0.2); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(186,151,62,0.1) 0%, transparent 70%);"></div>
+                        
+                        <div style="margin-bottom: 2.5rem;">
+                            <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">Clinic Location</h4>
+                            <p style="font-size: 1.3rem; line-height: 1.6; color: #fff;">
+                                <strong>Dr. Alam's Skin Clinic</strong><br>
+                                308, Nasiyanur Road,<br>
+                                Narayanavalasu, Erode,<br>
+                                Tamil Nadu, India
+                            </p>
                         </div>
 
-
+                        <div style="padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">Contact Inquiries</h4>
+                            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8);">
+                                <span style="display: block; margin-bottom: 0.5rem;">Phone: 093454 10038</span>
+                                <span>WhatsApp: 093454 10038</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2849,24 +2867,19 @@
 
         <style>
             @media (max-width: 1024px) {
-                .final-contact-grid { 
+                .location-map-grid { 
                     grid-template-columns: 1fr !important; 
                     gap: 3rem !important; 
                 }
                 .map-frame-wrap { 
                     min-height: 400px !important; 
-                    order: 2; /* Map second on mobile */
+                    order: 2;
                 }
-                .contact-details-wrap {
-                    order: 1; /* Buttons first on mobile */
-                    margin-bottom: 2rem;
+                .location-details-wrap {
+                    order: 1;
                 }
-                .cta-actions-vertical button, .cta-actions-vertical a {
+                .cta-actions-block a {
                     width: 100% !important;
-                }
-                /* Ensure section has enough room for sticky dock */
-                .section {
-                    padding-bottom: 120px !important;
                 }
             }
         </style>
@@ -2885,6 +2898,17 @@
                     </a>
                     <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin
                         Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18WjsgWSqw/?mibextid=wwXIfr" class="social-icon" target="_blank" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="https://www.instagram.com/dr_alam_dermatologist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://youtube.com/@drhowthulalam?si=sYelKfivNCrWuqC0" class="social-icon" target="_blank" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.42 5.58a2.78 2.78 0 0 0 1.94 2c1.71.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.42-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h3>Services</h3>

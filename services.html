@@ -21,7 +21,7 @@
         .services-hero {
             padding: 240px 0 160px;
             background: linear-gradient(to bottom, rgba(6, 29, 48, 0.98), rgba(6, 29, 48, 0.95)), 
-                        url('images/Screenshot 2026-04-13 132535.png') center/cover fixed;
+                        url('images/hero-slide-4.jpg') center/cover fixed;
             text-align: center;
             color: white;
             position: relative;
@@ -445,25 +445,15 @@
             <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
+                <a href="about.html" class="nav-link">About Clinic</a>
                 <a href="services.html" class="nav-link active">Services</a>
-                <a href="technology.html" class="nav-link">Technology & Clinic</a>
+                <a href="technology.html" class="nav-link">Technology</a>
                 <a href="results.html" class="nav-link">Results Gallery</a>
-                <a href="blog.html" class="nav-link">Blog / Skin Education</a>
+                <a href="blog.html" class="nav-link">Skin Education</a>
                 <a href="contact.html" class="btn btn-primary">Contact</a>
             </nav>
         </div>
     </header>
-    <nav class="specialty-nav animate-fade-up">
-        <div class="container nav-scroll-wrapper">
-            <a href="acne-scars.html" class="spec-link">Acne & Acne Scars</a>
-            <a href="pigmentation.html" class="spec-link">Pigmentation & Melasma</a>
-            <a href="hair-loss.html" class="spec-link">Hair Loss Restoration</a>
-            <a href="laser-hair-removal.html" class="spec-link">Laser Hair Removal</a>
-            <a href="dermatosurgery.html" class="spec-link">Skin Surgery (Dermatosurgery)</a>
-            <a href="clinical-dermatology.html" class="spec-link">Clinical Dermatology</a>
-        </div>
-    </nav>
 
     <main>
         <!-- 1. HERO -->
@@ -474,6 +464,17 @@
                 <p class="subheading">From chronic skin disease to aesthetic perfection — we combine medical science with aesthetic artistry to deliver results that matter.</p>
             </div>
         </section>
+
+        <nav class="specialty-nav animate-fade-up">
+            <div class="container nav-scroll-wrapper">
+                <a href="#acne" class="spec-link">Acne & Scars</a>
+                <a href="#pigment" class="spec-link">Pigmentation</a>
+                <a href="#hair" class="spec-link">Hair Loss</a>
+                <a href="#laser" class="spec-link">Laser Hair</a>
+                <a href="#surgery" class="spec-link">Skin Surgery</a>
+                <a href="#medical" class="spec-link">Clinical Care</a>
+            </div>
+        </nav>
 
 
 
@@ -520,7 +521,7 @@
                     <a href="pigmentation.html" class="btn btn-primary" style="background: var(--color-primary-dark); border-color: var(--color-primary-dark);">View Pigmentation Solutions</a>
                 </div>
                 <div class="info-image-wrapper animate-fade-right">
-                    <img src="images/Screenshot 2026-04-13 132254.png" alt="Clinical Pigmentation & Melasma Treatment Results">
+                    <img src="images/pigmentation_before_1775715841906.png" alt="Clinical Pigmentation & Melasma Treatment Results">
                 </div>
             </div>
         </section>
@@ -639,17 +640,71 @@
             </div>
         </section>
 
-        <!-- 5. FINAL ACTION -->
-        <section class="section text-center">
-            <div class="container" style="max-width: 800px;">
-                <span class="eyebrow">Taking Action</span>
-                <h2>Find the Right Treatment Path</h2>
-                <div class="gold-divider"></div>
-                <p class="mb-xl">The best treatment is the one that's right for your specific condition. Join hundreds of patients who found clinical clarity at our clinic.</p>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 4rem;">Book My Consultation</a>
+        <!-- 5. FINAL CTA / CLINIC LOCATION -->
+        <section class="section" style="background: var(--color-primary-dark); padding: 120px 0; color: white;">
+            <div class="container">
+                <!-- Part 1: Appointment Booking Block (Separate) -->
+                <div class="text-center mb-xl animate-fade-up">
+                    <h2 style="color: #fff; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem;">Begin Your Clinical Transformation Today</h2>
+                    <p style="color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 3rem;">If you are struggling with skin or hair concerns, take the first step towards a medically-backed solution.</p>
+                    
+                    <div class="cta-actions-block animate-fade-up" style="max-width: 800px; margin: 0 auto 5rem;">
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 1.75rem; justify-content: center; font-size: 1.25rem; letter-spacing: 2px; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 15px 30px rgba(186,151,62,0.3);">BOOK TREATMENT CONSULTATION</a>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">WHATSAPP US</a>
+                            <a href="tel:09345410038" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">CALL CLINIC</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: Map and Location Side by Side -->
+                <div class="location-map-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: stretch;">
+                    <!-- Left: Map -->
+                    <div class="map-frame-wrap animate-fade-left" 
+                         onclick="this.querySelector('iframe').style.pointerEvents='auto'"
+                         style="position: relative; border-radius: 30px; overflow: hidden; min-height: 450px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid rgba(186,151,62,0.3); cursor: pointer;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15647.7813958744!2d77.72!3d11.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f43f0000001%3A0x67300438cf38706d!2sDr.Alam&#39;s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1713500000000!5m2!1sen!2sin" 
+                            style="width: 100%; height: 100%; border:0; position: absolute; inset: 0; pointer-events: none;" allowfullscreen="" loading="lazy"></iframe>
+                        <!-- Interaction Overlay Hint -->
+                        <div class="map-overlay-hint" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(6,29,48,0.2); pointer-events: none; transition: opacity 0.3s;">
+                            <span style="background: var(--color-primary-dark); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--color-accent);">CLICK TO INTERACT WITH MAP</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Location Details -->
+                    <div class="location-details-wrap animate-fade-right" style="display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
+                        <div class="clinical-info-card" style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 30px; border: 1px solid rgba(186,151,62,0.2); position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(186,151,62,0.1) 0%, transparent 70%);"></div>
+                            
+                            <div style="margin-bottom: 2.5rem;">
+                                <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">Clinic Location</h4>
+                                <p style="font-size: 1.3rem; line-height: 1.6; color: #fff;">
+                                    <strong>Dr. Alam's Skin Clinic</strong><br>
+                                    306, Nasiyanur Road,<br>
+                                    Narayanavalasu, Erode,<br>
+                                    Tamil Nadu, India
+                                </p>
+                            </div>
+
+                            <div style="padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">Contact Inquiries</h4>
+                                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8);">
+                                    <span style="display: block; margin-bottom: 0.5rem;">Phone: 093454 10038</span>
+                                    <span>WhatsApp: 093454 10038</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <style>
+                @media (max-width: 1024px) {
+                    .location-map-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+                    .map-frame-wrap { min-height: 400px !important; order: 2; }
+                    .location-details-wrap { order: 1; }
+                }
+            </style>
         </section>
     </main>
 
@@ -666,6 +721,17 @@
                         </div>
                     </a>
                     <p style="font-size: 0.9rem; margin-top: 1rem; color: #a4b0be;">Specialized Dermatology, Laser Skin Treatments, Dermatosurgery, and Hair Restoration services in Erode.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/18WjsgWSqw/?mibextid=wwXIfr" class="social-icon" target="_blank" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="https://www.instagram.com/dr_alam_dermatologist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://youtube.com/@drhowthulalam?si=sYelKfivNCrWuqC0" class="social-icon" target="_blank" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.42 5.58a2.78 2.78 0 0 0 1.94 2c1.71.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.42-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h3>Services</h3>
