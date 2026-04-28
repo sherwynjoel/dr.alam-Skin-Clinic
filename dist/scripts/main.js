@@ -8,7 +8,7 @@ const init = () => {
     initScrollReveal();
     initNavigation();
     initHeroSlider();
-    // initImageSliders(); // Disabled to allow static side-by-side results layout
+    initImageSliders();
     initMagneticEffects();
     initCounterAnimations();
     initFAQ();
@@ -120,7 +120,7 @@ function initScrollReveal() {
     setTimeout(() => {
         document.querySelectorAll('.animate-fade-up:not(.fade-up-active)').forEach(el => el.classList.add('fade-up-active'));
         document.querySelectorAll('.stagger-child:not(.visible)').forEach(el => el.classList.add('visible'));
-    }, 4500);
+    }, 2500);
 }
 
 // ============================================================
@@ -232,16 +232,46 @@ function initImageSliders() {
         const handle = slider.querySelector('.ba-slider-handle');
         if (!afterImg || !handle) return;
 
-        const move = (e) => {
+        let isInteracted = false;
+        let animationFrame;
+
+        const updateSlider = (pct) => {
+            afterImg.style.clipPath = `inset(0 0 0 ${pct}%)`;
+            handle.style.left = `${pct}%`;
+        };
+
+        const onMove = (e) => {
+            isInteracted = true;
+            cancelAnimationFrame(animationFrame);
             const rect = slider.getBoundingClientRect();
             let x = ((e.pageX || e.touches?.[0].pageX) - rect.left - window.scrollX);
             x = Math.max(0, Math.min(x, rect.width));
             const pct = (x / rect.width) * 100;
-            afterImg.style.clipPath = `inset(0 0 0 ${pct}%)`;
-            handle.style.left = `${pct}%`;
+            updateSlider(pct);
         };
-        slider.addEventListener('mousemove', move);
-        slider.addEventListener('touchmove', move);
+
+        slider.addEventListener('mousemove', (e) => { if(e.buttons === 1) onMove(e); });
+        slider.addEventListener('mousedown', onMove);
+        slider.addEventListener('touchmove', onMove, { passive: true });
+
+        // Full Range Synchronized Animation
+        const autoAnimate = (time) => {
+            if (isInteracted) return;
+            // Oscillate from 0 to 100% with faster cycle (800ms)
+            const pct = 50 + Math.sin(time / 800) * 50; 
+            updateSlider(pct);
+            animationFrame = requestAnimationFrame(autoAnimate);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !isInteracted) {
+                animationFrame = requestAnimationFrame(autoAnimate);
+            } else {
+                cancelAnimationFrame(animationFrame);
+            }
+        }, { threshold: 0.1 });
+
+        observer.observe(slider);
     });
 }
 

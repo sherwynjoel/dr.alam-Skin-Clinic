@@ -2820,23 +2820,15 @@
             <div class="location-map-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: stretch;">
                 <!-- Left: Map -->
                 <div class="map-frame-wrap animate-fade-left" 
-                     onclick="this.querySelector('iframe').style.pointerEvents='auto'"
                      style="position: relative; border-radius: 30px; overflow: hidden; min-height: 450px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 1px solid rgba(186,151,62,0.3); cursor: pointer;">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15647.7813958744!2d77.72!3d11.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f43f0000001%3A0x67300438cf38706d!2sDr.Alam&#39;s%20Skin%20Clinic!5e0!3m2!1sen!2sin!4v1713500000000!5m2!1sen!2sin" 
-                        style="width: 100%; height: 100%; border:0; position: absolute; inset: 0; pointer-events: none;" allowfullscreen="" loading="lazy"></iframe>
-                    <!-- Interaction Overlay Hint -->
-                    <div class="map-overlay-hint" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(6,29,48,0.2); pointer-events: none; transition: opacity 0.3s;">
-                        <span style="background: var(--color-primary-dark); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--color-accent);">CLICK TO INTERACT WITH MAP</span>
-                    </div>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.832289658514!2d77.7013567750503!3d11.3434980888415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f00a776da6d%3A0x156e3c212dcabdc4!2sDr.%20Alam's%20Skin%20Hair%20Laser%20Clinic%20-%20Advanced%20Laser%20%26%20Aesthetic%20Dermatology%20Centre%20in%20Erode!5e0!3m2!1sen!2sin!4v1714311136363!5m2!1sen!2sin" 
+                        style="width: 100%; height: 100%; border:0; position: absolute; inset: 0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- Interaction Overlay Hint as Navigable Link -->
+                    <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" class="map-overlay-hint" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(6,29,48,0.2); transition: opacity 0.3s; text-decoration: none; z-index: 10;">
+                        <span style="background: var(--color-primary-dark); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--color-accent); text-transform: uppercase;">CLICK TO INTERACT WITH MAP</span>
+                    </a>
                 </div>
-
-                <script>
-                    // Hide hint when map is clicked
-                    document.querySelector('.map-frame-wrap').addEventListener('click', function() {
-                        this.querySelector('.map-overlay-hint').style.opacity = '0';
-                    });
-                </script>
 
                 <!-- Right: Location Details -->
                 <div class="location-details-wrap animate-fade-right" style="display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
@@ -2846,10 +2838,12 @@
                         <div style="margin-bottom: 2.5rem;">
                             <h4 style="color: var(--color-accent); font-family: var(--font-heading); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">Clinic Location</h4>
                             <p style="font-size: 1.3rem; line-height: 1.6; color: #fff;">
-                                <strong>Dr. Alam's Skin Clinic</strong><br>
-                                308, Nasiyanur Road,<br>
-                                Narayanavalasu, Erode,<br>
-                                Tamil Nadu, India
+                                <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" style="color: inherit; text-decoration: none;">
+                                    <strong>Dr. Alam's Skin Clinic</strong><br>
+                                    306, Nasiyanur Road,<br>
+                                    Narayanavalasu, Erode,<br>
+                                    Tamil Nadu, India
+                                </a>
                             </p>
                         </div>
 
@@ -2929,7 +2923,11 @@
                 </div>
                 <div>
                     <h3>Location</h3>
-                    <p style="font-size: 0.9rem; color: #a4b0be; line-height: 1.6;">308, Nasiyanur Road,<br>Narayanavalasu,<br>Erode, Tamil Nadu, India</p>
+                    <p style="font-size: 0.9rem; color: #a4b0be; line-height: 1.6;">
+                        <a href="https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6?g_st=ic" target="_blank" style="color: inherit; text-decoration: none;">
+                            306, Nasiyanur Road,<br>Narayanavalasu,<br>Erode, Tamil Nadu, India
+                        </a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
