@@ -36,6 +36,16 @@ const copyFoldersPlugin = {
         console.log(`Copied ${folder}/ → dist/${folder}/`);
       }
     }
+
+    const files = ['robots.txt', 'sitemap.xml'];
+    for (const file of files) {
+      const src = resolve(__dirname, file);
+      const dest = resolve(__dirname, 'dist', file);
+      if (fs.existsSync(src)) {
+        fs.copyFileSync(src, dest);
+        console.log(`Copied ${file} → dist/${file}`);
+      }
+    }
   }
 };
 
