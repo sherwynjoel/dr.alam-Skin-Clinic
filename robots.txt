@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /snake.html
+
+Sitemap: https://dralamdermcentre.com/sitemap.xml
