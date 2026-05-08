@@ -32,10 +32,10 @@ These values are reused across schema markup, sitemap, and meta tags. **Single s
 | Phone | +91-93454-10038 |
 | Latitude | 11.343498 |
 | Longitude | 77.7035454 |
-| Hours | Monday–Saturday, 10:00–21:00 (Sunday TBD — confirm before launch) |
+| Hours | All days (Mon–Sun), 10:00–21:00 |
 | Physician | Dr. Howthul Alam Raja |
 | Specialty | Dermatology |
-| sameAs | https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6, https://www.facebook.com/share/18WjsgWSqw/, https://youtube.com/@drhowthulalam, https://www.instagram.com/dr_alam_dermatologist |
+| sameAs | https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6, https://www.facebook.com/people/Dr-Alams-Skin-Clinic/61574087517804/, https://youtube.com/@drhowthulalam, https://www.instagram.com/dr_alam_dermatologist |
 
 ## 3. Page Inventory & Canonicalization
 
@@ -135,14 +135,14 @@ Inserted as `<script type="application/ld+json">` blocks at the end of `<head>` 
   },
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "opens": "10:00",
     "closes": "21:00"
   }],
   "medicalSpecialty": "Dermatologic",
   "sameAs": [
     "https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6",
-    "https://www.facebook.com/share/18WjsgWSqw/",
+    "https://www.facebook.com/people/Dr-Alams-Skin-Clinic/61574087517804/",
     "https://youtube.com/@drhowthulalam",
     "https://www.instagram.com/dr_alam_dermatologist"
   ],
@@ -263,8 +263,6 @@ The following are deliberately not part of this spec:
 - Tamil-language hreflang variants (target market is local Erode; English is sufficient)
 - Twitter Card profile (`twitter:site` handle) — clinic does not currently have an X/Twitter account
 
-## 11. Open Items Before Implementation
+## 11. Follow-Ups (Post-Implementation)
 
-- **Sunday hours** — confirm whether the clinic is open Sunday. Spec assumes closed (Mon–Sat). If open, add Sunday to `dayOfWeek` array in §5.1.
-- **Open Graph image asset** — implementation will reference `images/og-default.jpg`. If a dedicated 1200×630 branded image isn't available at implementation time, fall back to `images/hero-slide-1.jpg` and create a follow-up task to design a proper card.
-- **Facebook canonical page URL** — current `sameAs` uses a share URL. If a `facebook.com/<page>` URL is available, swap it in.
+- **Open Graph image asset** — implementation references `images/hero-slide-1.jpg` as the `og:image`. Design a dedicated 1200×630 branded social card (`images/og-default.jpg`) and swap in the URL when ready.
