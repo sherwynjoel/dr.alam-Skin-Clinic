@@ -536,25 +536,32 @@ function initConcierge() {
         let recTitle = "Clinical Diagnosis Required";
         let recDesc = "Based on your input, Dr. Alam recommends a detailed skin diagnostic session. We specialize in evidence-based protocols for long-term health.";
         let link = "services.html";
+        let linkText = "View Treatment Options";
 
         const c = selections.concern;
         if (c === 'acne') {
             recTitle = "Acne & Scar Restoration Path";
             recDesc = "Your condition suggests a combined approach: Clinical medicine to control active acne, followed by advanced laser resurfacing for scar revision.";
             link = "acne-scars.html";
+            linkText = "View Acne Treatment";
         } else if (c === 'pigmentation') {
             recTitle = "Pigmentation Correction Protocol";
             recDesc = "Melasma and deep pigmentation require a double-action plan: Medical-grade peels and Q-Switched laser therapy for deep pigment breakdown.";
             link = "pigmentation.html";
+            linkText = "View Pigmentation Treatment";
         } else if (c === 'hair') {
             recTitle = "Hair Follicle Restoration";
             recDesc = "Early intervention is key. Dr. Alam recommends a clinical assessment for pattern analysis, likely involving medical therapy and GFC/PRP restoration.";
             link = "hair-loss.html";
+            linkText = "View Hair Loss Treatment";
         }
 
         if (headline) headline.textContent = recTitle;
         if (text) text.textContent = recDesc;
-        if (learnMore) learnMore.setAttribute('href', link);
+        if (learnMore) {
+            learnMore.setAttribute('href', link);
+            learnMore.textContent = linkText;
+        }
     }
 }
 
