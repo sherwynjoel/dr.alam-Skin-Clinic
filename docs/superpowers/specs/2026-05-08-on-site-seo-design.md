@@ -35,7 +35,7 @@ These values are reused across schema markup, sitemap, and meta tags. **Single s
 | Hours | All days (Mon–Sun), 10:00–21:00 |
 | Physician | Dr. Howthul Alam Raja |
 | Specialty | Dermatology |
-| sameAs | https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6, https://www.facebook.com/people/Dr-Alams-Skin-Clinic/61574087517804/, https://youtube.com/@drhowthulalam, https://www.instagram.com/dr_alam_dermatologist |
+| sameAs | https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6, https://www.facebook.com/p/Dr-Alams-Skin-Clinic-61574087517804, https://youtube.com/@drhowthulalam, https://www.instagram.com/dr_alam_dermatologist |
 
 ## 3. Page Inventory & Canonicalization
 
@@ -142,7 +142,7 @@ Inserted as `<script type="application/ld+json">` blocks at the end of `<head>` 
   "medicalSpecialty": "Dermatologic",
   "sameAs": [
     "https://maps.app.goo.gl/ABuVMbpvPjcpSbBt6",
-    "https://www.facebook.com/people/Dr-Alams-Skin-Clinic/61574087517804/",
+    "https://www.facebook.com/p/Dr-Alams-Skin-Clinic-61574087517804",
     "https://youtube.com/@drhowthulalam",
     "https://www.instagram.com/dr_alam_dermatologist"
   ],
