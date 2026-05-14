@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Dr. Alam's Skin Clinic | Advanced Dermatology & Laser Surgery</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta name="description"
         content="Advanced dermatology, laser and skin surgery treatments in Erode specializing in acne scars, pigmentation, hair loss, laser hair removal and clinical dermatology.">
 
@@ -37,7 +37,7 @@
     <meta name="twitter:image" content="https://dralamdermcentre.com/images/hero-slide-1.jpg">
 
     <!-- LCP preload -->
-    <link rel="preload" as="image" href="images/hero-slide-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/hero-slide-1.jpg" fetchpriority="high">
 
     <!-- JSON-LD: MedicalClinic -->
     <script type="application/ld+json">
@@ -96,19 +96,30 @@
     }
     </script>
 
-    <link rel="stylesheet" href="styles/variables.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="/styles/variables.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/components.css">
     <!-- Ali Abdaal Style Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="/scripts/main.js"></script>
     <style>
         /* ============================================
            HOME PAGE — UNIQUE COMPONENT STYLES
            ============================================ */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* ── HERO ─────────────────────────────────── */
         .hero {
@@ -979,7 +990,7 @@
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-logo-wrapper">
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="preloader-logo"></picture>
+                <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="preloader-logo"></picture>
                 <div class="preloader-rings">
                     <div class="ring ring-1"></div>
                     <div class="ring ring-2"></div>
@@ -1216,8 +1227,8 @@
         <!-- Header Navigation -->
         <header class="header">
             <div class="container nav-container">
-                <a href="index.html" class="logo">
-                    <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon"></picture>
+                <a href="/" class="logo">
+                    <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="logo-icon"></picture>
                     <div class="logo-text-wrapper">
                         <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                         <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -1226,12 +1237,12 @@
                 <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
                 <nav class="nav-links">
                     <a href="/" class="nav-link active">Home</a>
-                    <a href="about" class="nav-link">About</a>
-                    <a href="services" class="nav-link">Services</a>
-                    <a href="technology" class="nav-link">Technology & Clinic</a>
-                    <a href="results" class="nav-link">Results Gallery</a>
-                    <a href="blog" class="nav-link">Blog / Skin Education</a>
-                    <a href="contact" class="btn btn-primary">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/services" class="nav-link">Services</a>
+                    <a href="/technology" class="nav-link">Technology & Clinic</a>
+                    <a href="/results" class="nav-link">Results Gallery</a>
+                    <a href="/blog" class="nav-link">Blog / Skin Education</a>
+                    <a href="/contact" class="btn btn-primary">Contact</a>
 
                 </nav>
             </div>
@@ -1258,7 +1269,7 @@
                             class="specialty-highlight" style="color: var(--color-accent); font-weight: 600;">Acne Scars, Pigmentation, Hair Loss &amp; Skin Surgery</span></p>
 
                     <div class="btn-group" style="justify-content: flex-start; gap: 20px; margin-top: 2.5rem; flex-wrap: wrap;">
-                        <a href="contact" class="btn btn-primary" style="padding: 1.1rem 3rem;">Book Consultation</a>
+                        <a href="/contact" class="btn btn-primary" style="padding: 1.1rem 3rem;">Book Consultation</a>
                         <button id="open-concierge" class="btn btn-concierge" style="padding: 1.1rem 3rem;">
                             <span style="margin-right: 8px;">✦</span> Start Skin Assessment
                         </button>
@@ -1284,104 +1295,104 @@
 
                         <div class="cards-stack" style="width: 100%; max-width: 320px;">
                             <!-- Card 1 (Slide 1: Expert/General) -->
-                            <div class="result-arch-card" style="width: 100%;">
+                            <div class="result-arch-card" id="acne-cycling-card" style="width: 100%;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('results/10 (3).jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/results/10-3.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('results/11 (6).jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/results/11-6.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Acne Scar Restoration</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
                             <!-- Card 2 (Slide 2: Living With) -->
                             <div class="result-arch-card" style="width: 100%; display: none;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('results/12 (5).jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/results/12-5.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('results/13 (5).jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/results/13-5.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Boxcar Scar Revision</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
                             <!-- Card 3 (Slide 3: Acne) -->
                             <div class="result-arch-card" style="width: 100%; display: none;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('results/13 (2).jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/results/13-2.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('results/14 (2).jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/results/14-2.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Active Acne Protocol</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
                             <!-- Card 4 (Slide 4: Melasma) -->
                             <div class="result-arch-card" style="width: 100%; display: none;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('results/4.jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/results/4.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('results/5.jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/results/5.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Melasma Correction</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
                             <!-- Card 5 (Slide 5: Hair Loss) -->
                             <div class="result-arch-card" style="width: 100%; display: none;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('images/16 (1).jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/images/16-1.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('images/17.jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/images/17.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Hair Restoration Journey</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
                             <!-- Card 6 (Slide 6: Refresh) -->
                             <div class="result-arch-card" style="width: 100%; display: none;">
                                 <div class="result-arch-frame" style="height: 480px; border-radius: 160px 160px 25px 25px; border: 6px solid #fff; box-shadow: 0 40px 100px rgba(6, 29, 48, 0.15);">
-                                    <div class="ba-img img-before" style="background-image: url('results/36.jpg'); height: 50%;">
+                                    <div class="ba-img img-before" style="background-image: url('/results/36.jpg'); height: 50%;">
                                         <span class="ba-badge before" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">BEFORE</span>
                                     </div>
-                                    <div class="ba-img img-after" style="background-image: url('results/37 (1).jpg'); height: 50%;">
+                                    <div class="ba-img img-after" style="background-image: url('/results/37-1.jpg'); height: 50%;">
                                         <span class="ba-badge after" style="background: rgba(6, 29, 48, 0.8); bottom: 20px; left: 20px;">AFTER</span>
                                     </div>
                                 </div>
                                 <span class="result-arch-label" style="margin-top: 25px; font-size: 0.85rem; letter-spacing: 4px; font-weight: 800; color: var(--color-accent); display: block; text-align: center; text-transform: uppercase;">Surgical Growth Removal</span>
                                 <div class="btn-group" style="justify-content: center; gap: 15px; margin-top: 25px;">
-                                    <a href="results.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
-                                    <a href="contact.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
+                                    <a href="/results" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px;">Results Gallery</a>
+                                    <a href="/contact" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--color-background); border-color: var(--color-accent);">Get Diagnosis</a>
                                 </div>
                             </div>
 
@@ -1414,11 +1425,11 @@
                                 </div>
                                 <p>We are dedicated to helping you achieve and maintain healthy, beautiful skin through
                                     personalized clinical care and comprehensive dermatologist-led treatments.</p>
-                                <a href="services.html" class="btn btn-primary">Explore Services <span>→</span></a>
+                                <a href="/services" class="btn btn-primary">Explore Services <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-1.webp" type="image/webp"><img src="images/hero-slide-1.jpg" alt="Expert Dermatology Care"></picture>
+                            <picture><source srcset="/images/hero-slide-1.webp" type="image/webp"><img src="/images/hero-slide-1.jpg" alt="Expert Dermatology Care" fetchpriority="high"></picture>
                         </div>
                     </div>
 
@@ -1434,11 +1445,11 @@
                                 </div>
                                 <p>Psoriasis, eczema, vitiligo, fungal infections — properly diagnosed, carefully
                                     treated, and managed for the long term.</p>
-                                <a href="clinical-dermatology.html" class="btn btn-primary">View Treatments <span>→</span></a>
+                                <a href="/clinical-dermatology" class="btn btn-primary">View Treatments <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-2.webp" type="image/webp"><img src="images/hero-slide-2.jpg" alt="Skin Condition Treatment" loading="lazy"></picture>
+                            <picture><source srcset="/images/hero-slide-2.webp" type="image/webp"><img src="/images/hero-slide-2.jpg" alt="Skin Condition Treatment" loading="lazy"></picture>
                         </div>
                     </div>
 
@@ -1454,11 +1465,11 @@
                                 </div>
                                 <p>A clear, step-by-step plan — from controlling active acne to treating old scars.
                                     Designed for your skin.</p>
-                                <a href="acne-scars.html" class="btn btn-primary">Treat Acne Now <span>→</span></a>
+                                <a href="/acne-scars" class="btn btn-primary">Treat Acne Now <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-3.webp" type="image/webp"><img src="images/hero-slide-3.jpg" alt="Acne Treatment" loading="lazy"></picture>
+                            <picture><source srcset="/images/hero-slide-3.webp" type="image/webp"><img src="/images/hero-slide-3.jpg" alt="Acne Treatment" loading="lazy"></picture>
                         </div>
                     </div>
 
@@ -1474,11 +1485,11 @@
                                 </div>
                                 <p>Melasma and pigmentation need medical diagnosis. We help you choose the treatment
                                     that actually works.</p>
-                                <a href="pigmentation.html" class="btn btn-primary">Clear Pigmentation <span>→</span></a>
+                                <a href="/pigmentation" class="btn btn-primary">Clear Pigmentation <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-4.webp" type="image/webp"><img src="images/hero-slide-4.jpg" alt="Pigmentation Treatment" loading="lazy"></picture>
+                            <picture><source srcset="/images/hero-slide-4.webp" type="image/webp"><img src="/images/hero-slide-4.jpg" alt="Pigmentation Treatment" loading="lazy"></picture>
                         </div>
                     </div>
 
@@ -1494,11 +1505,11 @@
                                 </div>
                                 <p>Receding hairline or hair fall — find the medical cause and start a professional
                                     restoration journey.</p>
-                                <a href="hair-loss.html" class="btn btn-primary">Restore Hair <span>→</span></a>
+                                <a href="/hair-loss" class="btn btn-primary">Restore Hair <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-5.webp" type="image/webp"><img src="images/hero-slide-5.jpg" alt="Hair Loss Treatment"></picture>
+                            <picture><source srcset="/images/hero-slide-5.webp" type="image/webp"><img src="/images/hero-slide-5.jpg" alt="Hair Loss Treatment" loading="lazy"></picture>
                         </div>
                     </div>
 
@@ -1514,11 +1525,11 @@
                                 </div>
                                 <p>Subtle, doctor-led dermatological treatments that enhance your clinical skin health
                                     and appearance.</p>
-                                <a href="services.html" class="btn btn-primary">Enhance Glow <span>→</span></a>
+                                <a href="/services" class="btn btn-primary">Enhance Glow <span>→</span></a>
                             </div>
                         </div>
                         <div class="carousel-image-wrapper">
-                            <picture><source srcset="images/hero-slide-6.webp" type="image/webp"><img src="images/hero-slide-6.jpg" alt="Refreshing Skin Care"></picture>
+                            <picture><source srcset="/images/hero-slide-6.webp" type="image/webp"><img src="/images/hero-slide-6.jpg" alt="Refreshing Skin Care" loading="lazy"></picture>
                         </div>
                     </div>
 
@@ -1591,7 +1602,7 @@
                         </p>
                     </div>
 
-                    <a href="contact.html" class="btn btn-secondary" style="padding: 1.2rem 3rem; font-weight: 800; letter-spacing: 1px; width: auto; min-width: 250px;">Request a Medical Evaluation</a>
+                    <a href="/contact" class="btn btn-secondary" style="padding: 1.2rem 3rem; font-weight: 800; letter-spacing: 1px; width: auto; min-width: 250px;">Request a Medical Evaluation</a>
                 </div>
 
                 <!-- Right Side: Pain Point Cards -->
@@ -1659,7 +1670,7 @@
         <div class="container grid grid-2" style="align-items: center;">
             <div class="animate-fade-up">
                 <div style="overflow: hidden; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); aspect-ratio: 1/1; background: var(--color-primary-dark);">
-                    <picture><source srcset="images/dr-alam.webp" type="image/webp"><img src="images/dr-alam.png" alt="Dr. Howthul Alam Raja"
+                    <picture><source srcset="/images/dr-alam.webp" type="image/webp"><img src="/images/dr-alam.png" alt="Dr. Howthul Alam Raja"
                         style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); object-position: center 10%;"></picture>
                 </div>
             </div>
@@ -1670,7 +1681,7 @@
                 
                 <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;"><strong>Dr. Howthul Alam Raja</strong> is a Consultant Dermatologist trained at Madras Medical College, Chennai, specializing in acne scars, pigmentation disorders, hair loss, laser procedures, and skin surgery. The clinic is dedicated to evidence-based dermatology and advanced dermatosurgery to deliver safe, effective, and lasting results.</p>
                 
-                <a href="about.html" class="btn btn-secondary mt-xs">Read Full Profile</a>
+                <a href="/about" class="btn btn-secondary mt-xs">Read Full Profile</a>
             </div>
         </div>
     </section>
@@ -1738,7 +1749,7 @@
             </style>
 
             <div class="mt-xl">
-                <a href="contact.html" class="btn btn-primary">Start Your Journey Today</a>
+                <a href="/contact" class="btn btn-primary">Start Your Journey Today</a>
             </div>
         </div>
     </section>
@@ -1762,7 +1773,7 @@
                     
                     <a href="services.html#acne" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/acne-treatment.webp" type="image/webp"><img src="images/acne-treatment.jpg" alt="Acne Treatment" class="card-img" loading="lazy"></picture>
+                            <picture><source srcset="/images/acne-treatment.webp" type="image/webp"><img src="/images/acne-treatment.jpg" alt="Acne Treatment" class="card-img" loading="lazy"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Acne & Acne Scar Treatment</h3>
@@ -1772,7 +1783,7 @@
 
                     <a href="services.html#pigmentation" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/pigmentation-treatment.webp" type="image/webp"><img src="images/pigmentation-treatment.jpg" alt="Pigmentation Treatment" class="card-img" loading="lazy"></picture>
+                            <picture><source srcset="/images/pigmentation-treatment.webp" type="image/webp"><img src="/images/pigmentation-treatment.jpg" alt="Pigmentation Treatment" class="card-img" loading="lazy"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Pigmentation Treatment</h3>
@@ -1782,7 +1793,7 @@
 
                     <a href="services.html#hair-loss" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/hair-restoration.webp" type="image/webp"><img src="images/hair-restoration.jpg" alt="Hair Restoration" class="card-img"></picture>
+                            <picture><source srcset="/images/hair-restoration.webp" type="image/webp"><img src="/images/hair-restoration.jpg" alt="Hair Restoration" class="card-img"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Hair Loss & Hair Restoration</h3>
@@ -1792,7 +1803,7 @@
 
                     <a href="services.html#laser-hair-removal" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/laser-hair-removal.webp" type="image/webp"><img src="images/laser-hair-removal.jpg" alt="Laser Hair Removal" class="card-img"></picture>
+                            <picture><source srcset="/images/laser-hair-removal.webp" type="image/webp"><img src="/images/laser-hair-removal.jpg" alt="Laser Hair Removal" class="card-img"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Laser Hair Removal</h3>
@@ -1802,7 +1813,7 @@
 
                     <a href="services.html#dermatosurgery" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/skin-surgery.webp" type="image/webp"><img src="images/skin-surgery.jpg" alt="Skin Surgery" class="card-img"></picture>
+                            <picture><source srcset="/images/skin-surgery.webp" type="image/webp"><img src="/images/skin-surgery.jpg" alt="Skin Surgery" class="card-img"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Skin Surgery & Mole Removal</h3>
@@ -1812,7 +1823,7 @@
 
                     <a href="services.html#clinical-dermatology" class="card treatment-card carousel-item-service">
                         <div class="card-img-wrapper">
-                            <picture><source srcset="images/clinical-dermatology.webp" type="image/webp"><img src="images/clinical-dermatology.jpg" alt="Clinical Dermatology" class="card-img"></picture>
+                            <picture><source srcset="/images/clinical-dermatology.webp" type="image/webp"><img src="/images/clinical-dermatology.jpg" alt="Clinical Dermatology" class="card-img"></picture>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Clinical Dermatology</h3>
@@ -1936,11 +1947,11 @@
                 <a href="results.html#acne" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="images/11.webp" type="image/webp"><img src="images/11.jpg" alt="Acne Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/11.webp" type="image/webp"><img src="/images/11.jpg" alt="Acne Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="images/12.webp" type="image/webp"><img src="images/12.jpg" alt="Acne After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/12.webp" type="image/webp"><img src="/images/12.jpg" alt="Acne After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -1951,11 +1962,11 @@
                 <a href="results.html#acne-scars" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="results/10%20(3).webp" type="image/webp"><img src="results/10 (3).jpg" alt="Scars Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/10-3.webp" type="image/webp"><img src="/results/10-3.jpg" alt="Scars Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="results/11%20(6).webp" type="image/webp"><img src="results/11 (6).jpg" alt="Scars After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/11-6.webp" type="image/webp"><img src="/results/11-6.jpg" alt="Scars After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -1966,11 +1977,11 @@
                 <a href="results.html#pigmentation" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="results/4.webp" type="image/webp"><img src="results/4.jpg" alt="Pigmentation Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/4.webp" type="image/webp"><img src="/results/4.jpg" alt="Pigmentation Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="results/5.webp" type="image/webp"><img src="results/5.jpg" alt="Pigmentation After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/5.webp" type="image/webp"><img src="/results/5.jpg" alt="Pigmentation After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -1981,11 +1992,11 @@
                 <a href="results.html#hair" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="images/16%20(1).webp" type="image/webp"><img src="images/16 (1).jpg" alt="Hair Loss Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/16-1.webp" type="image/webp"><img src="/images/16-1.jpg" alt="Hair Loss Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="images/17.webp" type="image/webp"><img src="images/17.jpg" alt="Hair Loss After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/17.webp" type="image/webp"><img src="/images/17.jpg" alt="Hair Loss After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -1996,11 +2007,11 @@
                 <a href="results.html#laser" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="results/10%20(5).webp" type="image/webp"><img src="results/10 (5).jpg" alt="Laser Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/10-5.webp" type="image/webp"><img src="/results/10-5.jpg" alt="Laser Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="results/sd%20(1).webp" type="image/webp"><img src="results/sd (1).jpg" alt="Laser After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/sd-1.webp" type="image/webp"><img src="/results/sd-1.jpg" alt="Laser After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -2011,11 +2022,11 @@
                 <a href="results#surgery" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="results/34.webp" type="image/webp"><img src="results/34.jpg" alt="Surgery Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/34.webp" type="image/webp"><img src="/results/34.jpg" alt="Surgery Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="results/35.webp" type="image/webp"><img src="results/35.jpg" alt="Surgery After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/results/35.webp" type="image/webp"><img src="/results/35.jpg" alt="Surgery After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -2026,11 +2037,11 @@
                 <a href="results#keloid" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); display: flex; margin-bottom: 1rem;">
                         <div style="flex: 1; position: relative; border-right: 1px solid #fff;">
-                            <picture><source srcset="images/38.webp" type="image/webp"><img src="images/38.jpg" alt="Keloid Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/38.webp" type="image/webp"><img src="/images/38.jpg" alt="Keloid Before" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">Before</span>
                         </div>
                         <div style="flex: 1; position: relative;">
-                            <picture><source srcset="images/37.webp" type="image/webp"><img src="images/37.jpg" alt="Keloid After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                            <picture><source srcset="/images/37.webp" type="image/webp"><img src="/images/37.jpg" alt="Keloid After" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                             <span style="position: absolute; bottom: 8px; right: 8px; background: var(--color-accent); color: #fff; font-size: 0.55rem; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; font-weight: 700;">After</span>
                         </div>
                     </div>
@@ -2040,7 +2051,7 @@
                 <!-- Category 8: Specialized Care -->
                 <a href="results#specialized" class="transformation-cat-card" style="text-decoration: none; display: block;">
                     <div class="transformation-img-wrap" style="position: relative; height: 320px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(186,151,62,0.12); margin-bottom: 1rem;">
-                        <picture><source srcset="images/hero-slide-2.webp" type="image/webp"><img src="images/hero-slide-2.jpg" alt="Specialized Care" style="width: 100%; height: 100%; object-fit: cover;"></picture>
+                        <picture><source srcset="/images/hero-slide-2.webp" type="image/webp"><img src="/images/hero-slide-2.jpg" alt="Specialized Care" style="width: 100%; height: 100%; object-fit: cover;"></picture>
                     </div>
                     <h3 style="color: var(--color-primary-dark); font-family: var(--font-heading); font-size: 1.15rem; margin: 0; text-align: center; transition: color 0.3s;">Specialized Care</h3>
                 </a>
@@ -2067,7 +2078,7 @@
             <p class="text-muted" style="font-size: 0.9rem; margin-bottom: var(--spacing-md); line-height: 1.6;"><strong>Note:</strong>
                 Results vary from patient to patient depending on condition severity, skin type and treatment
                 compliance.</p>
-            <a href="results.html" class="btn btn-secondary">Explore All Gallery Results</a>
+            <a href="/results" class="btn btn-secondary">Explore All Gallery Results</a>
         </div>
     </section>
 
@@ -2089,7 +2100,7 @@
                             <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="short-doctor-tag">
-                            <picture><source srcset="images/dr-alam.webp" type="image/webp"><img src="images/dr-alam.png" alt="Dr. Alam"></picture>
+                            <picture><source srcset="/images/dr-alam.webp" type="image/webp"><img src="/images/dr-alam.png" alt="Dr. Alam"></picture>
                             <span>Dr. Alam</span>
                         </div>
                     </div>
@@ -2102,7 +2113,7 @@
                             <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="short-doctor-tag">
-                            <picture><source srcset="images/dr-alam.webp" type="image/webp"><img src="images/dr-alam.png" alt="Dr. Alam"></picture>
+                            <picture><source srcset="/images/dr-alam.webp" type="image/webp"><img src="/images/dr-alam.png" alt="Dr. Alam"></picture>
                             <span>Dr. Alam</span>
                         </div>
                     </div>
@@ -2115,7 +2126,7 @@
                             <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="short-doctor-tag">
-                            <picture><source srcset="images/dr-alam.webp" type="image/webp"><img src="images/dr-alam.png" alt="Dr. Alam"></picture>
+                            <picture><source srcset="/images/dr-alam.webp" type="image/webp"><img src="/images/dr-alam.png" alt="Dr. Alam"></picture>
                             <span>Dr. Alam</span>
                         </div>
                     </div>
@@ -2128,7 +2139,7 @@
                             <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <div class="short-doctor-tag">
-                            <picture><source srcset="images/dr-alam.webp" type="image/webp"><img src="images/dr-alam.png" alt="Dr. Alam"></picture>
+                            <picture><source srcset="/images/dr-alam.webp" type="image/webp"><img src="/images/dr-alam.png" alt="Dr. Alam"></picture>
                             <span>Dr. Alam</span>
                         </div>
                     </div>
@@ -2255,7 +2266,7 @@
             <div class="luxury-experience-grid">
                 <!-- Left: Big Branding Image (Reception) -->
                 <div class="experience-main-img" style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-lg);">
-                    <picture><source srcset="images/Screenshot%202026-04-13%20132535.webp" type="image/webp"><img src="images/Screenshot 2026-04-13 132535.png" alt="Dr. Alam Skin Clinic Reception" style="width: 100%; height: 100%; object-fit: cover; display: block;"></picture>
+                    <picture><source srcset="/images/Screenshot-2026-04-13-132535.webp" type="image/webp"><img src="/images/Screenshot-2026-04-13-132535.png" alt="Dr. Alam Skin Clinic Reception" style="width: 100%; height: 100%; object-fit: cover; display: block;"></picture>
                     <div class="img-overlay-dark" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);"></div>
                     <div class="img-content" style="position: absolute; bottom: 30px; left: 30px; color: white;">
                         <span class="eyebrow" style="color: var(--color-accent); margin-bottom: 5px;">Modern Facility</span>
@@ -2275,7 +2286,7 @@
                         <!-- Tech 1 -->
                         <div class="tech-item-mini">
                             <div class="tech-thumb-mini">
-                                <picture><source srcset="images/image%20(4).webp" type="image/webp"><img src="images/image (4).png" alt="Precision Laser System"></picture>
+                                <picture><source srcset="/images/image-4.webp" type="image/webp"><img src="/images/image-4.png" alt="Precision Laser System"></picture>
                             </div>
                             <div class="tech-info-mini">
                                 <h5>Advanced Lasers</h5>
@@ -2285,7 +2296,7 @@
                         <!-- Tech 2 -->
                         <div class="tech-item-mini">
                             <div class="tech-thumb-mini">
-                                <picture><source srcset="images/image%20(8).webp" type="image/webp"><img src="images/image (8).png" alt="Clinical Grade PRP Systems"></picture>
+                                <picture><source srcset="/images/image-8.webp" type="image/webp"><img src="/images/image-8.png" alt="Clinical Grade PRP Systems"></picture>
                             </div>
                             <div class="tech-info-mini">
                                 <h5>Regenerative Tech</h5>
@@ -2900,7 +2911,7 @@
                 <p style="color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 3rem;">If you are struggling with skin or hair concerns, take the first step towards a medically-backed solution.</p>
                 
                 <div class="cta-actions-block animate-fade-up" style="max-width: 800px; margin: 0 auto 5rem;">
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; padding: 1.75rem; justify-content: center; font-size: 1.25rem; letter-spacing: 2px; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 15px 30px rgba(186,151,62,0.3);">BOOK TREATMENT CONSULTATION</a>
+                    <a href="/contact" class="btn btn-primary" style="width: 100%; padding: 1.75rem; justify-content: center; font-size: 1.25rem; letter-spacing: 2px; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 15px 30px rgba(186,151,62,0.3);">BOOK TREATMENT CONSULTATION</a>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">WHATSAPP US</a>
                         <a href="tel:09345410038" class="btn btn-outline-white" style="justify-content: center; padding: 1.25rem; border-radius: 50px;">CALL CLINIC</a>
@@ -2975,8 +2986,8 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon"></picture>
+                    <a href="/" class="logo">
+                        <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="logo-icon"></picture>
                         <div class="logo-text-wrapper">
                             <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                             <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -2998,20 +3009,20 @@
                 </div>
                 <div>
                     <h3>Services</h3>
-                    <a href="acne-scars">Acne & Acne Scars</a>
-                    <a href="pigmentation">Pigmentation & Melasma</a>
-                    <a href="hair-loss">Hair Loss Restoration</a>
-                    <a href="laser-hair-removal">Laser Hair Removal</a>
-                    <a href="dermatosurgery">Skin Surgery (Dermatosurgery)</a>
-                    <a href="clinical-dermatology">Clinical Dermatology</a>
+                    <a href="/acne-scars">Acne & Acne Scars</a>
+                    <a href="/pigmentation">Pigmentation & Melasma</a>
+                    <a href="/hair-loss">Hair Loss Restoration</a>
+                    <a href="/laser-hair-removal">Laser Hair Removal</a>
+                    <a href="/dermatosurgery">Skin Surgery (Dermatosurgery)</a>
+                    <a href="/clinical-dermatology">Clinical Dermatology</a>
                 </div>
                 <div>
                     <h3>Quick Links</h3>
                     <a href="/">Home</a>
-                    <a href="about">About Clinic</a>
-                    <a href="services">Our Services</a>
-                    <a href="results">Results Gallery</a>
-                    <a href="blog">Skin Education</a>
+                    <a href="/about">About Clinic</a>
+                    <a href="/services">Our Services</a>
+                    <a href="/results">Results Gallery</a>
+                    <a href="/blog">Skin Education</a>
                 </div>
                 <div>
                     <h3>Location</h3>
@@ -3045,150 +3056,7 @@
         </a>
     </div>
 
-    <script>
-        // Automatic Cycling for Arched Result Cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const clinicalResults = [
-                { b: 'results/34.jpg', a: 'results/35.jpg', n: 'Mole Removal Surgery' },
-                { b: 'results/10 (3).jpg', a: 'results/11 (6).jpg', n: 'Acne Scar Restoration' },
-                { b: 'results/12 (5).jpg', a: 'results/13 (5).jpg', n: 'Boxcar Scar Revision' },
-                { b: 'results/4.jpg', a: 'results/5.jpg', n: 'Melasma Correction' },
-                { b: 'results/13 (2).jpg', a: 'results/14 (2).jpg', n: 'Active Acne Protocol' },
-                { b: 'results/36.jpg', a: 'results/37 (1).jpg', n: 'Surgical Growth Removal' },
-                { b: 'results/10 (5).jpg', a: 'results/sd (1).jpg', n: 'Precision Laser Reduction' }
-            ];
-
-            function cycleCard(cardId, pairs) {
-                const card = document.getElementById(cardId);
-                if(!card) return;
-                const beforeImg = card.querySelector('.img-before');
-                const afterImg = card.querySelector('.img-after');
-                const label = card.querySelector('.result-arch-label');
-                let currentIndex = 0;
-
-                setInterval(() => {
-                    currentIndex = (currentIndex + 1) % pairs.length;
-                    
-                    // Fade out
-                    beforeImg.style.opacity = '0';
-                    afterImg.style.opacity = '0';
-                    if(label) label.style.opacity = '0';
-                    
-                    setTimeout(() => {
-                        beforeImg.style.backgroundImage = `url('${pairs[currentIndex].b}')`;
-                        afterImg.style.backgroundImage = `url('${pairs[currentIndex].a}')`;
-                        if(label) label.textContent = pairs[currentIndex].n;
-                        
-                        // Fade in
-                        beforeImg.style.opacity = '1';
-                        afterImg.style.opacity = '1';
-                        if(label) {
-                            label.style.opacity = '1';
-                            label.style.transition = 'opacity 0.6s ease';
-                        }
-                    }, 400);
-                }, 5000); 
-            }
-
-            cycleCard('acne-cycling-card', clinicalResults);
-        });
-
-        // Hero Carousel Logic (Swappable/Swipeable)
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.hero-carousel');
-            const container = document.querySelector('.carousel-container');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.carousel-dot');
-            if (!carousel || slides.length === 0) return;
-
-            let currentSlide = 0;
-            let slideInterval;
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-            let animationID;
-
-            function showSlide(index) {
-                currentSlide = index;
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-
-                slides[index].classList.add('active');
-                dots[index].classList.add('active');
-
-                // Reset translate for active slide focus
-                container.style.transform = `translateX(0)`;
-                prevTranslate = 0;
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            function startAutoPlay() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            function stopAutoPlay() {
-                clearInterval(slideInterval);
-            }
-
-            // Swipe/Drag Implementation
-            carousel.addEventListener('mousedown', dragStart);
-            carousel.addEventListener('touchstart', dragStart);
-            carousel.addEventListener('mouseup', dragEnd);
-            carousel.addEventListener('touchend', dragEnd);
-            carousel.addEventListener('mouseleave', dragEnd);
-            carousel.addEventListener('mousemove', dragMove);
-            carousel.addEventListener('touchmove', dragMove);
-
-            function dragStart(e) {
-                isDragging = true;
-                startPos = getPositionX(e);
-                stopAutoPlay();
-                carousel.style.cursor = 'grabbing';
-            }
-
-            function dragMove(e) {
-                if (!isDragging) return;
-                const currentPosition = getPositionX(e);
-                const diff = currentPosition - startPos;
-
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        // Swiped Right
-                        currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
-                    } else {
-                        // Swiped Left
-                        currentSlide = (currentSlide + 1) % slides.length;
-                    }
-                    showSlide(currentSlide);
-                    isDragging = false;
-                }
-            }
-
-            function dragEnd() {
-                isDragging = false;
-                carousel.style.cursor = 'grab';
-                startAutoPlay();
-            }
-
-            function getPositionX(e) {
-                return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            }
-
-            startAutoPlay();
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showSlide(index);
-                });
-            });
-        });
-    </script>
+    <!-- All Hero Slider Logic is now consolidated in /scripts/main.js -->
 
     <!-- ═══════════════════════════════════════════
          SKIN JOURNEY DIGITAL CONCIERGE MODAL
@@ -3337,8 +3205,8 @@
                 </div>
                 <div class="result-disclaimer">Results are indicative. An in-clinic diagnostic consultation will finalise your treatment plan.</div>
                 <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2rem;">
-                    <a href="contact.html" class="btn btn-primary" style="padding: 0.9rem 2.5rem;">Book Your Consultation</a>
-                    <a id="result-learn-more" href="services.html" class="btn btn-secondary" style="padding: 0.9rem 2.5rem;">View Treatment Options</a>
+                    <a href="/contact" class="btn btn-primary" style="padding: 0.9rem 2.5rem;">Book Your Consultation</a>
+                    <a id="result-learn-more" href="/services" class="btn btn-secondary" style="padding: 0.9rem 2.5rem;">View Treatment Options</a>
                 </div>
             </div>
 
@@ -3367,7 +3235,7 @@
                     </div>
                     <span class="dock-item-label">WhatsApp</span>
                 </a>
-                <a href="contact.html" class="dock-item dock-item-cta">
+                <a href="/contact" class="dock-item dock-item-cta">
                     <div class="dock-icon-wrap">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
@@ -3376,6 +3244,6 @@
             </div>
         </div>
     </div>
-    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>

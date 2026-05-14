@@ -26,8 +26,8 @@ function copyDir(src, dest) {
 
 const copyFoldersPlugin = {
   name: 'copy-static-folders',
-  closeBundle() {
-    const folders = ['images', 'results', 'services', 'scripts'];
+    closeBundle() {
+    const folders = ['services', 'scripts', 'admin', 'data']; // Added 'admin' and 'data'
     for (const folder of folders) {
       const src = resolve(__dirname, folder);
       const dest = resolve(__dirname, 'dist', folder);
@@ -37,7 +37,7 @@ const copyFoldersPlugin = {
       }
     }
 
-    const files = ['robots.txt', 'sitemap.xml'];
+    const files = ['robots.txt', 'sitemap.xml', '.htaccess', 'send-appointment.php'];
     for (const file of files) {
       const src = resolve(__dirname, file);
       const dest = resolve(__dirname, 'dist', file);
@@ -50,7 +50,7 @@ const copyFoldersPlugin = {
 };
 
 export default defineConfig({
-  base: './',
+  base: '/',
   root: './',
 
   build: {

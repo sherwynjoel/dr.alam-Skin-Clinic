@@ -2,53 +2,72 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const targetDir = path.join(__dirname, '..', 'results');
+const projectRoot = path.join(__dirname, '..');
+const directories = ['results', 'images'];
 
-const imagesToCompress = [
-    '49.jpg',
-    '51.jpg',
-    '15 (1).jpg',
-    '16 (2).jpg',
-    '14 (4).jpg'
-];
+async function processDirectory(dirPath) {
+    const files = fs.readdirSync(dirPath);
 
-async function compress() {
-    console.log('--- Image Compression Start ---');
-    for (const imageName of imagesToCompress) {
-        const inputPath = path.join(targetDir, imageName);
-        const outputPath = path.join(targetDir, 'temp_' + imageName);
+    for (const file of files) {
+        const fullPath = path.join(dirPath, file);
+        const stat = fs.statSync(fullPath);
 
-        if (!fs.existsSync(inputPath)) {
-            console.log(`Skipping: ${imageName} (File not found)`);
-            continue;
-        }
-
-        const stats = fs.statSync(inputPath);
-        const sizeInMb = stats.size / (1024 * 1024);
-        
-        if (sizeInMb < 0.5) {
-            console.log(`Skipping: ${imageName} (Already small: ${sizeInMb.toFixed(2)} MB)`);
-            continue;
-        }
-
-        console.log(`Compressing: ${imageName} (${sizeInMb.toFixed(2)} MB)...`);
-        try {
-            await sharp(inputPath)
-                .jpeg({ quality: 80, progressive: true })
-                .resize(1600, null, { withoutEnlargement: true })
-                .toFile(outputPath);
-            
-            // Replace original
-            fs.unlinkSync(inputPath);
-            fs.renameSync(outputPath, inputPath);
-            
-            const newStats = fs.statSync(inputPath);
-            console.log(`Success: ${imageName} -> ${(newStats.size / 1024).toFixed(2)} KB`);
-        } catch (err) {
-            console.error(`Error processing ${imageName}:`, err.message);
+        if (stat.isDirectory()) {
+            await processDirectory(fullPath);
+        } else if (/\.(jpg|jpeg|png)$/i.test(file)) {
+            await compressImage(fullPath);
         }
     }
-    console.log('--- Image Compression Finished ---');
 }
 
-compress();
+async function compressImage(filePath) {
+    const stats = fs.statSync(filePath);
+    const sizeInMb = stats.size / (1024 * 1024);
+    
+    // Only compress if larger than 200KB
+    if (sizeInMb < 0.2) {
+        return;
+    }
+
+    console.log(`Processing: ${path.relative(projectRoot, filePath)} (${sizeInMb.toFixed(2)} MB)`);
+    
+    const ext = path.extname(filePath).toLowerCase();
+    const tempPath = filePath + '.tmp';
+
+    try {
+        let pipeline = sharp(filePath).resize(1200, null, { withoutEnlargement: true });
+
+        if (ext === '.png') {
+            pipeline = pipeline.png({ quality: 80, compressionLevel: 9 });
+        } else {
+            pipeline = pipeline.jpeg({ quality: 80, progressive: true });
+        }
+
+        await pipeline.toFile(tempPath);
+        
+        // Replace original
+        fs.unlinkSync(filePath);
+        fs.renameSync(tempPath, filePath);
+        
+        const newStats = fs.statSync(filePath);
+        const reduction = ((1 - (newStats.size / stats.size)) * 100).toFixed(1);
+        console.log(`   Done: ${(newStats.size / 1024).toFixed(1)} KB (-${reduction}%)`);
+    } catch (err) {
+        console.error(`   Error processing ${filePath}:`, err.message);
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+    }
+}
+
+async function run() {
+    console.log('--- Global Image Compression Started ---');
+    for (const dir of directories) {
+        const dirPath = path.join(projectRoot, dir);
+        if (fs.existsSync(dirPath)) {
+            console.log(`Scanning: /${dir}...`);
+            await processDirectory(dirPath);
+        }
+    }
+    console.log('--- Global Image Compression Finished ---');
+}
+
+run();

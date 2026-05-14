@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Dr. Alam's Skin Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #061d30; --accent: #b8973e; --bg: #f4f7f6; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--primary); }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1 { margin-top: 0; border-bottom: 2px solid var(--accent); padding-bottom: 10px; font-size: 1.5rem; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
+        textarea { min-height: 300px; resize: vertical; line-height: 1.6; }
+        .btn { padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-danger { background: #e74c3c; color: white; padding: 5px 10px; font-size: 13px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        .success { color: #27ae60; background: #eafaf1; padding: 10px; border-radius: 6px; margin-bottom: 20px; display: none; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .hint { font-size: 0.8rem; color: #666; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-flex">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="../images/logo.png" alt="Logo" style="width: 40px;">
+            <h1>Full Blog Editor</h1>
+        </div>
+        <a href="../blog.html" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600;">View Live Blog →</a>
+    </div>
+
+    <div id="msg" class="success">✓ Blog saved successfully!</div>
+
+    <div style="background: #fafafa; padding: 25px; border-radius: 8px; border: 1px solid #eee;">
+        <h3 style="margin-top: 0; font-size: 1.1rem;">Write your Blog Post</h3>
+        <form id="blogForm">
+            <input type="hidden" id="blog-id">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="blog-category" required>
+                        <option value="Acne & Scars">Acne & Scars</option>
+                        <option value="Pigmentation & Melasma">Pigmentation & Melasma</option>
+                        <option value="Hair Fall & Thinning">Hair Fall & Thinning</option>
+                        <option value="Laser & Skin Procedures">Laser & Skin Procedures</option>
+                        <option value="Medical Skin Diseases">Medical Skin Diseases</option>
+                        <option value="Skincare & Skin Health">Skincare & Skin Health</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Blog Title</label>
+                    <input type="text" id="blog-title" placeholder="e.g., My Guide to Clear Skin" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Blog Content</label>
+                <textarea id="blog-content" placeholder="Type your full blog post here... You can use HTML like <p>, <h3>, or <b> to style it."></textarea>
+                <div class="hint">Tip: Use &lt;p&gt; for paragraphs and &lt;h3&gt; for sub-headings.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Custom Link (Optional)</label>
+                <input type="text" id="blog-url" placeholder="Leave empty to use the auto-generated post page">
+                <div class="hint">Only fill this if you want to link to a DIFFERENT page instead of writing a new post.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save and Publish Post</button>
+            <button type="button" onclick="resetForm()" class="btn" style="background: #ddd;">Clear</button>
+        </form>
+    </div>
+
+    <table id="blogTable">
+        <thead>
+            <tr><th>Category</th><th>Title</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    // Automatically use Node.js locally, or PHP on the live server
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const API_URL = isLocal ? 'http://localhost:8000/api/blogs' : 'api.php';
+
+    async function loadBlogs() {
+        const res = await fetch(API_URL);
+        const blogs = await res.json();
+        const tbody = document.querySelector('#blogTable tbody');
+        tbody.innerHTML = blogs.length ? '' : '<tr><td colspan="3" style="text-align:center;padding:40px;">No blogs yet.</td></tr>';
+        blogs.forEach(b => {
+            const tr = document.createElement('tr');
+            // Truncate title for display
+            const shortTitle = b.title.length > 50 ? b.title.substring(0, 50) + '...' : b.title;
+            
+            tr.innerHTML = `
+                <td><span style="background:#eee;padding:3px 8px;border-radius:4px;font-size:0.75rem;">${b.category}</span></td>
+                <td><strong>${shortTitle}</strong><br><small style="color:#999;">${b.url}</small></td>
+                <td>
+                    <button class="btn btn-edit" style="font-size:13px;padding:5px 10px;background:#061d30;color:white;">Edit</button>
+                    <button onclick="deleteBlog('${b.id}')" class="btn btn-danger">Delete</button>
+                </td>
+            `;
+            // Securely attach the blog data to the button to avoid HTML breakages
+            tr.querySelector('.btn-edit').onclick = () => editBlog(b);
+            tbody.appendChild(tr);
+        });
+    }
+
+    document.getElementById('blogForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('blog-id').value || Date.now().toString();
+        let url = document.getElementById('blog-url').value;
+        const content = document.getElementById('blog-content').value;
+
+        // If content is typed and no custom URL, link to post.html
+        if (content && !url) {
+            url = `/post.html?id=${id}`;
+        }
+
+        const blog = {
+            id: id,
+            category: document.getElementById('blog-category').value,
+            title: document.getElementById('blog-title').value,
+            url: url,
+            content: content
+        };
+
+        await fetch(API_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'save', blog })
+        });
+        showMsg();
+        resetForm();
+        loadBlogs();
+    };
+
+    async function deleteBlog(id) {
+        if (!confirm('Delete this blog?')) return;
+        await fetch(API_URL, {
+            method: 'POST',
+            body: JSON.stringify({ action: 'delete', blog: { id } })
+        });
+        loadBlogs();
+    }
+
+    function editBlog(blog) {
+        document.getElementById('blog-id').value = blog.id;
+        document.getElementById('blog-category').value = blog.category;
+        document.getElementById('blog-title').value = blog.title;
+        document.getElementById('blog-url').value = blog.url;
+        document.getElementById('blog-content').value = blog.content || '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetForm() {
+        document.getElementById('blog-id').value = '';
+        document.getElementById('blog-title').value = '';
+        document.getElementById('blog-url').value = '';
+        document.getElementById('blog-content').value = '';
+    }
+
+    function showMsg() {
+        const m = document.getElementById('msg');
+        m.style.display = 'block';
+        setTimeout(() => m.style.display = 'none', 3000);
+    }
+
+    loadBlogs();
+</script>
+</body>
+</html>

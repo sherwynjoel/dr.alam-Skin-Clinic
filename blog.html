@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Patient Education Hub | Skin & Hair Resources | Dr. Alam's Skin Clinic</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta name="description" content="Access thousands of years of combined medical knowledge. Learn about acne, hair loss, pigmentation, and skin diseases from our dermatologist-led education hub.">
 
     <!-- Canonical -->
@@ -35,10 +35,10 @@
     <meta name="twitter:description" content="Access thousands of years of combined medical knowledge. Learn about acne, hair loss, pigmentation, and skin diseases from our dermatologist-led education hub.">
     <meta name="twitter:image" content="https://dralamdermcentre.com/images/hero-slide-1.jpg">
 
-    <link rel="stylesheet" href="styles/variables.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="/styles/variables.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/components.css">
     
     <style>
         .blog-hero {
@@ -168,7 +168,7 @@
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-logo-wrapper">
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="preloader-logo" loading="lazy" decoding="async"></picture>
+                <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="preloader-logo" loading="lazy" decoding="async"></picture>
                 <div class="preloader-rings">
                     <div class="ring ring-1"></div>
                     <div class="ring ring-2"></div>
@@ -381,8 +381,8 @@
 
     <header class="header">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon" loading="lazy" decoding="async"></picture>
+            <a href="/" class="logo">
+                <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="logo-icon" loading="lazy" decoding="async"></picture>
                 <div class="logo-text-wrapper">
                     <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                     <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -390,13 +390,13 @@
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
             <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="technology.html" class="nav-link">Technology & Clinic</a>
-                <a href="results.html" class="nav-link">Results Gallery</a>
-                <a href="blog.html" class="nav-link active">Blog / Skin Education</a>
-                <a href="contact.html" class="btn btn-primary">Contact</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/services" class="nav-link">Services</a>
+                <a href="/technology" class="nav-link">Technology & Clinic</a>
+                <a href="/results" class="nav-link">Results Gallery</a>
+                <a href="/blog" class="nav-link active">Blog / Skin Education</a>
+                <a href="/contact" class="btn btn-primary">Contact</a>
             </nav>
         </div>
     </header>
@@ -411,7 +411,7 @@
                 <h1>Skin, Hair and Treatment<br>Education Hub</h1>
                 <p class="subheading" style="color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 2.5rem;">Learn about acne, pigmentation, hair loss, skin diseases, laser treatments and skincare from dermatologist-written patient education articles.</p>
                 <div class="btn-group" style="justify-content: center;">
-                    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                    <a href="/contact" class="btn btn-primary">Book Consultation</a>
                     <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
                 </div>
             </div>
@@ -440,15 +440,8 @@
                         </div>
                         <h2>Acne & Scars</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">Acne Treatment Guide</a></li>
-                        <li><a href="#">Why Pimples Keep Coming Back</a></li>
-                        <li><a href="#">Acne Scar Treatment Options</a></li>
-                        <li><a href="#">Isotretinoin Treatment Guide</a></li>
-                        <li><a href="#">Skincare Routine for Acne</a></li>
-                        <li><a href="#">Chemical Peels for Acne</a></li>
-                        <li><a href="#">Microneedling RF for Acne Scars</a></li>
-                        <li><a href="#">CO2 Laser for Acne Scars</a></li>
+                    <ul class="article-list" data-category="Acne & Scars">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -460,14 +453,8 @@
                         </div>
                         <h2>Pigmentation & Melasma</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">Melasma Treatment Guide</a></li>
-                        <li><a href="#">Pigmentation Treatment Options</a></li>
-                        <li><a href="#">Chemical Peels for Pigmentation</a></li>
-                        <li><a href="#">Laser Treatment for Pigmentation</a></li>
-                        <li><a href="#">Sunscreen Guide</a></li>
-                        <li><a href="#">Skincare Routine for Pigmentation</a></li>
-                        <li><a href="#">Dark Spots After Acne Treatment</a></li>
+                    <ul class="article-list" data-category="Pigmentation & Melasma">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -479,14 +466,8 @@
                         </div>
                         <h2>Hair Fall & Thinning</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">Hair Loss Causes and Treatment</a></li>
-                        <li><a href="#">PRP for Hair Loss</a></li>
-                        <li><a href="#">Hair Thinning Treatment Options</a></li>
-                        <li><a href="#">Dandruff and Hair Fall</a></li>
-                        <li><a href="#">Androgenetic Alopecia Treatment</a></li>
-                        <li><a href="#">Hair Care Routine for Hair Fall</a></li>
-                        <li><a href="#">When to Start Hair Loss Treatment</a></li>
+                    <ul class="article-list" data-category="Hair Fall & Thinning">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -498,15 +479,8 @@
                         </div>
                         <h2>Laser & Skin Procedures</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">Laser Hair Removal Guide</a></li>
-                        <li><a href="#">Acne Scar Laser Treatment</a></li>
-                        <li><a href="#">Microneedling RF Treatment Guide</a></li>
-                        <li><a href="#">CO2 Laser Treatment Guide</a></li>
-                        <li><a href="#">Mole Removal Procedure</a></li>
-                        <li><a href="#">Wart Removal Treatment</a></li>
-                        <li><a href="#">PRP Treatment Guide</a></li>
-                        <li><a href="#">Chemical Peel Treatment Guide</a></li>
+                    <ul class="article-list" data-category="Laser & Skin Procedures">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -518,15 +492,8 @@
                         </div>
                         <h2>Medical Skin Diseases</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">Psoriasis Treatment Guide</a></li>
-                        <li><a href="#">Vitiligo Treatment Options</a></li>
-                        <li><a href="#">Fungal Infection Treatment</a></li>
-                        <li><a href="#">Eczema Treatment Guide</a></li>
-                        <li><a href="#">Urticaria Treatment</a></li>
-                        <li><a href="#">Lichen Planus Treatment</a></li>
-                        <li><a href="#">Skin Allergy Treatment</a></li>
-                        <li><a href="#">Nail Fungal Infection Treatment</a></li>
+                    <ul class="article-list" data-category="Medical Skin Diseases">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -538,15 +505,8 @@
                         </div>
                         <h2>Skincare & Skin Health</h2>
                     </div>
-                    <ul class="article-list">
-                        <li><a href="#">How to Choose Sunscreen</a></li>
-                        <li><a href="#">Morning Skincare Routine</a></li>
-                        <li><a href="#">Night Skincare Routine</a></li>
-                        <li><a href="#">Skincare for Oily Skin</a></li>
-                        <li><a href="#">Skincare for Dry Skin</a></li>
-                        <li><a href="#">Anti-aging Skincare Guide</a></li>
-                        <li><a href="#">Dark Neck Treatment</a></li>
-                        <li><a href="#">Under Eye Dark Circles</a></li>
+                    <ul class="article-list" data-category="Skincare & Skin Health">
+                        <!-- Dynamic Content -->
                     </ul>
                 </div>
 
@@ -559,7 +519,7 @@
                 <h2 class="text-white mb-sm">Have More Questions?</h2>
                 <p class="text-white cta-text">Education is the first step, but a clinical diagnosis is the second. Book your consultation today.</p>
                 <div class="btn-group cta-btn-group" style="justify-content: center;">
-                    <a href="contact.html" class="btn btn-white">Request Appointment</a>
+                    <a href="/contact" class="btn btn-white">Request Appointment</a>
                     <a href="https://wa.me/9345410038" target="_blank" class="btn btn-outline-white">WhatsApp Now</a>
                 </div>
             </div>
@@ -586,8 +546,8 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Dr. Alam's Logo" class="logo-icon" loading="lazy" decoding="async"></picture>
+                    <a href="/" class="logo">
+                        <picture><source srcset="/images/logo.webp" type="image/webp"><img src="/images/logo.png" alt="Dr. Alam's Logo" class="logo-icon" loading="lazy" decoding="async"></picture>
                         <div class="logo-text-wrapper">
                             <span class="logo-text">DR. ALAM'S SKIN CLINIC</span>
                             <span class="logo-subtext">Dermatology & Laser Surgery Centre</span>
@@ -597,20 +557,20 @@
                 </div>
                 <div>
                     <h3>Services</h3>
-                    <a href="acne-scars.html">Acne & Acne Scars</a>
-                    <a href="pigmentation.html">Pigmentation & Melasma</a>
-                    <a href="hair-loss.html">Hair Loss Restoration</a>
-                    <a href="laser-hair-removal.html">Laser Hair Removal</a>
-                    <a href="dermatosurgery.html">Skin Surgery (Dermatosurgery)</a>
-                    <a href="clinical-dermatology.html">Clinical Dermatology</a>
+                    <a href="/acne-scars">Acne & Acne Scars</a>
+                    <a href="/pigmentation">Pigmentation & Melasma</a>
+                    <a href="/hair-loss">Hair Loss Restoration</a>
+                    <a href="/laser-hair-removal">Laser Hair Removal</a>
+                    <a href="/dermatosurgery">Skin Surgery (Dermatosurgery)</a>
+                    <a href="/clinical-dermatology">Clinical Dermatology</a>
                 </div>
                 <div>
                     <h3>Quick Links</h3>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Clinic</a>
-                    <a href="services.html">Our Services</a>
-                    <a href="results.html">Results Gallery</a>
-                    <a href="blog.html">Skin Education</a>
+                    <a href="/">Home</a>
+                    <a href="/about">About Clinic</a>
+                    <a href="/services">Our Services</a>
+                    <a href="/results">Results Gallery</a>
+                    <a href="/blog">Skin Education</a>
                 </div>
                 <div>
                     <h3>Location</h3>
@@ -623,7 +583,7 @@
         </div>
     </footer>
 
-    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="/scripts/main.js"></script>
     <!-- Magnetic Contact Dock (Mobile Only) -->
     <div class="contact-dock">
         <div class="dock-bar">
@@ -641,7 +601,7 @@
                     </div>
                     <span class="dock-item-label">WhatsApp</span>
                 </a>
-                <a href="contact.html" class="dock-item dock-item-cta">
+                <a href="/contact" class="dock-item dock-item-cta">
                     <div class="dock-icon-wrap">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
@@ -650,6 +610,29 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataUrl = '/data/blogs.json?v=' + new Date().getTime(); // Prevent caching
+            fetch(dataUrl)
+                .then(response => response.json())
+                .then(blogs => {
+                    const categories = document.querySelectorAll('.article-list[data-category]');
+                    categories.forEach(list => {
+                        const categoryName = list.getAttribute('data-category');
+                        const categoryBlogs = blogs.filter(b => b.category === categoryName);
+                        
+                        if (categoryBlogs.length === 0) {
+                            list.innerHTML = '<li><span style="color: #999; font-size: 0.9rem;">Coming soon...</span></li>';
+                        } else {
+                            list.innerHTML = categoryBlogs.map(b => `
+                                <li><a href="${b.url}">${b.title}</a></li>
+                            `).join('');
+                        }
+                    });
+                })
+                .catch(err => console.error('Error loading blogs:', err));
+        });
+    </script>
 </body>
 
 </html>

@@ -157,44 +157,89 @@ function initHeroSlider() {
     const prevBtn = document.getElementById('hero-prev');
     const nextBtn = document.getElementById('hero-next');
     
-    if (!cards.length || !slides.length) return;
+    if (!slides.length) return;
 
     let currentIndex = 0;
+    let autoPlayInterval;
+
+    // --- Preload All Result Images for smooth transitions ---
+    const preloadImages = () => {
+        const resultPaths = [
+            '/results/10-3.jpg', '/results/11-6.jpg',
+            '/results/12-5.jpg', '/results/13-5.jpg',
+            '/results/13-2.jpg', '/results/14-2.jpg',
+            '/results/4.jpg', '/results/5.jpg',
+            '/images/16-1.jpg', '/images/17.jpg',
+            '/results/36.jpg', '/results/37-1.jpg'
+        ];
+        resultPaths.forEach(path => {
+            const img = new Image();
+            img.src = path;
+        });
+    };
+    preloadImages();
+
     const updateSlider = (index) => {
-        if (index >= cards.length) currentIndex = 0;
-        else if (index < 0) currentIndex = cards.length - 1;
+        // Handle boundary conditions
+        if (index >= slides.length) currentIndex = 0;
+        else if (index < 0) currentIndex = slides.length - 1;
         else currentIndex = index;
 
-        cards.forEach((card, i) => {
-            card.style.display = (i === currentIndex) ? 'block' : 'none';
-        });
-
+        // Update Slides (Backgrounds)
         slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === currentIndex) slide.classList.add('active');
+            slide.classList.toggle('active', i === currentIndex);
         });
 
+        // Update Result Cards (Foregound)
+        if (cards.length > 0) {
+            cards.forEach((card, i) => {
+                card.style.display = (i === currentIndex) ? 'block' : 'none';
+                if (i === currentIndex) {
+                    card.style.animation = 'none';
+                    card.offsetHeight; // trigger reflow
+                    card.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }
+
+        // Update Dots
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === currentIndex);
         });
     };
 
-    nextBtn?.addEventListener('click', () => updateSlider(currentIndex + 1));
-    prevBtn?.addEventListener('click', () => updateSlider(currentIndex - 1));
+    const startAutoPlay = () => {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+            updateSlider(currentIndex + 1);
+        }, 6000); // Change every 6 seconds
+    };
+
+    const stopAutoPlay = () => {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    };
+
+    // Event Listeners
+    nextBtn?.addEventListener('click', () => {
+        updateSlider(currentIndex + 1);
+        startAutoPlay(); // Reset timer
+    });
+
+    prevBtn?.addEventListener('click', () => {
+        updateSlider(currentIndex - 1);
+        startAutoPlay(); // Reset timer
+    });
 
     dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
             updateSlider(i);
-            resetAutoPlay();
+            startAutoPlay(); // Reset timer
         });
     });
 
-    let autoPlay = setInterval(() => updateSlider(currentIndex + 1), 5000);
-    const resetAutoPlay = () => {
-        clearInterval(autoPlay);
-        autoPlay = setInterval(() => updateSlider(currentIndex + 1), 5000);
-    };
-    [nextBtn, prevBtn].forEach(btn => btn?.addEventListener('click', resetAutoPlay));
+    // Start everything
+    updateSlider(0);
+    startAutoPlay();
 }
 
 // ============================================================
@@ -535,24 +580,24 @@ function initConcierge() {
 
         let recTitle = "Clinical Diagnosis Required";
         let recDesc = "Based on your input, Dr. Alam recommends a detailed skin diagnostic session. We specialize in evidence-based protocols for long-term health.";
-        let link = "services.html";
+        let link = "/services";
         let linkText = "View Treatment Options";
 
         const c = selections.concern;
         if (c === 'acne') {
             recTitle = "Acne & Scar Restoration Path";
             recDesc = "Your condition suggests a combined approach: Clinical medicine to control active acne, followed by advanced laser resurfacing for scar revision.";
-            link = "acne-scars.html";
+            link = "/acne-scars";
             linkText = "View Acne Treatment";
         } else if (c === 'pigmentation') {
             recTitle = "Pigmentation Correction Protocol";
             recDesc = "Melasma and deep pigmentation require a double-action plan: Medical-grade peels and Q-Switched laser therapy for deep pigment breakdown.";
-            link = "pigmentation.html";
+            link = "/pigmentation";
             linkText = "View Pigmentation Treatment";
         } else if (c === 'hair') {
             recTitle = "Hair Follicle Restoration";
             recDesc = "Early intervention is key. Dr. Alam recommends a clinical assessment for pattern analysis, likely involving medical therapy and GFC/PRP restoration.";
-            link = "hair-loss.html";
+            link = "/hair-loss";
             linkText = "View Hair Loss Treatment";
         }
 
