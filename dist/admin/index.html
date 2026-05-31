@@ -105,14 +105,19 @@
         tbody.innerHTML = blogs.length ? '' : '<tr><td colspan="3" style="text-align:center;padding:40px;">No blogs yet.</td></tr>';
         blogs.forEach(b => {
             const tr = document.createElement('tr');
+            // Truncate title for display
+            const shortTitle = b.title.length > 50 ? b.title.substring(0, 50) + '...' : b.title;
+            
             tr.innerHTML = `
                 <td><span style="background:#eee;padding:3px 8px;border-radius:4px;font-size:0.75rem;">${b.category}</span></td>
-                <td><strong>${b.title}</strong><br><small style="color:#999;">${b.url}</small></td>
+                <td><strong>${shortTitle}</strong><br><small style="color:#999;">${b.url}</small></td>
                 <td>
-                    <button onclick='editBlog(${JSON.stringify(b)})' class="btn" style="font-size:13px;padding:5px 10px;background:#061d30;color:white;">Edit</button>
+                    <button class="btn btn-edit" style="font-size:13px;padding:5px 10px;background:#061d30;color:white;">Edit</button>
                     <button onclick="deleteBlog('${b.id}')" class="btn btn-danger">Delete</button>
                 </td>
             `;
+            // Securely attach the blog data to the button to avoid HTML breakages
+            tr.querySelector('.btn-edit').onclick = () => editBlog(b);
             tbody.appendChild(tr);
         });
     }
