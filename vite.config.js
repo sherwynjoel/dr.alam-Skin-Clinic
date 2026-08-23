@@ -27,7 +27,7 @@ function copyDir(src, dest) {
 const copyFoldersPlugin = {
   name: 'copy-static-folders',
     closeBundle() {
-    const folders = ['services', 'scripts', 'admin', 'data']; // Added 'admin' and 'data'
+    const folders = ['services', 'scripts', 'admin', 'data', 'images']; // Added 'admin', 'data', and 'images'
     for (const folder of folders) {
       const src = resolve(__dirname, folder);
       const dest = resolve(__dirname, 'dist', folder);
